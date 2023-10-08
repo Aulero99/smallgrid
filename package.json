@@ -1,6 +1,13 @@
 {
     "name": "smallgrid",
+    "version": "1.1.0",
     "description": "",
-    "version": "1.1.0"
-    
+    "main": "smallgrid.js",
+    "author": "Auston Robertson <auston.robertson.business@gmail.com>",
+    "license": "MIT",
+    "dependencies": {},
+    "devDependencies": {
+        "node-sass-json-importer": "^4.3.0",
+        "sass": "^1.64.0"
+    }
 }
