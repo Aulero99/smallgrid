@@ -1,13 +1,27 @@
 {
     "name": "smallgrid",
+    "private": true,
     "version": "1.1.0",
-    "description": "",
+    "description": "Small Scss grid system for smaller projects",
     "main": "smallgrid.js",
+    "sass": "dist/css/smallgrid.scss",
     "author": "Auston Robertson <auston.robertson.business@gmail.com>",
     "license": "MIT",
     "dependencies": {},
     "devDependencies": {
-        "node-sass-json-importer": "^4.3.0",
         "sass": "^1.64.0"
-    }
+    },
+    "keywords": [
+        "css",
+        "sass",
+        "mobile-first",
+        "responsive",
+        "front-end",
+        "framework",
+        "web"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Aulero99/smallgrid.git"
+      }
 }
