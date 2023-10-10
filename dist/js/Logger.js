@@ -1,6 +1,6 @@
-// import { AppState } from "../AppState"
+import variables from "../../Variables.json"
 
-const dev = true
+const dev = variables.dev
 
 function log(type, content) {
     if (dev) {

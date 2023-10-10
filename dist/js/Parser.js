@@ -1,7 +1,8 @@
 import { logger } from "./Logger";
 
-function returnNumOnly(string){
-    var numsStr = string.replace(/[^0-9]/g, '');
+function returnNumOnly(str){
+    if(typeof str != 'string'){return}
+    var numsStr = str.replace(/[^0-9]/g, '');
     return parseInt(numsStr);
 }
 

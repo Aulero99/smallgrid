@@ -3,7 +3,7 @@
     "private": true,
     "version": "1.1.0",
     "description": "Small Scss grid system for smaller projects",
-    "main": "smallgrid.js",
+    "main": "dist/js/smallgrid.js",
     "sass": "dist/css/smallgrid.scss",
     "author": "Auston Robertson <auston.robertson.business@gmail.com>",
     "license": "MIT",

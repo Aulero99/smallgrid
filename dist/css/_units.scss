@@ -1,0 +1,9 @@
+@import "./_variables.scss";
+
+@function cvh($size){
+    @return calc(($size/100) * $vh100)
+}
+
+@function cvw($size){
+    @return calc(($size/100) * $vw100)
+}
