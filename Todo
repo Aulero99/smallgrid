@@ -1,3 +1,4 @@
  - Implement dynamic sizing variables in vh and vw (ex: vh75 would be 0.75*vh100)
  - Fix spagetti code in smallgrid.js
  - link to local service
+ - rename
