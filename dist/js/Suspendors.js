@@ -1,9 +1,9 @@
 import { sizer } from "./Sizer"
 
-class Smallgrid {
+class Suspendors {
     setup(){
         sizer.setup()
     }
 }
 
-export const smallgrid = new Smallgrid()
+export const suspendors = new Suspendors()

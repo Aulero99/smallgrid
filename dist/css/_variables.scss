@@ -1,32 +1,63 @@
+// STUB Behavioral Settings
 
-$vh100: var(--vh100);
-$vw100: var(--vw100);
+    // NOTE This sets the gutter of the grid for margins and padding.
+    // All numbers will work here, larger numbers will make the
+    // spacing feel more pillowy, smaller numbers will feel tighter
 $gutter: 1.5rem;
-$minmax: "min-width";
+
+    // NOTE This is the variable that sets the behavior of the grid to use either
+    // max or min width for the breakpoints, for example bootstrap uses min-width
+    // for default behavior
+$minmax: "max-width";
+
+    // NOTE This is the settings for the breakpoints in the grid.
+    // By default this shares the same values as bootstrap, but are
+    // readily changeable here
 $sm: 576px;
 $md: 768px;
 $lg: 992px;
 $xl: 1200px;
 $xxl: 1400px;
-$h1: 3.7rem;
-$h2: 3rem;
-$h3: 2.4rem;
-$h4: 1.7rem;
-$h5: 1.2rem;
-$fs1: 1rem;
-$fs2: 0.85rem;
-$fs3: 0.7rem;
-$trans1: 150ms;
-$trans2: 275ms;
-$trans3: 500ms;
-$trans4: 700ms;
-$trans5: 1000ms;
 
+    // NOTE this is the padding settings based on the gutter
+    // it is not recommended messing with these, but they are
+    // configurable
 $p1: calc( $gutter * (1 / 6) );
 $p2: calc( $gutter * (1 / 3) );
 $p3: calc( $gutter * (1 / 2) );
 $p4: calc( $gutter * (2 / 3) );
 
+
+
+// STUB Style Settings
+
+    // NOTE this is the heading sizes denoted by hX where
+    // X is the multiplier 
+$h1: 3.7rem;
+$h2: 3rem;
+$h3: 2.4rem;
+$h4: 1.7rem;
+$h5: 1.2rem;
+
+    // NOTE This is the font setting denoted by fsX where
+    // X is the multiplier of the base font size
+    // denoted by a dynamic srcipt
+    // TODO
+$fs1: 1rem;
+$fs2: 0.85rem;
+$fs3: 0.7rem;
+
+
+// STUB This is the logic for the sizing of the grid
+
+$vh100: var(--vh100);
+$vw100: var(--vw100);
+
+// NOTE the default of the scss variables here default to 
+// 100vh/vw (looks like var(100vh) in the compiled css), 
+// this is changed into solid numbers by scripts so the
+// compiled css works seamlessly regardless of 
+// software or hardware differences
 :root{
     --vh100: 100vh;
     --vw100: 100vw;

@@ -4,6 +4,7 @@ $breakpoints:("sm":$sm, "md":$md, "lg":$lg, "xl":$xl, "xxl":$xxl );
 $paddings:("0":0, "1":$p1, "2":$p2, "3":$p3, "4":$p4, "5":$gutter);
 
 *{ box-sizing: border-box; }
+body{ margin: 0; }
 
 .container{
     display: block;
