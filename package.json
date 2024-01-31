@@ -1,7 +1,7 @@
 {
     "name": "suspendors",
     "private": false,
-    "version": "1.2.2",
+    "version": "1.2.3",
     "description": "Small Scss grid system for smaller projects",
     "main": "dist/js/Suspendors.js",
     "sass": "dist/css/suspendors.scss",

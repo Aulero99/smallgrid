@@ -38,51 +38,6 @@ Then you need to import the javascript to the root of your project (see 'Using t
 and run the `suspendors.setup()` function within that file
 </p>
 
-## Using the Javascript Events
-
-<p>
-
-If you are looking to utilize the Events of Suspendors, you now need to register the functions you want to run within the framework `before` you start the service by either registering them with the corresponding function or implementing a event listener. As of now Suspendors offers the following checks (all configurable in the var folder):
-
-- .sm
-- .md
-- .lg
-- .xl
-- .xxl
-- .under*
-- .over
-- .portrait
-- .landscape
-
-By default Suspendors is configured to behave like bootstrap using the same breakpoints as of bootstrap 5.3 and the under check will never happen as the under and over logic happens when you go beyond the defined breakpoints with the default behavior using the sm breakpoint to initiate code when under the sm breakpoint and the over breakpoint to initiate code to when over the xxl breakpoint. However, you can change this behavior by changing the min-width or max-width variables in the two files in the `var` folder to behave as you would like which will in turn change the behavior of Suspendors to use code when over the breakpoints accordingly. 
-
-To registers the code you want to run with each breakpoint simple send the functions you would like to run like so:
-
-`suspendors.sm(function)`
-
-or as function with a parameter:
-
-`suspendors.sm(function.bind(null, 'param'))`
-
-`NOTE` - the registered functions will always run in the exact order of registering them
-
-You can also do this for a requisite Event by adding an event listener for each of these as well by listening for a `clip_` Event as well:
-
-`window.addEventListener("clip_sm", (e) => {function}, false)`
-</p>
-
-<p>
-After all your code is registered, and all your listeners are set up with Suspendors, then and only then should you start the service by calling the function:
-
-`suspendors.setup()`
-
-you can also call for an update or a single check trigger at any time to check for each of the event flags by calling:
-
-`suspendors.trigger()`
-
-& that's it! Easy, simple and useful.
-</p>
-
 ## Using the Grid
 
 <p>
@@ -143,7 +98,7 @@ Utility classes included are:
     * `-even`
 - `.grow-bp-1` sets the flex grow to 1
 
-### Misc
+### Misc Utility Classes
 
 - `.fill-bp` sets height and width to 100% and grow to 1
 - `.fill-bp-x` sets width to 100%
@@ -152,4 +107,59 @@ Utility classes included are:
 - `.d-bp-flex` sets element to display flex
 - `.d-bp-block` sets element to display block
 
+### Other Implementations
+
+In addition to the utility and grid classes, Suspendors also comes with 2 custom units to be used in custom styles called cvh() and cvw() which stand for calculated view height and width respectively. These units are what the grid uses for its own styles and are activated by the `suspendors.setup()` function, and when used properly will stop the locking and jumping issues from standard vh and vw units. 
+    
+    NOTE - If suspendors.setup() is not called cvh and cvw will default to vh and vw units respectively.
+
+- `cvh(x)` works exactly like lvh but across everything
+    * This custom unit fixes the scroll jumps & locks from the vh unit
+- `cvw(x)` works exactly like lvw but across everything
+
 </p> 
+
+## Using the Javascript Events
+
+<p>
+
+If you are looking to utilize the Events of Suspendors, you now need to register the functions you want to run within the framework `before` you start the service by either registering them with the corresponding function or implementing a event listener. As of now Suspendors offers the following checks (all configurable in the var folder):
+
+- .sm
+- .md
+- .lg
+- .xl
+- .xxl
+- .under*
+- .over
+- .portrait
+- .landscape
+
+By default Suspendors is configured to behave like bootstrap using the same breakpoints as of bootstrap 5.3 and the under check will never happen as the under and over logic happens when you go beyond the defined breakpoints with the default behavior using the sm breakpoint to initiate code when under the sm breakpoint and the over breakpoint to initiate code to when over the xxl breakpoint. However, you can change this behavior by changing the min-width or max-width variables in the two files in the `var` folder to behave as you would like which will in turn change the behavior of Suspendors to use code when over the breakpoints accordingly. 
+
+To registers the code you want to run with each breakpoint simple send the functions you would like to run like so:
+
+`suspendors.sm(function)`
+
+or as function with a parameter:
+
+`suspendors.sm(function.bind(null, 'param'))`
+
+    NOTE - the registered functions will always run in the exact order of registering them
+
+You can also do this for a requisite Event by adding an event listener for each of these as well by listening for a `clip_` Event as well:
+
+`window.addEventListener("clip_sm", (e) => {function}, false)`
+</p>
+
+<p>
+After all your code is registered, and all your listeners are set up with Suspendors, then and only then should you start the service by calling the function:
+
+`suspendors.setup()`
+
+you can also call for an update or a single check trigger at any time to check for each of the event flags by calling:
+
+`suspendors.trigger()`
+
+& that's it! Easy, simple and useful.
+</p>

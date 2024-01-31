@@ -1,4 +1,4 @@
-import variables from "../../Variables.json"
+import variables from "../var/Variables.json"
 
 const dev = variables.dev
 
