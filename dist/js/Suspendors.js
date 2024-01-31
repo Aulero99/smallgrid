@@ -10,6 +10,8 @@ class Suspendors {
         setter.setup()
     }
 
+    setupSizerOnly(){ sizer.setup() }
+
     trigger(){ setter.update() }
 
     under(fn){ caller.setEventFlags(fn, 'under') }

@@ -82,6 +82,7 @@ body{ margin: 0; }
             margin-right: calc($gutter * -.1 ) !important; 
         }
         &.m-5{ margin: 0 !important; }
+        &.flex-col{ flex-direction: column !important;}
     }
 }
 
