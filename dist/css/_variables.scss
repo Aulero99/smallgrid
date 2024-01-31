@@ -53,11 +53,15 @@ $fs3: 0.7rem;
 $vh100: var(--vh100);
 $vw100: var(--vw100);
 
-// NOTE the default of the scss variables here default to 
-// 100vh/vw (looks like var(100vh) in the compiled css), 
-// this is changed into solid numbers by scripts so the
-// compiled css works seamlessly regardless of 
-// software or hardware differences
+
+// STUB CSS Root Variable Declaration
+
+    // NOTE This is where the root css variables 
+    // are declared and defaulted, for example vh100
+    // defaults to 100vh is scripts are turned off
+    // etc. If variables need to be accessed in
+    // multiple areas this is where they are
+    // declared
 :root{
     --vh100: 100vh;
     --vw100: 100vw;

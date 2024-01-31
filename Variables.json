@@ -6,18 +6,5 @@
     "lg": "992px",
     "xl": "1200px",
     "xxl": "1400px",
-    "h1": "3.7rem",
-    "h2": "3rem",
-    "h3": "2.4rem",
-    "h4": "1.7rem",
-    "h5": "1.2rem",
-    "fs1": "1rem",
-    "fs2": "0.85rem",
-    "fs3": "0.7rem",
-    "trans1": "150ms",
-    "trans2": "275ms",
-    "trans3": "500ms",
-    "trans4": "700ms",
-    "trans5": "1000ms",
     "dev": true
 }

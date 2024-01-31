@@ -7,7 +7,6 @@
     "sass": "dist/css/suspendors.scss",
     "author": "Auston Robertson <auston.robertson.business@gmail.com>",
     "license": "MIT",
-    "dependencies": {},
     "devDependencies": {
         "sass": "^1.64.0"
     },
@@ -19,9 +18,9 @@
         "front-end",
         "framework",
         "web"
-      ],
-      "repository": {
+    ],
+    "repository": {
         "type": "git",
         "url": "git+https://github.com/Aulero99/smallgrid.git"
-      }
+    }
 }
