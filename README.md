@@ -21,4 +21,5 @@ To install Suspendors there are currently 2 options:
 - Clone the repo: `https://github.com/Aulero99/suspendors.git`
 - Install with [npm](https://www.npmjs.com/): `npm install suspendors`
 
-After installation you need to import the grid to the root of your project's scss stylesheet
+After installation you need to import the grid to the root of your project's scss stylesheet:
+`@import "suspendors";`
