@@ -1,5 +1,10 @@
 import { logger } from "./Logger";
 
+    // NOTE
+    // This is a file to extract the values from the variables.json file
+    // which isn't implemented much at this point but opens the 
+    // door for more expansion in the future
+
 function returnNumOnly(str){
     if(typeof str != 'string'){return}
     var numsStr = str.replace(/[^0-9]/g, '');

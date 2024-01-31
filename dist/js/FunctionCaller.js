@@ -26,7 +26,7 @@ class Caller{
     }
 
     trigger(flag){
-        // logger.log('running ' + flag)
+        logger.log('Triggering ' + flag)
         if(flag == 'under'){ this.runEvents(under) }
         if(flag == 'sm'){ this.runEvents(sm) }
         if(flag == 'md'){ this.runEvents(md) }

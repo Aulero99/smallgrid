@@ -1,4 +1,4 @@
-@import "./_variables.scss";
+@import "../var/_variables.scss";
 
 // NOTE this is the logic for calculating a logical size for 
 @function cvh($size){ @return calc(($size/100) * $vh100) }

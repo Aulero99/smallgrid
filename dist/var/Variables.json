@@ -1,10 +1,10 @@
 {
     "gutter": "1.5rem",
-    "minmax": "min-width",
+    "minmax": "max-width",
     "sm": "576px",
     "md": "768px",
     "lg": "992px",
     "xl": "1200px",
     "xxl": "1400px",
-    "dev": true
+    "dev": false
 }

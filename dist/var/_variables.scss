@@ -1,16 +1,22 @@
 // STUB Behavioral Settings
 
-    // NOTE This sets the gutter of the grid for margins and padding.
+    // NOTE 
+    // This sets the gutter of the grid for margins and padding.
     // All numbers will work here, larger numbers will make the
     // spacing feel more pillowy, smaller numbers will feel tighter
 $gutter: 1.5rem;
 
-    // NOTE This is the variable that sets the behavior of the grid to use either
-    // max or min width for the breakpoints, for example bootstrap uses min-width
+    // NOTE 
+    // This is the variable that sets the behavior of the grid to use either
+    // max or min width for the breakpoints, for example bootstrap uses max-width
     // for default behavior
+
+    // IMPORTANT
+    // This variable MUST match the variable in the Variables.json file
 $minmax: "max-width";
 
-    // NOTE This is the settings for the breakpoints in the grid.
+    // NOTE 
+    // This is the settings for the breakpoints in the grid.
     // By default this shares the same values as bootstrap, but are
     // readily changeable here
 $sm: 576px;
@@ -19,7 +25,8 @@ $lg: 992px;
 $xl: 1200px;
 $xxl: 1400px;
 
-    // NOTE this is the padding settings based on the gutter
+    // NOTE 
+    // this is the padding settings based on the gutter
     // it is not recommended messing with these, but they are
     // configurable
 $p1: calc( $gutter * (1 / 6) );
@@ -31,7 +38,8 @@ $p4: calc( $gutter * (2 / 3) );
 
 // STUB Style Settings
 
-    // NOTE this is the heading sizes denoted by hX where
+    // NOTE 
+    // this is the heading sizes denoted by hX where
     // X is the multiplier 
 $h1: 3.7rem;
 $h2: 3rem;
@@ -39,7 +47,8 @@ $h3: 2.4rem;
 $h4: 1.7rem;
 $h5: 1.2rem;
 
-    // NOTE This is the font setting denoted by fsX where
+    // NOTE 
+    // This is the font setting denoted by fsX where
     // X is the multiplier of the base font size
     // denoted by a dynamic srcipt
     // TODO
@@ -58,7 +67,7 @@ $vw100: var(--vw100);
 
     // NOTE This is where the root css variables 
     // are declared and defaulted, for example vh100
-    // defaults to 100vh is scripts are turned off
+    // defaults to 100vh if scripts are turned off
     // etc. If variables need to be accessed in
     // multiple areas this is where they are
     // declared

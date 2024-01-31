@@ -1,7 +1,6 @@
 import { caller } from "./FunctionCaller"
-import { logger } from "./Logger"
-import { setter } from "./Setter"
-import { sizer } from "./Sizer"
+import { setter } from "./EventSetter"
+import { sizer } from "./StylesSizer"
 
 
 class Suspendors {
@@ -10,6 +9,8 @@ class Suspendors {
         sizer.setup()
         setter.setup()
     }
+
+    trigger(){ setter.update() }
 
     under(fn){ caller.setEventFlags(fn, 'under') }
     sm(fn){ caller.setEventFlags(fn, 'sm') }

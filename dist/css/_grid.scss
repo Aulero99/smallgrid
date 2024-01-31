@@ -1,4 +1,4 @@
-@import "./_variables.scss";
+@import "../var/_variables.scss";
 
 $breakpoints:("sm":$sm, "md":$md, "lg":$lg, "xl":$xl, "xxl":$xxl );
 $paddings:("0":0, "1":$p1, "2":$p2, "3":$p3, "4":$p4, "5":$gutter);
