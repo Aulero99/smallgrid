@@ -18,15 +18,54 @@ const clip_over = new Event("clip_over")
 const clip_portrait = new Event("clip_portrait")
 const clip_landscape = new Event("clip_landscape")
 
-function underLogic(){ window.dispatchEvent(clip_under) }
-function smLogic(){ window.dispatchEvent(clip_sm) }
-function mdLogic(){ window.dispatchEvent(clip_md) }
-function lgLogic(){ window.dispatchEvent(clip_lg) }
-function xlLogic(){ window.dispatchEvent(clip_xl) }
-function xxlLogic(){ window.dispatchEvent(clip_xxl) }
-function overLogic(){ window.dispatchEvent(clip_over) }
-function portraitLogic(){ window.dispatchEvent(clip_portrait) }
-function landscapeLogic(){ window.dispatchEvent(clip_landscape) }
+let orientation = null
+let screen = null
+
+function underLogic(){
+    if(screen == 'under'){ return } 
+    window.dispatchEvent(clip_under)
+    screen = 'under'
+}
+function smLogic(){ 
+    if(screen == 'sm'){ return } 
+    window.dispatchEvent(clip_sm)
+    screen = 'sm'
+}
+function mdLogic(){ 
+    if(screen == 'md'){ return } 
+    window.dispatchEvent(clip_md) 
+    screen = 'md'
+}
+function lgLogic(){ 
+    if(screen == 'lg'){ return } 
+    window.dispatchEvent(clip_lg)
+    screen = 'lg' 
+}
+function xlLogic(){ 
+    if(screen == 'xl'){ return } 
+    window.dispatchEvent(clip_xl) 
+    screen = 'xl' 
+}
+function xxlLogic(){ 
+    if(screen == 'xxl'){ return } 
+    window.dispatchEvent(clip_xxl) 
+    screen = 'xxl' 
+}
+function overLogic(){ 
+    if(screen == 'over'){ return }
+    window.dispatchEvent(clip_over)
+    screen = 'over' 
+}
+function portraitLogic(){
+    if(orientation == 'p'){ return } 
+    window.dispatchEvent(clip_portrait)
+    orientation = 'p' 
+}
+function landscapeLogic(){ 
+    if(orientation == 'l'){ return }
+    window.dispatchEvent(clip_landscape)
+    orientation = 'l' 
+}
 
 class Setter{
     setup(){
