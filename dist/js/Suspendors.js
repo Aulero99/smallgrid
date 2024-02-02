@@ -53,7 +53,7 @@ class Suspendors {
         // NOTE
         // These functions return the values of the
         // state of the breakpoints and the 
-        // orientation value
+        // orientation values
 
     returnScreen(){ setter.returnScreen()}
     returnOrientation(){ setter.returnOrientation()}
