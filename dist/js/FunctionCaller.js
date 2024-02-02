@@ -15,15 +15,15 @@ class Caller{
 
     setup(){
         logger.log('Caller Online')
-        window.addEventListener("clip_under", (e) => {this.trigger('under')}, false)
-        window.addEventListener("clip_sm", (e) => {this.trigger('sm')}, false)
-        window.addEventListener("clip_md", (e) => {this.trigger('md')}, false)
-        window.addEventListener("clip_lg", (e) => {this.trigger('lg')}, false)
-        window.addEventListener("clip_xl", (e) => {this.trigger('xl')}, false)
-        window.addEventListener("clip_xxl", (e) => {this.trigger('xxl')}, false)
-        window.addEventListener("clip_over", (e) => {this.trigger('over')}, false)
-        window.addEventListener("clip_portrait", (e) => {this.trigger('portrait')}, false)
-        window.addEventListener("clip_landscape", (e) => {this.trigger('landscape')}, false)
+        window.addEventListener("tie_under", (e) => {this.trigger('under')}, false)
+        window.addEventListener("tie_sm", (e) => {this.trigger('sm')}, false)
+        window.addEventListener("tie_md", (e) => {this.trigger('md')}, false)
+        window.addEventListener("tie_lg", (e) => {this.trigger('lg')}, false)
+        window.addEventListener("tie_xl", (e) => {this.trigger('xl')}, false)
+        window.addEventListener("tie_xxl", (e) => {this.trigger('xxl')}, false)
+        window.addEventListener("tie_over", (e) => {this.trigger('over')}, false)
+        window.addEventListener("tie_portrait", (e) => {this.trigger('portrait')}, false)
+        window.addEventListener("tie_landscape", (e) => {this.trigger('landscape')}, false)
     }
 
     trigger(flag){

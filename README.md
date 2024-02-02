@@ -8,7 +8,7 @@
     Lightweight framework with easily integrated callbacks and easily configurable breakpoint logic that doesn't break scrolling between screen sizes and different devices.
 </p>
 
-## Suspendors 1.X
+## Suspendors 2.X
 
 <p>
     The goal of this project was to eliminate common framework issues that anyone who has worked in a framework has inevitably encountered. Issues such as scroll locking or jumping are eliminated when using the integrated cvh and cvw functions and work nearly identically as vh and vw but across practically all devices not just the newer ones. Needing to integrate different logic such as different tools between desktop and mobile platforms are now easily implemented by registering the startup functions with Suspendors and letting it handle the thinking. It is also easy to track orientation with suspendors by utilizing the native support and functions can be registered to trigger with an orientation flip as needed.   
@@ -147,7 +147,7 @@ If you are looking to utilize the Events of Suspendors, you now need to register
 <br/>
 
     * suspendors.under(fn) is disabled by default, .over(fn) if used instead with the breakpoint logic aligning with bootstrap conventions.
-    
+
 By default Suspendors is configured to behave like bootstrap using the same breakpoints as of bootstrap 5.3 and the under check will never happen as the under and over logic happens when you go beyond the defined breakpoints with the default behavior using the sm breakpoint to initiate code when under the sm breakpoint and the over breakpoint to initiate code to when over the xxl breakpoint. However, you can change this behavior by changing the min-width or max-width variables in the two files in the `var` folder to behave as you would like which will in turn change the behavior of Suspendors to use code when over the breakpoints accordingly. 
 
 To registers the code you want to run with each breakpoint simple send the functions you would like to run like so:
@@ -160,19 +160,25 @@ or as function with a parameter:
 
     NOTE - the registered functions will always run in the exact order of registering them
 
-You can also do this for a requisite Event by adding an event listener for each of these as well by listening for a `clip_` Event as well:
+You can also do this for a requisite Event by adding an event listener for each of these as well by listening for a `tie_` Event as well:
 
-`window.addEventListener("clip_sm", (e) => {function}, false)`
+`window.addEventListener("tie_sm", (e) => {function}, false)`
 </p>
 
 <p>
+
+    NOTE - You can skip this next step if using version ^1.4.1 which added an autostart feature after dom is fully loaded, however manual start is still available in all versions ^1.3.1
+
 After all your code is registered, and all your listeners are set up with Suspendors, then and only then should you start the service by calling the function:
 
 `suspendors.setup()`
 
-you can also call for an update or a single check trigger at any time to check for each of the event flags by calling:
+you can also call for an update or a single check trigger at any time to check for each of the corresponding event flags by calling one of the following:
 
-`suspendors.trigger()`
+- `suspendors.triggerAll()`
+- `suspendors.triggerOrientation()`
+- `suspendors.triggerScreen()`
+
 
 & that's it! Easy, simple and useful.
 </p>
@@ -184,3 +190,8 @@ you can also call for an update or a single check trigger at any time to check f
     * 1.3.2:
         * Added `.flex-col` support to rows
         * Added `setupSizerOnly()` as a function to bypass `setup()` if you only the grid to function and didn't want the callbacks to trigger.
+- 1.4 - changed listeners from `clip_` to `tie_` for future features
+    * Fixed bug with functions not being called after load
+    * Added auto start for event broadcasters
+    * Added in manual triggers for event broadcasters
+    * Added return functions that return the breakpoint and orientation state

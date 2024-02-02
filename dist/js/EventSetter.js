@@ -8,68 +8,70 @@ import { parser } from "./Parser"
 
 const vars = parser.numbers(variables)
 
-const clip_under = new Event("clip_under")
-const clip_sm = new Event("clip_sm")
-const clip_md = new Event("clip_md")
-const clip_lg = new Event("clip_lg")
-const clip_xl = new Event("clip_xl")
-const clip_xxl = new Event("clip_xxl")
-const clip_over = new Event("clip_over")
-const clip_portrait = new Event("clip_portrait")
-const clip_landscape = new Event("clip_landscape")
+const tie_under = new Event("tie_under")
+const tie_sm = new Event("tie_sm")
+const tie_md = new Event("tie_md")
+const tie_lg = new Event("tie_lg")
+const tie_xl = new Event("tie_xl")
+const tie_xxl = new Event("tie_xxl")
+const tie_over = new Event("tie_over")
+const tie_portrait = new Event("tie_portrait")
+const tie_landscape = new Event("tie_landscape")
 
 let orientation = null
 let screen = null
 
 function underLogic(){
     if(screen == 'under'){ return } 
-    window.dispatchEvent(clip_under)
+    window.dispatchEvent(tie_under)
     screen = 'under'
 }
 function smLogic(){ 
     if(screen == 'sm'){ return } 
-    window.dispatchEvent(clip_sm)
+    window.dispatchEvent(tie_sm)
     screen = 'sm'
 }
 function mdLogic(){ 
     if(screen == 'md'){ return } 
-    window.dispatchEvent(clip_md) 
+    window.dispatchEvent(tie_md) 
     screen = 'md'
 }
 function lgLogic(){ 
     if(screen == 'lg'){ return } 
-    window.dispatchEvent(clip_lg)
+    window.dispatchEvent(tie_lg)
     screen = 'lg' 
 }
 function xlLogic(){ 
     if(screen == 'xl'){ return } 
-    window.dispatchEvent(clip_xl) 
+    window.dispatchEvent(tie_xl) 
     screen = 'xl' 
 }
 function xxlLogic(){ 
     if(screen == 'xxl'){ return } 
-    window.dispatchEvent(clip_xxl) 
+    window.dispatchEvent(tie_xxl) 
     screen = 'xxl' 
 }
 function overLogic(){ 
     if(screen == 'over'){ return }
-    window.dispatchEvent(clip_over)
+    window.dispatchEvent(tie_over)
     screen = 'over' 
 }
 function portraitLogic(){
     if(orientation == 'p'){ return } 
-    window.dispatchEvent(clip_portrait)
+    window.dispatchEvent(tie_portrait)
     orientation = 'p' 
 }
 function landscapeLogic(){ 
     if(orientation == 'l'){ return }
-    window.dispatchEvent(clip_landscape)
+    window.dispatchEvent(tie_landscape)
     orientation = 'l' 
 }
 
 class Setter{
+
     setup(){
         logger.log('Event Setter Online')
+        this.update()
         window.addEventListener('resize', this.update)
         window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
             const portrait = e.matches;
@@ -101,6 +103,7 @@ class Setter{
             // IMPORTANT 
             // the min-width and max-width variables must match between the min-width and max-width
             // files for this framework to work
+
         if(variables.minmax == 'max-width'){
             if(w <= vars.sm){ smLogic(); return}
             else if( w > vars.sm && w <= vars.md){ mdLogic(); return }
@@ -116,6 +119,41 @@ class Setter{
             else if(w >= vars.xl && w < vars.xxl){ xlLogic(); return }
             else{ xxlLogic(); return }
         }
-     }
+    }
+
+        // NOTE
+        // these functions are a fix to allow for the trigger to fire events by
+        // clearing the variables that don't allow for the events to fire
+        // before calling the update
+
+    clearAllThenUpdate() {
+        this.clearOrientThenUpdate()
+        this.clearScreenThenUpdate()
+    }
+
+    clearScreenThenUpdate() {
+        screen = null
+        orientation = null
+        this.update()
+    }
+
+    clearOrientThenUpdate() {
+        screen = null
+        orientation = null
+        this.update()
+    }
+
+        // NOTE
+        // These functions return the current state of the
+        // breakpoints and orientation as strings
+
+    returnOrientation() {
+        if(!orientation){this.update()}
+        return orientation
+    }
+    returnScreen() {
+        if(!screen){this.update()}
+        return screen
+    }
 }
 export const setter = new Setter()
