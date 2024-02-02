@@ -1,10 +1,6 @@
 @import "../var/_variables.scss";
 @import "./_units.scss";
 
-$breakpoints:("sm":$sm, "md":$md, "lg":$lg, "xl":$xl, "xxl":$xxl );
-$paddings:("0":0, "1":$p1, "2":$p2, "3":$p3, "4":$p4, "5":$gutter);
-$cv:("100":100,"75":75, "50":50, "25":25);
-
 *{ box-sizing: border-box; }
 body{ margin: 0; }
 
@@ -19,7 +15,7 @@ body{ margin: 0; }
     padding-right: calc($gutter * .5); 
 
     // @each $key, $value in $breakpoints{
-    //     @media screen and (max-width: $value){max-width: calc($value - $gutter) !important;}
+    //     @media screen and (max-width: $value){max-width: calc($value - $gutter);}
     // }
 
     .row{
@@ -48,43 +44,43 @@ body{ margin: 0; }
 
         @each $key, $value in $breakpoints{
             @media screen and ($minmax: $value){
-                .col-#{$key}-12{ width: 100% !important; }
-                .col-#{$key}-11{ width: calc( (11/12) * 100% ) !important; }
-                .col-#{$key}-10{ width: calc( (5/6) * 100% ) !important; }
-                .col-#{$key}-9{ width: 75% !important; }
-                .col-#{$key}-8{ width: calc( (2/3) * 100% ) !important; }
-                .col-#{$key}-7{ width: calc( (7/12) * 100% ) !important; }
-                .col-#{$key}-6{ width: 50% !important; }
-                .col-#{$key}-5{ width: calc( (5/12) * 100% ) !important; }
-                .col-#{$key}-4{ width: calc( (1/3) * 100% ) !important; }
+                .col-#{$key}-12{ width: 100%; }
+                .col-#{$key}-11{ width: calc( (11/12) * 100% ); }
+                .col-#{$key}-10{ width: calc( (5/6) * 100% ); }
+                .col-#{$key}-9{ width: 75%; }
+                .col-#{$key}-8{ width: calc( (2/3) * 100% ); }
+                .col-#{$key}-7{ width: calc( (7/12) * 100% ); }
+                .col-#{$key}-6{ width: 50%; }
+                .col-#{$key}-5{ width: calc( (5/12) * 100% ); }
+                .col-#{$key}-4{ width: calc( (1/3) * 100% ); }
                 .col-#{$key}-3{ width: 25%; }
-                .col-#{$key}-2{ width: calc( (1/6) * 100% ) !important; }
-                .col-#{$key}-1{ width: calc( (1/12) * 100% ) !important; }
+                .col-#{$key}-2{ width: calc( (1/6) * 100% ); }
+                .col-#{$key}-1{ width: calc( (1/12) * 100% ); }
             }
         }
 
         &.m-0{
-            margin-left: calc($gutter * -.5) !important;
-            margin-right: calc($gutter * -.5) !important; 
+            margin-left: calc($gutter * -.5);
+            margin-right: calc($gutter * -.5); 
         }
         &.m-1{
-            margin-left: calc($gutter * -.4) !important;
-            margin-right: calc($gutter * -.4) !important; 
+            margin-left: calc($gutter * -.4);
+            margin-right: calc($gutter * -.4); 
         }
         &.m-2{
-            margin-left: calc($gutter * -.3 ) !important;
-            margin-right: calc($gutter * -.3 ) !important; 
+            margin-left: calc($gutter * -.3 );
+            margin-right: calc($gutter * -.3 ); 
         }
         &.m-3{             
-            margin-left: calc($gutter * -.2 ) !important;
-            margin-right: calc($gutter * -.2 ) !important; 
+            margin-left: calc($gutter * -.2 );
+            margin-right: calc($gutter * -.2 ); 
         }
         &.m-4{ 
-            margin-left: calc($gutter * -.1 ) !important;
-            margin-right: calc($gutter * -.1 ) !important; 
+            margin-left: calc($gutter * -.1 );
+            margin-right: calc($gutter * -.1 ); 
         }
-        &.m-5{ margin: 0 !important; }
-        &.flex-col{ flex-direction: column !important;}
+        &.m-5{ margin: 0; }
+        &.flex-col{ flex-direction: column;}
     }
 }
 
@@ -110,23 +106,23 @@ body{ margin: 0; }
 @each $key, $value in $breakpoints{
     @media screen and ($minmax: $value){
         .flex-#{$key}-row{
-            display: flex !important;
-            flex-direction: row !important;
-            .wrap{ flex-wrap: wrap !important; }
+            display: flex;
+            flex-direction: row;
+            .wrap{ flex-wrap: wrap; }
         }
         .flex-#{$key}-col{
-            display: flex !important;
-            flex-direction: column !important;
-            .wrap{ flex-wrap: wrap !important; }
+            display: flex;
+            flex-direction: column;
+            .wrap{ flex-wrap: wrap; }
         }
-        .grow-#{$key}-1{ flex-grow: 1 !important; }
+        .grow-#{$key}-1{ flex-grow: 1; }
         .fill-#{$key} {
-            height: 100% !important;
-            width: 100% !important;
-            flex-grow: 1 !important;
+            height: 100%;
+            width: 100%;
+            flex-grow: 1;
         }
-        .fill-#{$key}-x{ width: 100% !important; }
-        .fill-#{$key}-y{ height: 100% !important; }
+        .fill-#{$key}-x{ width: 100%; }
+        .fill-#{$key}-y{ height: 100%; }
     }
 }
 
@@ -182,52 +178,52 @@ body{ margin: 0; }
 @each $key, $value in $breakpoints{
     @media screen and ($minmax: $value){
         .align-#{$key}-start{
-            align-items: flex-start !important;
-            align-content: flex-start !important;
+            align-items: flex-start;
+            align-content: flex-start;
         }
         .align-#{$key}-center{
-            align-items: center !important;
-            align-content: center !important;
+            align-items: center;
+            align-content: center;
         }
         .align-#{$key}-end{
-            align-items: flex-end !important;
-            align-content: flex-end !important;
+            align-items: flex-end;
+            align-content: flex-end;
         }
         .align-#{$key}-between{
-            align-content: space-between !important;
-            align-items: space-between !important;
+            align-content: space-between;
+            align-items: space-between;
         }
         .align-#{$key}-around{
-            align-content: space-around !important;
-            align-items: space-around !important;
+            align-content: space-around;
+            align-items: space-around;
         }
         .align-#{$key}-even{
-            align-content: space-evenly !important;
-            align-items: space-evenly !important;
+            align-content: space-evenly;
+            align-items: space-evenly;
         }
         .justify-#{$key}-start{
-            justify-content: flex-start !important;
-            justify-items: flex-start !important;
+            justify-content: flex-start;
+            justify-items: flex-start;
         }
         .justify-#{$key}-center{
-            justify-content: center !important;
-            justify-items: center !important;
+            justify-content: center;
+            justify-items: center;
         }
         .justify-#{$key}-end{
-            justify-content: flex-end !important;
-            justify-items: flex-end !important;
+            justify-content: flex-end;
+            justify-items: flex-end;
         }
         .justify-#{$key}-between{
-            justify-content: space-between !important;
-            justify-items: space-between !important;
+            justify-content: space-between;
+            justify-items: space-between;
         }
         .justify-#{$key}-around{
-            justify-content: space-around !important;
-            justify-items: space-around !important;
+            justify-content: space-around;
+            justify-items: space-around;
         }
         .justify-#{$key}-even{
-            justify-content: space-evenly !important;
-            justify-items: space-evenly !important;
+            justify-content: space-evenly;
+            justify-items: space-evenly;
         }
     }
 }
@@ -273,36 +269,36 @@ body{ margin: 0; }
     @media screen and ($minmax: $v1){
         // standard margins in each @media
         @each $k2, $v2 in $paddings { 
-            .p-#{$k1}-#{$k2} { padding: $v2 !important; }
+            .p-#{$k1}-#{$k2} { padding: $v2; }
         }
         // padding top
         @each $k2, $v2 in $paddings { 
-            .pt-#{$k1}-#{$k2} { padding-top: $v2 !important; }
+            .pt-#{$k1}-#{$k2} { padding-top: $v2; }
         }
         // padding bottom
         @each $k2, $v2 in $paddings { 
-            .pb-#{$k1}-#{$k2} { padding-bottom: $v2 !important; }
+            .pb-#{$k1}-#{$k2} { padding-bottom: $v2; }
         }
         // padding start
         @each $k2, $v2 in $paddings { 
-            .ps-#{$k1}-#{$k2} { padding-left: $v2 !important; }
+            .ps-#{$k1}-#{$k2} { padding-left: $v2; }
         }
         // padding end
         @each $k2, $v2 in $paddings { 
-            .pe-#{$k1}-#{$k2} { padding-right: $v2 !important; }
+            .pe-#{$k1}-#{$k2} { padding-right: $v2; }
         }
         // padding x
         @each $k2, $v2 in $paddings { 
             .px-#{$k1}-#{$k2} { 
-                padding-left: $v2 !important; 
-                padding-right: $v2 !important; 
+                padding-left: $v2; 
+                padding-right: $v2; 
             }
         }
         // padding y
         @each $k2, $v2 in $paddings { 
             .py-#{$k1}-#{$k2} { 
-                padding-top: $v2 !important; 
-                padding-bottom: $v2 !important; 
+                padding-top: $v2; 
+                padding-bottom: $v2; 
             }
         }
     }
@@ -349,36 +345,36 @@ body{ margin: 0; }
     @media screen and ($minmax: $v1){
         // standard margins in each @media
         @each $k2, $v2 in $paddings { 
-            .m-#{$k1}-#{$k2} { margin: $v2 !important; }
+            .m-#{$k1}-#{$k2} { margin: $v2; }
         }
         // margin top
         @each $k2, $v2 in $paddings { 
-            .mt-#{$k1}-#{$k2} { margin-top: $v2 !important; }
+            .mt-#{$k1}-#{$k2} { margin-top: $v2; }
         }
         // margin bottom
         @each $k2, $v2 in $paddings { 
-            .mb-#{$k1}-#{$k2} { margin-bottom: $v2 !important; }
+            .mb-#{$k1}-#{$k2} { margin-bottom: $v2; }
         }
         // margin start
         @each $k2, $v2 in $paddings { 
-            .ms-#{$k1}-#{$k2} { margin-left: $v2 !important; }
+            .ms-#{$k1}-#{$k2} { margin-left: $v2; }
         }
         // margin end
         @each $k2, $v2 in $paddings { 
-            .me-#{$k1}-#{$k2} { margin-right: $v2 !important; }
+            .me-#{$k1}-#{$k2} { margin-right: $v2; }
         }
         // margin x
         @each $k2, $v2 in $paddings { 
             .mx-#{$k1}-#{$k2} { 
-                margin-left: $v2 !important; 
-                margin-right: $v2 !important; 
+                margin-left: $v2; 
+                margin-right: $v2; 
             }
         }
         // margin y
         @each $k2, $v2 in $paddings { 
             .my-#{$k1}-#{$k2} { 
-                margin-top: $v2 !important; 
-                margin-bottom: $v2 !important; 
+                margin-top: $v2; 
+                margin-bottom: $v2; 
             }
         }
     }
@@ -387,7 +383,7 @@ body{ margin: 0; }
 
 // STUB Begin cvh & cvw
 
-// standard cv logic
+// standard cvs
 @each $key, $value in $cv { 
     .cvh-#{$key} { 
         height: cvh($value);
@@ -418,8 +414,8 @@ body{ margin: 0; }
 
 @each $key, $value in $breakpoints {
     @media screen and ($minmax: $value){
-        .d-#{$key}-none{ display: none !important; }
-        .d-#{$key}-flex{ display: flex !important; }
-        .d-#{$key}-block{ display: block !important; }
+        .d-#{$key}-none{ display: none; }
+        .d-#{$key}-flex{ display: flex; }
+        .d-#{$key}-block{ display: block; }
     }
 }

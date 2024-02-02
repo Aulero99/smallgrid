@@ -204,3 +204,5 @@ you can also call for an update or a single check trigger at any time to check f
         * Cleaned up code, fixed mistake on var file still having dev enabled
     * 1.4.3
         * added cvh-X and cvw-X utility classes
+    * 1.4.4
+        * fixed bug where styles would not dynamically apply and override the previous breakpoint

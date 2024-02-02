@@ -6,14 +6,6 @@
     // spacing feel more pillowy, smaller numbers will feel tighter
 $gutter: 1.5rem;
 
-    // NOTE 
-    // This is the variable that sets the behavior of the grid to use either
-    // max or min width for the breakpoints, for example bootstrap uses max-width
-    // for default behavior
-
-    // IMPORTANT
-    // This variable MUST match the variable in the Variables.json file
-$minmax: "max-width";
 
     // NOTE 
     // This is the settings for the breakpoints in the grid.
@@ -26,6 +18,26 @@ $xl: 1200px;
 $xxl: 1400px;
 
     // NOTE 
+    // This is the variable that sets the behavior of the grid to use either
+    // max or min width for the breakpoints, for example bootstrap uses max-width
+    // for default behavior
+
+    // IMPORTANT
+    // This variable MUST match the variable in the Variables.json file
+    // also, the $breakpoints variable must match the setting (see the
+    // NOTE above them for which one to keep active
+
+$minmax: "max-width";
+
+    // NOTE - max-width set
+$breakpoints:("xxl":$xxl, "xl":$xl, "lg":$lg, "md":$md, "sm":$sm);
+
+    // NOTE - min-width set
+// $breakpoints:("sm":$sm, "md":$md, "lg":$lg, "xl":$xl, "xxl":$xxl);
+
+
+
+    // NOTE 
     // this is the padding settings based on the gutter
     // it is not recommended messing with these, but they are
     // configurable
@@ -34,33 +46,18 @@ $p2: calc( $gutter * (1 / 3) );
 $p3: calc( $gutter * (1 / 2) );
 $p4: calc( $gutter * (2 / 3) );
 
-
-
-// STUB Style Settings
-
-    // NOTE 
-    // this is the heading sizes denoted by hX where
-    // X is the multiplier 
-$h1: 3.7rem;
-$h2: 3rem;
-$h3: 2.4rem;
-$h4: 1.7rem;
-$h5: 1.2rem;
-
-    // NOTE 
-    // This is the font setting denoted by fsX where
-    // X is the multiplier of the base font size
-    // denoted by a dynamic srcipt
-    // TODO
-$fs1: 1rem;
-$fs2: 0.85rem;
-$fs3: 0.7rem;
+    // NOTE - the map for the grid
+$paddings:("0":0, "1":$p1, "2":$p2, "3":$p3, "4":$p4, "5":$gutter);
 
 
 // STUB This is the logic for the sizing of the grid
 
 $vh100: var(--vh100);
 $vw100: var(--vw100);
+
+    // NOTE - the cv for the grid
+$cv:("100":100,"75":75, "50":50, "25":25);
+
 
 
 // STUB CSS Root Variable Declaration
