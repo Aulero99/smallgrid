@@ -21,50 +21,15 @@ const tie_landscape = new Event("tie_landscape")
 let orientation = null
 let screen = null
 
-function underLogic(){
-    if(screen == 'under'){ return } 
-    window.dispatchEvent(tie_under)
-    screen = 'under'
-}
-function smLogic(){ 
-    if(screen == 'sm'){ return } 
-    window.dispatchEvent(tie_sm)
-    screen = 'sm'
-}
-function mdLogic(){ 
-    if(screen == 'md'){ return } 
-    window.dispatchEvent(tie_md) 
-    screen = 'md'
-}
-function lgLogic(){ 
-    if(screen == 'lg'){ return } 
-    window.dispatchEvent(tie_lg)
-    screen = 'lg' 
-}
-function xlLogic(){ 
-    if(screen == 'xl'){ return } 
-    window.dispatchEvent(tie_xl) 
-    screen = 'xl' 
-}
-function xxlLogic(){ 
-    if(screen == 'xxl'){ return } 
-    window.dispatchEvent(tie_xxl) 
-    screen = 'xxl' 
-}
-function overLogic(){ 
-    if(screen == 'over'){ return }
-    window.dispatchEvent(tie_over)
-    screen = 'over' 
-}
-function portraitLogic(){
-    if(orientation == 'p'){ return } 
-    window.dispatchEvent(tie_portrait)
-    orientation = 'p' 
-}
-function landscapeLogic(){ 
-    if(orientation == 'l'){ return }
-    window.dispatchEvent(tie_landscape)
-    orientation = 'l' 
+function callLogic(event, title){
+    if( screen == title ){ return } 
+    if( orientation == title ){ return }
+    if( title == 'portrait' || title == 'landscape'){
+        orientation = title
+    } else{
+        screen = title
+    }
+    window.dispatchEvent(event)
 }
 
 class Setter{
@@ -75,8 +40,8 @@ class Setter{
         window.addEventListener('resize', this.update)
         window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
             const portrait = e.matches;
-            if (portrait) { portraitLogic() } 
-            else { landscapeLogic() }
+            if (portrait) { callLogic(tie_portrait,'portrait') } 
+            else { callLogic(tie_under,'under') }
         });
     }
 
@@ -90,34 +55,34 @@ class Setter{
         const w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
         const h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
     
-        if(w>h){ landscapeLogic() }
-        else{ portraitLogic() }
+        if(w>h){ callLogic(tie_landscape,'landscape') }
+        else{ callLogic(tie_portrait,'portrait') }
 
             // NOTE
             // This sets up a logic tree on whether or not it should act according to min-width
             // or max-width to implement over or under logic accordingly as well as to perfectly
             // match the breakpoints in the scss. By default the framework acts exactly as bootstrap
             // but can be changed by matching the variable in the variables.json and the _variables.scss
-            // files to either min-width or max-width accorginly
+            // files to either min-width or max-width accordingly
             
             // IMPORTANT 
             // the min-width and max-width variables must match between the min-width and max-width
             // files for this framework to work
 
         if(variables.minmax == 'max-width'){
-            if(w <= vars.sm){ smLogic(); return}
-            else if( w > vars.sm && w <= vars.md){ mdLogic(); return }
-            else if(w > vars.md && w <= vars.lg){ lgLogic(); return }
-            else if(w > vars.lg && w <= vars.xl){ xlLogic(); return }
-            else if(w > vars.xl && w <= vars.xxl){ xxlLogic(); return }
-            else{ overLogic(); return }
+            if(w <= vars.sm){ callLogic(tie_sm,'sm'); return}
+            else if( w > vars.sm && w <= vars.md){ callLogic(tie_md,'md'); return }
+            else if(w > vars.md && w <= vars.lg){ callLogic(tie_lg,'lg'); return }
+            else if(w > vars.lg && w <= vars.xl){ callLogic(tie_xl,'xl'); return }
+            else if(w > vars.xl && w <= vars.xxl){ callLogic(tie_xxl,'xxl'); return }
+            else{ callLogic(tie_over,'over'); return }
         }else{
-            if(w < vars.sm){ underLogic(); return }
-            else if( w >= vars.sm && w < vars.md){ smLogic(); return }
-            else if(w >= vars.md && w < vars.lg){ mdLogic(); return }
-            else if(w >= vars.lg && w < vars.xl){ lgLogic(); return }
-            else if(w >= vars.xl && w < vars.xxl){ xlLogic(); return }
-            else{ xxlLogic(); return }
+            if(w < vars.sm){ callLogic(tie_under,'under'); return }
+            else if( w >= vars.sm && w < vars.md){ callLogic(tie_sm,'sm'); return }
+            else if(w >= vars.md && w < vars.lg){ callLogic(tie_md,'md'); return }
+            else if(w >= vars.lg && w < vars.xl){ callLogic(tie_lg,'lg'); return }
+            else if(w >= vars.xl && w < vars.xxl){ callLogic(tie_xl,'xl'); return }
+            else{ callLogic(tie_xxl,'xxl'); return }
         }
     }
 

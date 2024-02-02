@@ -191,7 +191,10 @@ you can also call for an update or a single check trigger at any time to check f
         * Added `.flex-col` support to rows
         * Added `setupSizerOnly()` as a function to bypass `setup()` if you only the grid to function and didn't want the callbacks to trigger.
 - 1.4 - changed listeners from `clip_` to `tie_` for future features
-    * Fixed bug with functions not being called after load
-    * Added auto start for event broadcasters
-    * Added in manual triggers for event broadcasters
-    * Added return functions that return the breakpoint and orientation state
+    * 1.4.1
+        * Fixed bug with functions not being called after load
+        * Added auto start for event broadcasters
+        * Added in manual triggers for event broadcasters
+        * Added return functions that return the breakpoint and orientation state
+    * 1.4.2
+        * Cleaned up code, fixed mistake on var file still having dev enabled
