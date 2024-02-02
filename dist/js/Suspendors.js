@@ -42,7 +42,7 @@ class Suspendors {
         // NOTE
         // These are functions that will allow for
         // manual triggers of the current breakpoint
-        // or orientation that will remain consistant
+        // or orientation that will remain consistent
         // with all listeners and registered
         // functions
 
