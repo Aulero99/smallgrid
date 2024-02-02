@@ -1,7 +1,9 @@
 @import "../var/_variables.scss";
+@import "./_units.scss";
 
 $breakpoints:("sm":$sm, "md":$md, "lg":$lg, "xl":$xl, "xxl":$xxl );
 $paddings:("0":0, "1":$p1, "2":$p2, "3":$p3, "4":$p4, "5":$gutter);
+$cv:("100":100,"75":75, "50":50, "25":25);
 
 *{ box-sizing: border-box; }
 body{ margin: 0; }
@@ -381,6 +383,34 @@ body{ margin: 0; }
         }
     }
 }
+
+
+// STUB Begin cvh & cvw
+
+// standard cv logic
+@each $key, $value in $cv { 
+    .cvh-#{$key} { 
+        height: cvh($value);
+    }
+    .cvw-#{$key} {
+        width: cvw($value);
+    }
+}
+// Breakpoint Logic
+@each $k1, $v1 in $breakpoints {
+    @media screen and ($minmax: $v1){
+        @each $k2, $v2 in $cv { 
+            .cvh-#{$k1}-#{$k2} { 
+                height: cvh($v2);
+            }
+            .cvw-#{$k1}-#{$k2} { 
+                width: cvw($v2);
+            }
+        }
+    }
+}
+
+// STUB Other utility classes
 
 .d-none{ display: none; }
 .d-flex{ display: flex; }

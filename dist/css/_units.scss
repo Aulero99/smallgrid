@@ -4,14 +4,3 @@
 @function cvh($size){ @return calc(($size/100) * $vh100) }
 
 @function cvw($size){ @return calc(($size/100) * $vw100) }
-
-// TODO This is something to get to once more study has been done
-
-// // NOTE This is the logic for font size
-// @function cf($size){
-//     @return $size
-// }
-
-// @function ch($size){
-//     @return $size
-// }

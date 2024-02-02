@@ -112,6 +112,10 @@ All classes included are:
 - `.fill-bp` sets height and width to 100% and grow to 1
 - `.fill-bp-x` sets width to 100%
 - `.fill-bp-y` sets height to 100%
+- `cvh-bp-X` sets height of element to cvh(X)
+    * values for x are 100, 75, 50, 25
+- `cvw-bp-X` sets width of element to cvw(X)
+    * values for x are 100, 75, 50, 25
 - `.d-bp-none` sets element to display none
 - `.d-bp-flex` sets element to display flex
 - `.d-bp-block` sets element to display block
@@ -198,3 +202,5 @@ you can also call for an update or a single check trigger at any time to check f
         * Added return functions that return the breakpoint and orientation state
     * 1.4.2
         * Cleaned up code, fixed mistake on var file still having dev enabled
+    * 1.4.3
+        * added cvh-X and cvw-X utility classes
