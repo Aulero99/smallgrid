@@ -2,11 +2,12 @@ import { caller } from "./FunctionCaller"
 import { setter } from "./EventSetter"
 import { sizer } from "./StylesSizer"
 import { logger } from "./Logger"
+import variables from "../var/Variables.json"
 
-    // NOTE
-    // This is a automatic way to activate the scripts
-    // and the variable allows for manual activation if
-    // that is more desireable
+// NOTE
+// This is a automatic way to activate the scripts
+// and the variable allows for manual activation if
+// that is more desireable
 
 let setupCalled = false
 
@@ -37,6 +38,11 @@ class Suspendors {
         setter.setup()
     }
 
+        // NOTE
+        // This function turns on dev mode by
+        // flipping the bool to true for logger.log to begin logging
+    dev(){ variables.dev = true }
+
     setupSizerOnly(){ sizer.setup() }
 
         // NOTE
@@ -62,17 +68,44 @@ class Suspendors {
         // These functions register the code that should
         // be run at the end of the loading of the dom
         // or once setup is called as well as at screen
-        // transitions
+        // and orientation transitions
 
-    under(fn){console.log('registering', fn); caller.setEventFlags(fn, 'under') }
-    sm(fn){ caller.setEventFlags(fn, 'sm') }
-    md(fn){ caller.setEventFlags(fn, 'md') }
-    lg(fn){ caller.setEventFlags(fn, 'lg') }
-    xl(fn){ caller.setEventFlags(fn, 'xl') }
-    xxl(fn){ caller.setEventFlags(fn, 'xxl') }
-    over(fn){ caller.setEventFlags(fn, 'over') }
-    landscape(fn){ caller.setEventFlags(fn, 'landscape') }
-    portrait(fn){ caller.setEventFlags(fn, 'portrait') }
+    under(fn){ 
+        logger.log('registering function: ', fn, ' at breakpoint under')
+        caller.setEventFlags(fn, 'under') 
+    }
+    sm(fn){
+        logger.log('registering function: ', fn, ' at breakpoint sm')
+        caller.setEventFlags(fn, 'sm') 
+    }
+    md(fn){
+        logger.log('registering function: ', fn, ' at breakpoint md')
+        caller.setEventFlags(fn, 'md') 
+    }
+    lg(fn){
+        logger.log('registering function: ', fn, ' at breakpoint lg')
+        caller.setEventFlags(fn, 'lg') 
+    }
+    xl(fn){ 
+        logger.log('registering function: ', fn, ' at breakpoint xl')
+        caller.setEventFlags(fn, 'xl') 
+    }
+    xxl(fn){ 
+        logger.log('registering function: ', fn, ' at breakpoint xxl')
+        caller.setEventFlags(fn, 'xxl') 
+    }
+    over(fn){
+        logger.log('registering function: ', fn, ' at breakpoint over')
+        caller.setEventFlags(fn, 'over') 
+    }
+    landscape(fn){
+        logger.log('registering function: ', fn, ' at orientation landscape')
+        caller.setEventFlags(fn, 'landscape') 
+    }
+    portrait(fn){
+        logger.log('registering function: ', fn, ' at orientation portrait')
+        caller.setEventFlags(fn, 'portrait')
+    }
 }
 
 export const suspendors = new Suspendors()

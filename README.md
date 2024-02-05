@@ -112,9 +112,9 @@ All classes included are:
 - `.fill-bp` sets height and width to 100% and grow to 1
 - `.fill-bp-x` sets width to 100%
 - `.fill-bp-y` sets height to 100%
-- `cvh-bp-X` sets height of element to cvh(X)
+- `vh-bp-X` sets height of element to cvh(X)
     * values for x are 100, 75, 50, 25
-- `cvw-bp-X` sets width of element to cvw(X)
+- `vw-bp-X` sets width of element to cvw(X)
     * values for x are 100, 75, 50, 25
 - `.d-bp-none` sets element to display none
 - `.d-bp-flex` sets element to display flex
@@ -203,6 +203,13 @@ you can also call for an update or a single check trigger at any time to check f
     * 1.4.2
         * Cleaned up code, fixed mistake on var file still having dev enabled
     * 1.4.3
-        * added cvh-X and cvw-X utility classes
+        * added `cvh-X` and `cvw-X` utility classes
     * 1.4.4
         * fixed bug where styles would not dynamically apply and override the previous breakpoint
+    * 1.4.5
+        * changed default background color to black to make rotations on mobile look better
+        * fixed bug where iphone would not update appropriately
+        * renamed custom scss units to `tie_` to better match the naming convention of the javascript names
+        * renamed the `cvh-X` & `cvw-X` utility classes to `vh-X` and `vw-X` for better naming conventions
+        * added tie-p & tie-m as units based on gutter variable that can be used in custom styles with values identical to p-x and m-x utility classes
+        * changed the padding calcs from 1/6 to 1/5 to eliminate padding/margin jump on p-4 to p-5

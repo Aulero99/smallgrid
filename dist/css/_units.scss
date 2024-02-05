@@ -1,6 +1,16 @@
 @import "../var/_variables.scss";
 
 // NOTE this is the logic for calculating a logical size for 
-@function cvh($size){ @return calc(($size/100) * $vh100) }
+@function tie_vh($size){ 
+    @return calc(($size/100) * $vh100) 
+}
 
-@function cvw($size){ @return calc(($size/100) * $vw100) }
+@function tie_vw($size){ 
+    @return calc(($size/100) * $vw100) 
+}
+
+@function tie_p($size){
+    @return calc((1/5) * $gutter * $size)
+}
+
+@function tie_m($size){ @return ti_p($size) }

@@ -41,13 +41,14 @@ $breakpoints:("xxl":$xxl, "xl":$xl, "lg":$lg, "md":$md, "sm":$sm);
     // this is the padding settings based on the gutter
     // it is not recommended messing with these, but they are
     // configurable
-$p1: calc( $gutter * (1 / 6) );
-$p2: calc( $gutter * (1 / 3) );
-$p3: calc( $gutter * (1 / 2) );
-$p4: calc( $gutter * (2 / 3) );
+$p1: calc( $gutter * (1 / 5) );
+$p2: calc( $gutter * (2 / 5) );
+$p3: calc( $gutter * (3 / 5) );
+$p4: calc( $gutter * (4 / 5) );
+$p5: $gutter;
 
     // NOTE - the map for the grid
-$paddings:("0":0, "1":$p1, "2":$p2, "3":$p3, "4":$p4, "5":$gutter);
+$paddings:("0":0, "1":$p1, "2":$p2, "3":$p3, "4":$p4, "5":$p5);
 
 
 // STUB This is the logic for the sizing of the grid
@@ -71,4 +72,8 @@ $cv:("100":100,"75":75, "50":50, "25":25);
 :root{
     --vh100: 100vh;
     --vw100: 100vw;
+    --sat: env(safe-area-inset-top);
+    --sar: env(safe-area-inset-right);
+    --sab: env(safe-area-inset-bottom);
+    --sal: env(safe-area-inset-left);
 }

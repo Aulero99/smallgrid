@@ -2,7 +2,12 @@
 @import "./_units.scss";
 
 *{ box-sizing: border-box; }
-body{ margin: 0; }
+
+html, body, main, header, footer, section{ 
+    margin: 0;
+    padding: 0;
+    background-color: #000; 
+}
 
 .container{
     display: block;
@@ -13,10 +18,6 @@ body{ margin: 0; }
     margin-right: auto;
     padding-left: calc($gutter * .5);
     padding-right: calc($gutter * .5); 
-
-    // @each $key, $value in $breakpoints{
-    //     @media screen and (max-width: $value){max-width: calc($value - $gutter);}
-    // }
 
     .row{
         display: flex;
@@ -381,26 +382,26 @@ body{ margin: 0; }
 }
 
 
-// STUB Begin cvh & cvw
+// STUB Begin vh & vw
 
-// standard cvs
+// standard screen variable styles
 @each $key, $value in $cv { 
-    .cvh-#{$key} { 
-        height: cvh($value);
+    .vh-#{$key} { 
+        height: tie_vh($value);
     }
-    .cvw-#{$key} {
-        width: cvw($value);
+    .vw-#{$key} {
+        width: tie_vw($value);
     }
 }
 // Breakpoint Logic
 @each $k1, $v1 in $breakpoints {
     @media screen and ($minmax: $v1){
         @each $k2, $v2 in $cv { 
-            .cvh-#{$k1}-#{$k2} { 
-                height: cvh($v2);
+            .vh-#{$k1}-#{$k2} { 
+                height: tie_vh($v2);
             }
-            .cvw-#{$k1}-#{$k2} { 
-                width: cvw($v2);
+            .vw-#{$k1}-#{$k2} { 
+                width: tie_vw($v2);
             }
         }
     }
