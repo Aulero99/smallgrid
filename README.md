@@ -207,9 +207,9 @@ you can also call for an update or a single check trigger at any time to check f
     * 1.4.4
         * fixed bug where styles would not dynamically apply and override the previous breakpoint
     * 1.4.5
-        * changed default background color to black to make rotations on mobile look better
-        * fixed bug where iphone would not update appropriately
+        * changed default background color to 000 to make rotations on mobile look better
+        * fixed bug where iphone would not update vh appropriately
         * renamed custom scss units to `tie_` to better match the naming convention of the javascript names
         * renamed the `cvh-X` & `cvw-X` utility classes to `vh-X` and `vw-X` for better naming conventions
-        * added tie-p & tie-m as units based on gutter variable that can be used in custom styles with values identical to p-x and m-x utility classes
+        * added tie_p & tie_m as units based on gutter variable that can be used in custom styles with values identical to p-x and m-x utility classes
         * changed the padding calcs from 1/6 to 1/5 to eliminate padding/margin jump on p-4 to p-5

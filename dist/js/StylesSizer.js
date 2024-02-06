@@ -46,7 +46,7 @@ class Sizer{
       // devices at low to md scroll speeds, with only the highest scroll speeds causing visual
       // glitches at infrequent intervals and mostly on a scroll up action. 
 
-    if(h < dynamicHeight && w == dynamicWidth && w <= vars.md && mobileCheck()){return}
+    if(h < dynamicHeight && w == dynamicWidth && w <= vars.lg){return}
 
     dynamicWidth = w
     dynamicHeight = h
