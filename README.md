@@ -213,3 +213,5 @@ you can also call for an update or a single check trigger at any time to check f
         * renamed the `cvh-X` & `cvw-X` utility classes to `vh-X` and `vw-X` for better naming conventions
         * added tie_p & tie_m as units based on gutter variable that can be used in custom styles with values identical to p-x and m-x utility classes
         * changed the padding calcs from 1/6 to 1/5 to eliminate padding/margin jump on p-4 to p-5
+    * 1.4.6
+        * changed variables from json file to js file for expandability in the future

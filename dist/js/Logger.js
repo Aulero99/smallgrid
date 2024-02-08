@@ -1,6 +1,6 @@
-import variables from "../var/Variables.json"
+import { vars } from "../var/_variables"
 
-const dev = variables.dev
+const dev = vars.dev
 
 function log(type, content) {
     if (dev) {

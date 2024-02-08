@@ -1,6 +1,6 @@
 import { logger } from "./Logger"
-import variables from "../var/Variables.json"
-import { parser } from "./Parser"
+import { vars } from "../var/_variables"
+
 
 
 // NOTE 
@@ -10,7 +10,6 @@ import { parser } from "./Parser"
 
 let dynamicWidth = null
 let dynamicHeight = null
-const vars = parser.numbers(variables)
 
 
 function mobileCheck(){
