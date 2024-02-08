@@ -1,12 +1,9 @@
 import { logger } from "./Logger"
-import variables from "../var/Variables.json"
-import { parser } from "./Parser"
+import { vars } from "../var/_variables"
 
     // NOTE
     // This file sets up the events and the triggers them once the screen
     // size matches the variables set up in the Variables.json file
-
-const vars = parser.numbers(variables)
 
 const tie_under = new Event("tie_under")
 const tie_sm = new Event("tie_sm")
@@ -69,7 +66,7 @@ class Setter{
             // the min-width and max-width variables must match between the min-width and max-width
             // files for this framework to work
 
-        if(variables.minmax == 'max-width'){
+        if(vars.minmax == 'max-width'){
             if(w <= vars.sm){ callLogic(tie_sm,'sm'); return}
             else if( w > vars.sm && w <= vars.md){ callLogic(tie_md,'md'); return }
             else if(w > vars.md && w <= vars.lg){ callLogic(tie_lg,'lg'); return }

@@ -2,7 +2,7 @@ import { caller } from "./FunctionCaller"
 import { setter } from "./EventSetter"
 import { sizer } from "./StylesSizer"
 import { logger } from "./Logger"
-import variables from "../var/Variables.json"
+import { vars } from "../var/_variables"
 
 // NOTE
 // This is a automatic way to activate the scripts
@@ -41,7 +41,7 @@ class Suspendors {
         // NOTE
         // This function turns on dev mode by
         // flipping the bool to true for logger.log to begin logging
-    dev(){ variables.dev = true }
+    dev(){ vars.dev = true }
 
     setupSizerOnly(){ sizer.setup() }
 
