@@ -14,7 +14,7 @@ let portrait = []
 class Caller{
 
     setup(){
-        logger.log('Caller Online')
+        logger.log('Function Caller Logic Online')
         window.addEventListener("tie_under", (e) => {this.trigger('under')}, false)
         window.addEventListener("tie_sm", (e) => {this.trigger('sm')}, false)
         window.addEventListener("tie_md", (e) => {this.trigger('md')}, false)
@@ -28,15 +28,15 @@ class Caller{
 
     trigger(flag){
         logger.log('Triggering ' + flag)
-        if(flag == 'under'){ this.runEvents(under) }
-        if(flag == 'sm'){ this.runEvents(sm) }
-        if(flag == 'md'){ this.runEvents(md) }
-        if(flag == 'lg'){ this.runEvents(lg) }
-        if(flag == 'xl'){ this.runEvents(xl) }
-        if(flag == 'xxl'){ this.runEvents(xxl) }
-        if(flag == 'over'){ this.runEvents(over) }
-        if(flag == 'landscape'){ this.runEvents(landscape) }
-        if(flag == 'portrait'){ this.runEvents(portrait) }
+        if(flag == 'under'){ this.runEvents(under); return; }
+        if(flag == 'sm'){ this.runEvents(sm); return; }
+        if(flag == 'md'){ this.runEvents(md); return; }
+        if(flag == 'lg'){ this.runEvents(lg); return; }
+        if(flag == 'xl'){ this.runEvents(xl); return; }
+        if(flag == 'xxl'){ this.runEvents(xxl); return; }
+        if(flag == 'over'){ this.runEvents(over); return; }
+        if(flag == 'landscape'){ this.runEvents(landscape); return;}
+        if(flag == 'portrait'){ this.runEvents(portrait); return; }
         return
     }
 
@@ -50,15 +50,15 @@ class Caller{
     setEventFlags(fn, flag){
         if(typeof fn === 'function'){ 
             logger.log('valid function')
-            if(flag == 'under'){ under.push(fn); return }
-            if(flag == 'sm'){ sm.push(fn); return }
-            if(flag == 'md'){ md.push(fn); return }
-            if(flag == 'lg'){ lg.push(fn); return }
-            if(flag == 'xl'){ xl.push(fn); return }
-            if(flag == 'xxl'){ xxl.push(fn); return }
-            if(flag == 'over'){ over.push(fn); return }
-            if(flag == 'landscape'){ landscape.push(fn); return }
-            if(flag == 'portrait'){ portrait.push(fn); return }
+            if(flag == 'under'){ under.push(fn); return; }
+            if(flag == 'sm'){ sm.push(fn); return; }
+            if(flag == 'md'){ md.push(fn); return; }
+            if(flag == 'lg'){ lg.push(fn); return; }
+            if(flag == 'xl'){ xl.push(fn); return; }
+            if(flag == 'xxl'){ xxl.push(fn); return; }
+            if(flag == 'over'){ over.push(fn); return; }
+            if(flag == 'landscape'){ landscape.push(fn); return; }
+            if(flag == 'portrait'){ portrait.push(fn); return; }
             return
         }
         else{ logger.log('not a valid function') }

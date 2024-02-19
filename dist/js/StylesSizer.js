@@ -12,20 +12,20 @@ let dynamicWidth = null
 let dynamicHeight = null
 
 
-function mobileCheck(){
-   var isMobile = navigator.userAgent.toLowerCase().match(/mobile/i);
-   if(isMobile){
-      logger.log('mobile browser detected')
-      return(true)
-   }else{
-      logger.log('not mobile browser detected')
-      return(false)
-   }
-}
+// function mobileCheck(){
+//    var isMobile = navigator.userAgent.toLowerCase().match(/mobile/i);
+//    if(isMobile){
+//       logger.log('mobile browser detected')
+//       return(true)
+//    }else{
+//       logger.log('not mobile browser detected')
+//       return(false)
+//    }
+// }
 
 class Sizer{
  setup(){
-    logger.log('Sizer Online')
+    logger.log('Sizer Logic Online')
     window.addEventListener('resize', this.update)
     window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
        this.update()

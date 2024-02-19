@@ -1,9 +1,8 @@
 import { vars } from "../var/_variables"
 
-const dev = vars.dev
 
 function log(type, content) {
-    if (dev) {
+    if (vars.dev) {
       // eslint-disable-next-line no-console
       console[type](`[${type}] :: ${new Date().toLocaleTimeString()} :: `, ...content)
     } else {

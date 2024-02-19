@@ -2,7 +2,8 @@ import { caller } from "./FunctionCaller"
 import { setter } from "./EventSetter"
 import { sizer } from "./StylesSizer"
 import { logger } from "./Logger"
-import { vars } from "../var/_variables"
+import { variables } from "../var/_variables"
+import { modules } from "./Modules"
 
 // NOTE
 // This is a automatic way to activate the scripts
@@ -11,19 +12,13 @@ import { vars } from "../var/_variables"
 
 let setupCalled = false
 
-document.addEventListener('DOMContentLoaded', function() {
-    if (setupCalled){ return }
-    logger.log('DOM fully loaded and parsed');
-    suspendors.setup()
-});
-
 class Suspendors {
 
         // NOTE
         // this function is called once the dom is
         // fully loaded, however it can be manually called
         // if so desired any time. for example, you
-        // could activate the event liseners, then
+        // could activate the event listeners, then
         // call for an update in a later lifecycle
         // hook once you have set up the event 
         // listeners
@@ -31,17 +26,32 @@ class Suspendors {
     setup(){
         if (setupCalled){ return }
         setupCalled = true
-
-        logger.log('suspendors online')
+        logger.log('Suspendors Online')
+        
+        // NOTE this must be first
         caller.setup()
+        
+        modules.setup()
         sizer.setup()
+
+        // NOTE This must be last
         setter.setup()
     }
 
         // NOTE
         // This function turns on dev mode by
         // flipping the bool to true for logger.log to begin logging
-    dev(){ vars.dev = true }
+    dev(){ 
+        console.log('turning on dev mode')
+        variables.devMode()
+    }
+
+        // NOTE
+        // This is a simple tie in for the logger function to work with
+        // the suspendors modules in version ^1.5
+    log(data){
+        logger.log(data)
+    }
 
     setupSizerOnly(){ sizer.setup() }
 
@@ -109,3 +119,10 @@ class Suspendors {
 }
 
 export const suspendors = new Suspendors()
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (setupCalled){ return }
+    logger.log('DOM fully loaded and parsed');
+    suspendors.setup()
+    this.removeEventListener
+});

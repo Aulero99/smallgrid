@@ -6,5 +6,13 @@ export const vars = {
     lg:992,
     xl:1200,
     xxl:1400,
-    dev: false
+    dev:false
 }
+
+class Variables{
+    devMode(){
+        console.log('setting dev mode to true')
+        vars.dev = true
+    }
+}
+export const variables = new Variables()

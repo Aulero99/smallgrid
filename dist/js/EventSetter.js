@@ -32,7 +32,7 @@ function callLogic(event, title){
 class Setter{
 
     setup(){
-        logger.log('Event Setter Online')
+        logger.log('Event Setter Logic Online')
         this.update()
         window.addEventListener('resize', this.update)
         window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
@@ -115,6 +115,7 @@ class Setter{
     }
     returnScreen() {
         if(!screen){this.update()}
+        logger.log('The current screen is ', screen)
         return screen
     }
 }
