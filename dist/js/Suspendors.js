@@ -2,7 +2,7 @@ import { caller } from "./FunctionCaller"
 import { setter } from "./EventSetter"
 import { sizer } from "./StylesSizer"
 import { logger } from "./Logger"
-import { variables } from "../var/_variables"
+import { variables, vars } from "../var/_variables"
 import { modules } from "./Modules"
 
 // NOTE
@@ -25,6 +25,7 @@ class Suspendors {
 
     setup(){
         if (setupCalled){ return }
+        document.removeEventListener('DOMContentLoaded', suspendors.setup)
         setupCalled = true
         logger.log('Suspendors Online')
         
@@ -71,8 +72,9 @@ class Suspendors {
         // state of the breakpoints and the 
         // orientation values
 
-    returnScreen(){ setter.returnScreen()}
-    returnOrientation(){ setter.returnOrientation()}
+    returnScreen(){ return setter.returnScreen()}
+    returnOrientation(){ return setter.returnOrientation()}
+    returnVariables(){ return vars }
 
         // NOTE
         // These functions register the code that should
@@ -120,9 +122,4 @@ class Suspendors {
 
 export const suspendors = new Suspendors()
 
-document.addEventListener('DOMContentLoaded', function() {
-    if (setupCalled){ return }
-    logger.log('DOM fully loaded and parsed');
-    suspendors.setup()
-    this.removeEventListener
-});
+document.addEventListener('DOMContentLoaded', suspendors.setup)
