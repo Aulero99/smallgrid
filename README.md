@@ -8,7 +8,7 @@
     Lightweight framework with easily integrated callbacks and easily configurable breakpoint logic that doesn't break scrolling between screen sizes and different devices.
 </p>
 
-## Suspendors 1.4
+## Suspendors 1.5
 
 <p>
     The goal of this project was to eliminate common framework issues that anyone who has worked in a framework has inevitably encountered. Issues such as scroll locking or jumping are eliminated when using the integrated cvh and cvw functions and work nearly identically as vh and vw but across practically all devices not just the newer ones. Needing to integrate different logic such as different tools between desktop and mobile platforms are now easily implemented by registering the startup functions with Suspendors and letting it handle the thinking. It is also easy to track orientation with suspendors by utilizing the native support and functions can be registered to trigger with an orientation flip as needed.   
@@ -61,9 +61,17 @@ All classes included are:
     * `.container-x` is also applicable as of 1.5.1 with max width of the corresponding breakpoint
 - `.row` each row of the grid
     * `.flex-col` applied to a `.row` will change the flex-direction to column from its default row, which has its uses
+    * `.gx-bp-x`,`.gy-bp-x`, & `g-bp-x` will adjust spacing between rows and containers as of 1.5.1
 - `.col-bp-x` column in the row with x between 1-12
 - `.col-fill` fills the available space in the row
     * ex: a row with a col-3 and a col-fill will have the col-fill act like a col-9, and if that col-3 becomes a col-6 after a bp the col-fill will then act as a col-6
+
+### Gutters
+    NOTE - gutters can only be applied to rows to space them inside the containers
+- `g-bp-x` Adjusts x and y gutters
+- `gx-bp-x` Adjusts x gutter
+- `gy-bp-x` Adjusts y gutter
+    * Modifiers for `x` are 0-5
 
 ### Padding
 - `.p-bp-x` Padding All
@@ -73,7 +81,7 @@ All classes included are:
 - `.pe-bp-x` Padding End
 - `.px-bp-x` Padding X
 - `.py-bp-x` Padding Y
-    * Modifiers for `x` are 1-5
+    * Modifiers for `x` are 0-5
 
 ### Margin 
 - `.m-bp-x` Padding All
@@ -83,7 +91,7 @@ All classes included are:
 - `.me-bp-x` Padding End
 - `.mx-bp-x` Padding X
 - `.my-bp-x` Padding Y
-    * Modifiers for `x` are 1-5
+    * Modifiers for `x` are 0-5
 
 ### Flexbox
 
@@ -216,3 +224,9 @@ you can also call for an update or a single check trigger at any time to check f
         * changed the padding calcs from 1/6 to 1/5 to eliminate padding/margin jump on p-4 to p-5
     * 1.4.6
         * changed variables from json file to js file for expandability in the future
+    * 1.5.1
+        * fixed glitch with :root making duplicates
+        * fixed glitch with event listeners not removing themselves properly
+        * fixed oversight where return functions would return incorrect or nothing
+        * added expandability for modules
+        * added `.g-bp-x` styles for `.row` classes

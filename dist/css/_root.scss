@@ -1,0 +1,14 @@
+// STUB CSS Root Variable Declaration
+
+    // NOTE This is where the root css variables 
+    // are declared and defaulted, for example vh100
+    // defaults to 100vh if scripts are turned off
+    // etc. If variables need to be accessed after 
+    // compiling, this is where they need to be
+    // declared to ensure no duplicates are made
+    // by imports
+    
+:root{
+    --vh100: 100vh;
+    --vw100: 100vw;
+}

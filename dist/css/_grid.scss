@@ -1,5 +1,7 @@
+@use "sass:map";
 @import "../var/_variables.scss";
 @import "./_units.scss";
+// SCSS SYNTAX
 
 *{ box-sizing: border-box; }
 
@@ -32,7 +34,6 @@ html, body, main, header, footer, section{
     }
 }
 
-
 .row{
     display: flex;
     flex-direction: row;
@@ -41,15 +42,36 @@ html, body, main, header, footer, section{
     margin-right: calc($gutter * -.5);
 
     @each $key, $value in $gutters-x{
+        &.g-#{$key}{
+            margin-left: calc($gutter * $value);
+            margin-right: calc($gutter * $value); 
+            margin-top: calc($gutter * map.get($gutters-y, $key ));
+        }
         &.gx-#{$key}{
             margin-left: calc($gutter * $value);
             margin-right: calc($gutter * $value); 
         }
+        &.gy-#{$key}{
+            margin-top: calc($gutter * map.get($gutters-y, $key ));
+        }
     }
 
-    @each $key, $value in $gutters-y{
-        &.gy-#{$key}{
-            margin-top: calc($gutter * $value);
+    @each $k1, $v1 in $breakpoints{
+        @media screen and ($minmax: $v1){
+            @each $k2, $v2 in $gutters-x{
+                &.g-#{$k1}-#{$k2}{
+                    margin-left: calc($gutter * $v2);
+                    margin-right: calc($gutter * $v2); 
+                    margin-top: calc($gutter * map.get($gutters-y, $k2 ));
+                }
+                &.gx-#{$k1}-#{$k2}{
+                    margin-left: calc($gutter * $v2);
+                    margin-right: calc($gutter * $v2); 
+                }
+                &.gy-#{$k1}-#{$k2}{
+                    margin-top: calc($gutter * map.get($gutters-y, $k2 ));
+                }
+            }
         }
     }
     

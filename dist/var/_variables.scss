@@ -61,22 +61,3 @@ $vw100: var(--vw100);
 
     // NOTE - the cv for the grid
 $cv:("100":100,"75":75, "50":50, "25":25);
-
-
-
-// STUB CSS Root Variable Declaration
-
-    // NOTE This is where the root css variables 
-    // are declared and defaulted, for example vh100
-    // defaults to 100vh if scripts are turned off
-    // etc. If variables need to be accessed in
-    // multiple areas this is where they are
-    // declared
-:root{
-    --vh100: 100vh;
-    --vw100: 100vw;
-    --sat: env(safe-area-inset-top);
-    --sar: env(safe-area-inset-right);
-    --sab: env(safe-area-inset-bottom);
-    --sal: env(safe-area-inset-left);
-}
