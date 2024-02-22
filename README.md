@@ -58,6 +58,7 @@ All classes included are:
 ### Grid
 
 - `.container` The parent of the 'grid'
+    * `.container-x` is also applicable as of 1.5.1 with max width of the corresponding breakpoint
 - `.row` each row of the grid
     * `.flex-col` applied to a `.row` will change the flex-direction to column from its default row, which has its uses
 - `.col-bp-x` column in the row with x between 1-12

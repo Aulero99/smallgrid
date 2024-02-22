@@ -25,8 +25,8 @@ class Suspendors {
 
     setup(){
         if (setupCalled){ return }
-        document.removeEventListener('DOMContentLoaded', suspendors.setup)
         setupCalled = true
+        document.removeEventListener('DOMContentLoaded', suspendors.setup)
         logger.log('Suspendors Online')
         
         // NOTE this must be first

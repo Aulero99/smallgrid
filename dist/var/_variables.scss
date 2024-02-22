@@ -5,6 +5,9 @@
     // All numbers will work here, larger numbers will make the
     // spacing feel more pillowy, smaller numbers will feel tighter
 $gutter: 1.5rem;
+$gutters-x:("0":-0.5, "1":-0.4, "2":-0.3, "3":-0.2, "4":-0.1, "5":0);
+$gutters-y:("0":0, "1":0.2, "2":0.4, "3":0.6, "4":0.8, "5":1);
+
 
 
     // NOTE 
