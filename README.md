@@ -224,9 +224,9 @@ you can also call for an update or a single check trigger at any time to check f
         * changed the padding calcs from 1/6 to 1/5 to eliminate padding/margin jump on p-4 to p-5
     * 1.4.6
         * changed variables from json file to js file for expandability in the future
+- 1.5 - Module support added
     * 1.5.1
-        * fixed glitch with :root making duplicates
+        * fixed glitch with `:root` elements making duplicates from `@import`
         * fixed glitch with event listeners not removing themselves properly
         * fixed oversight where return functions would return incorrect or nothing
-        * added expandability for modules
         * added `.g-bp-x` styles for `.row` classes
