@@ -31,7 +31,7 @@ html, body, main, header, footer, section{
 }
 
 // STUB Default col-x Styling
-%col{
+.col{
     --width: 100%;
     width: var(--width);
 }
@@ -39,7 +39,7 @@ html, body, main, header, footer, section{
 @each $key, $value in $breakpoints{
     @each $name, $width in $cols{
         .col-#{$key}-#{$name}{ 
-            @extend %col
+            @extend .col
          }
     }
 }
