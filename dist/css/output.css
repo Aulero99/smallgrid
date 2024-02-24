@@ -46,317 +46,321 @@ html, body, main, header, footer, section {
   flex-grow: 1;
 }
 
-.col, .col-sm-12, .col-sm-11, .col-sm-10, .col-sm-9, .col-sm-8, .col-sm-7, .col-sm-6, .col-sm-5, .col-sm-4, .col-sm-3, .col-sm-2, .col-sm-1, .col-md-12, .col-md-11, .col-md-10, .col-md-9, .col-md-8, .col-md-7, .col-md-6, .col-md-5, .col-md-4, .col-md-3, .col-md-2, .col-md-1, .col-lg-12, .col-lg-11, .col-lg-10, .col-lg-9, .col-lg-8, .col-lg-7, .col-lg-6, .col-lg-5, .col-lg-4, .col-lg-3, .col-lg-2, .col-lg-1, .col-xl-12, .col-xl-11, .col-xl-10, .col-xl-9, .col-xl-8, .col-xl-7, .col-xl-6, .col-xl-5, .col-xl-4, .col-xl-3, .col-xl-2, .col-xl-1, .col-xxl-12, .col-xxl-11, .col-xxl-10, .col-xxl-9, .col-xxl-8, .col-xxl-7, .col-xxl-6, .col-xxl-5, .col-xxl-4, .col-xxl-3, .col-xxl-2, .col-xxl-1 {
+.col-sm-12, .col-sm-11, .col-sm-10, .col-sm-9, .col-sm-8, .col-sm-7, .col-sm-6, .col-sm-5, .col-sm-4, .col-sm-3, .col-sm-2, .col-sm-1, .col-md-12, .col-md-11, .col-md-10, .col-md-9, .col-md-8, .col-md-7, .col-md-6, .col-md-5, .col-md-4, .col-md-3, .col-md-2, .col-md-1, .col-lg-12, .col-lg-11, .col-lg-10, .col-lg-9, .col-lg-8, .col-lg-7, .col-lg-6, .col-lg-5, .col-lg-4, .col-lg-3, .col-lg-2, .col-lg-1, .col-xl-12, .col-xl-11, .col-xl-10, .col-xl-9, .col-xl-8, .col-xl-7, .col-xl-6, .col-xl-5, .col-xl-4, .col-xl-3, .col-xl-2, .col-xl-1, .col-xxl-12, .col-xxl-11, .col-xxl-10, .col-xxl-9, .col-xxl-8, .col-xxl-7, .col-xxl-6, .col-xxl-5, .col-xxl-4, .col-xxl-3, .col-xxl-2, .col-xxl-1, .col {
   --width: 100%;
   width: var(--width);
 }
 
-.col-1 {
+.col {
+  --width: 100%;
+}
+
+.col-1, .cols-1 .col {
   --width: 8.3333333333%;
   width: var(--width);
 }
 
-.col-2 {
+.col-2, .cols-2 .col {
   --width: 16.6666666667%;
   width: var(--width);
 }
 
-.col-3 {
+.col-3, .cols-3 .col {
   --width: 25%;
   width: var(--width);
 }
 
-.col-4 {
+.col-4, .cols-4 .col {
   --width: 33.3333333333%;
   width: var(--width);
 }
 
-.col-5 {
+.col-5, .cols-5 .col {
   --width: 41.6666666667%;
   width: var(--width);
 }
 
-.col-6 {
+.col-6, .cols-6 .col {
   --width: 50%;
   width: var(--width);
 }
 
-.col-7 {
+.col-7, .cols-7 .col {
   --width: 58.3333333333%;
   width: var(--width);
 }
 
-.col-8 {
+.col-8, .cols-8 .col {
   --width: 66.6666666667%;
   width: var(--width);
 }
 
-.col-9 {
+.col-9, .cols-9 .col {
   --width: 75%;
   width: var(--width);
 }
 
-.col-10 {
+.col-10, .cols-10 .col {
   --width: 83.3333333333%;
   width: var(--width);
 }
 
-.col-11 {
+.col-11, .cols-11 .col {
   --width: 91.6666666667%;
   width: var(--width);
 }
 
-.col-12 {
+.col-12, .cols-12 .col {
   --width: 100%;
   width: var(--width);
 }
 
 @media screen and (max-width: 1400px) {
-  .col-xxl-1 {
+  .col-xxl-1, .cols-xxl-1 .col {
     --width: 8.3333333333%;
     width: var(--width);
   }
-  .col-xxl-2 {
+  .col-xxl-2, .cols-xxl-2 .col {
     --width: 16.6666666667%;
     width: var(--width);
   }
-  .col-xxl-3 {
+  .col-xxl-3, .cols-xxl-3 .col {
     --width: 25%;
     width: var(--width);
   }
-  .col-xxl-4 {
+  .col-xxl-4, .cols-xxl-4 .col {
     --width: 33.3333333333%;
     width: var(--width);
   }
-  .col-xxl-5 {
+  .col-xxl-5, .cols-xxl-5 .col {
     --width: 41.6666666667%;
     width: var(--width);
   }
-  .col-xxl-6 {
+  .col-xxl-6, .cols-xxl-6 .col {
     --width: 50%;
     width: var(--width);
   }
-  .col-xxl-7 {
+  .col-xxl-7, .cols-xxl-7 .col {
     --width: 58.3333333333%;
     width: var(--width);
   }
-  .col-xxl-8 {
+  .col-xxl-8, .cols-xxl-8 .col {
     --width: 66.6666666667%;
     width: var(--width);
   }
-  .col-xxl-9 {
+  .col-xxl-9, .cols-xxl-9 .col {
     --width: 75%;
     width: var(--width);
   }
-  .col-xxl-10 {
+  .col-xxl-10, .cols-xxl-10 .col {
     --width: 83.3333333333%;
     width: var(--width);
   }
-  .col-xxl-11 {
+  .col-xxl-11, .cols-xxl-11 .col {
     --width: 91.6666666667%;
     width: var(--width);
   }
-  .col-xxl-12 {
+  .col-xxl-12, .cols-xxl-12 .col {
     --width: 100%;
     width: var(--width);
   }
 }
 @media screen and (max-width: 1200px) {
-  .col-xl-1 {
+  .col-xl-1, .cols-xl-1 .col {
     --width: 8.3333333333%;
     width: var(--width);
   }
-  .col-xl-2 {
+  .col-xl-2, .cols-xl-2 .col {
     --width: 16.6666666667%;
     width: var(--width);
   }
-  .col-xl-3 {
+  .col-xl-3, .cols-xl-3 .col {
     --width: 25%;
     width: var(--width);
   }
-  .col-xl-4 {
+  .col-xl-4, .cols-xl-4 .col {
     --width: 33.3333333333%;
     width: var(--width);
   }
-  .col-xl-5 {
+  .col-xl-5, .cols-xl-5 .col {
     --width: 41.6666666667%;
     width: var(--width);
   }
-  .col-xl-6 {
+  .col-xl-6, .cols-xl-6 .col {
     --width: 50%;
     width: var(--width);
   }
-  .col-xl-7 {
+  .col-xl-7, .cols-xl-7 .col {
     --width: 58.3333333333%;
     width: var(--width);
   }
-  .col-xl-8 {
+  .col-xl-8, .cols-xl-8 .col {
     --width: 66.6666666667%;
     width: var(--width);
   }
-  .col-xl-9 {
+  .col-xl-9, .cols-xl-9 .col {
     --width: 75%;
     width: var(--width);
   }
-  .col-xl-10 {
+  .col-xl-10, .cols-xl-10 .col {
     --width: 83.3333333333%;
     width: var(--width);
   }
-  .col-xl-11 {
+  .col-xl-11, .cols-xl-11 .col {
     --width: 91.6666666667%;
     width: var(--width);
   }
-  .col-xl-12 {
+  .col-xl-12, .cols-xl-12 .col {
     --width: 100%;
     width: var(--width);
   }
 }
 @media screen and (max-width: 992px) {
-  .col-lg-1 {
+  .col-lg-1, .cols-lg-1 .col {
     --width: 8.3333333333%;
     width: var(--width);
   }
-  .col-lg-2 {
+  .col-lg-2, .cols-lg-2 .col {
     --width: 16.6666666667%;
     width: var(--width);
   }
-  .col-lg-3 {
+  .col-lg-3, .cols-lg-3 .col {
     --width: 25%;
     width: var(--width);
   }
-  .col-lg-4 {
+  .col-lg-4, .cols-lg-4 .col {
     --width: 33.3333333333%;
     width: var(--width);
   }
-  .col-lg-5 {
+  .col-lg-5, .cols-lg-5 .col {
     --width: 41.6666666667%;
     width: var(--width);
   }
-  .col-lg-6 {
+  .col-lg-6, .cols-lg-6 .col {
     --width: 50%;
     width: var(--width);
   }
-  .col-lg-7 {
+  .col-lg-7, .cols-lg-7 .col {
     --width: 58.3333333333%;
     width: var(--width);
   }
-  .col-lg-8 {
+  .col-lg-8, .cols-lg-8 .col {
     --width: 66.6666666667%;
     width: var(--width);
   }
-  .col-lg-9 {
+  .col-lg-9, .cols-lg-9 .col {
     --width: 75%;
     width: var(--width);
   }
-  .col-lg-10 {
+  .col-lg-10, .cols-lg-10 .col {
     --width: 83.3333333333%;
     width: var(--width);
   }
-  .col-lg-11 {
+  .col-lg-11, .cols-lg-11 .col {
     --width: 91.6666666667%;
     width: var(--width);
   }
-  .col-lg-12 {
+  .col-lg-12, .cols-lg-12 .col {
     --width: 100%;
     width: var(--width);
   }
 }
 @media screen and (max-width: 768px) {
-  .col-md-1 {
+  .col-md-1, .cols-md-1 .col {
     --width: 8.3333333333%;
     width: var(--width);
   }
-  .col-md-2 {
+  .col-md-2, .cols-md-2 .col {
     --width: 16.6666666667%;
     width: var(--width);
   }
-  .col-md-3 {
+  .col-md-3, .cols-md-3 .col {
     --width: 25%;
     width: var(--width);
   }
-  .col-md-4 {
+  .col-md-4, .cols-md-4 .col {
     --width: 33.3333333333%;
     width: var(--width);
   }
-  .col-md-5 {
+  .col-md-5, .cols-md-5 .col {
     --width: 41.6666666667%;
     width: var(--width);
   }
-  .col-md-6 {
+  .col-md-6, .cols-md-6 .col {
     --width: 50%;
     width: var(--width);
   }
-  .col-md-7 {
+  .col-md-7, .cols-md-7 .col {
     --width: 58.3333333333%;
     width: var(--width);
   }
-  .col-md-8 {
+  .col-md-8, .cols-md-8 .col {
     --width: 66.6666666667%;
     width: var(--width);
   }
-  .col-md-9 {
+  .col-md-9, .cols-md-9 .col {
     --width: 75%;
     width: var(--width);
   }
-  .col-md-10 {
+  .col-md-10, .cols-md-10 .col {
     --width: 83.3333333333%;
     width: var(--width);
   }
-  .col-md-11 {
+  .col-md-11, .cols-md-11 .col {
     --width: 91.6666666667%;
     width: var(--width);
   }
-  .col-md-12 {
+  .col-md-12, .cols-md-12 .col {
     --width: 100%;
     width: var(--width);
   }
 }
 @media screen and (max-width: 576px) {
-  .col-sm-1 {
+  .col-sm-1, .cols-sm-1 .col {
     --width: 8.3333333333%;
     width: var(--width);
   }
-  .col-sm-2 {
+  .col-sm-2, .cols-sm-2 .col {
     --width: 16.6666666667%;
     width: var(--width);
   }
-  .col-sm-3 {
+  .col-sm-3, .cols-sm-3 .col {
     --width: 25%;
     width: var(--width);
   }
-  .col-sm-4 {
+  .col-sm-4, .cols-sm-4 .col {
     --width: 33.3333333333%;
     width: var(--width);
   }
-  .col-sm-5 {
+  .col-sm-5, .cols-sm-5 .col {
     --width: 41.6666666667%;
     width: var(--width);
   }
-  .col-sm-6 {
+  .col-sm-6, .cols-sm-6 .col {
     --width: 50%;
     width: var(--width);
   }
-  .col-sm-7 {
+  .col-sm-7, .cols-sm-7 .col {
     --width: 58.3333333333%;
     width: var(--width);
   }
-  .col-sm-8 {
+  .col-sm-8, .cols-sm-8 .col {
     --width: 66.6666666667%;
     width: var(--width);
   }
-  .col-sm-9 {
+  .col-sm-9, .cols-sm-9 .col {
     --width: 75%;
     width: var(--width);
   }
-  .col-sm-10 {
+  .col-sm-10, .cols-sm-10 .col {
     --width: 83.3333333333%;
     width: var(--width);
   }
-  .col-sm-11 {
+  .col-sm-11, .cols-sm-11 .col {
     --width: 91.6666666667%;
     width: var(--width);
   }
-  .col-sm-12 {
+  .col-sm-12, .cols-sm-12 .col {
     --width: 100%;
     width: var(--width);
   }
@@ -383,7 +387,7 @@ html, body, main, header, footer, section {
 .row.gy-0, .row.g-0 {
   row-gap: 0rem;
 }
-.row.g-0 > div, .row.g-0 article, .row.g-0 aside, .row.g-0 details, .row.g-0 figcaption, .row.g-0 figure, .row.g-0 footer, .row.g-0 header, .row.g-0 main, .row.g-0 mark, .row.g-0 nav, .row.g-0 section, .row.g-0 summary, .row.g-0 time, .row.gx-0 > div, .row.gx-0 article, .row.gx-0 aside, .row.gx-0 details, .row.gx-0 figcaption, .row.gx-0 figure, .row.gx-0 footer, .row.gx-0 header, .row.gx-0 main, .row.gx-0 mark, .row.gx-0 nav, .row.gx-0 section, .row.gx-0 summary, .row.gx-0 time {
+.row.g-0 > div, .row.g-0 article, .row.g-0 aside, .row.g-0 details, .row.g-0 figcaption, .row.g-0 figure, .row.g-0 footer, .row.g-0 header, .row.g-0 main, .row.g-0 mark, .row.g-0 nav, .row.g-0 section, .row.g-0 summary, .row.g-0 time, .row.g-0 a, .row.gx-0 > div, .row.gx-0 article, .row.gx-0 aside, .row.gx-0 details, .row.gx-0 figcaption, .row.gx-0 figure, .row.gx-0 footer, .row.gx-0 header, .row.gx-0 main, .row.gx-0 mark, .row.gx-0 nav, .row.gx-0 section, .row.gx-0 summary, .row.gx-0 time, .row.gx-0 a {
   width: calc(var(--width) - 0rem);
 }
 .row.gx-1, .row.g-1 {
@@ -400,7 +404,7 @@ html, body, main, header, footer, section {
 .row.gy-1, .row.g-1 {
   row-gap: 0.3rem;
 }
-.row.g-1 > div, .row.g-1 article, .row.g-1 aside, .row.g-1 details, .row.g-1 figcaption, .row.g-1 figure, .row.g-1 footer, .row.g-1 header, .row.g-1 main, .row.g-1 mark, .row.g-1 nav, .row.g-1 section, .row.g-1 summary, .row.g-1 time, .row.gx-1 > div, .row.gx-1 article, .row.gx-1 aside, .row.gx-1 details, .row.gx-1 figcaption, .row.gx-1 figure, .row.gx-1 footer, .row.gx-1 header, .row.gx-1 main, .row.gx-1 mark, .row.gx-1 nav, .row.gx-1 section, .row.gx-1 summary, .row.gx-1 time {
+.row.g-1 > div, .row.g-1 article, .row.g-1 aside, .row.g-1 details, .row.g-1 figcaption, .row.g-1 figure, .row.g-1 footer, .row.g-1 header, .row.g-1 main, .row.g-1 mark, .row.g-1 nav, .row.g-1 section, .row.g-1 summary, .row.g-1 time, .row.g-1 a, .row.gx-1 > div, .row.gx-1 article, .row.gx-1 aside, .row.gx-1 details, .row.gx-1 figcaption, .row.gx-1 figure, .row.gx-1 footer, .row.gx-1 header, .row.gx-1 main, .row.gx-1 mark, .row.gx-1 nav, .row.gx-1 section, .row.gx-1 summary, .row.gx-1 time, .row.gx-1 a {
   width: calc(var(--width) - 0.3rem);
 }
 .row.gx-2, .row.g-2 {
@@ -417,7 +421,7 @@ html, body, main, header, footer, section {
 .row.gy-2, .row.g-2 {
   row-gap: 0.6rem;
 }
-.row.g-2 > div, .row.g-2 article, .row.g-2 aside, .row.g-2 details, .row.g-2 figcaption, .row.g-2 figure, .row.g-2 footer, .row.g-2 header, .row.g-2 main, .row.g-2 mark, .row.g-2 nav, .row.g-2 section, .row.g-2 summary, .row.g-2 time, .row.gx-2 > div, .row.gx-2 article, .row.gx-2 aside, .row.gx-2 details, .row.gx-2 figcaption, .row.gx-2 figure, .row.gx-2 footer, .row.gx-2 header, .row.gx-2 main, .row.gx-2 mark, .row.gx-2 nav, .row.gx-2 section, .row.gx-2 summary, .row.gx-2 time {
+.row.g-2 > div, .row.g-2 article, .row.g-2 aside, .row.g-2 details, .row.g-2 figcaption, .row.g-2 figure, .row.g-2 footer, .row.g-2 header, .row.g-2 main, .row.g-2 mark, .row.g-2 nav, .row.g-2 section, .row.g-2 summary, .row.g-2 time, .row.g-2 a, .row.gx-2 > div, .row.gx-2 article, .row.gx-2 aside, .row.gx-2 details, .row.gx-2 figcaption, .row.gx-2 figure, .row.gx-2 footer, .row.gx-2 header, .row.gx-2 main, .row.gx-2 mark, .row.gx-2 nav, .row.gx-2 section, .row.gx-2 summary, .row.gx-2 time, .row.gx-2 a {
   width: calc(var(--width) - 0.6rem);
 }
 .row.gx-3, .row.g-3 {
@@ -434,7 +438,7 @@ html, body, main, header, footer, section {
 .row.gy-3, .row.g-3 {
   row-gap: 0.9rem;
 }
-.row.g-3 > div, .row.g-3 article, .row.g-3 aside, .row.g-3 details, .row.g-3 figcaption, .row.g-3 figure, .row.g-3 footer, .row.g-3 header, .row.g-3 main, .row.g-3 mark, .row.g-3 nav, .row.g-3 section, .row.g-3 summary, .row.g-3 time, .row.gx-3 > div, .row.gx-3 article, .row.gx-3 aside, .row.gx-3 details, .row.gx-3 figcaption, .row.gx-3 figure, .row.gx-3 footer, .row.gx-3 header, .row.gx-3 main, .row.gx-3 mark, .row.gx-3 nav, .row.gx-3 section, .row.gx-3 summary, .row.gx-3 time {
+.row.g-3 > div, .row.g-3 article, .row.g-3 aside, .row.g-3 details, .row.g-3 figcaption, .row.g-3 figure, .row.g-3 footer, .row.g-3 header, .row.g-3 main, .row.g-3 mark, .row.g-3 nav, .row.g-3 section, .row.g-3 summary, .row.g-3 time, .row.g-3 a, .row.gx-3 > div, .row.gx-3 article, .row.gx-3 aside, .row.gx-3 details, .row.gx-3 figcaption, .row.gx-3 figure, .row.gx-3 footer, .row.gx-3 header, .row.gx-3 main, .row.gx-3 mark, .row.gx-3 nav, .row.gx-3 section, .row.gx-3 summary, .row.gx-3 time, .row.gx-3 a {
   width: calc(var(--width) - 0.9rem);
 }
 .row.gx-4, .row.g-4 {
@@ -451,7 +455,7 @@ html, body, main, header, footer, section {
 .row.gy-4, .row.g-4 {
   row-gap: 1.2rem;
 }
-.row.g-4 > div, .row.g-4 article, .row.g-4 aside, .row.g-4 details, .row.g-4 figcaption, .row.g-4 figure, .row.g-4 footer, .row.g-4 header, .row.g-4 main, .row.g-4 mark, .row.g-4 nav, .row.g-4 section, .row.g-4 summary, .row.g-4 time, .row.gx-4 > div, .row.gx-4 article, .row.gx-4 aside, .row.gx-4 details, .row.gx-4 figcaption, .row.gx-4 figure, .row.gx-4 footer, .row.gx-4 header, .row.gx-4 main, .row.gx-4 mark, .row.gx-4 nav, .row.gx-4 section, .row.gx-4 summary, .row.gx-4 time {
+.row.g-4 > div, .row.g-4 article, .row.g-4 aside, .row.g-4 details, .row.g-4 figcaption, .row.g-4 figure, .row.g-4 footer, .row.g-4 header, .row.g-4 main, .row.g-4 mark, .row.g-4 nav, .row.g-4 section, .row.g-4 summary, .row.g-4 time, .row.g-4 a, .row.gx-4 > div, .row.gx-4 article, .row.gx-4 aside, .row.gx-4 details, .row.gx-4 figcaption, .row.gx-4 figure, .row.gx-4 footer, .row.gx-4 header, .row.gx-4 main, .row.gx-4 mark, .row.gx-4 nav, .row.gx-4 section, .row.gx-4 summary, .row.gx-4 time, .row.gx-4 a {
   width: calc(var(--width) - 1.2rem);
 }
 .row.gx-5, .row.g-5 {
@@ -468,7 +472,7 @@ html, body, main, header, footer, section {
 .row.gy-5, .row.g-5 {
   row-gap: 1.5rem;
 }
-.row.g-5 > div, .row.g-5 article, .row.g-5 aside, .row.g-5 details, .row.g-5 figcaption, .row.g-5 figure, .row.g-5 footer, .row.g-5 header, .row.g-5 main, .row.g-5 mark, .row.g-5 nav, .row.g-5 section, .row.g-5 summary, .row.g-5 time, .row.gx-5 > div, .row.gx-5 article, .row.gx-5 aside, .row.gx-5 details, .row.gx-5 figcaption, .row.gx-5 figure, .row.gx-5 footer, .row.gx-5 header, .row.gx-5 main, .row.gx-5 mark, .row.gx-5 nav, .row.gx-5 section, .row.gx-5 summary, .row.gx-5 time {
+.row.g-5 > div, .row.g-5 article, .row.g-5 aside, .row.g-5 details, .row.g-5 figcaption, .row.g-5 figure, .row.g-5 footer, .row.g-5 header, .row.g-5 main, .row.g-5 mark, .row.g-5 nav, .row.g-5 section, .row.g-5 summary, .row.g-5 time, .row.g-5 a, .row.gx-5 > div, .row.gx-5 article, .row.gx-5 aside, .row.gx-5 details, .row.gx-5 figcaption, .row.gx-5 figure, .row.gx-5 footer, .row.gx-5 header, .row.gx-5 main, .row.gx-5 mark, .row.gx-5 nav, .row.gx-5 section, .row.gx-5 summary, .row.gx-5 time, .row.gx-5 a {
   width: calc(var(--width) - 1.5rem);
 }
 @media screen and (max-width: 1400px) {
@@ -486,7 +490,7 @@ html, body, main, header, footer, section {
   .row.gy-xxl-0, .row.g-xxl-0 {
     row-gap: 0rem;
   }
-  .row.g-xxl-0 > div, .row.g-xxl-0 article, .row.g-xxl-0 aside, .row.g-xxl-0 details, .row.g-xxl-0 figcaption, .row.g-xxl-0 figure, .row.g-xxl-0 footer, .row.g-xxl-0 header, .row.g-xxl-0 main, .row.g-xxl-0 mark, .row.g-xxl-0 nav, .row.g-xxl-0 section, .row.g-xxl-0 summary, .row.g-xxl-0 time, .row.gx-xxl-0 > div, .row.gx-xxl-0 article, .row.gx-xxl-0 aside, .row.gx-xxl-0 details, .row.gx-xxl-0 figcaption, .row.gx-xxl-0 figure, .row.gx-xxl-0 footer, .row.gx-xxl-0 header, .row.gx-xxl-0 main, .row.gx-xxl-0 mark, .row.gx-xxl-0 nav, .row.gx-xxl-0 section, .row.gx-xxl-0 summary, .row.gx-xxl-0 time {
+  .row.g-xxl-0 > div, .row.g-xxl-0 article, .row.g-xxl-0 aside, .row.g-xxl-0 details, .row.g-xxl-0 figcaption, .row.g-xxl-0 figure, .row.g-xxl-0 footer, .row.g-xxl-0 header, .row.g-xxl-0 main, .row.g-xxl-0 mark, .row.g-xxl-0 nav, .row.g-xxl-0 section, .row.g-xxl-0 summary, .row.g-xxl-0 time, .row.g-xxl-0 a, .row.gx-xxl-0 > div, .row.gx-xxl-0 article, .row.gx-xxl-0 aside, .row.gx-xxl-0 details, .row.gx-xxl-0 figcaption, .row.gx-xxl-0 figure, .row.gx-xxl-0 footer, .row.gx-xxl-0 header, .row.gx-xxl-0 main, .row.gx-xxl-0 mark, .row.gx-xxl-0 nav, .row.gx-xxl-0 section, .row.gx-xxl-0 summary, .row.gx-xxl-0 time, .row.gx-xxl-0 a {
     width: calc(var(--width) - 0rem);
   }
   .row.gx-xxl-1, .row.g-xxl-1 {
@@ -503,7 +507,7 @@ html, body, main, header, footer, section {
   .row.gy-xxl-1, .row.g-xxl-1 {
     row-gap: 0.3rem;
   }
-  .row.g-xxl-1 > div, .row.g-xxl-1 article, .row.g-xxl-1 aside, .row.g-xxl-1 details, .row.g-xxl-1 figcaption, .row.g-xxl-1 figure, .row.g-xxl-1 footer, .row.g-xxl-1 header, .row.g-xxl-1 main, .row.g-xxl-1 mark, .row.g-xxl-1 nav, .row.g-xxl-1 section, .row.g-xxl-1 summary, .row.g-xxl-1 time, .row.gx-xxl-1 > div, .row.gx-xxl-1 article, .row.gx-xxl-1 aside, .row.gx-xxl-1 details, .row.gx-xxl-1 figcaption, .row.gx-xxl-1 figure, .row.gx-xxl-1 footer, .row.gx-xxl-1 header, .row.gx-xxl-1 main, .row.gx-xxl-1 mark, .row.gx-xxl-1 nav, .row.gx-xxl-1 section, .row.gx-xxl-1 summary, .row.gx-xxl-1 time {
+  .row.g-xxl-1 > div, .row.g-xxl-1 article, .row.g-xxl-1 aside, .row.g-xxl-1 details, .row.g-xxl-1 figcaption, .row.g-xxl-1 figure, .row.g-xxl-1 footer, .row.g-xxl-1 header, .row.g-xxl-1 main, .row.g-xxl-1 mark, .row.g-xxl-1 nav, .row.g-xxl-1 section, .row.g-xxl-1 summary, .row.g-xxl-1 time, .row.g-xxl-1 a, .row.gx-xxl-1 > div, .row.gx-xxl-1 article, .row.gx-xxl-1 aside, .row.gx-xxl-1 details, .row.gx-xxl-1 figcaption, .row.gx-xxl-1 figure, .row.gx-xxl-1 footer, .row.gx-xxl-1 header, .row.gx-xxl-1 main, .row.gx-xxl-1 mark, .row.gx-xxl-1 nav, .row.gx-xxl-1 section, .row.gx-xxl-1 summary, .row.gx-xxl-1 time, .row.gx-xxl-1 a {
     width: calc(var(--width) - 0.3rem);
   }
   .row.gx-xxl-2, .row.g-xxl-2 {
@@ -520,7 +524,7 @@ html, body, main, header, footer, section {
   .row.gy-xxl-2, .row.g-xxl-2 {
     row-gap: 0.6rem;
   }
-  .row.g-xxl-2 > div, .row.g-xxl-2 article, .row.g-xxl-2 aside, .row.g-xxl-2 details, .row.g-xxl-2 figcaption, .row.g-xxl-2 figure, .row.g-xxl-2 footer, .row.g-xxl-2 header, .row.g-xxl-2 main, .row.g-xxl-2 mark, .row.g-xxl-2 nav, .row.g-xxl-2 section, .row.g-xxl-2 summary, .row.g-xxl-2 time, .row.gx-xxl-2 > div, .row.gx-xxl-2 article, .row.gx-xxl-2 aside, .row.gx-xxl-2 details, .row.gx-xxl-2 figcaption, .row.gx-xxl-2 figure, .row.gx-xxl-2 footer, .row.gx-xxl-2 header, .row.gx-xxl-2 main, .row.gx-xxl-2 mark, .row.gx-xxl-2 nav, .row.gx-xxl-2 section, .row.gx-xxl-2 summary, .row.gx-xxl-2 time {
+  .row.g-xxl-2 > div, .row.g-xxl-2 article, .row.g-xxl-2 aside, .row.g-xxl-2 details, .row.g-xxl-2 figcaption, .row.g-xxl-2 figure, .row.g-xxl-2 footer, .row.g-xxl-2 header, .row.g-xxl-2 main, .row.g-xxl-2 mark, .row.g-xxl-2 nav, .row.g-xxl-2 section, .row.g-xxl-2 summary, .row.g-xxl-2 time, .row.g-xxl-2 a, .row.gx-xxl-2 > div, .row.gx-xxl-2 article, .row.gx-xxl-2 aside, .row.gx-xxl-2 details, .row.gx-xxl-2 figcaption, .row.gx-xxl-2 figure, .row.gx-xxl-2 footer, .row.gx-xxl-2 header, .row.gx-xxl-2 main, .row.gx-xxl-2 mark, .row.gx-xxl-2 nav, .row.gx-xxl-2 section, .row.gx-xxl-2 summary, .row.gx-xxl-2 time, .row.gx-xxl-2 a {
     width: calc(var(--width) - 0.6rem);
   }
   .row.gx-xxl-3, .row.g-xxl-3 {
@@ -537,7 +541,7 @@ html, body, main, header, footer, section {
   .row.gy-xxl-3, .row.g-xxl-3 {
     row-gap: 0.9rem;
   }
-  .row.g-xxl-3 > div, .row.g-xxl-3 article, .row.g-xxl-3 aside, .row.g-xxl-3 details, .row.g-xxl-3 figcaption, .row.g-xxl-3 figure, .row.g-xxl-3 footer, .row.g-xxl-3 header, .row.g-xxl-3 main, .row.g-xxl-3 mark, .row.g-xxl-3 nav, .row.g-xxl-3 section, .row.g-xxl-3 summary, .row.g-xxl-3 time, .row.gx-xxl-3 > div, .row.gx-xxl-3 article, .row.gx-xxl-3 aside, .row.gx-xxl-3 details, .row.gx-xxl-3 figcaption, .row.gx-xxl-3 figure, .row.gx-xxl-3 footer, .row.gx-xxl-3 header, .row.gx-xxl-3 main, .row.gx-xxl-3 mark, .row.gx-xxl-3 nav, .row.gx-xxl-3 section, .row.gx-xxl-3 summary, .row.gx-xxl-3 time {
+  .row.g-xxl-3 > div, .row.g-xxl-3 article, .row.g-xxl-3 aside, .row.g-xxl-3 details, .row.g-xxl-3 figcaption, .row.g-xxl-3 figure, .row.g-xxl-3 footer, .row.g-xxl-3 header, .row.g-xxl-3 main, .row.g-xxl-3 mark, .row.g-xxl-3 nav, .row.g-xxl-3 section, .row.g-xxl-3 summary, .row.g-xxl-3 time, .row.g-xxl-3 a, .row.gx-xxl-3 > div, .row.gx-xxl-3 article, .row.gx-xxl-3 aside, .row.gx-xxl-3 details, .row.gx-xxl-3 figcaption, .row.gx-xxl-3 figure, .row.gx-xxl-3 footer, .row.gx-xxl-3 header, .row.gx-xxl-3 main, .row.gx-xxl-3 mark, .row.gx-xxl-3 nav, .row.gx-xxl-3 section, .row.gx-xxl-3 summary, .row.gx-xxl-3 time, .row.gx-xxl-3 a {
     width: calc(var(--width) - 0.9rem);
   }
   .row.gx-xxl-4, .row.g-xxl-4 {
@@ -554,7 +558,7 @@ html, body, main, header, footer, section {
   .row.gy-xxl-4, .row.g-xxl-4 {
     row-gap: 1.2rem;
   }
-  .row.g-xxl-4 > div, .row.g-xxl-4 article, .row.g-xxl-4 aside, .row.g-xxl-4 details, .row.g-xxl-4 figcaption, .row.g-xxl-4 figure, .row.g-xxl-4 footer, .row.g-xxl-4 header, .row.g-xxl-4 main, .row.g-xxl-4 mark, .row.g-xxl-4 nav, .row.g-xxl-4 section, .row.g-xxl-4 summary, .row.g-xxl-4 time, .row.gx-xxl-4 > div, .row.gx-xxl-4 article, .row.gx-xxl-4 aside, .row.gx-xxl-4 details, .row.gx-xxl-4 figcaption, .row.gx-xxl-4 figure, .row.gx-xxl-4 footer, .row.gx-xxl-4 header, .row.gx-xxl-4 main, .row.gx-xxl-4 mark, .row.gx-xxl-4 nav, .row.gx-xxl-4 section, .row.gx-xxl-4 summary, .row.gx-xxl-4 time {
+  .row.g-xxl-4 > div, .row.g-xxl-4 article, .row.g-xxl-4 aside, .row.g-xxl-4 details, .row.g-xxl-4 figcaption, .row.g-xxl-4 figure, .row.g-xxl-4 footer, .row.g-xxl-4 header, .row.g-xxl-4 main, .row.g-xxl-4 mark, .row.g-xxl-4 nav, .row.g-xxl-4 section, .row.g-xxl-4 summary, .row.g-xxl-4 time, .row.g-xxl-4 a, .row.gx-xxl-4 > div, .row.gx-xxl-4 article, .row.gx-xxl-4 aside, .row.gx-xxl-4 details, .row.gx-xxl-4 figcaption, .row.gx-xxl-4 figure, .row.gx-xxl-4 footer, .row.gx-xxl-4 header, .row.gx-xxl-4 main, .row.gx-xxl-4 mark, .row.gx-xxl-4 nav, .row.gx-xxl-4 section, .row.gx-xxl-4 summary, .row.gx-xxl-4 time, .row.gx-xxl-4 a {
     width: calc(var(--width) - 1.2rem);
   }
   .row.gx-xxl-5, .row.g-xxl-5 {
@@ -571,7 +575,7 @@ html, body, main, header, footer, section {
   .row.gy-xxl-5, .row.g-xxl-5 {
     row-gap: 1.5rem;
   }
-  .row.g-xxl-5 > div, .row.g-xxl-5 article, .row.g-xxl-5 aside, .row.g-xxl-5 details, .row.g-xxl-5 figcaption, .row.g-xxl-5 figure, .row.g-xxl-5 footer, .row.g-xxl-5 header, .row.g-xxl-5 main, .row.g-xxl-5 mark, .row.g-xxl-5 nav, .row.g-xxl-5 section, .row.g-xxl-5 summary, .row.g-xxl-5 time, .row.gx-xxl-5 > div, .row.gx-xxl-5 article, .row.gx-xxl-5 aside, .row.gx-xxl-5 details, .row.gx-xxl-5 figcaption, .row.gx-xxl-5 figure, .row.gx-xxl-5 footer, .row.gx-xxl-5 header, .row.gx-xxl-5 main, .row.gx-xxl-5 mark, .row.gx-xxl-5 nav, .row.gx-xxl-5 section, .row.gx-xxl-5 summary, .row.gx-xxl-5 time {
+  .row.g-xxl-5 > div, .row.g-xxl-5 article, .row.g-xxl-5 aside, .row.g-xxl-5 details, .row.g-xxl-5 figcaption, .row.g-xxl-5 figure, .row.g-xxl-5 footer, .row.g-xxl-5 header, .row.g-xxl-5 main, .row.g-xxl-5 mark, .row.g-xxl-5 nav, .row.g-xxl-5 section, .row.g-xxl-5 summary, .row.g-xxl-5 time, .row.g-xxl-5 a, .row.gx-xxl-5 > div, .row.gx-xxl-5 article, .row.gx-xxl-5 aside, .row.gx-xxl-5 details, .row.gx-xxl-5 figcaption, .row.gx-xxl-5 figure, .row.gx-xxl-5 footer, .row.gx-xxl-5 header, .row.gx-xxl-5 main, .row.gx-xxl-5 mark, .row.gx-xxl-5 nav, .row.gx-xxl-5 section, .row.gx-xxl-5 summary, .row.gx-xxl-5 time, .row.gx-xxl-5 a {
     width: calc(var(--width) - 1.5rem);
   }
 }
@@ -590,7 +594,7 @@ html, body, main, header, footer, section {
   .row.gy-xl-0, .row.g-xl-0 {
     row-gap: 0rem;
   }
-  .row.g-xl-0 > div, .row.g-xl-0 article, .row.g-xl-0 aside, .row.g-xl-0 details, .row.g-xl-0 figcaption, .row.g-xl-0 figure, .row.g-xl-0 footer, .row.g-xl-0 header, .row.g-xl-0 main, .row.g-xl-0 mark, .row.g-xl-0 nav, .row.g-xl-0 section, .row.g-xl-0 summary, .row.g-xl-0 time, .row.gx-xl-0 > div, .row.gx-xl-0 article, .row.gx-xl-0 aside, .row.gx-xl-0 details, .row.gx-xl-0 figcaption, .row.gx-xl-0 figure, .row.gx-xl-0 footer, .row.gx-xl-0 header, .row.gx-xl-0 main, .row.gx-xl-0 mark, .row.gx-xl-0 nav, .row.gx-xl-0 section, .row.gx-xl-0 summary, .row.gx-xl-0 time {
+  .row.g-xl-0 > div, .row.g-xl-0 article, .row.g-xl-0 aside, .row.g-xl-0 details, .row.g-xl-0 figcaption, .row.g-xl-0 figure, .row.g-xl-0 footer, .row.g-xl-0 header, .row.g-xl-0 main, .row.g-xl-0 mark, .row.g-xl-0 nav, .row.g-xl-0 section, .row.g-xl-0 summary, .row.g-xl-0 time, .row.g-xl-0 a, .row.gx-xl-0 > div, .row.gx-xl-0 article, .row.gx-xl-0 aside, .row.gx-xl-0 details, .row.gx-xl-0 figcaption, .row.gx-xl-0 figure, .row.gx-xl-0 footer, .row.gx-xl-0 header, .row.gx-xl-0 main, .row.gx-xl-0 mark, .row.gx-xl-0 nav, .row.gx-xl-0 section, .row.gx-xl-0 summary, .row.gx-xl-0 time, .row.gx-xl-0 a {
     width: calc(var(--width) - 0rem);
   }
   .row.gx-xl-1, .row.g-xl-1 {
@@ -607,7 +611,7 @@ html, body, main, header, footer, section {
   .row.gy-xl-1, .row.g-xl-1 {
     row-gap: 0.3rem;
   }
-  .row.g-xl-1 > div, .row.g-xl-1 article, .row.g-xl-1 aside, .row.g-xl-1 details, .row.g-xl-1 figcaption, .row.g-xl-1 figure, .row.g-xl-1 footer, .row.g-xl-1 header, .row.g-xl-1 main, .row.g-xl-1 mark, .row.g-xl-1 nav, .row.g-xl-1 section, .row.g-xl-1 summary, .row.g-xl-1 time, .row.gx-xl-1 > div, .row.gx-xl-1 article, .row.gx-xl-1 aside, .row.gx-xl-1 details, .row.gx-xl-1 figcaption, .row.gx-xl-1 figure, .row.gx-xl-1 footer, .row.gx-xl-1 header, .row.gx-xl-1 main, .row.gx-xl-1 mark, .row.gx-xl-1 nav, .row.gx-xl-1 section, .row.gx-xl-1 summary, .row.gx-xl-1 time {
+  .row.g-xl-1 > div, .row.g-xl-1 article, .row.g-xl-1 aside, .row.g-xl-1 details, .row.g-xl-1 figcaption, .row.g-xl-1 figure, .row.g-xl-1 footer, .row.g-xl-1 header, .row.g-xl-1 main, .row.g-xl-1 mark, .row.g-xl-1 nav, .row.g-xl-1 section, .row.g-xl-1 summary, .row.g-xl-1 time, .row.g-xl-1 a, .row.gx-xl-1 > div, .row.gx-xl-1 article, .row.gx-xl-1 aside, .row.gx-xl-1 details, .row.gx-xl-1 figcaption, .row.gx-xl-1 figure, .row.gx-xl-1 footer, .row.gx-xl-1 header, .row.gx-xl-1 main, .row.gx-xl-1 mark, .row.gx-xl-1 nav, .row.gx-xl-1 section, .row.gx-xl-1 summary, .row.gx-xl-1 time, .row.gx-xl-1 a {
     width: calc(var(--width) - 0.3rem);
   }
   .row.gx-xl-2, .row.g-xl-2 {
@@ -624,7 +628,7 @@ html, body, main, header, footer, section {
   .row.gy-xl-2, .row.g-xl-2 {
     row-gap: 0.6rem;
   }
-  .row.g-xl-2 > div, .row.g-xl-2 article, .row.g-xl-2 aside, .row.g-xl-2 details, .row.g-xl-2 figcaption, .row.g-xl-2 figure, .row.g-xl-2 footer, .row.g-xl-2 header, .row.g-xl-2 main, .row.g-xl-2 mark, .row.g-xl-2 nav, .row.g-xl-2 section, .row.g-xl-2 summary, .row.g-xl-2 time, .row.gx-xl-2 > div, .row.gx-xl-2 article, .row.gx-xl-2 aside, .row.gx-xl-2 details, .row.gx-xl-2 figcaption, .row.gx-xl-2 figure, .row.gx-xl-2 footer, .row.gx-xl-2 header, .row.gx-xl-2 main, .row.gx-xl-2 mark, .row.gx-xl-2 nav, .row.gx-xl-2 section, .row.gx-xl-2 summary, .row.gx-xl-2 time {
+  .row.g-xl-2 > div, .row.g-xl-2 article, .row.g-xl-2 aside, .row.g-xl-2 details, .row.g-xl-2 figcaption, .row.g-xl-2 figure, .row.g-xl-2 footer, .row.g-xl-2 header, .row.g-xl-2 main, .row.g-xl-2 mark, .row.g-xl-2 nav, .row.g-xl-2 section, .row.g-xl-2 summary, .row.g-xl-2 time, .row.g-xl-2 a, .row.gx-xl-2 > div, .row.gx-xl-2 article, .row.gx-xl-2 aside, .row.gx-xl-2 details, .row.gx-xl-2 figcaption, .row.gx-xl-2 figure, .row.gx-xl-2 footer, .row.gx-xl-2 header, .row.gx-xl-2 main, .row.gx-xl-2 mark, .row.gx-xl-2 nav, .row.gx-xl-2 section, .row.gx-xl-2 summary, .row.gx-xl-2 time, .row.gx-xl-2 a {
     width: calc(var(--width) - 0.6rem);
   }
   .row.gx-xl-3, .row.g-xl-3 {
@@ -641,7 +645,7 @@ html, body, main, header, footer, section {
   .row.gy-xl-3, .row.g-xl-3 {
     row-gap: 0.9rem;
   }
-  .row.g-xl-3 > div, .row.g-xl-3 article, .row.g-xl-3 aside, .row.g-xl-3 details, .row.g-xl-3 figcaption, .row.g-xl-3 figure, .row.g-xl-3 footer, .row.g-xl-3 header, .row.g-xl-3 main, .row.g-xl-3 mark, .row.g-xl-3 nav, .row.g-xl-3 section, .row.g-xl-3 summary, .row.g-xl-3 time, .row.gx-xl-3 > div, .row.gx-xl-3 article, .row.gx-xl-3 aside, .row.gx-xl-3 details, .row.gx-xl-3 figcaption, .row.gx-xl-3 figure, .row.gx-xl-3 footer, .row.gx-xl-3 header, .row.gx-xl-3 main, .row.gx-xl-3 mark, .row.gx-xl-3 nav, .row.gx-xl-3 section, .row.gx-xl-3 summary, .row.gx-xl-3 time {
+  .row.g-xl-3 > div, .row.g-xl-3 article, .row.g-xl-3 aside, .row.g-xl-3 details, .row.g-xl-3 figcaption, .row.g-xl-3 figure, .row.g-xl-3 footer, .row.g-xl-3 header, .row.g-xl-3 main, .row.g-xl-3 mark, .row.g-xl-3 nav, .row.g-xl-3 section, .row.g-xl-3 summary, .row.g-xl-3 time, .row.g-xl-3 a, .row.gx-xl-3 > div, .row.gx-xl-3 article, .row.gx-xl-3 aside, .row.gx-xl-3 details, .row.gx-xl-3 figcaption, .row.gx-xl-3 figure, .row.gx-xl-3 footer, .row.gx-xl-3 header, .row.gx-xl-3 main, .row.gx-xl-3 mark, .row.gx-xl-3 nav, .row.gx-xl-3 section, .row.gx-xl-3 summary, .row.gx-xl-3 time, .row.gx-xl-3 a {
     width: calc(var(--width) - 0.9rem);
   }
   .row.gx-xl-4, .row.g-xl-4 {
@@ -658,7 +662,7 @@ html, body, main, header, footer, section {
   .row.gy-xl-4, .row.g-xl-4 {
     row-gap: 1.2rem;
   }
-  .row.g-xl-4 > div, .row.g-xl-4 article, .row.g-xl-4 aside, .row.g-xl-4 details, .row.g-xl-4 figcaption, .row.g-xl-4 figure, .row.g-xl-4 footer, .row.g-xl-4 header, .row.g-xl-4 main, .row.g-xl-4 mark, .row.g-xl-4 nav, .row.g-xl-4 section, .row.g-xl-4 summary, .row.g-xl-4 time, .row.gx-xl-4 > div, .row.gx-xl-4 article, .row.gx-xl-4 aside, .row.gx-xl-4 details, .row.gx-xl-4 figcaption, .row.gx-xl-4 figure, .row.gx-xl-4 footer, .row.gx-xl-4 header, .row.gx-xl-4 main, .row.gx-xl-4 mark, .row.gx-xl-4 nav, .row.gx-xl-4 section, .row.gx-xl-4 summary, .row.gx-xl-4 time {
+  .row.g-xl-4 > div, .row.g-xl-4 article, .row.g-xl-4 aside, .row.g-xl-4 details, .row.g-xl-4 figcaption, .row.g-xl-4 figure, .row.g-xl-4 footer, .row.g-xl-4 header, .row.g-xl-4 main, .row.g-xl-4 mark, .row.g-xl-4 nav, .row.g-xl-4 section, .row.g-xl-4 summary, .row.g-xl-4 time, .row.g-xl-4 a, .row.gx-xl-4 > div, .row.gx-xl-4 article, .row.gx-xl-4 aside, .row.gx-xl-4 details, .row.gx-xl-4 figcaption, .row.gx-xl-4 figure, .row.gx-xl-4 footer, .row.gx-xl-4 header, .row.gx-xl-4 main, .row.gx-xl-4 mark, .row.gx-xl-4 nav, .row.gx-xl-4 section, .row.gx-xl-4 summary, .row.gx-xl-4 time, .row.gx-xl-4 a {
     width: calc(var(--width) - 1.2rem);
   }
   .row.gx-xl-5, .row.g-xl-5 {
@@ -675,7 +679,7 @@ html, body, main, header, footer, section {
   .row.gy-xl-5, .row.g-xl-5 {
     row-gap: 1.5rem;
   }
-  .row.g-xl-5 > div, .row.g-xl-5 article, .row.g-xl-5 aside, .row.g-xl-5 details, .row.g-xl-5 figcaption, .row.g-xl-5 figure, .row.g-xl-5 footer, .row.g-xl-5 header, .row.g-xl-5 main, .row.g-xl-5 mark, .row.g-xl-5 nav, .row.g-xl-5 section, .row.g-xl-5 summary, .row.g-xl-5 time, .row.gx-xl-5 > div, .row.gx-xl-5 article, .row.gx-xl-5 aside, .row.gx-xl-5 details, .row.gx-xl-5 figcaption, .row.gx-xl-5 figure, .row.gx-xl-5 footer, .row.gx-xl-5 header, .row.gx-xl-5 main, .row.gx-xl-5 mark, .row.gx-xl-5 nav, .row.gx-xl-5 section, .row.gx-xl-5 summary, .row.gx-xl-5 time {
+  .row.g-xl-5 > div, .row.g-xl-5 article, .row.g-xl-5 aside, .row.g-xl-5 details, .row.g-xl-5 figcaption, .row.g-xl-5 figure, .row.g-xl-5 footer, .row.g-xl-5 header, .row.g-xl-5 main, .row.g-xl-5 mark, .row.g-xl-5 nav, .row.g-xl-5 section, .row.g-xl-5 summary, .row.g-xl-5 time, .row.g-xl-5 a, .row.gx-xl-5 > div, .row.gx-xl-5 article, .row.gx-xl-5 aside, .row.gx-xl-5 details, .row.gx-xl-5 figcaption, .row.gx-xl-5 figure, .row.gx-xl-5 footer, .row.gx-xl-5 header, .row.gx-xl-5 main, .row.gx-xl-5 mark, .row.gx-xl-5 nav, .row.gx-xl-5 section, .row.gx-xl-5 summary, .row.gx-xl-5 time, .row.gx-xl-5 a {
     width: calc(var(--width) - 1.5rem);
   }
 }
@@ -694,7 +698,7 @@ html, body, main, header, footer, section {
   .row.gy-lg-0, .row.g-lg-0 {
     row-gap: 0rem;
   }
-  .row.g-lg-0 > div, .row.g-lg-0 article, .row.g-lg-0 aside, .row.g-lg-0 details, .row.g-lg-0 figcaption, .row.g-lg-0 figure, .row.g-lg-0 footer, .row.g-lg-0 header, .row.g-lg-0 main, .row.g-lg-0 mark, .row.g-lg-0 nav, .row.g-lg-0 section, .row.g-lg-0 summary, .row.g-lg-0 time, .row.gx-lg-0 > div, .row.gx-lg-0 article, .row.gx-lg-0 aside, .row.gx-lg-0 details, .row.gx-lg-0 figcaption, .row.gx-lg-0 figure, .row.gx-lg-0 footer, .row.gx-lg-0 header, .row.gx-lg-0 main, .row.gx-lg-0 mark, .row.gx-lg-0 nav, .row.gx-lg-0 section, .row.gx-lg-0 summary, .row.gx-lg-0 time {
+  .row.g-lg-0 > div, .row.g-lg-0 article, .row.g-lg-0 aside, .row.g-lg-0 details, .row.g-lg-0 figcaption, .row.g-lg-0 figure, .row.g-lg-0 footer, .row.g-lg-0 header, .row.g-lg-0 main, .row.g-lg-0 mark, .row.g-lg-0 nav, .row.g-lg-0 section, .row.g-lg-0 summary, .row.g-lg-0 time, .row.g-lg-0 a, .row.gx-lg-0 > div, .row.gx-lg-0 article, .row.gx-lg-0 aside, .row.gx-lg-0 details, .row.gx-lg-0 figcaption, .row.gx-lg-0 figure, .row.gx-lg-0 footer, .row.gx-lg-0 header, .row.gx-lg-0 main, .row.gx-lg-0 mark, .row.gx-lg-0 nav, .row.gx-lg-0 section, .row.gx-lg-0 summary, .row.gx-lg-0 time, .row.gx-lg-0 a {
     width: calc(var(--width) - 0rem);
   }
   .row.gx-lg-1, .row.g-lg-1 {
@@ -711,7 +715,7 @@ html, body, main, header, footer, section {
   .row.gy-lg-1, .row.g-lg-1 {
     row-gap: 0.3rem;
   }
-  .row.g-lg-1 > div, .row.g-lg-1 article, .row.g-lg-1 aside, .row.g-lg-1 details, .row.g-lg-1 figcaption, .row.g-lg-1 figure, .row.g-lg-1 footer, .row.g-lg-1 header, .row.g-lg-1 main, .row.g-lg-1 mark, .row.g-lg-1 nav, .row.g-lg-1 section, .row.g-lg-1 summary, .row.g-lg-1 time, .row.gx-lg-1 > div, .row.gx-lg-1 article, .row.gx-lg-1 aside, .row.gx-lg-1 details, .row.gx-lg-1 figcaption, .row.gx-lg-1 figure, .row.gx-lg-1 footer, .row.gx-lg-1 header, .row.gx-lg-1 main, .row.gx-lg-1 mark, .row.gx-lg-1 nav, .row.gx-lg-1 section, .row.gx-lg-1 summary, .row.gx-lg-1 time {
+  .row.g-lg-1 > div, .row.g-lg-1 article, .row.g-lg-1 aside, .row.g-lg-1 details, .row.g-lg-1 figcaption, .row.g-lg-1 figure, .row.g-lg-1 footer, .row.g-lg-1 header, .row.g-lg-1 main, .row.g-lg-1 mark, .row.g-lg-1 nav, .row.g-lg-1 section, .row.g-lg-1 summary, .row.g-lg-1 time, .row.g-lg-1 a, .row.gx-lg-1 > div, .row.gx-lg-1 article, .row.gx-lg-1 aside, .row.gx-lg-1 details, .row.gx-lg-1 figcaption, .row.gx-lg-1 figure, .row.gx-lg-1 footer, .row.gx-lg-1 header, .row.gx-lg-1 main, .row.gx-lg-1 mark, .row.gx-lg-1 nav, .row.gx-lg-1 section, .row.gx-lg-1 summary, .row.gx-lg-1 time, .row.gx-lg-1 a {
     width: calc(var(--width) - 0.3rem);
   }
   .row.gx-lg-2, .row.g-lg-2 {
@@ -728,7 +732,7 @@ html, body, main, header, footer, section {
   .row.gy-lg-2, .row.g-lg-2 {
     row-gap: 0.6rem;
   }
-  .row.g-lg-2 > div, .row.g-lg-2 article, .row.g-lg-2 aside, .row.g-lg-2 details, .row.g-lg-2 figcaption, .row.g-lg-2 figure, .row.g-lg-2 footer, .row.g-lg-2 header, .row.g-lg-2 main, .row.g-lg-2 mark, .row.g-lg-2 nav, .row.g-lg-2 section, .row.g-lg-2 summary, .row.g-lg-2 time, .row.gx-lg-2 > div, .row.gx-lg-2 article, .row.gx-lg-2 aside, .row.gx-lg-2 details, .row.gx-lg-2 figcaption, .row.gx-lg-2 figure, .row.gx-lg-2 footer, .row.gx-lg-2 header, .row.gx-lg-2 main, .row.gx-lg-2 mark, .row.gx-lg-2 nav, .row.gx-lg-2 section, .row.gx-lg-2 summary, .row.gx-lg-2 time {
+  .row.g-lg-2 > div, .row.g-lg-2 article, .row.g-lg-2 aside, .row.g-lg-2 details, .row.g-lg-2 figcaption, .row.g-lg-2 figure, .row.g-lg-2 footer, .row.g-lg-2 header, .row.g-lg-2 main, .row.g-lg-2 mark, .row.g-lg-2 nav, .row.g-lg-2 section, .row.g-lg-2 summary, .row.g-lg-2 time, .row.g-lg-2 a, .row.gx-lg-2 > div, .row.gx-lg-2 article, .row.gx-lg-2 aside, .row.gx-lg-2 details, .row.gx-lg-2 figcaption, .row.gx-lg-2 figure, .row.gx-lg-2 footer, .row.gx-lg-2 header, .row.gx-lg-2 main, .row.gx-lg-2 mark, .row.gx-lg-2 nav, .row.gx-lg-2 section, .row.gx-lg-2 summary, .row.gx-lg-2 time, .row.gx-lg-2 a {
     width: calc(var(--width) - 0.6rem);
   }
   .row.gx-lg-3, .row.g-lg-3 {
@@ -745,7 +749,7 @@ html, body, main, header, footer, section {
   .row.gy-lg-3, .row.g-lg-3 {
     row-gap: 0.9rem;
   }
-  .row.g-lg-3 > div, .row.g-lg-3 article, .row.g-lg-3 aside, .row.g-lg-3 details, .row.g-lg-3 figcaption, .row.g-lg-3 figure, .row.g-lg-3 footer, .row.g-lg-3 header, .row.g-lg-3 main, .row.g-lg-3 mark, .row.g-lg-3 nav, .row.g-lg-3 section, .row.g-lg-3 summary, .row.g-lg-3 time, .row.gx-lg-3 > div, .row.gx-lg-3 article, .row.gx-lg-3 aside, .row.gx-lg-3 details, .row.gx-lg-3 figcaption, .row.gx-lg-3 figure, .row.gx-lg-3 footer, .row.gx-lg-3 header, .row.gx-lg-3 main, .row.gx-lg-3 mark, .row.gx-lg-3 nav, .row.gx-lg-3 section, .row.gx-lg-3 summary, .row.gx-lg-3 time {
+  .row.g-lg-3 > div, .row.g-lg-3 article, .row.g-lg-3 aside, .row.g-lg-3 details, .row.g-lg-3 figcaption, .row.g-lg-3 figure, .row.g-lg-3 footer, .row.g-lg-3 header, .row.g-lg-3 main, .row.g-lg-3 mark, .row.g-lg-3 nav, .row.g-lg-3 section, .row.g-lg-3 summary, .row.g-lg-3 time, .row.g-lg-3 a, .row.gx-lg-3 > div, .row.gx-lg-3 article, .row.gx-lg-3 aside, .row.gx-lg-3 details, .row.gx-lg-3 figcaption, .row.gx-lg-3 figure, .row.gx-lg-3 footer, .row.gx-lg-3 header, .row.gx-lg-3 main, .row.gx-lg-3 mark, .row.gx-lg-3 nav, .row.gx-lg-3 section, .row.gx-lg-3 summary, .row.gx-lg-3 time, .row.gx-lg-3 a {
     width: calc(var(--width) - 0.9rem);
   }
   .row.gx-lg-4, .row.g-lg-4 {
@@ -762,7 +766,7 @@ html, body, main, header, footer, section {
   .row.gy-lg-4, .row.g-lg-4 {
     row-gap: 1.2rem;
   }
-  .row.g-lg-4 > div, .row.g-lg-4 article, .row.g-lg-4 aside, .row.g-lg-4 details, .row.g-lg-4 figcaption, .row.g-lg-4 figure, .row.g-lg-4 footer, .row.g-lg-4 header, .row.g-lg-4 main, .row.g-lg-4 mark, .row.g-lg-4 nav, .row.g-lg-4 section, .row.g-lg-4 summary, .row.g-lg-4 time, .row.gx-lg-4 > div, .row.gx-lg-4 article, .row.gx-lg-4 aside, .row.gx-lg-4 details, .row.gx-lg-4 figcaption, .row.gx-lg-4 figure, .row.gx-lg-4 footer, .row.gx-lg-4 header, .row.gx-lg-4 main, .row.gx-lg-4 mark, .row.gx-lg-4 nav, .row.gx-lg-4 section, .row.gx-lg-4 summary, .row.gx-lg-4 time {
+  .row.g-lg-4 > div, .row.g-lg-4 article, .row.g-lg-4 aside, .row.g-lg-4 details, .row.g-lg-4 figcaption, .row.g-lg-4 figure, .row.g-lg-4 footer, .row.g-lg-4 header, .row.g-lg-4 main, .row.g-lg-4 mark, .row.g-lg-4 nav, .row.g-lg-4 section, .row.g-lg-4 summary, .row.g-lg-4 time, .row.g-lg-4 a, .row.gx-lg-4 > div, .row.gx-lg-4 article, .row.gx-lg-4 aside, .row.gx-lg-4 details, .row.gx-lg-4 figcaption, .row.gx-lg-4 figure, .row.gx-lg-4 footer, .row.gx-lg-4 header, .row.gx-lg-4 main, .row.gx-lg-4 mark, .row.gx-lg-4 nav, .row.gx-lg-4 section, .row.gx-lg-4 summary, .row.gx-lg-4 time, .row.gx-lg-4 a {
     width: calc(var(--width) - 1.2rem);
   }
   .row.gx-lg-5, .row.g-lg-5 {
@@ -779,7 +783,7 @@ html, body, main, header, footer, section {
   .row.gy-lg-5, .row.g-lg-5 {
     row-gap: 1.5rem;
   }
-  .row.g-lg-5 > div, .row.g-lg-5 article, .row.g-lg-5 aside, .row.g-lg-5 details, .row.g-lg-5 figcaption, .row.g-lg-5 figure, .row.g-lg-5 footer, .row.g-lg-5 header, .row.g-lg-5 main, .row.g-lg-5 mark, .row.g-lg-5 nav, .row.g-lg-5 section, .row.g-lg-5 summary, .row.g-lg-5 time, .row.gx-lg-5 > div, .row.gx-lg-5 article, .row.gx-lg-5 aside, .row.gx-lg-5 details, .row.gx-lg-5 figcaption, .row.gx-lg-5 figure, .row.gx-lg-5 footer, .row.gx-lg-5 header, .row.gx-lg-5 main, .row.gx-lg-5 mark, .row.gx-lg-5 nav, .row.gx-lg-5 section, .row.gx-lg-5 summary, .row.gx-lg-5 time {
+  .row.g-lg-5 > div, .row.g-lg-5 article, .row.g-lg-5 aside, .row.g-lg-5 details, .row.g-lg-5 figcaption, .row.g-lg-5 figure, .row.g-lg-5 footer, .row.g-lg-5 header, .row.g-lg-5 main, .row.g-lg-5 mark, .row.g-lg-5 nav, .row.g-lg-5 section, .row.g-lg-5 summary, .row.g-lg-5 time, .row.g-lg-5 a, .row.gx-lg-5 > div, .row.gx-lg-5 article, .row.gx-lg-5 aside, .row.gx-lg-5 details, .row.gx-lg-5 figcaption, .row.gx-lg-5 figure, .row.gx-lg-5 footer, .row.gx-lg-5 header, .row.gx-lg-5 main, .row.gx-lg-5 mark, .row.gx-lg-5 nav, .row.gx-lg-5 section, .row.gx-lg-5 summary, .row.gx-lg-5 time, .row.gx-lg-5 a {
     width: calc(var(--width) - 1.5rem);
   }
 }
@@ -798,7 +802,7 @@ html, body, main, header, footer, section {
   .row.gy-md-0, .row.g-md-0 {
     row-gap: 0rem;
   }
-  .row.g-md-0 > div, .row.g-md-0 article, .row.g-md-0 aside, .row.g-md-0 details, .row.g-md-0 figcaption, .row.g-md-0 figure, .row.g-md-0 footer, .row.g-md-0 header, .row.g-md-0 main, .row.g-md-0 mark, .row.g-md-0 nav, .row.g-md-0 section, .row.g-md-0 summary, .row.g-md-0 time, .row.gx-md-0 > div, .row.gx-md-0 article, .row.gx-md-0 aside, .row.gx-md-0 details, .row.gx-md-0 figcaption, .row.gx-md-0 figure, .row.gx-md-0 footer, .row.gx-md-0 header, .row.gx-md-0 main, .row.gx-md-0 mark, .row.gx-md-0 nav, .row.gx-md-0 section, .row.gx-md-0 summary, .row.gx-md-0 time {
+  .row.g-md-0 > div, .row.g-md-0 article, .row.g-md-0 aside, .row.g-md-0 details, .row.g-md-0 figcaption, .row.g-md-0 figure, .row.g-md-0 footer, .row.g-md-0 header, .row.g-md-0 main, .row.g-md-0 mark, .row.g-md-0 nav, .row.g-md-0 section, .row.g-md-0 summary, .row.g-md-0 time, .row.g-md-0 a, .row.gx-md-0 > div, .row.gx-md-0 article, .row.gx-md-0 aside, .row.gx-md-0 details, .row.gx-md-0 figcaption, .row.gx-md-0 figure, .row.gx-md-0 footer, .row.gx-md-0 header, .row.gx-md-0 main, .row.gx-md-0 mark, .row.gx-md-0 nav, .row.gx-md-0 section, .row.gx-md-0 summary, .row.gx-md-0 time, .row.gx-md-0 a {
     width: calc(var(--width) - 0rem);
   }
   .row.gx-md-1, .row.g-md-1 {
@@ -815,7 +819,7 @@ html, body, main, header, footer, section {
   .row.gy-md-1, .row.g-md-1 {
     row-gap: 0.3rem;
   }
-  .row.g-md-1 > div, .row.g-md-1 article, .row.g-md-1 aside, .row.g-md-1 details, .row.g-md-1 figcaption, .row.g-md-1 figure, .row.g-md-1 footer, .row.g-md-1 header, .row.g-md-1 main, .row.g-md-1 mark, .row.g-md-1 nav, .row.g-md-1 section, .row.g-md-1 summary, .row.g-md-1 time, .row.gx-md-1 > div, .row.gx-md-1 article, .row.gx-md-1 aside, .row.gx-md-1 details, .row.gx-md-1 figcaption, .row.gx-md-1 figure, .row.gx-md-1 footer, .row.gx-md-1 header, .row.gx-md-1 main, .row.gx-md-1 mark, .row.gx-md-1 nav, .row.gx-md-1 section, .row.gx-md-1 summary, .row.gx-md-1 time {
+  .row.g-md-1 > div, .row.g-md-1 article, .row.g-md-1 aside, .row.g-md-1 details, .row.g-md-1 figcaption, .row.g-md-1 figure, .row.g-md-1 footer, .row.g-md-1 header, .row.g-md-1 main, .row.g-md-1 mark, .row.g-md-1 nav, .row.g-md-1 section, .row.g-md-1 summary, .row.g-md-1 time, .row.g-md-1 a, .row.gx-md-1 > div, .row.gx-md-1 article, .row.gx-md-1 aside, .row.gx-md-1 details, .row.gx-md-1 figcaption, .row.gx-md-1 figure, .row.gx-md-1 footer, .row.gx-md-1 header, .row.gx-md-1 main, .row.gx-md-1 mark, .row.gx-md-1 nav, .row.gx-md-1 section, .row.gx-md-1 summary, .row.gx-md-1 time, .row.gx-md-1 a {
     width: calc(var(--width) - 0.3rem);
   }
   .row.gx-md-2, .row.g-md-2 {
@@ -832,7 +836,7 @@ html, body, main, header, footer, section {
   .row.gy-md-2, .row.g-md-2 {
     row-gap: 0.6rem;
   }
-  .row.g-md-2 > div, .row.g-md-2 article, .row.g-md-2 aside, .row.g-md-2 details, .row.g-md-2 figcaption, .row.g-md-2 figure, .row.g-md-2 footer, .row.g-md-2 header, .row.g-md-2 main, .row.g-md-2 mark, .row.g-md-2 nav, .row.g-md-2 section, .row.g-md-2 summary, .row.g-md-2 time, .row.gx-md-2 > div, .row.gx-md-2 article, .row.gx-md-2 aside, .row.gx-md-2 details, .row.gx-md-2 figcaption, .row.gx-md-2 figure, .row.gx-md-2 footer, .row.gx-md-2 header, .row.gx-md-2 main, .row.gx-md-2 mark, .row.gx-md-2 nav, .row.gx-md-2 section, .row.gx-md-2 summary, .row.gx-md-2 time {
+  .row.g-md-2 > div, .row.g-md-2 article, .row.g-md-2 aside, .row.g-md-2 details, .row.g-md-2 figcaption, .row.g-md-2 figure, .row.g-md-2 footer, .row.g-md-2 header, .row.g-md-2 main, .row.g-md-2 mark, .row.g-md-2 nav, .row.g-md-2 section, .row.g-md-2 summary, .row.g-md-2 time, .row.g-md-2 a, .row.gx-md-2 > div, .row.gx-md-2 article, .row.gx-md-2 aside, .row.gx-md-2 details, .row.gx-md-2 figcaption, .row.gx-md-2 figure, .row.gx-md-2 footer, .row.gx-md-2 header, .row.gx-md-2 main, .row.gx-md-2 mark, .row.gx-md-2 nav, .row.gx-md-2 section, .row.gx-md-2 summary, .row.gx-md-2 time, .row.gx-md-2 a {
     width: calc(var(--width) - 0.6rem);
   }
   .row.gx-md-3, .row.g-md-3 {
@@ -849,7 +853,7 @@ html, body, main, header, footer, section {
   .row.gy-md-3, .row.g-md-3 {
     row-gap: 0.9rem;
   }
-  .row.g-md-3 > div, .row.g-md-3 article, .row.g-md-3 aside, .row.g-md-3 details, .row.g-md-3 figcaption, .row.g-md-3 figure, .row.g-md-3 footer, .row.g-md-3 header, .row.g-md-3 main, .row.g-md-3 mark, .row.g-md-3 nav, .row.g-md-3 section, .row.g-md-3 summary, .row.g-md-3 time, .row.gx-md-3 > div, .row.gx-md-3 article, .row.gx-md-3 aside, .row.gx-md-3 details, .row.gx-md-3 figcaption, .row.gx-md-3 figure, .row.gx-md-3 footer, .row.gx-md-3 header, .row.gx-md-3 main, .row.gx-md-3 mark, .row.gx-md-3 nav, .row.gx-md-3 section, .row.gx-md-3 summary, .row.gx-md-3 time {
+  .row.g-md-3 > div, .row.g-md-3 article, .row.g-md-3 aside, .row.g-md-3 details, .row.g-md-3 figcaption, .row.g-md-3 figure, .row.g-md-3 footer, .row.g-md-3 header, .row.g-md-3 main, .row.g-md-3 mark, .row.g-md-3 nav, .row.g-md-3 section, .row.g-md-3 summary, .row.g-md-3 time, .row.g-md-3 a, .row.gx-md-3 > div, .row.gx-md-3 article, .row.gx-md-3 aside, .row.gx-md-3 details, .row.gx-md-3 figcaption, .row.gx-md-3 figure, .row.gx-md-3 footer, .row.gx-md-3 header, .row.gx-md-3 main, .row.gx-md-3 mark, .row.gx-md-3 nav, .row.gx-md-3 section, .row.gx-md-3 summary, .row.gx-md-3 time, .row.gx-md-3 a {
     width: calc(var(--width) - 0.9rem);
   }
   .row.gx-md-4, .row.g-md-4 {
@@ -866,7 +870,7 @@ html, body, main, header, footer, section {
   .row.gy-md-4, .row.g-md-4 {
     row-gap: 1.2rem;
   }
-  .row.g-md-4 > div, .row.g-md-4 article, .row.g-md-4 aside, .row.g-md-4 details, .row.g-md-4 figcaption, .row.g-md-4 figure, .row.g-md-4 footer, .row.g-md-4 header, .row.g-md-4 main, .row.g-md-4 mark, .row.g-md-4 nav, .row.g-md-4 section, .row.g-md-4 summary, .row.g-md-4 time, .row.gx-md-4 > div, .row.gx-md-4 article, .row.gx-md-4 aside, .row.gx-md-4 details, .row.gx-md-4 figcaption, .row.gx-md-4 figure, .row.gx-md-4 footer, .row.gx-md-4 header, .row.gx-md-4 main, .row.gx-md-4 mark, .row.gx-md-4 nav, .row.gx-md-4 section, .row.gx-md-4 summary, .row.gx-md-4 time {
+  .row.g-md-4 > div, .row.g-md-4 article, .row.g-md-4 aside, .row.g-md-4 details, .row.g-md-4 figcaption, .row.g-md-4 figure, .row.g-md-4 footer, .row.g-md-4 header, .row.g-md-4 main, .row.g-md-4 mark, .row.g-md-4 nav, .row.g-md-4 section, .row.g-md-4 summary, .row.g-md-4 time, .row.g-md-4 a, .row.gx-md-4 > div, .row.gx-md-4 article, .row.gx-md-4 aside, .row.gx-md-4 details, .row.gx-md-4 figcaption, .row.gx-md-4 figure, .row.gx-md-4 footer, .row.gx-md-4 header, .row.gx-md-4 main, .row.gx-md-4 mark, .row.gx-md-4 nav, .row.gx-md-4 section, .row.gx-md-4 summary, .row.gx-md-4 time, .row.gx-md-4 a {
     width: calc(var(--width) - 1.2rem);
   }
   .row.gx-md-5, .row.g-md-5 {
@@ -883,7 +887,7 @@ html, body, main, header, footer, section {
   .row.gy-md-5, .row.g-md-5 {
     row-gap: 1.5rem;
   }
-  .row.g-md-5 > div, .row.g-md-5 article, .row.g-md-5 aside, .row.g-md-5 details, .row.g-md-5 figcaption, .row.g-md-5 figure, .row.g-md-5 footer, .row.g-md-5 header, .row.g-md-5 main, .row.g-md-5 mark, .row.g-md-5 nav, .row.g-md-5 section, .row.g-md-5 summary, .row.g-md-5 time, .row.gx-md-5 > div, .row.gx-md-5 article, .row.gx-md-5 aside, .row.gx-md-5 details, .row.gx-md-5 figcaption, .row.gx-md-5 figure, .row.gx-md-5 footer, .row.gx-md-5 header, .row.gx-md-5 main, .row.gx-md-5 mark, .row.gx-md-5 nav, .row.gx-md-5 section, .row.gx-md-5 summary, .row.gx-md-5 time {
+  .row.g-md-5 > div, .row.g-md-5 article, .row.g-md-5 aside, .row.g-md-5 details, .row.g-md-5 figcaption, .row.g-md-5 figure, .row.g-md-5 footer, .row.g-md-5 header, .row.g-md-5 main, .row.g-md-5 mark, .row.g-md-5 nav, .row.g-md-5 section, .row.g-md-5 summary, .row.g-md-5 time, .row.g-md-5 a, .row.gx-md-5 > div, .row.gx-md-5 article, .row.gx-md-5 aside, .row.gx-md-5 details, .row.gx-md-5 figcaption, .row.gx-md-5 figure, .row.gx-md-5 footer, .row.gx-md-5 header, .row.gx-md-5 main, .row.gx-md-5 mark, .row.gx-md-5 nav, .row.gx-md-5 section, .row.gx-md-5 summary, .row.gx-md-5 time, .row.gx-md-5 a {
     width: calc(var(--width) - 1.5rem);
   }
 }
@@ -902,7 +906,7 @@ html, body, main, header, footer, section {
   .row.gy-sm-0, .row.g-sm-0 {
     row-gap: 0rem;
   }
-  .row.g-sm-0 > div, .row.g-sm-0 article, .row.g-sm-0 aside, .row.g-sm-0 details, .row.g-sm-0 figcaption, .row.g-sm-0 figure, .row.g-sm-0 footer, .row.g-sm-0 header, .row.g-sm-0 main, .row.g-sm-0 mark, .row.g-sm-0 nav, .row.g-sm-0 section, .row.g-sm-0 summary, .row.g-sm-0 time, .row.gx-sm-0 > div, .row.gx-sm-0 article, .row.gx-sm-0 aside, .row.gx-sm-0 details, .row.gx-sm-0 figcaption, .row.gx-sm-0 figure, .row.gx-sm-0 footer, .row.gx-sm-0 header, .row.gx-sm-0 main, .row.gx-sm-0 mark, .row.gx-sm-0 nav, .row.gx-sm-0 section, .row.gx-sm-0 summary, .row.gx-sm-0 time {
+  .row.g-sm-0 > div, .row.g-sm-0 article, .row.g-sm-0 aside, .row.g-sm-0 details, .row.g-sm-0 figcaption, .row.g-sm-0 figure, .row.g-sm-0 footer, .row.g-sm-0 header, .row.g-sm-0 main, .row.g-sm-0 mark, .row.g-sm-0 nav, .row.g-sm-0 section, .row.g-sm-0 summary, .row.g-sm-0 time, .row.g-sm-0 a, .row.gx-sm-0 > div, .row.gx-sm-0 article, .row.gx-sm-0 aside, .row.gx-sm-0 details, .row.gx-sm-0 figcaption, .row.gx-sm-0 figure, .row.gx-sm-0 footer, .row.gx-sm-0 header, .row.gx-sm-0 main, .row.gx-sm-0 mark, .row.gx-sm-0 nav, .row.gx-sm-0 section, .row.gx-sm-0 summary, .row.gx-sm-0 time, .row.gx-sm-0 a {
     width: calc(var(--width) - 0rem);
   }
   .row.gx-sm-1, .row.g-sm-1 {
@@ -919,7 +923,7 @@ html, body, main, header, footer, section {
   .row.gy-sm-1, .row.g-sm-1 {
     row-gap: 0.3rem;
   }
-  .row.g-sm-1 > div, .row.g-sm-1 article, .row.g-sm-1 aside, .row.g-sm-1 details, .row.g-sm-1 figcaption, .row.g-sm-1 figure, .row.g-sm-1 footer, .row.g-sm-1 header, .row.g-sm-1 main, .row.g-sm-1 mark, .row.g-sm-1 nav, .row.g-sm-1 section, .row.g-sm-1 summary, .row.g-sm-1 time, .row.gx-sm-1 > div, .row.gx-sm-1 article, .row.gx-sm-1 aside, .row.gx-sm-1 details, .row.gx-sm-1 figcaption, .row.gx-sm-1 figure, .row.gx-sm-1 footer, .row.gx-sm-1 header, .row.gx-sm-1 main, .row.gx-sm-1 mark, .row.gx-sm-1 nav, .row.gx-sm-1 section, .row.gx-sm-1 summary, .row.gx-sm-1 time {
+  .row.g-sm-1 > div, .row.g-sm-1 article, .row.g-sm-1 aside, .row.g-sm-1 details, .row.g-sm-1 figcaption, .row.g-sm-1 figure, .row.g-sm-1 footer, .row.g-sm-1 header, .row.g-sm-1 main, .row.g-sm-1 mark, .row.g-sm-1 nav, .row.g-sm-1 section, .row.g-sm-1 summary, .row.g-sm-1 time, .row.g-sm-1 a, .row.gx-sm-1 > div, .row.gx-sm-1 article, .row.gx-sm-1 aside, .row.gx-sm-1 details, .row.gx-sm-1 figcaption, .row.gx-sm-1 figure, .row.gx-sm-1 footer, .row.gx-sm-1 header, .row.gx-sm-1 main, .row.gx-sm-1 mark, .row.gx-sm-1 nav, .row.gx-sm-1 section, .row.gx-sm-1 summary, .row.gx-sm-1 time, .row.gx-sm-1 a {
     width: calc(var(--width) - 0.3rem);
   }
   .row.gx-sm-2, .row.g-sm-2 {
@@ -936,7 +940,7 @@ html, body, main, header, footer, section {
   .row.gy-sm-2, .row.g-sm-2 {
     row-gap: 0.6rem;
   }
-  .row.g-sm-2 > div, .row.g-sm-2 article, .row.g-sm-2 aside, .row.g-sm-2 details, .row.g-sm-2 figcaption, .row.g-sm-2 figure, .row.g-sm-2 footer, .row.g-sm-2 header, .row.g-sm-2 main, .row.g-sm-2 mark, .row.g-sm-2 nav, .row.g-sm-2 section, .row.g-sm-2 summary, .row.g-sm-2 time, .row.gx-sm-2 > div, .row.gx-sm-2 article, .row.gx-sm-2 aside, .row.gx-sm-2 details, .row.gx-sm-2 figcaption, .row.gx-sm-2 figure, .row.gx-sm-2 footer, .row.gx-sm-2 header, .row.gx-sm-2 main, .row.gx-sm-2 mark, .row.gx-sm-2 nav, .row.gx-sm-2 section, .row.gx-sm-2 summary, .row.gx-sm-2 time {
+  .row.g-sm-2 > div, .row.g-sm-2 article, .row.g-sm-2 aside, .row.g-sm-2 details, .row.g-sm-2 figcaption, .row.g-sm-2 figure, .row.g-sm-2 footer, .row.g-sm-2 header, .row.g-sm-2 main, .row.g-sm-2 mark, .row.g-sm-2 nav, .row.g-sm-2 section, .row.g-sm-2 summary, .row.g-sm-2 time, .row.g-sm-2 a, .row.gx-sm-2 > div, .row.gx-sm-2 article, .row.gx-sm-2 aside, .row.gx-sm-2 details, .row.gx-sm-2 figcaption, .row.gx-sm-2 figure, .row.gx-sm-2 footer, .row.gx-sm-2 header, .row.gx-sm-2 main, .row.gx-sm-2 mark, .row.gx-sm-2 nav, .row.gx-sm-2 section, .row.gx-sm-2 summary, .row.gx-sm-2 time, .row.gx-sm-2 a {
     width: calc(var(--width) - 0.6rem);
   }
   .row.gx-sm-3, .row.g-sm-3 {
@@ -953,7 +957,7 @@ html, body, main, header, footer, section {
   .row.gy-sm-3, .row.g-sm-3 {
     row-gap: 0.9rem;
   }
-  .row.g-sm-3 > div, .row.g-sm-3 article, .row.g-sm-3 aside, .row.g-sm-3 details, .row.g-sm-3 figcaption, .row.g-sm-3 figure, .row.g-sm-3 footer, .row.g-sm-3 header, .row.g-sm-3 main, .row.g-sm-3 mark, .row.g-sm-3 nav, .row.g-sm-3 section, .row.g-sm-3 summary, .row.g-sm-3 time, .row.gx-sm-3 > div, .row.gx-sm-3 article, .row.gx-sm-3 aside, .row.gx-sm-3 details, .row.gx-sm-3 figcaption, .row.gx-sm-3 figure, .row.gx-sm-3 footer, .row.gx-sm-3 header, .row.gx-sm-3 main, .row.gx-sm-3 mark, .row.gx-sm-3 nav, .row.gx-sm-3 section, .row.gx-sm-3 summary, .row.gx-sm-3 time {
+  .row.g-sm-3 > div, .row.g-sm-3 article, .row.g-sm-3 aside, .row.g-sm-3 details, .row.g-sm-3 figcaption, .row.g-sm-3 figure, .row.g-sm-3 footer, .row.g-sm-3 header, .row.g-sm-3 main, .row.g-sm-3 mark, .row.g-sm-3 nav, .row.g-sm-3 section, .row.g-sm-3 summary, .row.g-sm-3 time, .row.g-sm-3 a, .row.gx-sm-3 > div, .row.gx-sm-3 article, .row.gx-sm-3 aside, .row.gx-sm-3 details, .row.gx-sm-3 figcaption, .row.gx-sm-3 figure, .row.gx-sm-3 footer, .row.gx-sm-3 header, .row.gx-sm-3 main, .row.gx-sm-3 mark, .row.gx-sm-3 nav, .row.gx-sm-3 section, .row.gx-sm-3 summary, .row.gx-sm-3 time, .row.gx-sm-3 a {
     width: calc(var(--width) - 0.9rem);
   }
   .row.gx-sm-4, .row.g-sm-4 {
@@ -970,7 +974,7 @@ html, body, main, header, footer, section {
   .row.gy-sm-4, .row.g-sm-4 {
     row-gap: 1.2rem;
   }
-  .row.g-sm-4 > div, .row.g-sm-4 article, .row.g-sm-4 aside, .row.g-sm-4 details, .row.g-sm-4 figcaption, .row.g-sm-4 figure, .row.g-sm-4 footer, .row.g-sm-4 header, .row.g-sm-4 main, .row.g-sm-4 mark, .row.g-sm-4 nav, .row.g-sm-4 section, .row.g-sm-4 summary, .row.g-sm-4 time, .row.gx-sm-4 > div, .row.gx-sm-4 article, .row.gx-sm-4 aside, .row.gx-sm-4 details, .row.gx-sm-4 figcaption, .row.gx-sm-4 figure, .row.gx-sm-4 footer, .row.gx-sm-4 header, .row.gx-sm-4 main, .row.gx-sm-4 mark, .row.gx-sm-4 nav, .row.gx-sm-4 section, .row.gx-sm-4 summary, .row.gx-sm-4 time {
+  .row.g-sm-4 > div, .row.g-sm-4 article, .row.g-sm-4 aside, .row.g-sm-4 details, .row.g-sm-4 figcaption, .row.g-sm-4 figure, .row.g-sm-4 footer, .row.g-sm-4 header, .row.g-sm-4 main, .row.g-sm-4 mark, .row.g-sm-4 nav, .row.g-sm-4 section, .row.g-sm-4 summary, .row.g-sm-4 time, .row.g-sm-4 a, .row.gx-sm-4 > div, .row.gx-sm-4 article, .row.gx-sm-4 aside, .row.gx-sm-4 details, .row.gx-sm-4 figcaption, .row.gx-sm-4 figure, .row.gx-sm-4 footer, .row.gx-sm-4 header, .row.gx-sm-4 main, .row.gx-sm-4 mark, .row.gx-sm-4 nav, .row.gx-sm-4 section, .row.gx-sm-4 summary, .row.gx-sm-4 time, .row.gx-sm-4 a {
     width: calc(var(--width) - 1.2rem);
   }
   .row.gx-sm-5, .row.g-sm-5 {
@@ -987,7 +991,7 @@ html, body, main, header, footer, section {
   .row.gy-sm-5, .row.g-sm-5 {
     row-gap: 1.5rem;
   }
-  .row.g-sm-5 > div, .row.g-sm-5 article, .row.g-sm-5 aside, .row.g-sm-5 details, .row.g-sm-5 figcaption, .row.g-sm-5 figure, .row.g-sm-5 footer, .row.g-sm-5 header, .row.g-sm-5 main, .row.g-sm-5 mark, .row.g-sm-5 nav, .row.g-sm-5 section, .row.g-sm-5 summary, .row.g-sm-5 time, .row.gx-sm-5 > div, .row.gx-sm-5 article, .row.gx-sm-5 aside, .row.gx-sm-5 details, .row.gx-sm-5 figcaption, .row.gx-sm-5 figure, .row.gx-sm-5 footer, .row.gx-sm-5 header, .row.gx-sm-5 main, .row.gx-sm-5 mark, .row.gx-sm-5 nav, .row.gx-sm-5 section, .row.gx-sm-5 summary, .row.gx-sm-5 time {
+  .row.g-sm-5 > div, .row.g-sm-5 article, .row.g-sm-5 aside, .row.g-sm-5 details, .row.g-sm-5 figcaption, .row.g-sm-5 figure, .row.g-sm-5 footer, .row.g-sm-5 header, .row.g-sm-5 main, .row.g-sm-5 mark, .row.g-sm-5 nav, .row.g-sm-5 section, .row.g-sm-5 summary, .row.g-sm-5 time, .row.g-sm-5 a, .row.gx-sm-5 > div, .row.gx-sm-5 article, .row.gx-sm-5 aside, .row.gx-sm-5 details, .row.gx-sm-5 figcaption, .row.gx-sm-5 figure, .row.gx-sm-5 footer, .row.gx-sm-5 header, .row.gx-sm-5 main, .row.gx-sm-5 mark, .row.gx-sm-5 nav, .row.gx-sm-5 section, .row.gx-sm-5 summary, .row.gx-sm-5 time, .row.gx-sm-5 a {
     width: calc(var(--width) - 1.5rem);
   }
 }
@@ -2679,166 +2683,242 @@ html, body, main, header, footer, section {
     margin-right: 1.5rem;
   }
 }
-.vh-100 {
-  height: calc(1 * var(--vh100));
+.vol-1 {
+  height: calc(0.0833333333 * var(--vh100));
 }
 
-.vw-100 {
-  width: calc(1 * var(--vw100));
+.vol-2 {
+  height: calc(0.1666666667 * var(--vh100));
 }
 
-.vh-75 {
-  height: calc(0.75 * var(--vh100));
-}
-
-.vw-75 {
-  width: calc(0.75 * var(--vw100));
-}
-
-.vh-50 {
-  height: calc(0.5 * var(--vh100));
-}
-
-.vw-50 {
-  width: calc(0.5 * var(--vw100));
-}
-
-.vh-25 {
+.vol-3 {
   height: calc(0.25 * var(--vh100));
 }
 
-.vw-25 {
-  width: calc(0.25 * var(--vw100));
+.vol-4 {
+  height: calc(0.3333333333 * var(--vh100));
+}
+
+.vol-5 {
+  height: calc(0.4166666667 * var(--vh100));
+}
+
+.vol-6 {
+  height: calc(0.5 * var(--vh100));
+}
+
+.vol-7 {
+  height: calc(0.5833333333 * var(--vh100));
+}
+
+.vol-8 {
+  height: calc(0.6666666667 * var(--vh100));
+}
+
+.vol-9 {
+  height: calc(0.75 * var(--vh100));
+}
+
+.vol-10 {
+  height: calc(0.8333333333 * var(--vh100));
+}
+
+.vol-11 {
+  height: calc(0.9166666667 * var(--vh100));
+}
+
+.vol-12 {
+  height: calc(1 * var(--vh100));
 }
 
 @media screen and (max-width: 1400px) {
-  .vh-xxl-100 {
-    height: calc(1 * var(--vh100));
+  .vol-xxl-1 {
+    height: calc(0.0833333333 * var(--vh100));
   }
-  .vw-xxl-100 {
-    width: calc(1 * var(--vw100));
+  .vol-xxl-2 {
+    height: calc(0.1666666667 * var(--vh100));
   }
-  .vh-xxl-75 {
-    height: calc(0.75 * var(--vh100));
-  }
-  .vw-xxl-75 {
-    width: calc(0.75 * var(--vw100));
-  }
-  .vh-xxl-50 {
-    height: calc(0.5 * var(--vh100));
-  }
-  .vw-xxl-50 {
-    width: calc(0.5 * var(--vw100));
-  }
-  .vh-xxl-25 {
+  .vol-xxl-3 {
     height: calc(0.25 * var(--vh100));
   }
-  .vw-xxl-25 {
-    width: calc(0.25 * var(--vw100));
+  .vol-xxl-4 {
+    height: calc(0.3333333333 * var(--vh100));
+  }
+  .vol-xxl-5 {
+    height: calc(0.4166666667 * var(--vh100));
+  }
+  .vol-xxl-6 {
+    height: calc(0.5 * var(--vh100));
+  }
+  .vol-xxl-7 {
+    height: calc(0.5833333333 * var(--vh100));
+  }
+  .vol-xxl-8 {
+    height: calc(0.6666666667 * var(--vh100));
+  }
+  .vol-xxl-9 {
+    height: calc(0.75 * var(--vh100));
+  }
+  .vol-xxl-10 {
+    height: calc(0.8333333333 * var(--vh100));
+  }
+  .vol-xxl-11 {
+    height: calc(0.9166666667 * var(--vh100));
+  }
+  .vol-xxl-12 {
+    height: calc(1 * var(--vh100));
   }
 }
 @media screen and (max-width: 1200px) {
-  .vh-xl-100 {
-    height: calc(1 * var(--vh100));
+  .vol-xl-1 {
+    height: calc(0.0833333333 * var(--vh100));
   }
-  .vw-xl-100 {
-    width: calc(1 * var(--vw100));
+  .vol-xl-2 {
+    height: calc(0.1666666667 * var(--vh100));
   }
-  .vh-xl-75 {
-    height: calc(0.75 * var(--vh100));
-  }
-  .vw-xl-75 {
-    width: calc(0.75 * var(--vw100));
-  }
-  .vh-xl-50 {
-    height: calc(0.5 * var(--vh100));
-  }
-  .vw-xl-50 {
-    width: calc(0.5 * var(--vw100));
-  }
-  .vh-xl-25 {
+  .vol-xl-3 {
     height: calc(0.25 * var(--vh100));
   }
-  .vw-xl-25 {
-    width: calc(0.25 * var(--vw100));
+  .vol-xl-4 {
+    height: calc(0.3333333333 * var(--vh100));
+  }
+  .vol-xl-5 {
+    height: calc(0.4166666667 * var(--vh100));
+  }
+  .vol-xl-6 {
+    height: calc(0.5 * var(--vh100));
+  }
+  .vol-xl-7 {
+    height: calc(0.5833333333 * var(--vh100));
+  }
+  .vol-xl-8 {
+    height: calc(0.6666666667 * var(--vh100));
+  }
+  .vol-xl-9 {
+    height: calc(0.75 * var(--vh100));
+  }
+  .vol-xl-10 {
+    height: calc(0.8333333333 * var(--vh100));
+  }
+  .vol-xl-11 {
+    height: calc(0.9166666667 * var(--vh100));
+  }
+  .vol-xl-12 {
+    height: calc(1 * var(--vh100));
   }
 }
 @media screen and (max-width: 992px) {
-  .vh-lg-100 {
-    height: calc(1 * var(--vh100));
+  .vol-lg-1 {
+    height: calc(0.0833333333 * var(--vh100));
   }
-  .vw-lg-100 {
-    width: calc(1 * var(--vw100));
+  .vol-lg-2 {
+    height: calc(0.1666666667 * var(--vh100));
   }
-  .vh-lg-75 {
-    height: calc(0.75 * var(--vh100));
-  }
-  .vw-lg-75 {
-    width: calc(0.75 * var(--vw100));
-  }
-  .vh-lg-50 {
-    height: calc(0.5 * var(--vh100));
-  }
-  .vw-lg-50 {
-    width: calc(0.5 * var(--vw100));
-  }
-  .vh-lg-25 {
+  .vol-lg-3 {
     height: calc(0.25 * var(--vh100));
   }
-  .vw-lg-25 {
-    width: calc(0.25 * var(--vw100));
+  .vol-lg-4 {
+    height: calc(0.3333333333 * var(--vh100));
+  }
+  .vol-lg-5 {
+    height: calc(0.4166666667 * var(--vh100));
+  }
+  .vol-lg-6 {
+    height: calc(0.5 * var(--vh100));
+  }
+  .vol-lg-7 {
+    height: calc(0.5833333333 * var(--vh100));
+  }
+  .vol-lg-8 {
+    height: calc(0.6666666667 * var(--vh100));
+  }
+  .vol-lg-9 {
+    height: calc(0.75 * var(--vh100));
+  }
+  .vol-lg-10 {
+    height: calc(0.8333333333 * var(--vh100));
+  }
+  .vol-lg-11 {
+    height: calc(0.9166666667 * var(--vh100));
+  }
+  .vol-lg-12 {
+    height: calc(1 * var(--vh100));
   }
 }
 @media screen and (max-width: 768px) {
-  .vh-md-100 {
-    height: calc(1 * var(--vh100));
+  .vol-md-1 {
+    height: calc(0.0833333333 * var(--vh100));
   }
-  .vw-md-100 {
-    width: calc(1 * var(--vw100));
+  .vol-md-2 {
+    height: calc(0.1666666667 * var(--vh100));
   }
-  .vh-md-75 {
-    height: calc(0.75 * var(--vh100));
-  }
-  .vw-md-75 {
-    width: calc(0.75 * var(--vw100));
-  }
-  .vh-md-50 {
-    height: calc(0.5 * var(--vh100));
-  }
-  .vw-md-50 {
-    width: calc(0.5 * var(--vw100));
-  }
-  .vh-md-25 {
+  .vol-md-3 {
     height: calc(0.25 * var(--vh100));
   }
-  .vw-md-25 {
-    width: calc(0.25 * var(--vw100));
+  .vol-md-4 {
+    height: calc(0.3333333333 * var(--vh100));
+  }
+  .vol-md-5 {
+    height: calc(0.4166666667 * var(--vh100));
+  }
+  .vol-md-6 {
+    height: calc(0.5 * var(--vh100));
+  }
+  .vol-md-7 {
+    height: calc(0.5833333333 * var(--vh100));
+  }
+  .vol-md-8 {
+    height: calc(0.6666666667 * var(--vh100));
+  }
+  .vol-md-9 {
+    height: calc(0.75 * var(--vh100));
+  }
+  .vol-md-10 {
+    height: calc(0.8333333333 * var(--vh100));
+  }
+  .vol-md-11 {
+    height: calc(0.9166666667 * var(--vh100));
+  }
+  .vol-md-12 {
+    height: calc(1 * var(--vh100));
   }
 }
 @media screen and (max-width: 576px) {
-  .vh-sm-100 {
-    height: calc(1 * var(--vh100));
+  .vol-sm-1 {
+    height: calc(0.0833333333 * var(--vh100));
   }
-  .vw-sm-100 {
-    width: calc(1 * var(--vw100));
+  .vol-sm-2 {
+    height: calc(0.1666666667 * var(--vh100));
   }
-  .vh-sm-75 {
-    height: calc(0.75 * var(--vh100));
-  }
-  .vw-sm-75 {
-    width: calc(0.75 * var(--vw100));
-  }
-  .vh-sm-50 {
-    height: calc(0.5 * var(--vh100));
-  }
-  .vw-sm-50 {
-    width: calc(0.5 * var(--vw100));
-  }
-  .vh-sm-25 {
+  .vol-sm-3 {
     height: calc(0.25 * var(--vh100));
   }
-  .vw-sm-25 {
-    width: calc(0.25 * var(--vw100));
+  .vol-sm-4 {
+    height: calc(0.3333333333 * var(--vh100));
+  }
+  .vol-sm-5 {
+    height: calc(0.4166666667 * var(--vh100));
+  }
+  .vol-sm-6 {
+    height: calc(0.5 * var(--vh100));
+  }
+  .vol-sm-7 {
+    height: calc(0.5833333333 * var(--vh100));
+  }
+  .vol-sm-8 {
+    height: calc(0.6666666667 * var(--vh100));
+  }
+  .vol-sm-9 {
+    height: calc(0.75 * var(--vh100));
+  }
+  .vol-sm-10 {
+    height: calc(0.8333333333 * var(--vh100));
+  }
+  .vol-sm-11 {
+    height: calc(0.9166666667 * var(--vh100));
+  }
+  .vol-sm-12 {
+    height: calc(1 * var(--vh100));
   }
 }
 

@@ -25,27 +25,34 @@ html, body, main, header, footer, section{
     }
 }
 
+// STUB Default col-x Styling
 .col-fill{
     width: 0;
     flex-grow: 1;
 }
 
-// STUB Default col-x Styling
+// NOTE this class is used to remove compilation errors from extension, and
+// reduces compilation size by about 7-12k
+%col-extend{
+    --width: 100%;
+    width: var(--width);    
+}
+
 .col{
     --width: 100%;
-    width: var(--width);
+    @extend %col-extend
 }
 
 @each $key, $value in $breakpoints{
     @each $name, $width in $cols{
         .col-#{$key}-#{$name}{ 
-            @extend .col
+            @extend %col-extend
          }
     }
 }
 
 @each $name, $width in $cols{
-    .col-#{$name}{
+    .col-#{$name}, .cols-#{$name} .col{
         --width: #{$width};
         width: var(--width); 
     }
@@ -54,7 +61,7 @@ html, body, main, header, footer, section{
 @each $key, $value in $breakpoints{
     @media screen and ($minmax: $value){
         @each $name, $width in $cols{
-            .col-#{$key}-#{$name}{ 
+            .col-#{$key}-#{$name}, .cols-#{$key}-#{$name} .col{ 
                 --width: #{$width};
                 width: var(--width); 
             }
@@ -94,7 +101,7 @@ html, body, main, header, footer, section{
         // This is the logic for the col classes, combined together to save
         // space
         &.g-#{$key},&.gx-#{$key}{
-            >div,article,aside,details,figcaption,figure,footer,header,main,mark,nav,section,summary,time{
+            >div,article,aside,details,figcaption,figure,footer,header,main,mark,nav,section,summary,time,a{
                 width: calc(var(--width) - ($value * $gutter));
             }
         }
@@ -124,7 +131,7 @@ html, body, main, header, footer, section{
                 }
 
                 &.g-#{$break}-#{$key},&.gx-#{$break}-#{$key}{
-                    >div,article,aside,details,figcaption,figure,footer,header,main,mark,nav,section,summary,time{
+                    >div,article,aside,details,figcaption,figure,footer,header,main,mark,nav,section,summary,time,a{
                         width: calc(var(--width) - ($value * $gutter));
                     }
                 }
@@ -317,29 +324,21 @@ html, body, main, header, footer, section{
 }
 
 
-// STUB Begin vh & vw
+// STUB Begin vol
 
 // standard screen variable styles
-@each $key, $value in $cv { 
-    .vh-#{$key} { 
-        height: tie_vh($value);
-    }
-    .vw-#{$key} {
-        width: tie_vw($value);
+@each $key, $value in $vols { 
+    .vol-#{$key} { 
+        height: vol($value);
     }
 }
 // Breakpoint Logic
 @each $break, $screen in $breakpoints {
     @media screen and ($minmax: $screen){
-        @each $k2, $v2 in $cv { 
-            .vh-#{$break}-#{$k2} { 
-                height: tie_vh($v2);
-            }
-            .vw-#{$break}-#{$k2} { 
-                width: tie_vw($v2);
+        @each $k2, $v2 in $vols { 
+            .vol-#{$break}-#{$k2} { 
+                height: vol($v2);
             }
         }
     }
 }
-
-// STUB Other utility classes

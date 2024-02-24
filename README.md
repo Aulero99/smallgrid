@@ -57,17 +57,22 @@ All classes included are:
 
 ### Grid
 
-- `.container` The parent of the 'grid'
-    * `.container-x` is also applicable as of 1.5.1 with max width of the corresponding breakpoint
+- `.container` The parent of the 'grid' with width set to 100%
+    * `.container-x` as of 1.5.1 with max width of the corresponding breakpoint
+    * `container-solid` as of 1.5.1 with max-width set to next lowest breakpoint
 - `.row` each row of the grid
     * `.flex-col` applied to a `.row` will change the flex-direction to column from its default row, which has its uses
     * `.gx-bp-x`,`.gy-bp-x`, & `g-bp-x` will adjust spacing between rows and containers as of 1.5.1
-- `.col-bp-x` column in the row with x between 1-12
+    * `.cols-bp-x` as of 1.5.1 sets all `.col` elements within to behave like `.col-bp-x` classes
+- `.col-bp-x` designates a column in the row
+    * `x` between 1-12
 - `.col-fill` fills the available space in the row
     * ex: a row with a col-3 and a col-fill will have the col-fill act like a col-9, and if that col-3 becomes a col-6 after a bp the col-fill will then act as a col-6
+- `.vol-bp-x` as of 1.5.1 sets the volume of an object (height based on the current screen size)
+    * `x` between 1-12
 
 ### Gutters
-    NOTE - gutters can only be applied to rows to space them inside the containers
+    NOTE - gutters can only be applied to rows to space objects inside them
 - `g-bp-x` Adjusts x and y gutters
 - `gx-bp-x` Adjusts x gutter
 - `gy-bp-x` Adjusts y gutter
@@ -121,23 +126,24 @@ All classes included are:
 - `.fill-bp` sets height and width to 100% and grow to 1
 - `.fill-bp-x` sets width to 100%
 - `.fill-bp-y` sets height to 100%
-- `vh-bp-X` sets height of element to cvh(X)
-    * values for x are 100, 75, 50, 25
-- `vw-bp-X` sets width of element to cvw(X)
-    * values for x are 100, 75, 50, 25
 - `.d-bp-none` sets element to display none
 - `.d-bp-flex` sets element to display flex
 - `.d-bp-block` sets element to display block
 
 ### Other Implementations
 
-In addition to the utility and grid classes, Suspendors also comes with 2 custom units to be used in custom styles called cvh() and cvw() which stand for calculated view height and width respectively. These units are what the grid uses for its own styles and are activated by the `suspendors.setup()` function, and when used properly will stop the locking and jumping issues from standard vh and vw units. 
+In addition to the utility and grid classes, Suspendors also comes with some custom units to be used in custom styles. These units are what the grid uses for its own styles and are activated by the `suspendors.setup()` function, and when used properly will stop the locking and jumping issues from standard vh and vw units. 
     
-    NOTE - If suspendors.setup() is not called cvh and cvw will default to vh and vw units respectively.
+    NOTE - If suspendors.setup() does not run either because dom never finished loading or was never called, these units default to vh/vw units respectively and scroll locking and jumping will continue to occur.
 
-- `cvh(x)` works exactly like lvh but across everything
-    * This custom unit fixes the scroll jumps & locks from the vh unit
-- `cvw(x)` works exactly like lvw but across everything
+- `vol(x)` works exactly like `.vol-x`
+- `col(x)` works exactly like `.col-x`
+    * Both `vol(x)` & `col(x)` only work with values 1-12, any other values are liable to break the grid system.
+    * Neither `vol(x)` & `col(x)` implement breakpoint logic
+- `height(x)` works exactly like `lvh` but across everything using absolute pixel values and logic to fix scroll locking and jumping
+- `width(x)` works exactly like `lvw` but uses absolute pixel values
+- `pad(x)` works exactly like `.p-x`
+- `mar(x)` works exactly like `.m-x`
 
 </p> 
 
@@ -161,7 +167,7 @@ If you are looking to utilize the Events of Suspendors, you now need to register
 
     * suspendors.under(fn) is disabled by default, .over(fn) if used instead with the breakpoint logic aligning with bootstrap conventions.
 
-By default Suspendors is configured to behave like bootstrap using the same breakpoints as of bootstrap 5.3 and the under check will never happen as the under and over logic happens when you go beyond the defined breakpoints with the default behavior using the sm breakpoint to initiate code when under the sm breakpoint and the over breakpoint to initiate code to when over the xxl breakpoint. However, you can change this behavior by changing the min-width or max-width variables in the two files in the `var` folder to behave as you would like which will in turn change the behavior of Suspendors to use code when over the breakpoints accordingly. 
+By default Suspendors is configured to behave similarly to bootstrap using the same breakpoints as of bootstrap 5.3 and the under check will never happen as the under and over logic happens when you go beyond the defined breakpoints with the default behavior using the sm breakpoint to initiate code when under the sm breakpoint and the over breakpoint to initiate code to when over the xxl breakpoint. However, you can change this behavior by changing the min-width or max-width variables in the two files in the `var` folder to behave as you would like which will in turn change the behavior of Suspendors to use code when over the breakpoints accordingly. 
 
 To registers the code you want to run with each breakpoint simple send the functions you would like to run like so:
 
@@ -229,4 +235,12 @@ you can also call for an update or a single check trigger at any time to check f
         * fixed glitch with `:root` elements making duplicates from `@import`
         * fixed glitch with event listeners not removing themselves properly
         * fixed oversight where return functions would return incorrect or nothing
-        * added `.g-bp-x` styles for `.row` classes
+        * added gutter logic,`.g-bp-x` styles for `.row` classes
+            * all gutter classes are responsive to screen size like all other sizes
+        * changed `.vh` class to `.vol` for more pleasing syntax
+            * expanded the `.vol` class to use same conventions of `.col` with a 1-12 convention instead of a percent conversion
+        * removed `.vw` class as it conflicted with the `.col` classes and is irrelevant with `.fill` for the most part
+        * changed sass functions to different names for better readability
+            * `tie_` removed from all classes, now only used in javascript events
+            * `vh` now called `vol` or `height` for better neaming conventions
+            * `tie_p` now called `pad`
