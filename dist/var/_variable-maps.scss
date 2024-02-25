@@ -1,10 +1,25 @@
-$breakpoint-map:(
-    "xxl":$xxl, 
-    "xl":$xl, 
-    "lg":$lg, 
-    "md":$md, 
-    "sm":$sm
-);
+$breakpoint-map: null;
+
+@if $minmax == 'min-width' {
+    $breakpoint-map:(
+        "sm":$sm, 
+        "md":$md, 
+        "lg":$lg, 
+        "xl":$xl, 
+        "xxl":$xxl
+    );
+}
+
+@if $minmax == 'max-width' {
+    $breakpoint-map:(
+        "xxl":$xxl, 
+        "xl":$xl, 
+        "lg":$lg, 
+        "md":$md, 
+        "sm":$sm
+    ) !default;
+}
+
 
 $col-map:(
     "1":8.3333333333333333333333333333333%,
@@ -47,7 +62,7 @@ $gutter-map:(
 
     // TODO - find a way to make this switch automatic
     // NOTE - min-width set
-// $breakpoints:(
+// $breakpoint-map:(
 //     "sm":$sm, 
 //     "md":$md, 
 //     "lg":$lg, 
