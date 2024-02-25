@@ -1,31 +1,10 @@
-// STUB Behavioral Settings
+// STUB - Grid
 
     // NOTE 
     // This sets the gutter of the grid for margins and padding.
     // All numbers will work here, larger numbers will make the
     // spacing feel more pillowy, smaller numbers will feel tighter
-$gutter: 1.5rem;
-$gutters-x:(
-    "0":0,
-    "1":0.2, 
-    "2":0.4, 
-    "3":0.6, 
-    "4":0.8, 
-    "5":1);
-$cols:(
-    "1":8.3333333333333333333333333333333%,
-    "2":16.666666666666666666666666666667%,
-    "3":25%,
-    "4":33.333333333333333333333333333333%,
-    "5":41.666666666666666666666666666667%,
-    "6":50%,
-    "7":58.333333333333333333333333333333%,
-    "8":66.666666666666666666666666666667%,
-    "9":75%,
-    "10":83.333333333333333333333333333333%,
-    "11":91.666666666666666666666666666667%,
-    "12":100%,
-);
+$gutter: 1.5rem !default;
 
 
 
@@ -33,11 +12,11 @@ $cols:(
     // This is the settings for the breakpoints in the grid.
     // By default this shares the same values as bootstrap, but are
     // readily changeable here
-$sm: 576px;
-$md: 768px;
-$lg: 992px;
-$xl: 1200px;
-$xxl: 1400px;
+$sm: 576px !default;
+$md: 768px !default;
+$lg: 992px !default;
+$xl: 1200px !default;
+$xxl: 1400px !default;
 
     // NOTE 
     // This is the variable that sets the behavior of the grid to use either
@@ -51,45 +30,54 @@ $xxl: 1400px;
 
 $minmax: "max-width";
 
-    // NOTE - max-width set
-$breakpoints:("xxl":$xxl, "xl":$xl, "lg":$lg, "md":$md, "sm":$sm);
 
-    // NOTE - min-width set
-// $breakpoints:("sm":$sm, "md":$md, "lg":$lg, "xl":$xl, "xxl":$xxl);
+    // NOTE This is the logic for the sizing of the grid
 
+// STUB - Spacing 
 
+// Padding
 
-    // NOTE 
-    // this is the padding settings based on the gutter
-    // it is not recommended messing with these, but they are
-    // configurable
-$p1: calc( $gutter * (1 / 5) );
-$p2: calc( $gutter * (2 / 5) );
-$p3: calc( $gutter * (3 / 5) );
-$p4: calc( $gutter * (4 / 5) );
-$p5: $gutter;
+$p1: calc( $gutter * (1 / 5) ) !default;
+$p2: calc( $gutter * (2 / 5) ) !default;
+$p3: calc( $gutter * (3 / 5) ) !default;
+$p4: calc( $gutter * (4 / 5) ) !default;
+$p5: $gutter !default;
 
-    // NOTE - the map for the grid
-$paddings:("0":0, "1":$p1, "2":$p2, "3":$p3, "4":$p4, "5":$p5);
+// Margin
 
+$m1: calc( $gutter * (1 / 5) ) !default;
+$m2: calc( $gutter * (2 / 5) ) !default;
+$m3: calc( $gutter * (3 / 5) ) !default;
+$m4: calc( $gutter * (4 / 5) ) !default;
+$m5: $gutter !default;
 
-// STUB This is the logic for the sizing of the grid
+// STUB - Typography
 
-$vh100: var(--vh100);
-$vw100: var(--vw100);
+// Fonts
 
-    // NOTE - the vols for the grid
-    $vols:(
-        "1":8.3333333333333333333333333333333,
-        "2":16.666666666666666666666666666667,
-        "3":25,
-        "4":33.333333333333333333333333333333,
-        "5":41.666666666666666666666666666667,
-        "6":50,
-        "7":58.333333333333333333333333333333,
-        "8":66.666666666666666666666666666667,
-        "9":75,
-        "10":83.333333333333333333333333333333,
-        "11":91.666666666666666666666666666667,
-        "12":100,
-    );
+$font-size: 1rem !default;
+
+// Headings
+
+$h1-font-size: $font-size * 2.5 !default;
+$h2-font-size: $font-size * 2 !default;
+$h3-font-size: $font-size * 1.75 !default;
+$h4-font-size: $font-size * 1.5 !default;
+$h5-font-size: $font-size * 1.25 !default;
+$h6-font-size: $font-size !default;
+
+$h1-font-weight: null !default;
+$h2-font-weight: null !default;
+$h3-font-weight: null !default;
+$h4-font-weight: null !default;
+$h5-font-weight: null !default;
+$h6-font-weight: null !default;
+
+$headings-color: inherit !default;
+
+$h1-color: $headings-color !default;
+$h2-color: $headings-color !default;
+$h3-color: $headings-color !default;
+$h4-color: $headings-color !default;
+$h5-color: $headings-color !default;
+$h6-color: $headings-color !default;

@@ -1,0 +1,43 @@
+// STUB - Padding
+@each $key, $value in $paddings-map { 
+    .p-#{$key} { padding: $value; }
+    .pt-#{$key},.py-#{$key} { padding-top: $value; }
+    .pb-#{$key},.py-#{$key} { padding-bottom: $value; }
+    .ps-#{$key},.px-#{$key} { padding-left: $value; }
+    .pe-#{$key},.px-#{$key} { padding-right: $value; }
+}
+
+// Padding Breakpoints
+@each $break, $screen in $breakpoint-map {
+    @media screen and ($minmax: $screen){
+        @each $key, $value in $paddings-map { 
+            .p-#{$break}-#{$key} { padding: $value; }
+            .pt-#{$break}-#{$key},.py-#{$break}-#{$key} { padding-top: $value; }
+            .pb-#{$break}-#{$key},.py-#{$break}-#{$key} { padding-bottom: $value; }
+            .ps-#{$break}-#{$key},.px-#{$break}-#{$key} { padding-left: $value; }
+            .pe-#{$break}-#{$key},.px-#{$break}-#{$key} { padding-right: $value; }
+        }
+    }
+}
+
+// STUB - Margins
+@each $key, $value in $margins-map { 
+    .m-#{$key} { margin: $value; }
+    .mt-#{$key},.my-#{$key} { margin-top: $value; }
+    .mb-#{$key},.my-#{$key} { margin-bottom: $value; }
+    .ms-#{$key},.mx-#{$key} { margin-left: $value; }
+    .me-#{$key},.mx-#{$key} { margin-right: $value; }
+}
+
+// Margin Breakpoints
+@each $break, $screen in $breakpoint-map {
+    @media screen and ($minmax: $screen){
+        @each $key, $value in $margins-map { 
+            .m-#{$break}-#{$key} { margin: $value; }
+            .mt-#{$break}-#{$key},.my-#{$break}-#{$key} { margin-top: $value; }
+            .mb-#{$break}-#{$key},.my-#{$break}-#{$key} { margin-bottom: $value; }
+            .ms-#{$break}-#{$key},.mx-#{$break}-#{$key} { margin-left: $value; }
+            .me-#{$break}-#{$key},.mx-#{$break}-#{$key} { margin-right: $value; }
+        }
+    }
+}

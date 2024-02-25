@@ -1,0 +1,64 @@
+.row{
+    // STUB Gutter Styling
+    @each $key, $value in $gutter-map{
+
+        &.gx-#{$key},&.g-#{$key}{
+            width: calc(100% - ($gutter * $value));
+            margin-left: calc($gutter * $value);
+            margin-right: 0;
+
+                &.full{
+                    width: calc(100% + ($gutter * $value));
+                    margin-left: 0;
+                    margin-right: calc($gutter * $value * -1);
+                }
+
+            column-gap: calc($value * $gutter); 
+        }
+
+        &.gy-#{$key},&.g-#{$key}{
+            row-gap: calc($value * $gutter);
+        }
+
+        // NOTE
+        // This is the logic for the col classes, combined together to save
+        // space
+        &.g-#{$key},&.gx-#{$key}{
+            >div,article,aside,details,figcaption,figure,footer,header,main,mark,nav,section,summary,time,a{
+                width: calc(var(--width) - ($value * $gutter));
+            }
+        }
+    }
+
+// STUB Gutter breakpoint logic
+
+    @each $break, $screen in $breakpoint-map{
+        @media screen and ($minmax: $screen){
+            @each $key, $value in $gutter-map{
+                &.gx-#{$break}-#{$key},&.g-#{$break}-#{$key}{
+                    width: calc(100% - ($gutter * $value));
+                    margin-left: calc($gutter * $value);
+                    margin-right: 0;
+        
+                        &.full{
+                            width: calc(100% + ($gutter * $value));
+                            margin-left: 0;
+                            margin-right: calc($gutter * $value * -1);
+                        }
+        
+                    column-gap: calc($value * $gutter); 
+                }
+        
+                &.gy-#{$break}-#{$key},&.g-#{$break}-#{$key}{
+                    row-gap: calc($value * $gutter);
+                }
+
+                &.g-#{$break}-#{$key},&.gx-#{$break}-#{$key}{
+                    >div,article,aside,details,figcaption,figure,footer,header,main,mark,nav,section,summary,time,a{
+                        width: calc(var(--width) - ($value * $gutter));
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,4 +1,5 @@
-@import "../var/_variables.scss";
+$vh100: var(--vh100);
+$vw100: var(--vw100);
 
 // NOTE this is the logic for calculating a logical size for 
 @function vol($size){ 
