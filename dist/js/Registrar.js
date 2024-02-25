@@ -11,10 +11,9 @@ let landscape = []
 let portrait = []
 
 
-class Caller{
-
-    setup(){
-        logger.log('Function Caller Logic Online')
+class Registrar{
+    constructor(){ 
+        logger.log('Registrar Online')
         window.addEventListener("tie_under", (e) => {this.trigger('under')}, false)
         window.addEventListener("tie_sm", (e) => {this.trigger('sm')}, false)
         window.addEventListener("tie_md", (e) => {this.trigger('md')}, false)
@@ -65,5 +64,42 @@ class Caller{
         return
     }
 
+    under(fn){ 
+        logger.log('registering function: ', fn, ' at breakpoint under')
+        this.setEventFlags(fn, 'under') 
+    }
+    sm(fn){
+        logger.log('registering function: ', fn, ' at breakpoint sm')
+        this.setEventFlags(fn, 'sm') 
+    }
+    md(fn){
+        logger.log('registering function: ', fn, ' at breakpoint md')
+        this.setEventFlags(fn, 'md') 
+    }
+    lg(fn){
+        logger.log('registering function: ', fn, ' at breakpoint lg')
+        this.setEventFlags(fn, 'lg') 
+    }
+    xl(fn){ 
+        logger.log('registering function: ', fn, ' at breakpoint xl')
+        this.setEventFlags(fn, 'xl') 
+    }
+    xxl(fn){ 
+        logger.log('registering function: ', fn, ' at breakpoint xxl')
+        this.setEventFlags(fn, 'xxl') 
+    }
+    over(fn){
+        logger.log('registering function: ', fn, ' at breakpoint over')
+        this.setEventFlags(fn, 'over') 
+    }
+    landscape(fn){
+        logger.log('registering function: ', fn, ' at orientation landscape')
+        this.setEventFlags(fn, 'landscape') 
+    }
+    portrait(fn){
+        logger.log('registering function: ', fn, ' at orientation portrait')
+        this.setEventFlags(fn, 'portrait')
+    }
+
 }
-export const caller = new Caller()
+export const registrar = new Registrar()

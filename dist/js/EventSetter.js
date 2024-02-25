@@ -17,6 +17,7 @@ const tie_landscape = new Event("tie_landscape")
 
 let orientation = null
 let screen = null
+let loaded = false
 
 function callLogic(event, title){
     if( screen == title ){ return } 
@@ -26,24 +27,36 @@ function callLogic(event, title){
     } else{
         screen = title
     }
+    if(!loaded){ return }
     window.dispatchEvent(event)
+}
+
+function loadingCheck(){
+    if(loaded){ return }
+    loaded = true
+    screen = null
+    orientation = null
+    document.removeEventListener('DOMContentLoaded', setter.loadFlip)
+    setter.update()
 }
 
 class Setter{
 
     setup(){
         logger.log('Event Setter Logic Online')
-        this.update()
+        document.addEventListener('DOMContentLoaded', setter.loadFlip)
         window.addEventListener('resize', this.update)
         window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
             const portrait = e.matches;
             if (portrait) { callLogic(tie_portrait,'portrait') } 
             else { callLogic(tie_under,'under') }
         });
+        this.update()
     }
 
-    update(){
+    loadFlip(){ loadingCheck() }
 
+    update(){
             // NOTE
             // This is the final destination for all update calls in this framework
             // and can be manually triggered to check whether of not the requisite flags
@@ -111,6 +124,7 @@ class Setter{
 
     returnOrientation() {
         if(!orientation){this.update()}
+        logger.log('The current orientation is ', orientation)
         return orientation
     }
     returnScreen() {
@@ -119,4 +133,5 @@ class Setter{
         return screen
     }
 }
+
 export const setter = new Setter()

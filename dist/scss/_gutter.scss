@@ -1,3 +1,7 @@
+@import "../var/_variables.scss";
+@import "../var/_variable-maps.scss";
+@import "./_units.scss";
+
 .row{
     // STUB Gutter Styling
     @each $key, $value in $gutter-map{

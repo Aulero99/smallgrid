@@ -1,6 +1,12 @@
+@import "../var/_variables.scss";
+@import "../var/_variable-maps.scss";
+@import "./_units.scss";
+
 // This file contains the logic for the base grid of Suspendors
 // that includes all the .container, .row, .col and .vol
-// and all derivatives of those classes (-bp-x)
+// and all derivatives of those classes (-bp-x) as well as
+// classes strictly necessary to define spacing in the
+// flexbox made with the grid
 
 
 // STUB - Container
@@ -31,7 +37,7 @@
 // reduces compilation size by about 7-12k
 %col-extend{
     --width: 100%;
-    width: var(--width);    
+    width: var(--width);
 }
 
 .col{
@@ -87,10 +93,6 @@
     flex-direction: column;
     .wrap{ flex-wrap: wrap; }
 }
-.grow-1{ flex-grow: 1; }
-.fill{ flex-grow: 1; }
-.fill-x,.fill{ width: 100%; }
-.fill-y,.fill{ height: 100%; }
 
 @each $break, $screen in $breakpoint-map{
     @media screen and ($minmax: $screen){
@@ -214,7 +216,7 @@
     }
 }
 
-// STUB Begin vol
+// STUB Vol
 
 // standard screen variable styles
 @each $key, $value in $vol-map { 

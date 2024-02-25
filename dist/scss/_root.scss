@@ -1,3 +1,7 @@
+@import "../var/_variables.scss";
+@import "../var/_variable-maps.scss";
+@import "./_units.scss";
+
 // STUB CSS Root Variable Declaration
 
     // NOTE This is where the root css variables 
@@ -11,6 +15,13 @@
 :root{
     --vh100: 100vh;
     --vw100: 100vw;
+    --sm: #{$sm};
+    --md: #{$md};
+    --lg: #{$lg};
+    --xl: #{$xl};
+    --xxl: #{$xxl};
+    --gutter: #{$gutter};
+    --minmax: #{$minmax};
 }
 
 *, 

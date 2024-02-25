@@ -4,6 +4,7 @@
     "version": "1.5.1",
     "description": "Small Scss grid system for smaller projects",
     "main": "dist/js/Suspendors.js",
+    "module": "dist/js/Suspendors.esm.js",
     "sass": "dist/scss/suspendors.scss",
     "style": "dist/css/min.css",
     "author": "Auston Robertson <auston.robertson.business@gmail.com>",

@@ -1,6 +1,5 @@
 import { vars } from "../var/_variables"
 
-
 function log(type, content) {
     if (vars.dev) {
       // eslint-disable-next-line no-console

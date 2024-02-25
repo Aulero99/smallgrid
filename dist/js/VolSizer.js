@@ -11,19 +11,7 @@ import { vars } from "../var/_variables"
 let dynamicWidth = null
 let dynamicHeight = null
 
-
-// function mobileCheck(){
-//    var isMobile = navigator.userAgent.toLowerCase().match(/mobile/i);
-//    if(isMobile){
-//       logger.log('mobile browser detected')
-//       return(true)
-//    }else{
-//       logger.log('not mobile browser detected')
-//       return(false)
-//    }
-// }
-
-class Sizer{
+class VolSizer{
  setup(){
     logger.log('Sizer Logic Online')
     window.addEventListener('resize', this.update)
@@ -32,7 +20,7 @@ class Sizer{
       });
  }
  update(){
-   logger.log('Updating CSS Size')
+   // logger.log('Updating CSS Size')
     const w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
     const h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
       
@@ -59,4 +47,4 @@ class Sizer{
  }
 }
 
-export const sizer = new Sizer()
+export const volSizer = new VolSizer()

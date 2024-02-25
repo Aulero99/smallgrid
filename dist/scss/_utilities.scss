@@ -1,3 +1,7 @@
+@import "../var/_variables.scss";
+@import "../var/_variable-maps.scss";
+@import "./_units.scss";
+
 // STUB - Padding
 @each $key, $value in $paddings-map { 
     .p-#{$key} { padding: $value; }
@@ -41,3 +45,8 @@
         }
     }
 }
+
+.grow-1{ flex-grow: 1; }
+.fill{ flex-grow: 1; }
+.fill-x,.fill{ width: 100%; }
+.fill-y,.fill{ height: 100%; }
