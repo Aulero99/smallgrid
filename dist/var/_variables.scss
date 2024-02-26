@@ -29,14 +29,14 @@ $xxl: 1400px !default;
     // until above the md breakpoint in which case it will default back to 
     // col-12, while bootstrap would apply .col-12 until the md breakpoint
     // then become a col-3)
-$minmax: "max-width";
+$minmax: "max-width"; 
 
 
 // STUB - Spacing 
 
 // Padding
 
-$p0: 0;
+$p0: 0 !default;
 $p1: calc( #{$gutter} * (1 / 5) ) !default;
 $p2: calc( #{$gutter} * (2 / 5) ) !default;
 $p3: calc( #{$gutter} * (3 / 5) ) !default;
@@ -45,7 +45,7 @@ $p5: #{$gutter} !default;
 
 // Margin
 
-$m0: 0;
+$m0: 0 !default;
 $m1: calc( #{$gutter} * (1 / 5) ) !default;
 $m2: calc( #{$gutter} * (2 / 5) ) !default;
 $m3: calc( #{$gutter} * (3 / 5) ) !default;
@@ -54,7 +54,7 @@ $m5: #{$gutter} !default;
 
 // Gutters
 
-$g0: 0;
+$g0: 0 !default;
 $g1: 0.2 !default;
 $g2: 0.4 !default;
 $g3: 0.6 !default;
