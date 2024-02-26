@@ -1,23 +1,33 @@
-$breakpoint-map: null;
+@use "sass:map";
+@use 'sass:list';
 
-@if $minmax == 'min-width' {
-    $breakpoint-map:(
-        "sm":$sm, 
-        "md":$md, 
-        "lg":$lg, 
-        "xl":$xl, 
-        "xxl":$xxl
-    );
-}
+$breakpoint-map:(
+    "sm": $sm,
+    "md": $md,
+    "lg": $lg,
+    "xl": $xl,
+    "xxl": $xxl
+) !default;
 
-@if $minmax == 'max-width' {
-    $breakpoint-map:(
-        "xxl":$xxl, 
-        "xl":$xl, 
-        "lg":$lg, 
-        "md":$md, 
-        "sm":$sm
-    ) !default;
+@function reverse-breakpoints($bp){
+    $names: null;
+    $values: null;
+    $r: ();
+    
+    @each $n, $v in $bp{
+        $names: append($names, $n);
+        $values: append($values, $v);
+    };
+    
+    @for $i from 1 through length($names){
+        $r: map.set( $r, list.nth($names, ($i * -1) ), list.nth($values, ($i * -1) ));
+    };
+    
+    @return $r;
+};
+
+@if $minmax != 'min-width' {
+    $breakpoint-map: reverse-breakpoints($breakpoint-map);;
 }
 
 
@@ -34,7 +44,7 @@ $col-map:(
     "10":83.333333333333333333333333333333%,
     "11":91.666666666666666666666666666667%,
     "12":100%
-);
+) !default;
 
 $vol-map:(
     "1":8.3333333333333333333333333333333,
@@ -49,44 +59,34 @@ $vol-map:(
     "10":83.333333333333333333333333333333,
     "11":91.666666666666666666666666666667,
     "12":100
-);
+) !default;
 
 $gutter-map:(
-    "0":0,
-    "1":0.2, 
-    "2":0.4, 
-    "3":0.6, 
-    "4":0.8, 
-    "5":1
-);
-
-    // TODO - find a way to make this switch automatic
-    // NOTE - min-width set
-// $breakpoint-map:(
-//     "sm":$sm, 
-//     "md":$md, 
-//     "lg":$lg, 
-//     "xl":$xl, 
-//     "xxl":$xxl
-// );
+    "0":$g0,
+    "1":$g1, 
+    "2":$g2, 
+    "3":$g3, 
+    "4":$g4, 
+    "5":$g5
+) !default;
 
 $paddings-map:(
-    "0":0, 
+    "0":$p0, 
     "1":$p1, 
     "2":$p2, 
     "3":$p3, 
     "4":$p4, 
     "5":$p5
-);
+) !default;
 
 $margins-map:(
-    "0":0, 
+    "0":$m0, 
     "1":$m1, 
     "2":$m2, 
     "3":$m3, 
     "4":$m4, 
     "5":$m5
-);
+) !default;
 
 $headings-map:(
     "h1": null,
@@ -95,7 +95,7 @@ $headings-map:(
     "h4": null,
     "h5": null,
     "h6": null
-);
+) !default;
 
 $headings-size-map:(
     "h1":$h1-font-size,
@@ -104,7 +104,7 @@ $headings-size-map:(
     "h4":$h4-font-size,
     "h5":$h5-font-size,
     "h6":$h6-font-size
-);
+) !default;
 
 $headings-color-map:(
     "h1":$h1-color,
@@ -113,4 +113,4 @@ $headings-color-map:(
     "h4":$h4-color,
     "h5":$h5-color,
     "h6":$h6-color
-);
+) !default;

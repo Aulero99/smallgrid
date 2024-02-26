@@ -19,10 +19,10 @@
     margin-right: auto;
 }
 
-@each $key, $value in $breakpoint-map{
-    .container-#{$key}{ 
+@each $break, $screen in $breakpoint-map{
+    .container-#{$break}{ 
         @extend .container;
-        max-width: $value;
+        max-width: $screen;
     }
 }
 
@@ -42,13 +42,13 @@
 
 .col{
     --width: 100%;
-    @extend %col-extend
+    @extend %col-extend;
 }
 
-@each $key, $value in $breakpoint-map{
+@each $break, $screen in $breakpoint-map{
     @each $name, $width in $col-map{
-        .col-#{$key}-#{$name}{ 
-            @extend %col-extend
+        .col-#{$break}-#{$name}{ 
+            @extend %col-extend;
          }
     }
 }
@@ -60,10 +60,10 @@
     }
 }
 
-@each $key, $value in $breakpoint-map{
-    @media screen and ($minmax: $value){
+@each $break, $screen in $breakpoint-map{
+    @media (#{$minmax}: $screen){
         @each $name, $width in $col-map{
-            .col-#{$key}-#{$name}, .cols-#{$key}-#{$name} .col{ 
+            .col-#{$break}-#{$name}, .cols-#{$break}-#{$name} .col{ 
                 --width: #{$width};
                 width: var(--width); 
             }
@@ -95,7 +95,7 @@
 }
 
 @each $break, $screen in $breakpoint-map{
-    @media screen and ($minmax: $screen){
+    @media (#{$minmax}: $screen){
         .d-#{$break}-none{ display: none; }
         .d-#{$break}-flex,.flex-#{$break}-row,.flex-#{$break}-col{ display: flex; }
         .d-#{$break}-block{ display: block; }
@@ -163,53 +163,53 @@
     justify-items: space-evenly;
 }
 
-@each $key, $value in $breakpoint-map{
-    @media screen and ($minmax: $value){
-        .align-#{$key}-start{
+@each $break, $screen in $breakpoint-map{
+    @media (#{$minmax}: $screen){
+        .align-#{$break}-start{
             align-items: flex-start;
             align-content: flex-start;
         }
-        .align-#{$key}-center{
+        .align-#{$break}-center{
             align-items: center;
             align-content: center;
         }
-        .align-#{$key}-end{
+        .align-#{$break}-end{
             align-items: flex-end;
             align-content: flex-end;
         }
-        .align-#{$key}-between{
+        .align-#{$break}-between{
             align-content: space-between;
             align-items: space-between;
         }
-        .align-#{$key}-around{
+        .align-#{$break}-around{
             align-content: space-around;
             align-items: space-around;
         }
-        .align-#{$key}-even{
+        .align-#{$break}-even{
             align-content: space-evenly;
             align-items: space-evenly;
         }
-        .justify-#{$key}-start{
+        .justify-#{$break}-start{
             justify-content: flex-start;
             justify-items: flex-start;
         }
-        .justify-#{$key}-center{
+        .justify-#{$break}-center{
             justify-content: center;
             justify-items: center;
         }
-        .justify-#{$key}-end{
+        .justify-#{$break}-end{
             justify-content: flex-end;
             justify-items: flex-end;
         }
-        .justify-#{$key}-between{
+        .justify-#{$break}-between{
             justify-content: space-between;
             justify-items: space-between;
         }
-        .justify-#{$key}-around{
+        .justify-#{$break}-around{
             justify-content: space-around;
             justify-items: space-around;
         }
-        .justify-#{$key}-even{
+        .justify-#{$break}-even{
             justify-content: space-evenly;
             justify-items: space-evenly;
         }
@@ -226,7 +226,7 @@
 }
 // Breakpoint Logic
 @each $break, $screen in $breakpoint-map {
-    @media screen and ($minmax: $screen){
+    @media (#{$minmax}: $screen){
         @each $k2, $v2 in $vol-map { 
             .vol-#{$break}-#{$k2} { 
                 height: vol($v2);

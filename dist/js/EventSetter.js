@@ -19,14 +19,16 @@ let orientation = null
 let screen = null
 let loaded = false
 
-function callLogic(event, title){
+function callScreen(event, title){
     if( screen == title ){ return } 
+    screen = title
+    if(!loaded){ return }
+    window.dispatchEvent(event)
+}
+
+function callOrient(event, title){
     if( orientation == title ){ return }
-    if( title == 'portrait' || title == 'landscape'){
-        orientation = title
-    } else{
-        screen = title
-    }
+    orientation = title
     if(!loaded){ return }
     window.dispatchEvent(event)
 }
@@ -47,9 +49,7 @@ class Setter{
         document.addEventListener('DOMContentLoaded', setter.loadFlip)
         window.addEventListener('resize', this.update)
         window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
-            const portrait = e.matches;
-            if (portrait) { callLogic(tie_portrait,'portrait') } 
-            else { callLogic(tie_under,'under') }
+            this.update()
         });
         this.update()
     }
@@ -65,8 +65,8 @@ class Setter{
         const w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
         const h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
     
-        if(w>h){ callLogic(tie_landscape,'landscape') }
-        else{ callLogic(tie_portrait,'portrait') }
+        if(w>h){ callOrient(tie_landscape,'landscape') }
+        else{ callOrient(tie_portrait,'portrait') }
 
             // NOTE
             // This sets up a logic tree on whether or not it should act according to min-width
@@ -80,19 +80,19 @@ class Setter{
             // files for this framework to work
 
         if(vars.minmax == 'max-width'){
-            if(w <= vars.sm){ callLogic(tie_sm,'sm'); return}
-            else if( w > vars.sm && w <= vars.md){ callLogic(tie_md,'md'); return }
-            else if(w > vars.md && w <= vars.lg){ callLogic(tie_lg,'lg'); return }
-            else if(w > vars.lg && w <= vars.xl){ callLogic(tie_xl,'xl'); return }
-            else if(w > vars.xl && w <= vars.xxl){ callLogic(tie_xxl,'xxl'); return }
-            else{ callLogic(tie_over,'over'); return }
+            if(w <= vars.sm){ callScreen(tie_sm,'sm'); return}
+            else if( w > vars.sm && w <= vars.md){ callScreen(tie_md,'md'); return }
+            else if(w > vars.md && w <= vars.lg){ callScreen(tie_lg,'lg'); return }
+            else if(w > vars.lg && w <= vars.xl){ callScreen(tie_xl,'xl'); return }
+            else if(w > vars.xl && w <= vars.xxl){ callScreen(tie_xxl,'xxl'); return }
+            else{ callScreen(tie_over,'over'); return }
         }else{
-            if(w < vars.sm){ callLogic(tie_under,'under'); return }
-            else if( w >= vars.sm && w < vars.md){ callLogic(tie_sm,'sm'); return }
-            else if(w >= vars.md && w < vars.lg){ callLogic(tie_md,'md'); return }
-            else if(w >= vars.lg && w < vars.xl){ callLogic(tie_lg,'lg'); return }
-            else if(w >= vars.xl && w < vars.xxl){ callLogic(tie_xl,'xl'); return }
-            else{ callLogic(tie_xxl,'xxl'); return }
+            if(w < vars.sm){ callScreen(tie_under,'under'); return }
+            else if( w >= vars.sm && w < vars.md){ callScreen(tie_sm,'sm'); return }
+            else if(w >= vars.md && w < vars.lg){ callScreen(tie_md,'md'); return }
+            else if(w >= vars.lg && w < vars.xl){ callScreen(tie_lg,'lg'); return }
+            else if(w >= vars.xl && w < vars.xxl){ callScreen(tie_xl,'xl'); return }
+            else{ callScreen(tie_xxl,'xxl'); return }
         }
     }
 
