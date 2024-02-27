@@ -1,3 +1,5 @@
+@use "sass:map";
+@use 'sass:list';
 @import "../var/_variables.scss";
 @import "../var/_variable-maps.scss";
 @import "./_units.scss";
@@ -19,10 +21,14 @@
     margin-right: auto;
 }
 
-@each $break, $screen in $breakpoint-map{
+@each $break, $screen in $breakpoint-map-ref{
     .container-#{$break}{ 
         @extend .container;
         max-width: $screen;
+    }
+    .container-solid{
+        @extend .container;
+        max-width: map.get($container-solid-map, $break);
     }
 }
 
@@ -45,7 +51,7 @@
     @extend %col-extend;
 }
 
-@each $break, $screen in $breakpoint-map{
+@each $break, $screen in $breakpoint-map-ref{
     @each $name, $width in $col-map{
         .col-#{$break}-#{$name}{ 
             @extend %col-extend;
@@ -60,8 +66,8 @@
     }
 }
 
-@each $break, $screen in $breakpoint-map{
-    @media (#{$minmax}: $screen){
+@each $break, $screen in $breakpoint-map-ref{
+    @media screen and (#{$minmax}: $screen){
         @each $name, $width in $col-map{
             .col-#{$break}-#{$name}, .cols-#{$break}-#{$name} .col{ 
                 --width: #{$width};
@@ -77,9 +83,29 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    
     &.flex-col{ flex-direction: column;}
 }
+
+// STUB - Vol
+
+@each $key, $value in $vol-map { 
+    .vol-#{$key} { 
+        height: $value;
+    }
+}
+
+// Breakpoint Logic
+@each $break, $screen in $breakpoint-map-ref {
+    @media (#{$minmax}: $screen){
+        @each $k2, $v2 in $vol-map { 
+            .vol-#{$break}-#{$k2} { 
+                height: $v2;
+            }
+        }
+    }
+}
+
+// STUB - Display Logic
 
 .d-flex,.flex-row,.flex-col{ display: flex; }
 .d-none{ display: none; }
@@ -94,7 +120,7 @@
     .wrap{ flex-wrap: wrap; }
 }
 
-@each $break, $screen in $breakpoint-map{
+@each $break, $screen in $breakpoint-map-ref{
     @media (#{$minmax}: $screen){
         .d-#{$break}-none{ display: none; }
         .d-#{$break}-flex,.flex-#{$break}-row,.flex-#{$break}-col{ display: flex; }
@@ -113,6 +139,8 @@
         .fill-#{$break}-y,.fill-#{$break}{ height: 100%; }
     }
 }
+
+// STUB - Alignment
 
 .align-start{
     align-items: flex-start;
@@ -163,7 +191,9 @@
     justify-items: space-evenly;
 }
 
-@each $break, $screen in $breakpoint-map{
+.grow-1{ flex-grow: 1; }
+
+@each $break, $screen in $breakpoint-map-ref{
     @media (#{$minmax}: $screen){
         .align-#{$break}-start{
             align-items: flex-start;
@@ -213,24 +243,6 @@
             justify-content: space-evenly;
             justify-items: space-evenly;
         }
-    }
-}
-
-// STUB Vol
-
-// standard screen variable styles
-@each $key, $value in $vol-map { 
-    .vol-#{$key} { 
-        height: vol($value);
-    }
-}
-// Breakpoint Logic
-@each $break, $screen in $breakpoint-map {
-    @media (#{$minmax}: $screen){
-        @each $k2, $v2 in $vol-map { 
-            .vol-#{$break}-#{$k2} { 
-                height: vol($v2);
-            }
-        }
+        .grow-#{$break}-1{ flex-grow: 1; }
     }
 }

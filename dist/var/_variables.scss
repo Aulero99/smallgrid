@@ -7,7 +7,6 @@
 $gutter: 1.5rem !default;
 
 
-
     // NOTE 
     // This is the settings for the breakpoints in the grid.
     // By default this shares the same values as bootstrap, but are
@@ -16,7 +15,7 @@ $sm: 576px !default;
 $md: 768px !default;
 $lg: 992px !default;
 $xl: 1200px !default;
-$xxl: 1400px !default;
+$xxl: 1401px !default;
 
 
     // NOTE 
@@ -69,19 +68,23 @@ $font-size: 1rem !default;
 
 // Headings
 
-$h1-font-size: $font-size * 2.5 !default;
-$h2-font-size: $font-size * 2 !default;
-$h3-font-size: $font-size * 1.75 !default;
-$h4-font-size: $font-size * 1.5 !default;
-$h5-font-size: $font-size * 1.25 !default;
-$h6-font-size: $font-size !default;
+$headings-font-size: $font-size !default;
 
-$h1-font-weight: null !default;
-$h2-font-weight: null !default;
-$h3-font-weight: null !default;
-$h4-font-weight: null !default;
-$h5-font-weight: null !default;
-$h6-font-weight: null !default;
+$h1-font-size: $headings-font-size * 2.5 !default;
+$h2-font-size: $headings-font-size * 2 !default;
+$h3-font-size: $headings-font-size * 1.75 !default;
+$h4-font-size: $headings-font-size * 1.5 !default;
+$h5-font-size: $headings-font-size * 1.25 !default;
+$h6-font-size: $headings-font-size !default;
+
+$headings-weight: null !default;
+
+$h1-font-weight: $headings-weight !default;
+$h2-font-weight: $headings-weight !default;
+$h3-font-weight: $headings-weight !default;
+$h4-font-weight: $headings-weight !default;
+$h5-font-weight: $headings-weight !default;
+$h6-font-weight: $headings-weight !default;
 
 $headings-color: inherit !default;
 
@@ -91,3 +94,22 @@ $h3-color: $headings-color !default;
 $h4-color: $headings-color !default;
 $h5-color: $headings-color !default;
 $h6-color: $headings-color !default;
+
+// STUB - Styling
+
+// Shadows
+
+$shadow-x: 0px !default;
+$shadow-y: 0px !default;
+$shadow-blur: 0px !default;
+$shadow-spread: 0px !default;
+$shadow-color: rgb(0, 0, 0) !default;
+
+// Elevation
+
+$elevation-x: $shadow-x !default;
+$elevation-y: $shadow-y + 1px !default;
+$elevation-blur: $shadow-blur + 1px !default;
+$elevation-spread: $shadow-spread - 1px !default;
+$elevation-color: $shadow-color !default;
+$elevation-opacity: 0.19 !default;

@@ -1,11 +1,9 @@
 @import "../var/_variables.scss";
-
-$vh100: var(--vh100);
-$vw100: var(--vw100);
+@import "../var/_variable-maps.scss";
 
 // NOTE this is the logic for calculating a logical size for 
 @function vol($size){ 
-    @return calc($size * (1/12) * $vh100) 
+    @return calc(($size/12) * $vh100) 
 };
 
 @function col($size){ 

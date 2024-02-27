@@ -1,13 +1,14 @@
 @use "sass:map";
 @use 'sass:list';
+@import "./_variables.scss";
 
-$breakpoint-map:(
-    "sm": $sm,
-    "md": $md,
-    "lg": $lg,
-    "xl": $xl,
-    "xxl": $xxl
-) !default;
+// STUB - Utility Variables
+
+// NOTE - The following variables are referential only and should not be overridden
+$vh100: var(--vh100);
+$vw100: var(--vw100);
+
+// STUB - Breakpoints
 
 @function reverse-breakpoints($bp){
     $names: null;
@@ -15,21 +16,49 @@ $breakpoint-map:(
     $r: ();
     
     @each $n, $v in $bp{
-        $names: append($names, $n);
-        $values: append($values, $v);
+        $names: list.append($names, $n);
+        $values: list.append($values, $v);
     };
     
-    @for $i from 1 through length($names){
+    @for $i from 1 through length($names) - 1{
         $r: map.set( $r, list.nth($names, ($i * -1) ), list.nth($values, ($i * -1) ));
     };
     
     @return $r;
 };
 
-@if $minmax != 'min-width' {
-    $breakpoint-map: reverse-breakpoints($breakpoint-map);;
-}
+// NOTE this must be in descending order if custom configuration is applied
+$breakpoint-map:(
+    "xxl": $xxl,
+    "xl": $xl,
+    "lg": $lg,
+    "md": $md,
+    "sm": $sm
+) !default;
 
+$breakpoint-map-ref: null;
+
+@if $minmax != 'max-width' {
+    $breakpoint-map-ref: reverse-breakpoints($breakpoint-map);
+};
+
+@if $minmax == 'max-width' {
+    $breakpoint-map-ref: $breakpoint-map;
+};
+
+
+
+// STUB - Container
+
+$container-solid-map:(
+    "sm": 540px,
+    "md": 720px,
+    "lg": 960px,
+    "xl": 1140px,
+    "xxl": 1320px
+) !default;
+
+// STUB - Col
 
 $col-map:(
     "1":8.3333333333333333333333333333333%,
@@ -46,20 +75,24 @@ $col-map:(
     "12":100%
 ) !default;
 
+// STUB - Vol
+
 $vol-map:(
-    "1":8.3333333333333333333333333333333,
-    "2":16.666666666666666666666666666667,
-    "3":25,
-    "4":33.333333333333333333333333333333,
-    "5":41.666666666666666666666666666667,
-    "6":50,
-    "7":58.333333333333333333333333333333,
-    "8":66.666666666666666666666666666667,
-    "9":75,
-    "10":83.333333333333333333333333333333,
-    "11":91.666666666666666666666666666667,
-    "12":100
+    "1": calc((1/12) * $vh100),
+    "2": calc((2/12) * $vh100),
+    "3": calc((3/12) * $vh100),
+    "4": calc((4/12) * $vh100),
+    "5": calc((5/12) * $vh100),
+    "6": calc((6/12) * $vh100),
+    "7": calc((7/12) * $vh100),
+    "8": calc((8/12) * $vh100),
+    "9": calc((9/12) * $vh100),
+    "10": calc((10/12) * $vh100),
+    "11": calc((11/12) * $vh100),
+    "12": $vh100
 ) !default;
+
+// STUB - Gutter
 
 $gutter-map:(
     "0":$g0,
@@ -70,6 +103,8 @@ $gutter-map:(
     "5":$g5
 ) !default;
 
+// STUB - Padding
+
 $paddings-map:(
     "0":$p0, 
     "1":$p1, 
@@ -79,6 +114,8 @@ $paddings-map:(
     "5":$p5
 ) !default;
 
+// STUB - Margin
+
 $margins-map:(
     "0":$m0, 
     "1":$m1, 
@@ -87,6 +124,8 @@ $margins-map:(
     "4":$m4, 
     "5":$m5
 ) !default;
+
+// STUB - Headings
 
 $headings-map:(
     "h1": null,
