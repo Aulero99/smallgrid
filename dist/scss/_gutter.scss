@@ -36,7 +36,7 @@
 
 // STUB Gutter breakpoint logic
 
-    @each $break, $screen in $breakpoint-map{
+    @each $break, $screen in $breakpoint-map-ref{
         @media screen and ($minmax: $screen){
             @each $key, $value in $gutter-map{
                 &.gx-#{$break}-#{$key},&.g-#{$break}-#{$key}{

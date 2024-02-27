@@ -13,7 +13,7 @@
 }
 
 // Padding Breakpoints
-@each $break, $screen in $breakpoint-map {
+@each $break, $screen in $breakpoint-map-ref {
     @media ($minmax: $screen){
         @each $key, $value in $paddings-map { 
             .p-#{$break}-#{$key} { padding: $value; }
@@ -35,7 +35,7 @@
 }
 
 // Margin Breakpoints
-@each $break, $screen in $breakpoint-map {
+@each $break, $screen in $breakpoint-map-ref {
     @media ($minmax: $screen){
         @each $key, $value in $margins-map { 
             .m-#{$break}-#{$key} { margin: $value; }
@@ -79,7 +79,7 @@ $elev-trans-fix: 1 - $elevation-opacity;
 }
 
 // Elevation Breakpoints
-@each $break, $screen in $breakpoint-map{
+@each $break, $screen in $breakpoint-map-ref {
     @media ($minmax: $screen){
         .e-#{$break}-0, .elevation-#{$break}-0{
             box-shadow: unset;

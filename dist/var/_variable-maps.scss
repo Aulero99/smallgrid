@@ -4,12 +4,15 @@
 
 // STUB - Utility Variables
 
-// NOTE - The following variables are referential only and should not be overridden
+    // NOTE - The following variables are referential only and should not be overridden
 $vh100: var(--vh100);
 $vw100: var(--vw100);
 
 // STUB - Breakpoints
 
+
+    // NOTE - This function reverses the breakpoint order when the $minmax variable is set to
+    // min-width, and is not used in other places, so it does not live in the _units file
 @function reverse-breakpoints($bp){
     $names: null;
     $values: null;
@@ -27,7 +30,8 @@ $vw100: var(--vw100);
     @return $r;
 };
 
-// NOTE this must be in descending order if custom configuration is applied
+    // NOTE - this must be in descending order if a custom configuration is applied
+    // directly to the map
 $breakpoint-map:(
     "xxl": $xxl,
     "xl": $xl,
