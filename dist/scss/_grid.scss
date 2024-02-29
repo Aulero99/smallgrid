@@ -33,7 +33,7 @@
 @each $break, $screen in $breakpoint-map-ref{
     .container-#{$break}{ 
         @extend .container;
-        max-width: $screen;
+        max-width: map.get($container-solid-map, $break);
     }
 }
 @each $break, $screen in reverse-breakpoints($breakpoint-map){
