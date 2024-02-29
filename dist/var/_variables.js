@@ -1,7 +1,7 @@
 import { logger } from "../js/Logger"
 
 export const vars = {
-    gutter:24,
+    spacer:24,
     minmax:"max-width",
     sm:576,
     md:768,
@@ -43,7 +43,7 @@ class Options{
         let lg = returnNumbersOnly(getStyle('--lg'))
         let xl = returnNumbersOnly(getStyle('--xl'))
         let xxl = returnNumbersOnly(getStyle('--xxl'))
-        let gutter = returnNumbersOnly(getStyle('--gutter')) * returnNumbersOnly(window.getComputedStyle(document.body).fontSize)
+        let spacer = returnNumbersOnly(getStyle('--spacer')) * returnNumbersOnly(window.getComputedStyle(document.body).fontSize)
         let minmax = getStyle('--minmax')
         
         vars.sm = sm
@@ -51,7 +51,7 @@ class Options{
         vars.lg = lg
         vars.xl = xl
         vars.xxl = xxl
-        vars.gutter = gutter
+        vars.spacer = spacer
         vars.minmax = minmax
         
         logger.log('The vars are now: ', vars)

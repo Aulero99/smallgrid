@@ -19,7 +19,7 @@
 };
 
 @function pad($size){
-    @return calc((1/5) * $gutter * $size)
+    @return calc((1/5) * $spacer * $size)
 };
 
 @function mar($size){ @return pad($size) }

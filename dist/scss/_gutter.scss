@@ -7,21 +7,21 @@
     @each $key, $value in $gutter-map{
 
         &.gx-#{$key},&.g-#{$key}{
-            width: calc(100% - ($gutter * $value));
-            margin-left: calc($gutter * $value);
+            width: calc(100% - ($spacer * $value));
+            margin-left: calc($spacer * $value);
             margin-right: 0;
 
                 &.full{
-                    width: calc(100% + ($gutter * $value));
+                    width: calc(100% + ($spacer * $value));
                     margin-left: 0;
-                    margin-right: calc($gutter * $value * -1);
+                    margin-right: calc($spacer * $value * -1);
                 }
 
-            column-gap: calc($value * $gutter); 
+            column-gap: calc($value * $spacer); 
         }
 
         &.gy-#{$key},&.g-#{$key}{
-            row-gap: calc($value * $gutter);
+            row-gap: calc($value * $spacer);
         }
 
         // NOTE
@@ -29,7 +29,7 @@
         // space
         &.g-#{$key},&.gx-#{$key}{
             >div,article,aside,details,figcaption,figure,footer,header,main,mark,nav,section,summary,time,a{
-                width: calc(var(--width) - ($value * $gutter));
+                width: calc(var(--width) - ($value * $spacer));
             }
         }
     }
@@ -40,26 +40,26 @@
         @media screen and ($minmax: $screen){
             @each $key, $value in $gutter-map{
                 &.gx-#{$break}-#{$key},&.g-#{$break}-#{$key}{
-                    width: calc(100% - ($gutter * $value));
-                    margin-left: calc($gutter * $value);
+                    width: calc(100% - ($spacer * $value));
+                    margin-left: calc($spacer * $value);
                     margin-right: 0;
         
                         &.full{
-                            width: calc(100% + ($gutter * $value));
+                            width: calc(100% + ($spacer * $value));
                             margin-left: 0;
-                            margin-right: calc($gutter * $value * -1);
+                            margin-right: calc($spacer * $value * -1);
                         }
         
-                    column-gap: calc($value * $gutter); 
+                    column-gap: calc($value * $spacer); 
                 }
         
                 &.gy-#{$break}-#{$key},&.g-#{$break}-#{$key}{
-                    row-gap: calc($value * $gutter);
+                    row-gap: calc($value * $spacer);
                 }
 
                 &.g-#{$break}-#{$key},&.gx-#{$break}-#{$key}{
                     >div,article,aside,details,figcaption,figure,footer,header,main,mark,nav,section,summary,time,a{
-                        width: calc(var(--width) - ($value * $gutter));
+                        width: calc(var(--width) - ($value * $spacer));
                     }
                 }
             }

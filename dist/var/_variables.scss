@@ -34,29 +34,34 @@ $minmax: "max-width";
 // STUB - Spacing 
 
     // NOTE 
-    // This sets the gutter of the grid for margins and padding.
+    // This sets the size of the gutter of the grid as well
+    // as defines the size of all default margins and padding.
     // All numbers will work here, larger numbers will make the
     // spacing feel more pillowy, smaller numbers will feel tighter
     // by default I ship suspendors with 1.5 rem
-$gutter: 1.5rem !default;
+// $gutter: 1.5rem !default;
+$spacer: 1.5rem !default;
+
 
 // Padding
 
 $p0: 0 !default;
-$p1: calc( #{$gutter} * (1 / 5) ) !default;
-$p2: calc( #{$gutter} * (2 / 5) ) !default;
-$p3: calc( #{$gutter} * (3 / 5) ) !default;
-$p4: calc( #{$gutter} * (4 / 5) ) !default;
-$p5: #{$gutter} !default;
+$p1: calc( #{$spacer} * (1 / 5) ) !default;
+$p2: calc( #{$spacer} * (2 / 5) ) !default;
+$p3: calc( #{$spacer} * (3 / 5) ) !default;
+$p4: calc( #{$spacer} * (4 / 5) ) !default;
+$p5: #{$spacer} !default;
+
 
 // Margin
 
 $m0: 0 !default;
-$m1: calc( #{$gutter} * (1 / 5) ) !default;
-$m2: calc( #{$gutter} * (2 / 5) ) !default;
-$m3: calc( #{$gutter} * (3 / 5) ) !default;
-$m4: calc( #{$gutter} * (4 / 5) ) !default;
-$m5: #{$gutter} !default;
+$m1: calc( #{$spacer} * (1 / 5) ) !default;
+$m2: calc( #{$spacer} * (2 / 5) ) !default;
+$m3: calc( #{$spacer} * (3 / 5) ) !default;
+$m4: calc( #{$spacer} * (4 / 5) ) !default;
+$m5: #{$spacer} !default;
+
 
 // Gutters
 
@@ -73,9 +78,24 @@ $g5: 1 !default;
 
 $font-size: 1rem !default;
 
+$font-weight-lighter:         lighter !default;
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-medium:          500 !default;
+$font-weight-semibold:        600 !default;
+$font-weight-bold:            700 !default;
+$font-weight-bolder:          bolder !default;
+
+$font-weight-base:            $font-weight-normal !default;
+
+
 // Headings
 
+$h-spacer: calc($spacer * (1/3));
+
 $headings-font-size: $font-size !default;
+$headings-mt: 0 !default;
+$headings-mb: $h-spacer !default;
 
 $h1-font-size: $headings-font-size * 2.5 !default;
 $h2-font-size: $headings-font-size * 2 !default;
@@ -111,7 +131,16 @@ $h4-line-height: $headings-line-height !default;
 $h5-line-height: $headings-line-height !default;
 $h6-line-height: $headings-line-height !default;
 
+
+// Paragraph
+
+$p-spacer: calc($spacer * (2/3));
+
+$p-mt: 0 !default;
+$p-mb: $p-spacer !default;
+
 // STUB - Styling
+
 
 // Shadows
 
@@ -120,6 +149,7 @@ $shadow-y: 0px !default;
 $shadow-blur: 0px !default;
 $shadow-spread: 0px !default;
 $shadow-color: rgb(0, 0, 0) !default;
+
 
 // Elevation
 
