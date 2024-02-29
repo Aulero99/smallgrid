@@ -20,15 +20,39 @@
     margin-left: auto;
     margin-right: auto;
 }
+.container-solid{
+    --max-width: #{map.get($container-solid-map, 'xxl')};
+    max-width: var(--max-width);
+    display: block;
+    width: 100%;
+    overflow-x: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 @each $break, $screen in $breakpoint-map-ref{
     .container-#{$break}{ 
         @extend .container;
         max-width: $screen;
     }
-    .container-solid{
-        @extend .container;
-        max-width: map.get($container-solid-map, $break);
+}
+@each $break, $screen in reverse-breakpoints($breakpoint-map){
+    .container-#{$break}-solid{
+        --max-width: #{map.get($container-solid-map, $xxl)};
+        max-width: var(--max-width);
+        display: block;
+        width: 100%;
+        overflow-x: hidden;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @media (min-width: $screen) {
+        .container-#{$break}-solid{
+            --max-width: #{map.get($container-solid-map, $break)};
+        }
+        .container-solid{
+            --max-width: #{map.get($container-solid-map, $break)};
+        }
     }
 }
 
