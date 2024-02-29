@@ -20,7 +20,15 @@
     margin-left: auto;
     margin-right: auto;
 }
-.container-solid{
+
+@each $break, $screen in $breakpoint-map-ref{
+    .container-#{$break}{ 
+        @extend .container;
+        max-width: map.get($container-solid-map, $break);
+    }
+}
+
+.container-solid, .container-shift{
     --max-width: #{map.get($container-solid-map, 'xxl')};
     max-width: var(--max-width);
     display: block;
@@ -30,12 +38,6 @@
     margin-right: auto;
 }
 
-@each $break, $screen in $breakpoint-map-ref{
-    .container-#{$break}{ 
-        @extend .container;
-        max-width: map.get($container-solid-map, $break);
-    }
-}
 @each $break, $screen in reverse-breakpoints($breakpoint-map){
     .container-#{$break}-solid{
         --max-width: #{map.get($container-solid-map, $xxl)};
@@ -46,12 +48,26 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .container-#{$break}-shift{
+        max-width: 100%;
+        display: block;
+        width: 100%;
+        overflow-x: hidden;
+        margin-left: auto;
+        margin-right: auto;
+    }
     @media (min-width: $screen) {
+        :root{
+            --container-shift-width: #{map.get($container-solid-map, $break)};
+        }
         .container-#{$break}-solid{
             --max-width: #{map.get($container-solid-map, $break)};
         }
-        .container-solid{
+        .container-solid, .container-shift{
             --max-width: #{map.get($container-solid-map, $break)};
+        }
+        .container-#{$break}-shift{
+            max-width: var(--container-shift-width);
         }
     }
 }

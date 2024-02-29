@@ -28,7 +28,7 @@ $xxl: 1400px !default;
     // until above the md breakpoint in which case it will default back to 
     // col-12, while bootstrap would apply .col-12 until the md breakpoint
     // then become a col-3) or 100% if nothing is set.
-$minmax: "max-width"; 
+$minmax: "min-width"; 
 
 
 // STUB - Spacing 
@@ -39,8 +39,9 @@ $minmax: "max-width";
     // All numbers will work here, larger numbers will make the
     // spacing feel more pillowy, smaller numbers will feel tighter
     // by default I ship suspendors with 1.5 rem
-// $gutter: 1.5rem !default;
 $spacer: 1.5rem !default;
+    // NOTE - depreciated
+$gutter: $spacer !default;
 
 
 // Padding

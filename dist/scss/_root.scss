@@ -1,3 +1,4 @@
+@use "sass:map";
 @import "../var/_variables.scss";
 @import "../var/_variable-maps.scss";
 @import "./_units.scss";
@@ -22,4 +23,5 @@
     --xxl: #{$xxl};
     --spacer: #{$spacer};
     --minmax: #{$minmax};
+    --container-shift-width: #{map.get($container-solid-map, 'xxl')};
 }
