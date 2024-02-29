@@ -233,12 +233,16 @@ you can also call for an update or a single check trigger at any time to check f
 - 1.5 - Module support added
     * 1.5.1
         * fixed glitch with `:root` elements making duplicates from `@import`
+        * changed `gutter` to `spacer` for better naming conventions
         * fixed glitch with event listeners not removing themselves properly
-        * fixed oversight where return functions would return incorrect or nothing
+        * fixed glitch where `minmax` variable being set to 'min-width' would not change behavior to match bootstraps
+        * fixed oversight where return functions would return incorrectly or nothing
         * added gutter logic,`.g-bp-x` styles for `.row` classes
             * all gutter classes are responsive to screen size like all other sizes
+        * added the `.cols-x` class to rows to make all child `.col` elements into appropriate col-x classes
         * changed `.vh` class to `.vol` for more pleasing syntax
             * expanded the `.vol` class to use same conventions of `.col` with a 1-12 convention instead of a percent conversion
+        * added `container-bp` and `container-solid` 
         * removed `.vw` class as it conflicted with the `.col` classes and is irrelevant with `.fill` for the most part
         * changed sass functions to different names for better readability
             * `tie_` removed from all classes, now only used in javascript events
