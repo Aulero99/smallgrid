@@ -58,7 +58,7 @@
     }
     @media (min-width: $screen) {
         :root{
-            --container-shift-width: #{map.get($container-solid-map, $break)};
+            --#{$prefix}container-shift-width: #{map.get($container-solid-map, $break)};
         }
         .container-#{$break}-solid{
             --max-width: #{map.get($container-solid-map, $break)};
@@ -67,7 +67,7 @@
             --max-width: #{map.get($container-solid-map, $break)};
         }
         .container-#{$break}-shift{
-            max-width: var(--container-shift-width);
+            max-width: var(--#{$prefix}container-shift-width);
         }
     }
 }
@@ -142,147 +142,5 @@
                 height: $v2;
             }
         }
-    }
-}
-
-// STUB - Display Logic
-
-.d-flex,.flex-row,.flex-col{ display: flex; }
-.d-none{ display: none; }
-.d-block{ display: block; }
-
-.flex-row{
-    flex-direction: row;
-    .wrap{ flex-wrap: wrap; }
-}
-.flex-col{
-    flex-direction: column;
-    .wrap{ flex-wrap: wrap; }
-}
-
-@each $break, $screen in $breakpoint-map-ref{
-    @media (#{$minmax}: $screen){
-        .d-#{$break}-none{ display: none; }
-        .d-#{$break}-flex,.flex-#{$break}-row,.flex-#{$break}-col{ display: flex; }
-        .d-#{$break}-block{ display: block; }
-        .flex-#{$break}-row{
-            flex-direction: row;
-            .wrap{ flex-wrap: wrap; }
-        }
-        .flex-#{$break}-col{
-            flex-direction: column;
-            .wrap{ flex-wrap: wrap; }
-        }
-        .grow-#{$break}-1{ flex-grow: 1; }
-        .fill-#{$break} { flex-grow: 1; }
-        .fill-#{$break}-x,.fill-#{$break}{ width: 100%; }
-        .fill-#{$break}-y,.fill-#{$break}{ height: 100%; }
-    }
-}
-
-// STUB - Alignment
-
-.align-start{
-    align-items: flex-start;
-    align-content: flex-start;
-}
-.align-center{
-    align-items: center;
-    align-content: center;
-}
-.align-end{
-    align-items: flex-end;
-    align-content: flex-end;
-}
-.align-between{
-    align-content: space-between;
-    align-items: space-between;
-}
-.align-around{
-    align-content: space-around;
-    align-items: space-around;
-}
-.align-even{
-    align-content: space-evenly;
-    align-items: space-evenly;
-}
-.justify-start{
-    justify-content: flex-start;
-    justify-items: flex-start;
-}
-.justify-center{
-    justify-content: center;
-    justify-items: center;
-}
-.justify-end{
-    justify-content: flex-end;
-    justify-items: flex-end;
-}
-.justify-between{
-    justify-content: space-between;
-    justify-items: space-between;
-}
-.justify-around{
-    justify-content: space-around;
-    justify-items: space-around;
-}
-.justify-even{
-    justify-content: space-evenly;
-    justify-items: space-evenly;
-}
-
-.grow-1{ flex-grow: 1; }
-
-@each $break, $screen in $breakpoint-map-ref{
-    @media (#{$minmax}: $screen){
-        .align-#{$break}-start{
-            align-items: flex-start;
-            align-content: flex-start;
-        }
-        .align-#{$break}-center{
-            align-items: center;
-            align-content: center;
-        }
-        .align-#{$break}-end{
-            align-items: flex-end;
-            align-content: flex-end;
-        }
-        .align-#{$break}-between{
-            align-content: space-between;
-            align-items: space-between;
-        }
-        .align-#{$break}-around{
-            align-content: space-around;
-            align-items: space-around;
-        }
-        .align-#{$break}-even{
-            align-content: space-evenly;
-            align-items: space-evenly;
-        }
-        .justify-#{$break}-start{
-            justify-content: flex-start;
-            justify-items: flex-start;
-        }
-        .justify-#{$break}-center{
-            justify-content: center;
-            justify-items: center;
-        }
-        .justify-#{$break}-end{
-            justify-content: flex-end;
-            justify-items: flex-end;
-        }
-        .justify-#{$break}-between{
-            justify-content: space-between;
-            justify-items: space-between;
-        }
-        .justify-#{$break}-around{
-            justify-content: space-around;
-            justify-items: space-around;
-        }
-        .justify-#{$break}-even{
-            justify-content: space-evenly;
-            justify-items: space-evenly;
-        }
-        .grow-#{$break}-1{ flex-grow: 1; }
     }
 }

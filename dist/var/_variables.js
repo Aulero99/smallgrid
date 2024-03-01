@@ -40,15 +40,16 @@ class Options{
         if(override){ return }
         logger.log('The defaults set are: ', vars)
         
-        let xxs = returnNumbersOnly(getStyle('--xxs'))
-        let xs = returnNumbersOnly(getStyle('--xs'))
-        let sm = returnNumbersOnly(getStyle('--sm'))
-        let md = returnNumbersOnly(getStyle('--md'))
-        let lg = returnNumbersOnly(getStyle('--lg'))
-        let xl = returnNumbersOnly(getStyle('--xl'))
-        let xxl = returnNumbersOnly(getStyle('--xxl'))
-        let spacer = returnNumbersOnly(getStyle('--spacer')) * returnNumbersOnly(window.getComputedStyle(document.body).fontSize)
-        let minmax = getStyle('--minmax')
+        let prefix = getStyle('--prefix')
+        let xxs = returnNumbersOnly(getStyle(`--${prefix}xxs`))
+        let xs = returnNumbersOnly(getStyle(`--${prefix}xs`))
+        let sm = returnNumbersOnly(getStyle(`--${prefix}sm`))
+        let md = returnNumbersOnly(getStyle(`--${prefix}md`))
+        let lg = returnNumbersOnly(getStyle(`--${prefix}lg`))
+        let xl = returnNumbersOnly(getStyle(`--${prefix}xl`))
+        let xxl = returnNumbersOnly(getStyle(`--${prefix}xxl`))
+        let spacer = returnNumbersOnly(getStyle(`--${prefix}spacer`)) * returnNumbersOnly(window.getComputedStyle(document.body).fontSize)
+        let minmax = getStyle(`--${prefix}minmax`)
         
         vars.xxs = xxs
         vars.xs = xs

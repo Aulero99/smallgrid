@@ -157,15 +157,15 @@ If you are looking to utilize the Events of Suspendors, you have 2 options, eith
 
 The event names you can listen to are as follows:
 
-- `tie_sm`
-- `tie_md`
-- `tie_lg`
-- `tie_xl`
-- `tie_xxl`
-- `tie_over`*
-- `tie_under`*
-- `tie_portrait`
-- `tie_landscape`
+- `sm`
+- `md`
+- `lg`
+- `xl`
+- `xxl`
+- `over`*
+- `under`*
+- `portrait`
+- `landscape`
 
 <br/>
 
@@ -174,7 +174,7 @@ The event names you can listen to are as follows:
 To set up an event listener use standard javascript event listener syntax like this:
 
 
-`window.addEventListener("tie_sm", (e) => {function}, false)`
+`window.addEventListener("sm", (e) => {function}, false)`
 
 </p>
 
@@ -238,7 +238,8 @@ Coming Soon
             * expanded the `.vol` class to use same conventions of `.col` with a 1-12 convention instead of a percent conversion
         * added `container-bp`,`container-solid`, and `container-shift`
         * removed `.vw` class as it conflicted with the `.col` classes and is irrelevant with `.fill` for the most part
+        * added `.elevation`/`.e` and `.order`/`.o` classes
         * changed sass functions to different names for better readability
-            * `tie_` removed from all classes, now only used in javascript events
-            * `vh` now called `vol` or `height` for better neaming conventions
+            * `tie_` prefix removed
+            * `vh` now called `vol` or `height` for better naming conventions
             * `tie_p` now called `pad`

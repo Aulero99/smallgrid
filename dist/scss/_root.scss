@@ -16,14 +16,15 @@
 :root{
     --vh100: 100vh;
     --vw100: 100vw;
-    --xxs: #{$xxs};
-    --xs: #{$xs};
-    --sm: #{$sm};
-    --md: #{$md};
-    --lg: #{$lg};
-    --xl: #{$xl};
-    --xxl: #{$xxl};
-    --spacer: #{$spacer};
-    --minmax: #{$minmax};
-    --container-shift-width: #{map.get($container-solid-map, 'xxl')};
+    --prefix: #{$prefix};
+    --#{$prefix}xxs: #{$xxs};
+    --#{$prefix}xs: #{$xs};
+    --#{$prefix}sm: #{$sm};
+    --#{$prefix}md: #{$md};
+    --#{$prefix}lg: #{$lg};
+    --#{$prefix}xl: #{$xl};
+    --#{$prefix}xxl: #{$xxl};
+    --#{$prefix}spacer: #{$spacer};
+    --#{$prefix}minmax: #{$minmax};
+    --#{$prefix}container-shift-width: 100%;
 }

@@ -15,14 +15,14 @@ html, body, main, header, footer, section{
 
 body{
     font-family: null;
-    font-weight: null;
-    font-size: null;
+    font-weight: $font-weight-base;
+    font-size: $font-size;
     line-height: null;
     text-align: null;
     color: null;
     background-color: null;
     -webkit-text-size-adjust: 100%;
-    // -webkit-tap-highlight-color: rgba($black, 0);
+    // -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 // Heading

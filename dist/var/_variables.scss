@@ -41,6 +41,10 @@ $xxl: 2400px !default;
     // then become a col-3).
 $minmax: "min-width"; 
 
+    // NOTE
+    // This variable sets the prefix for the root css variables.
+$prefix: ss- !default; 
+
 
 // STUB - Spacing 
 
