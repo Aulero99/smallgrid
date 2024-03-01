@@ -35,7 +35,7 @@ Then you need to import the javascript to the root of your project (see 'Using t
 
 `import { suspendors } from 'suspendors';`
 
-and run the `suspendors.setup()` function within that file
+then import each suspendors module as needed (coming soon)
 </p>
 
 ## Using the Grid
@@ -60,6 +60,7 @@ All classes included are:
 - `.container` The parent of the 'grid' with width set to 100%
     * `.container-x` as of 1.5.1 with max width of the corresponding breakpoint
     * `container-solid` as of 1.5.1 with max-width set to next lowest breakpoint
+    * `container-shift` as of 1.5.1 switches behavior from solid to standard at given breakpoint
 - `.row` each row of the grid
     * `.flex-col` applied to a `.row` will change the flex-direction to column from its default row, which has its uses
     * `.gx-bp-x`,`.gy-bp-x`, & `g-bp-x` will adjust spacing between rows and containers as of 1.5.1
@@ -121,7 +122,7 @@ All classes included are:
     * `-even`
 - `.grow-bp-1` sets the flex grow to 1
 
-### Misc Utility Classes
+### Utility Classes
 
 - `.fill-bp` sets height and width to 100% and grow to 1
 - `.fill-bp-x` sets width to 100%
@@ -129,6 +130,7 @@ All classes included are:
 - `.d-bp-none` sets element to display none
 - `.d-bp-flex` sets element to display flex
 - `.d-bp-block` sets element to display block
+- `.e-bp-x`/`.elevation-bp-x` adds a box shadow to the element
 
 ### Other Implementations
 
@@ -151,56 +153,48 @@ In addition to the utility and grid classes, Suspendors also comes with some cus
 
 <p>
 
-If you are looking to utilize the Events of Suspendors, you now need to register the functions you want to run within the framework `before` you start the service by either registering them with the corresponding function or implementing a event listener. As of now Suspendors offers the following checks (all configurable in the var folder):
+If you are looking to utilize the Events of Suspendors, you have 2 options, either to set up an event listener, or use the `registrar` module (currently in beta) to register the functions you want to call at each breakpoint. 
 
-- `suspendors.sm(fn)`
-- `suspendors.md(fn)`
-- `suspendors.lg(fn)`
-- `suspendors.xl(fn)`
-- `suspendors.xxl(fn)`
-- `suspendors.under(fn)`*
-- `suspendors.over(fn)`
-- `suspendors.portrait(fn)`
-- `suspendors.landscape(fn)`
+The event names you can listen to are as follows:
+
+- `tie_sm`
+- `tie_md`
+- `tie_lg`
+- `tie_xl`
+- `tie_xxl`
+- `tie_over`*
+- `tie_under`*
+- `tie_portrait`
+- `tie_landscape`
 
 <br/>
 
-    * suspendors.under(fn) is disabled by default, .over(fn) if used instead with the breakpoint logic aligning with bootstrap conventions.
+    * NOTE - that the tie_over and tie_under events are dependant on the mode of suspendors set by the minmax variable. By default minmax is set to max-width, which sets the behavior of the grid to use max-width to determine its breakpoints and apply the -bp classes when BELOW the breakpoint. This means that tie_sm will apply when the screen is a 0-sm and tie_over will apply when screen is at xxl-infinity. As a comparison, bootstrap uses min-width to determine its breakpoints, which applies a -bp class when ABOVE the breakpoint, which would make the tie_under apply when the screen is between 0-sm, sm apply when screen is sm-md  and so on. You can configure this behavior by setting the minmax variable to the chosen value. 
 
-By default Suspendors is configured to behave similarly to bootstrap using the same breakpoints as of bootstrap 5.3 and the under check will never happen as the under and over logic happens when you go beyond the defined breakpoints with the default behavior using the sm breakpoint to initiate code when under the sm breakpoint and the over breakpoint to initiate code to when over the xxl breakpoint. However, you can change this behavior by changing the min-width or max-width variables in the two files in the `var` folder to behave as you would like which will in turn change the behavior of Suspendors to use code when over the breakpoints accordingly. 
+To set up an event listener use standard javascript event listener syntax like this:
 
-To registers the code you want to run with each breakpoint simple send the functions you would like to run like so:
-
-`suspendors.sm(function)`
-
-or as function with a parameter:
-
-`suspendors.sm(function.bind(null, 'param'))`
-
-    NOTE - the registered functions will always run in the exact order of registering them
-
-You can also do this for a requisite Event by adding an event listener for each of these as well by listening for a `tie_` Event as well:
 
 `window.addEventListener("tie_sm", (e) => {function}, false)`
+
 </p>
 
 <p>
 
-    NOTE - You can skip this next step if using version ^1.4.1 which added an autostart feature after dom is fully loaded, however manual start is still available in all versions ^1.3.1
-
-After all your code is registered, and all your listeners are set up with Suspendors, then and only then should you start the service by calling the function:
-
-`suspendors.setup()`
-
-you can also call for an update or a single check trigger at any time to check for each of the corresponding event flags by calling one of the following:
+Once you have your event listeners set up you can either have your project wait to call them, or at any point check with suspendors to call the events using the following:
 
 - `suspendors.triggerAll()`
 - `suspendors.triggerOrientation()`
 - `suspendors.triggerScreen()`
 
 
-& that's it! Easy, simple and useful.
+You can also get the environment with some callback functions that will return the breakpoint or orientation accordingly:
+
+- `suspendors.returnScreen()`
+- `suspendors.returnOrientation()`
 </p>
+
+## Modules
+Coming Soon
 
 ## Changelog
 
@@ -242,7 +236,7 @@ you can also call for an update or a single check trigger at any time to check f
         * added the `.cols-x` class to rows to make all child `.col` elements into appropriate col-x classes
         * changed `.vh` class to `.vol` for more pleasing syntax
             * expanded the `.vol` class to use same conventions of `.col` with a 1-12 convention instead of a percent conversion
-        * added `container-bp` and `container-solid` 
+        * added `container-bp`,`container-solid`, and `container-shift`
         * removed `.vw` class as it conflicted with the `.col` classes and is irrelevant with `.fill` for the most part
         * changed sass functions to different names for better readability
             * `tie_` removed from all classes, now only used in javascript events

@@ -3,6 +3,8 @@ import { logger } from "../js/Logger"
 export const vars = {
     spacer:24,
     minmax:"max-width",
+    xxs:576,
+    xs:576,
     sm:576,
     md:768,
     lg:992,
@@ -38,6 +40,8 @@ class Options{
         if(override){ return }
         logger.log('The defaults set are: ', vars)
         
+        let xxs = returnNumbersOnly(getStyle('--xxs'))
+        let xs = returnNumbersOnly(getStyle('--xs'))
         let sm = returnNumbersOnly(getStyle('--sm'))
         let md = returnNumbersOnly(getStyle('--md'))
         let lg = returnNumbersOnly(getStyle('--lg'))
@@ -46,6 +50,8 @@ class Options{
         let spacer = returnNumbersOnly(getStyle('--spacer')) * returnNumbersOnly(window.getComputedStyle(document.body).fontSize)
         let minmax = getStyle('--minmax')
         
+        vars.xxs = xxs
+        vars.xs = xs
         vars.sm = sm
         vars.md = md
         vars.lg = lg

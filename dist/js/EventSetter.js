@@ -5,15 +5,17 @@ import { vars } from "../var/_variables"
     // This file sets up the events and the triggers them once the screen
     // size matches the variables set up in the Variables.json file
 
-const tie_under = new Event("tie_under")
-const tie_sm = new Event("tie_sm")
-const tie_md = new Event("tie_md")
-const tie_lg = new Event("tie_lg")
-const tie_xl = new Event("tie_xl")
-const tie_xxl = new Event("tie_xxl")
-const tie_over = new Event("tie_over")
-const tie_portrait = new Event("tie_portrait")
-const tie_landscape = new Event("tie_landscape")
+const under = new Event("under")
+const xxs = new Event("xxs")
+const xs = new Event("xs")
+const sm = new Event("sm")
+const md = new Event("md")
+const lg = new Event("lg")
+const xl = new Event("xl")
+const xxl = new Event("xxl")
+const over = new Event("over")
+const portrait = new Event("portrait")
+const landscape = new Event("landscape")
 
 let orientation = null
 let screen = null
@@ -65,8 +67,8 @@ class Setter{
         const w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
         const h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
     
-        if(w>h){ callOrient(tie_landscape,'landscape') }
-        else{ callOrient(tie_portrait,'portrait') }
+        if(w>h){ callOrient(landscape,'landscape') }
+        else{ callOrient(portrait,'portrait') }
 
             // NOTE
             // This sets up a logic tree on whether or not it should act according to min-width
@@ -80,19 +82,23 @@ class Setter{
             // files for this framework to work
 
         if(vars.minmax == 'max-width'){
-            if(w <= vars.sm){ callScreen(tie_sm,'sm'); return}
-            else if( w > vars.sm && w <= vars.md){ callScreen(tie_md,'md'); return }
-            else if(w > vars.md && w <= vars.lg){ callScreen(tie_lg,'lg'); return }
-            else if(w > vars.lg && w <= vars.xl){ callScreen(tie_xl,'xl'); return }
-            else if(w > vars.xl && w <= vars.xxl){ callScreen(tie_xxl,'xxl'); return }
-            else{ callScreen(tie_over,'over'); return }
+            if(w <= vars.xxs){ callScreen(xxs,'xxs'); return}
+            else if( w > vars.xxs && w <= vars.xs){ callScreen(xs,'xs'); return }
+            else if( w > vars.xs && w <= vars.sm){ callScreen(sm,'sm'); return }
+            else if( w > vars.sm && w <= vars.md){ callScreen(md,'md'); return }
+            else if(w > vars.md && w <= vars.lg){ callScreen(lg,'lg'); return }
+            else if(w > vars.lg && w <= vars.xl){ callScreen(xl,'xl'); return }
+            else if(w > vars.xl && w <= vars.xxl){ callScreen(xxl,'xxl'); return }
+            else{ callScreen(over,'over'); return }
         }else{
-            if(w < vars.sm){ callScreen(tie_under,'under'); return }
-            else if( w >= vars.sm && w < vars.md){ callScreen(tie_sm,'sm'); return }
-            else if(w >= vars.md && w < vars.lg){ callScreen(tie_md,'md'); return }
-            else if(w >= vars.lg && w < vars.xl){ callScreen(tie_lg,'lg'); return }
-            else if(w >= vars.xl && w < vars.xxl){ callScreen(tie_xl,'xl'); return }
-            else{ callScreen(tie_xxl,'xxl'); return }
+            if(w < vars.xxs){ callScreen(under,'under'); return }
+            else if( w >= vars.xxs && w < vars.xs){ callScreen(xxs,'xxs'); return }
+            else if( w >= vars.xs && w < vars.sm){ callScreen(xs,'xs'); return }
+            else if( w >= vars.sm && w < vars.md){ callScreen(sm,'sm'); return }
+            else if(w >= vars.md && w < vars.lg){ callScreen(md,'md'); return }
+            else if(w >= vars.lg && w < vars.xl){ callScreen(lg,'lg'); return }
+            else if(w >= vars.xl && w < vars.xxl){ callScreen(xl,'xl'); return }
+            else{ callScreen(xxl,'xxl'); return }
         }
     }
 

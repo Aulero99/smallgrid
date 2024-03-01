@@ -37,7 +37,9 @@ $breakpoint-map:(
     "xl": $xl,
     "lg": $lg,
     "md": $md,
-    "sm": $sm
+    "sm": $sm,
+    "xs": $xs,
+    "xxs": $xxs
 ) !default;
 
 $breakpoint-map-ref: null;
@@ -55,11 +57,13 @@ $breakpoint-map-ref: null;
 // STUB - Container
 
 $container-solid-map:(
-    "sm": 540px,
-    "md": 720px,
-    "lg": 960px,
-    "xl": 1140px,
-    "xxl": 1320px
+    "xxl": $xxl * 0.95,
+    "xl": $xl * 0.95,
+    "lg": $lg * 0.95,
+    "md": $md * 0.95,
+    "sm": $sm * 0.95,
+    "xs": $xs * 0.95,
+    "xxs": $xxs * 0.95
 ) !default;
 
 // STUB - Col

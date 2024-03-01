@@ -4,11 +4,21 @@
     // This is the settings for the breakpoints in the grid.
     // By default this shares the same values as bootstrap, but are
     // readily changeable
-$sm: 576px !default;
-$md: 768px !default;
-$lg: 992px !default;
-$xl: 1200px !default;
-$xxl: 1400px !default;
+
+// Mobile - Portrait
+$xxs: 480px !default;
+// Mobile - Landscape
+$xs: 768px !default;
+// Tablet - Portrait
+$sm: 992px !default;
+// Tablet - Landscape
+$md: 1200px !default;
+// Monitor - Small
+$lg: 1400px !default;
+// Monitor - 1080p
+$xl: 1900px !default;
+// Monitor - 1440+
+$xxl: 2400px !default;
 
 
     // NOTE 
@@ -22,12 +32,13 @@ $xxl: 1400px !default;
     // logical way since by doing this the breakpoints apply only 
     // when above the given point instead of below which just
     // makes more sense. Therefore, Since I am the only one working on this 
-    // particular project, Suspendors ships by default with max-width set instead, 
-    // which means breakpoints apply until above them, at which point they default
+    // particular project, Suspendors ships by default with min-width set,
+    // however, this behavior can be reversed for
+    // breakpoints apply until above them, at which point they default
     // back to their base value (ie a .col-md-3 .col-12 will be a .col-3
     // until above the md breakpoint in which case it will default back to 
     // col-12, while bootstrap would apply .col-12 until the md breakpoint
-    // then become a col-3) or 100% if nothing is set.
+    // then become a col-3).
 $minmax: "min-width"; 
 
 
