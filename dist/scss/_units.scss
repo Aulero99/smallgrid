@@ -3,7 +3,7 @@
 
 // NOTE this is the logic for calculating a logical size for 
 @function vol($size){ 
-    @return calc(($size/12) * $vh100) 
+    @return calc(($size/12) * $root-vh100) 
 };
 
 @function col($size){ 
@@ -11,11 +11,11 @@
 };
 
 @function height($size){ 
-    @return calc(($size/100) * $vh100)
+    @return calc(($size/100) * $root-vh100)
 };
 
 @function width($size){ 
-    @return calc(($size/100) * $vw100) 
+    @return calc(($size/100) * $root-vw100) 
 };
 
 @function pad($size){

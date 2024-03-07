@@ -104,7 +104,7 @@ All classes included are:
 - `.flex-bp-row` Implements display flex with flex-row
 - `.flex-bp-col` Implements display flex with flex-col
 - `.grow-bp-1` Implements flex-grow: 1;
-- `.align-bp-x` Sets flex alignment
+- `.align-bp-x`/`.align-items/content-bp-x` Sets flex alignment
     * Modifiers for `x`:
     *  `-start`
     * `-end`
@@ -112,7 +112,7 @@ All classes included are:
     * `-between`
     * `-around`
     * `-even`
-- `.justify-bp-x` Sets flex justify
+- `.justify-bp-x`/`.justify-items/content-bp-x` Sets flex justify
     * Modifiers for `x`:
     *  `-start`
     * `-end`

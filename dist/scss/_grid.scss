@@ -12,62 +12,57 @@
 
 
 // STUB - Container
-.container{
+
+%container-base{
     display: block;
     width: 100%;
-    max-width: 100vw;
     overflow-x: hidden;
     margin-left: auto;
     margin-right: auto;
+}
+
+%container-solid-base{
+    max-width: $root-container-shift-width;
+}
+
+.container{
+    @extend %container-base;
+    max-width: 100vw;
+}
+
+.container-solid, .container-shift{ 
+    @extend %container-base; 
+    --max-width: #{map.get($container-solid-map, 'xxl')};
+    max-width: var(--max-width);
 }
 
 @each $break, $screen in $breakpoint-map-ref{
     .container-#{$break}{ 
-        @extend .container;
+        @extend %container-base;
         max-width: map.get($container-solid-map, $break);
     }
 }
 
-.container-solid, .container-shift{
-    --max-width: #{map.get($container-solid-map, 'xxl')};
-    max-width: var(--max-width);
-    display: block;
-    width: 100%;
-    overflow-x: hidden;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 @each $break, $screen in reverse-breakpoints($breakpoint-map){
     .container-#{$break}-solid{
-        --max-width: #{map.get($container-solid-map, $xxl)};
-        max-width: var(--max-width);
-        display: block;
-        width: 100%;
-        overflow-x: hidden;
-        margin-left: auto;
-        margin-right: auto;
+        @extend %container-solid-base;
+        @extend %container-base;
     }
     .container-#{$break}-shift{
-        max-width: 100%;
-        display: block;
-        width: 100%;
-        overflow-x: hidden;
-        margin-left: auto;
-        margin-right: auto;
+        @extend %container-base;
     }
     @media (min-width: $screen) {
         :root{
             --#{$prefix}container-shift-width: #{map.get($container-solid-map, $break)};
         }
         .container-#{$break}-solid{
-            --max-width: #{map.get($container-solid-map, $break)};
+            max-width: #{map.get($container-solid-map, $break)};
         }
         .container-solid, .container-shift{
-            --max-width: #{map.get($container-solid-map, $break)};
+            max-width: #{map.get($container-solid-map, $break)};
         }
         .container-#{$break}-shift{
-            max-width: var(--#{$prefix}container-shift-width);
+            max-width: $root-container-shift-width;
         }
     }
 }
@@ -78,9 +73,6 @@
     width: 0;
     flex-grow: 1;
 }
-
-// NOTE this class is used to remove compilation errors from extension, and
-// reduces compilation size by about 7-12k
 %col-extend{
     --width: 100%;
     width: var(--width);
@@ -134,7 +126,7 @@
     }
 }
 
-// Breakpoint Logic
+// Breakpoints
 @each $break, $screen in $breakpoint-map-ref {
     @media (#{$minmax}: $screen){
         @each $k2, $v2 in $vol-map { 

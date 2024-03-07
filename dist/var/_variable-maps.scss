@@ -2,12 +2,6 @@
 @use 'sass:list';
 @import "./_variables.scss";
 
-// STUB - Utility Variables
-
-    // NOTE - The following variables are referential only and should not be overridden
-$vh100: var(--vh100);
-$vw100: var(--vw100);
-
 // STUB - Breakpoints
 
 
@@ -32,15 +26,15 @@ $vw100: var(--vw100);
 
     // NOTE - this must be in descending order if a custom configuration is applied
     // directly to the map
-$breakpoint-map:(
-    "xxl": $xxl,
-    "xl": $xl,
-    "lg": $lg,
-    "md": $md,
-    "sm": $sm,
-    "xs": $xs,
-    "xxs": $xxs
-) !default;
+$breakpoint-map:();
+
+@if $xxl != null    { $breakpoint-map:map.set($breakpoint-map, 'xxl', $xxl) }
+@if $xl != null     { $breakpoint-map:map.set($breakpoint-map, 'xl', $xl) }
+@if $lg != null     { $breakpoint-map:map.set($breakpoint-map, 'lg', $lg) }
+@if $md != null     { $breakpoint-map:map.set($breakpoint-map, 'md', $md) }
+@if $sm != null     { $breakpoint-map:map.set($breakpoint-map, 'sm', $sm) }
+@if $xs != null     { $breakpoint-map:map.set($breakpoint-map, 'xs', $xs) }
+@if $xxs != null    { $breakpoint-map:map.set($breakpoint-map, 'xxs', $xxs) }
 
 $breakpoint-map-ref: null;
 
@@ -56,15 +50,15 @@ $breakpoint-map-ref: null;
 
 // STUB - Container
 
-$container-solid-map:(
-    "xxl": $xxl * 0.95,
-    "xl": $xl * 0.95,
-    "lg": $lg * 0.95,
-    "md": $md * 0.95,
-    "sm": $sm * 0.95,
-    "xs": $xs * 0.95,
-    "xxs": $xxs * 0.95
-) !default;
+$container-solid-map:();
+
+@if $xxl != null    { $container-solid-map:map.set($container-solid-map, 'xxl', $xxl * $container-solid-margin) }
+@if $xl != null     { $container-solid-map:map.set($container-solid-map, 'xl', $xl * $container-solid-margin) }
+@if $lg != null     { $container-solid-map:map.set($container-solid-map, 'lg', $lg * $container-solid-margin) }
+@if $md != null     { $container-solid-map:map.set($container-solid-map, 'md', $md * $container-solid-margin) }
+@if $sm != null     { $container-solid-map:map.set($container-solid-map, 'sm', $sm * $container-solid-margin) }
+@if $xs != null     { $container-solid-map:map.set($container-solid-map, 'xs', $xs * $container-solid-margin) }
+@if $xxs != null    { $container-solid-map:map.set($container-solid-map, 'xxs', $xxs * $container-solid-margin) }
 
 // STUB - Col
 
@@ -86,18 +80,18 @@ $col-map:(
 // STUB - Vol
 
 $vol-map:(
-    "1": calc((1/12) * $vh100),
-    "2": calc((2/12) * $vh100),
-    "3": calc((3/12) * $vh100),
-    "4": calc((4/12) * $vh100),
-    "5": calc((5/12) * $vh100),
-    "6": calc((6/12) * $vh100),
-    "7": calc((7/12) * $vh100),
-    "8": calc((8/12) * $vh100),
-    "9": calc((9/12) * $vh100),
-    "10": calc((10/12) * $vh100),
-    "11": calc((11/12) * $vh100),
-    "12": $vh100
+    "1": calc((1/12) * $root-vh100),
+    "2": calc((2/12) * $root-vh100),
+    "3": calc((3/12) * $root-vh100),
+    "4": calc((4/12) * $root-vh100),
+    "5": calc((5/12) * $root-vh100),
+    "6": calc((6/12) * $root-vh100),
+    "7": calc((7/12) * $root-vh100),
+    "8": calc((8/12) * $root-vh100),
+    "9": calc((9/12) * $root-vh100),
+    "10": calc((10/12) * $root-vh100),
+    "11": calc((11/12) * $root-vh100),
+    "12": $root-vh100
 ) !default;
 
 // STUB - Gutter

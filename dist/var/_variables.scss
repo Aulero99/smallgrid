@@ -1,25 +1,33 @@
-// STUB - Grid
+// SECTION - Grid
 
     // NOTE 
     // This is the settings for the breakpoints in the grid.
     // By default this shares the same values as bootstrap, but are
     // readily changeable
 
-// Mobile - Portrait
-$xxs: 480px !default;
-// Mobile - Landscape
-$xs: 768px !default;
-// Tablet - Portrait
-$sm: 992px !default;
-// Tablet - Landscape
-$md: 1200px !default;
-// Monitor - Small
-$lg: 1400px !default;
-// Monitor - 1080p
-$xl: 1900px !default;
-// Monitor - 1440+
-$xxl: 2400px !default;
+    // Mobile - Portrait
+    // $xxs: 480px !default;
+    $xxs: null !default;
+    // Mobile - Landscape
+    // $xs: 768px !default;
+    $xs: null !default;
+    // Tablet - Portrait
+    $sm: 992px !default;
+    // Tablet - Landscape
+    // $md: 1200px !default;
+    $md: null !default;
+    // Monitor - Small
+    $lg: 1400px !default;
+    // Monitor - 1080p
+    $xl: 1900px !default;
+    // Monitor - 1440+
+    $xxl: 2400px !default;
 
+    $container-solid-margin: 0.95;
+
+// !SECTION
+
+// SECTION - Behavior
 
     // NOTE 
     // This is the variable that sets the behavior of the grid to use either
@@ -39,14 +47,17 @@ $xxl: 2400px !default;
     // until above the md breakpoint in which case it will default back to 
     // col-12, while bootstrap would apply .col-12 until the md breakpoint
     // then become a col-3).
-$minmax: "min-width"; 
 
-    // NOTE
-    // This variable sets the prefix for the root css variables.
-$prefix: ss- !default; 
+    $minmax: "min-width"; 
+
+        // NOTE
+        // This variable sets the prefix for the root css variables.
+    $prefix: ss- !default; 
+
+// !SECTION
 
 
-// STUB - Spacing 
+// SECTION - Spacing 
 
     // NOTE 
     // This sets the size of the gutter of the grid as well
@@ -54,124 +65,156 @@ $prefix: ss- !default;
     // All numbers will work here, larger numbers will make the
     // spacing feel more pillowy, smaller numbers will feel tighter
     // by default I ship suspendors with 1.5 rem
-$spacer: 1.5rem !default;
-    // NOTE - depreciated
-$gutter: $spacer !default;
+
+    $spacer: 1.5rem !default;
+        // NOTE - depreciated, will be removed by v 2.0
+    $gutter: $spacer !default;
 
 
-// Padding
+    // STUB - Padding
 
-$p0: 0 !default;
-$p1: calc( #{$spacer} * (1 / 5) ) !default;
-$p2: calc( #{$spacer} * (2 / 5) ) !default;
-$p3: calc( #{$spacer} * (3 / 5) ) !default;
-$p4: calc( #{$spacer} * (4 / 5) ) !default;
-$p5: #{$spacer} !default;
-
-
-// Margin
-
-$m0: 0 !default;
-$m1: calc( #{$spacer} * (1 / 5) ) !default;
-$m2: calc( #{$spacer} * (2 / 5) ) !default;
-$m3: calc( #{$spacer} * (3 / 5) ) !default;
-$m4: calc( #{$spacer} * (4 / 5) ) !default;
-$m5: #{$spacer} !default;
+    $p0: 0 !default;
+    $p1: calc( #{$spacer} * (1 / 5) ) !default;
+    $p2: calc( #{$spacer} * (2 / 5) ) !default;
+    $p3: calc( #{$spacer} * (3 / 5) ) !default;
+    $p4: calc( #{$spacer} * (4 / 5) ) !default;
+    $p5: #{$spacer} !default;
 
 
-// Gutters
+    // STUB - Margin
 
-$g0: 0 !default;
-$g1: 0.2 !default;
-$g2: 0.4 !default;
-$g3: 0.6 !default;
-$g4: 0.8 !default;
-$g5: 1 !default;
-
-// STUB - Typography
-
-// Fonts
-
-$font-size: 1rem !default;
-
-$font-weight-lighter:         lighter !default;
-$font-weight-light:           300 !default;
-$font-weight-normal:          400 !default;
-$font-weight-medium:          500 !default;
-$font-weight-semibold:        600 !default;
-$font-weight-bold:            700 !default;
-$font-weight-bolder:          bolder !default;
-
-$font-weight-base:            $font-weight-normal !default;
+    $m0: 0 !default;
+    $m1: calc( #{$spacer} * (1 / 5) ) !default;
+    $m2: calc( #{$spacer} * (2 / 5) ) !default;
+    $m3: calc( #{$spacer} * (3 / 5) ) !default;
+    $m4: calc( #{$spacer} * (4 / 5) ) !default;
+    $m5: #{$spacer} !default;
 
 
-// Headings
+    //STUB - Gutters
 
-$h-spacer: calc($spacer * (1/3));
+    $g0: 0 !default;
+    $g1: 0.2 !default;
+    $g2: 0.4 !default;
+    $g3: 0.6 !default;
+    $g4: 0.8 !default;
+    $g5: 1 !default;
 
-$headings-font-size: $font-size !default;
-$headings-mt: 0 !default;
-$headings-mb: $h-spacer !default;
-
-$h1-font-size: $headings-font-size * 2.5 !default;
-$h2-font-size: $headings-font-size * 2 !default;
-$h3-font-size: $headings-font-size * 1.75 !default;
-$h4-font-size: $headings-font-size * 1.5 !default;
-$h5-font-size: $headings-font-size * 1.25 !default;
-$h6-font-size: $headings-font-size !default;
-
-$headings-weight: null !default;
-
-$h1-font-weight: $headings-weight !default;
-$h2-font-weight: $headings-weight !default;
-$h3-font-weight: $headings-weight !default;
-$h4-font-weight: $headings-weight !default;
-$h5-font-weight: $headings-weight !default;
-$h6-font-weight: $headings-weight !default;
-
-$headings-color: inherit !default;
-
-$h1-color: $headings-color !default;
-$h2-color: $headings-color !default;
-$h3-color: $headings-color !default;
-$h4-color: $headings-color !default;
-$h5-color: $headings-color !default;
-$h6-color: $headings-color !default;
-
-$headings-line-height: inherit !default;
-
-$h1-line-height: $headings-line-height !default;
-$h2-line-height: $headings-line-height !default;
-$h3-line-height: $headings-line-height !default;
-$h4-line-height: $headings-line-height !default;
-$h5-line-height: $headings-line-height !default;
-$h6-line-height: $headings-line-height !default;
+// !SECTION
 
 
-// Paragraph
+// SECTION - Typography
 
-$p-spacer: calc($spacer * (2/3));
+    // STUB - Line Heights
 
-$p-mt: 0 !default;
-$p-mb: $p-spacer !default;
+    $line-height-base:            1.5 !default;
+    $line-height-sm:              1.25 !default;
+    $line-height-lg:              2 !default;
 
-// STUB - Styling
+    // STUB - Fonts
+
+    $font-size: 1rem !default;
+
+    $font-weight-lighter:         lighter !default;
+    $font-weight-light:           300 !default;
+    $font-weight-normal:          400 !default;
+    $font-weight-medium:          500 !default;
+    $font-weight-semibold:        600 !default;
+    $font-weight-bold:            700 !default;
+    $font-weight-bolder:          bolder !default;
+
+    $font-weight-base:            $font-weight-normal !default;
 
 
-// Shadows
+    // STUB - Headings
 
-$shadow-x: 0px !default;
-$shadow-y: 0px !default;
-$shadow-blur: 0px !default;
-$shadow-spread: 0px !default;
-$shadow-color: rgb(0, 0, 0) !default;
+    $h-spacer: calc($spacer * (1/3));
+
+    $headings-font-size: $font-size !default;
+    $headings-mt: 0 !default;
+    $headings-mb: $h-spacer !default;
+
+    $h1-font-size: $headings-font-size * 2.5 !default;
+    $h2-font-size: $headings-font-size * 2 !default;
+    $h3-font-size: $headings-font-size * 1.75 !default;
+    $h4-font-size: $headings-font-size * 1.5 !default;
+    $h5-font-size: $headings-font-size * 1.25 !default;
+    $h6-font-size: $headings-font-size !default;
+
+    $headings-weight: null !default;
+
+    $h1-font-weight: $headings-weight !default;
+    $h2-font-weight: $headings-weight !default;
+    $h3-font-weight: $headings-weight !default;
+    $h4-font-weight: $headings-weight !default;
+    $h5-font-weight: $headings-weight !default;
+    $h6-font-weight: $headings-weight !default;
+
+    $headings-color: inherit !default;
+
+    $h1-color: $headings-color !default;
+    $h2-color: $headings-color !default;
+    $h3-color: $headings-color !default;
+    $h4-color: $headings-color !default;
+    $h5-color: $headings-color !default;
+    $h6-color: $headings-color !default;
+
+    $headings-line-height: inherit !default;
+
+    $h1-line-height: $headings-line-height !default;
+    $h2-line-height: $headings-line-height !default;
+    $h3-line-height: $headings-line-height !default;
+    $h4-line-height: $headings-line-height !default;
+    $h5-line-height: $headings-line-height !default;
+    $h6-line-height: $headings-line-height !default;
 
 
-// Elevation
+    // STUB - Paragraph
 
-$elevation-x: $shadow-x !default;
-$elevation-y: $shadow-y + 1px !default;
-$elevation-blur: $shadow-blur + 1px !default;
-$elevation-spread: $shadow-spread - 1px !default;
-$elevation-color: $shadow-color !default;
-$elevation-opacity: 0.19 !default;
+    $p-spacer: calc($spacer * (2/3));
+
+    $p-mt: 0 !default;
+    $p-mb: $p-spacer !default;
+
+// !SECTION
+
+
+// SECTION - Styling
+
+    // STUB - Shadows
+
+    $shadow-x: 0px !default;
+    $shadow-y: 0px !default;
+    $shadow-blur: 0px !default;
+    $shadow-spread: 0px !default;
+    $shadow-color: rgb(0, 0, 0) !default;
+
+
+    // STUB - Elevation
+    $elevation-levels: 5 !default;
+
+    $elevation-x: $shadow-x !default;
+    $elevation-y: $shadow-y + 1px !default;
+    $elevation-blur: $shadow-blur + 1px !default;
+    $elevation-spread: $shadow-spread - 1px !default;
+    $elevation-color: $shadow-color !default;
+    $elevation-opacity: 0.19 !default;
+    
+// !SECTION
+
+
+// SECTION - :root replacers
+
+    $root-vh100: var(--vh100);
+    $root-vw100: var(--vw100);
+    // $root-xxs: var(--#{$prefix}xxs);
+    // $root-xs: var(--#{$prefix}xs);
+    // $root-sm: var(--#{$prefix}sm);
+    // $root-md: var(--#{$prefix}md);
+    // $root-lg: var(--#{$prefix}lg);
+    // $root-xl: var(--#{$prefix}xl);
+    // $root-xxl: var(--#{$prefix}xxl);
+    // $root-spacer: var(--#{$prefix}spacer);
+    $root-container-shift-width: var(--#{$prefix}container-shift-width);
+
+// !SECTION
