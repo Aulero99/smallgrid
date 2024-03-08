@@ -243,3 +243,5 @@ Coming Soon
             * `tie_` prefix removed
             * `vh` now called `vol` or `height` for better naming conventions
             * `tie_p` now called `pad`
+    * 1.5.2
+        *
