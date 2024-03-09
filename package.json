@@ -2,7 +2,7 @@
     "name": "suspendors",
     "private": false,
     "version": "1.5.2",
-    "description": "Small Scss grid system for smaller projects",
+    "description": "Scss framework with multiple applicable uses",
     "main": "dist/js/Suspendors.js",
     "module": "dist/js/Suspendors.esm.js",
     "sass": "dist/scss/suspendors.scss",
