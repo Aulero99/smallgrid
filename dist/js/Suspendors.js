@@ -7,12 +7,10 @@ class Suspendors {
 
     constructor(){ 
         logger.log('Suspendors Online')
-
+        
         volSizer.setup()
         setter.setup()
     }
-
-    setupSizerOnly(){ sizer.setup() }
 
         // NOTE
         // These are functions that will allow for

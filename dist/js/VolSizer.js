@@ -39,11 +39,11 @@ class VolSizer{
     dynamicHeight = h
 
     const root = document.querySelector(':root')
-
+    const prefix = vars.prefix
     // @ts-ignore
-    root.style.setProperty('--vh100', `${h}px`)
+    root.style.setProperty(`--${prefix}vh100`, `${h}px`)
     // @ts-ignore
-    root.style.setProperty('--vw100', `${w}px`)
+    root.style.setProperty(`--${prefix}vw100`, `${w}px`)
  }
 }
 

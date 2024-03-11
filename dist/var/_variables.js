@@ -1,21 +1,20 @@
 import { logger } from "../js/Logger"
 
 export const vars = {
-    spacer:24,
-    minmax:"max-width",
-    xxs:576,
-    xs:576,
-    sm:576,
-    md:768,
-    lg:992,
-    xl:1200,
-    xxl:1400,
+    spacer:0,
+    minmax:null,
+    prefix:null,
+    xxs:0,
+    xs:0,
+    sm:0,
+    md:0,
+    lg:0,
+    xl:0,
+    xxl:0,
     dev:true
 }
 
 const root = document.querySelector(':root')
-
-let override = false
 
 function getStyle(name){
     let select = getComputedStyle(root)
@@ -30,36 +29,75 @@ function returnNumbersOnly(string){
             output = output + string[i]
         }else{ break }
     }
-    return output
+    return Number(output)
+}
+
+function getCssRoot(){
+    const cssVars = Array.from(document.styleSheets)
+    .filter(
+      sheet =>
+        sheet.href === null || sheet.href.startsWith(window.location.origin)
+    )
+    .reduce(
+      (acc, sheet) =>
+        (acc = [
+          ...acc,
+          ...Array.from(sheet.cssRules).reduce(
+            (def, rule) =>
+              (def =
+                rule.selectorText === ":root"
+                  ? [
+                      ...def,
+                      ...Array.from(rule.style).filter(name =>
+                        name.startsWith("--")
+                      )
+                    ]
+                  : def),
+            []
+          )
+        ]),
+      []
+    );
+    return cssVars;
 }
 
 class Options{
-    constructor(){
-    }
+    constructor(){}
+
     importVariablesFromCss(){
-        if(override){ return }
-        logger.log('The defaults set are: ', vars)
+        let root = getCssRoot()
+        logger.log('the found root is: ', root)
         
         let prefix = getStyle('--prefix')
-        let xxs = returnNumbersOnly(getStyle(`--${prefix}xxs`))
-        let xs = returnNumbersOnly(getStyle(`--${prefix}xs`))
-        let sm = returnNumbersOnly(getStyle(`--${prefix}sm`))
-        let md = returnNumbersOnly(getStyle(`--${prefix}md`))
-        let lg = returnNumbersOnly(getStyle(`--${prefix}lg`))
-        let xl = returnNumbersOnly(getStyle(`--${prefix}xl`))
-        let xxl = returnNumbersOnly(getStyle(`--${prefix}xxl`))
-        let spacer = returnNumbersOnly(getStyle(`--${prefix}spacer`)) * returnNumbersOnly(window.getComputedStyle(document.body).fontSize)
-        let minmax = getStyle(`--${prefix}minmax`)
-        
-        vars.xxs = xxs
-        vars.xs = xs
-        vars.sm = sm
-        vars.md = md
-        vars.lg = lg
-        vars.xl = xl
-        vars.xxl = xxl
+        vars.prefix = prefix
+
+        for(let i = 0; i < root.length; i++){
+            let key = root[i].substring(2)
+            let val = getStyle(root[i])
+            let set = null
+
+            // skip if value is nulled or key is too long
+            if(val.length == 0 || key.length > 14){ continue }
+            // skip the prefix
+            if(key === 'prefix'){ continue }
+            // skip the vh100 and vw100 values, which we only need to set not get
+            if(key == `${prefix}vh100` || key == `${prefix}vw100`){ continue }
+            // skip the spacer, set that later
+            if(key === `${prefix}spacer`){ continue }
+            // skip if prefix is not detected, for the rest of the rooted variables
+            if(!key.includes(prefix)){ continue }
+
+            // set the value to a number if first digit is a number, otherwise set it as a string
+            if(!isNaN(val[0])){
+                set = returnNumbersOnly(val)
+            }else{ set = val }
+
+            vars[`${key.substring(prefix.length)}`] = set
+        }
+
+        // set the spacer as a result of the rem times the base px value of the font size
+        const spacer = returnNumbersOnly(getStyle(`--${prefix}spacer`)) * returnNumbersOnly(window.getComputedStyle(document.body).fontSize)
         vars.spacer = spacer
-        vars.minmax = minmax
         
         logger.log('The vars are now: ', vars)
         document.removeEventListener('DOMContentLoaded', options.importVariablesFromCss)
@@ -67,16 +105,6 @@ class Options{
     dev(){
         console.log('setting dev mode to true')
         vars.dev = true
-    }
-    overrideVars(obj){
-        override = true
-        vars.sm = obj.sm
-        vars.md = obj.md
-        vars.lg = obj.lg
-        vars.xl = obj.xl
-        vars.xxl = obj.xxl
-        vars.gutter = obj.gutter
-        vars.minmax = obj.minmax
     }
 }
 export const options = new Options()

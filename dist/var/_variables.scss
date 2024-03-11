@@ -6,16 +6,13 @@
     // readily changeable
 
     // Mobile - Portrait
-    // $xxs: 480px !default;
-    $xxs: null !default;
+    $xxs: 480px !default;
     // Mobile - Landscape
-    // $xs: 768px !default;
-    $xs: null !default;
+    $xs: 768px !default;
     // Tablet - Portrait
     $sm: 992px !default;
     // Tablet - Landscape
-    // $md: 1200px !default;
-    $md: null !default;
+    $md: 1200px !default;
     // Monitor - Small
     $lg: 1400px !default;
     // Monitor - 1080p
@@ -205,16 +202,16 @@
 
 // SECTION - :root replacers
 
-    $root-vh100: var(--vh100);
-    $root-vw100: var(--vw100);
-    // $root-xxs: var(--#{$prefix}xxs);
-    // $root-xs: var(--#{$prefix}xs);
-    // $root-sm: var(--#{$prefix}sm);
-    // $root-md: var(--#{$prefix}md);
-    // $root-lg: var(--#{$prefix}lg);
-    // $root-xl: var(--#{$prefix}xl);
-    // $root-xxl: var(--#{$prefix}xxl);
-    // $root-spacer: var(--#{$prefix}spacer);
+    $root-vh100: var(--#{$prefix}vh100);
+    $root-vw100: var(--#{$prefix}vw100);
+    $root-xxs: var(--#{$prefix}xxs);
+    $root-xs: var(--#{$prefix}xs);
+    $root-sm: var(--#{$prefix}sm);
+    $root-md: var(--#{$prefix}md);
+    $root-lg: var(--#{$prefix}lg);
+    $root-xl: var(--#{$prefix}xl);
+    $root-xxl: var(--#{$prefix}xxl);
+    $root-spacer: var(--#{$prefix}spacer);
     $root-container-shift-width: var(--#{$prefix}container-shift-width);
 
 // !SECTION
