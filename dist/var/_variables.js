@@ -11,7 +11,7 @@ export const vars = {
     lg:0,
     xl:0,
     xxl:0,
-    dev:true
+    dev:false
 }
 
 const root = document.querySelector(':root')
@@ -103,8 +103,8 @@ class Options{
         document.removeEventListener('DOMContentLoaded', options.importVariablesFromCss)
     }
     dev(){
-        console.log('setting dev mode to true')
         vars.dev = true
+        logger.log('set dev mode to true')
     }
 }
 export const options = new Options()
