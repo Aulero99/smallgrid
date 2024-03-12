@@ -1,6 +1,14 @@
 class ImgFade {
     setup(){
-        [].forEach.call(document.querySelectorAll('img[data-src]'), function(img) {
+        Array.prototype.forEach.call(document.querySelectorAll('img[data-src]'), function(img) {
+            img.setAttribute('src', img.getAttribute('data-src'));
+            img.onload = function() {
+                img.removeAttribute('data-src');
+            };
+        });
+    }
+    fadeAllInId(id){
+        Array.prototype.forEach.call(document.getElementById(id).querySelectorAll('img[data-src]'), function(img) {
             img.setAttribute('src', img.getAttribute('data-src'));
             img.onload = function() {
                 img.removeAttribute('data-src');
@@ -10,4 +18,3 @@ class ImgFade {
 }
 
 export const imgFade = new ImgFade()
-document.addEventListener('DOMContentLoaded', imgFade.setup)

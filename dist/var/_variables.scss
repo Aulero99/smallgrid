@@ -4,21 +4,23 @@
     // This is the settings for the breakpoints in the grid.
     // By default this shares the same values as bootstrap, but are
     // readily changeable
-
+    
+    // 375 480 600 768 992 1200 1440
+    
     // Mobile - Portrait
     $xxs: 480px !default;
     // Mobile - Landscape
-    $xs: 768px !default;
+    $xs: 600px !default;
     // Tablet - Portrait
-    $sm: 992px !default;
+    $sm: 768px !default;
     // Tablet - Landscape
-    $md: 1200px !default;
+    $md: 992px !default;
     // Monitor - Small
-    $lg: 1400px !default;
+    $lg: 1200px !default;
     // Monitor - 1080p
-    $xl: 1900px !default;
+    $xl: 1400px !default;
     // Monitor - 1440+
-    $xxl: 2400px !default;
+    $xxl: 1900px !default;
 
     $container-solid-margin: 0.95;
 
