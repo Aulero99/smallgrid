@@ -4,10 +4,12 @@ $skeleton-bg: linear-gradient(
     90deg,
     rgba(230, 230, 230, 0.65) 40%,
     rgba(255,255,255,0.65) 50%,
-    rgba(230, 230, 230, 0.65) 60%) right / 300% 100%;
+    rgba(230, 230, 230, 0.65) 60%) 
+    right / 300% 100%;;
 
 
 %skeleton{
+    display: block;
     cursor: progress;
     min-height: vol(1);
     mask:
@@ -49,36 +51,24 @@ $skeleton-bg: linear-gradient(
 
 // NOTE - these are the standard skeleton classes, they only work if the element is empty or has a loadable element
 
-*[data-skeleton]:not(.row), *[skeleton]:not(.row), .skeleton:not(.row){
+*[data-skeleton], *[skeleton], .skeleton{
     &:empty, &:has(img[data-src]){
         @extend %skeleton;
     }
 
 }
 
-*[data-skeleton-circle]:not(.row), *[skeleton-circle]:not(.row), .skeleton-circle:not(.row){
+*[data-skeleton-circle], *[skeleton-circle], .skeleton-circle{
     &:empty, &:has(img[data-src]){
         @extend %skeleton-circle;
     }
 }
 
-*[data-skeleton-bars]:not(.row), *[skeleton-bars]:not(.row), .skeleton-bars:not(.row){
+*[data-skeleton-bars], *[skeleton-bars], .skeleton-bars{
     &:empty, &:has(img[data-src]){
         @extend %skeleton-bars;
     }
 }
-
-// .skeleton:not(.row), *[data-skeleton]:not(.row), *[skeleton]:not(.row){
-//     &:empty, &:has(img[data-src]), *:not(br):empty, *:not(hr):empty, *:not(input):empty, *:not(img):empty{
-//         @extend %skeleton-base;
-//     }
-// }
-
-// .row[skeleton] > *, .skeleton.row .col > *{
-//     &:empty{
-//         @extend %skeleton-base;
-//     }
-// }
 
 img { 
     opacity: 1; 
@@ -112,18 +102,6 @@ img[data-src] {
             animation: loading 1.5s infinite;
         }
     }
-
-    // .skeleton:not(.row), *[skeleton]:not(.row){
-    //     &:empty, &:has(img[data-src]), *:not(br):empty, *:not(hr):empty, *:not(input):empty, *:not(img):empty{
-    //         animation: loading 1.5s infinite;
-    //     }
-    // }
-
-    // .row[skeleton] > *, .skeleton.row .col > *{
-    //     &:empty{
-    //         animation: loading 1.5s infinite;
-    //     }
-    // }
 
     img { 
         transition: 

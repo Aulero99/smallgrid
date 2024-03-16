@@ -17,8 +17,13 @@ export const vars = {
 const root = document.querySelector(':root')
 
 function getStyle(name){
-    let select = getComputedStyle(root)
-    return select.getPropertyValue(name)
+    let select = (root != undefined && root != null)? getComputedStyle(root) : null;
+    if (select != null){
+      return select.getPropertyValue(name)
+    }
+    else{
+      return null
+    }
 }
 
 function returnNumbersOnly(string){
@@ -62,8 +67,6 @@ function getCssRoot(){
 }
 
 class Options{
-    constructor(){}
-
     importVariablesFromCss(){
         let root = getCssRoot()
         logger.log('the found root is: ', root)

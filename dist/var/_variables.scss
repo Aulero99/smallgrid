@@ -5,8 +5,6 @@
     // By default this shares the same values as bootstrap, but are
     // readily changeable
     
-    // 375 480 600 768 992 1200 1440
-    
     // Mobile - Portrait
     $xxs: 480px !default;
     // Mobile - Landscape
@@ -17,12 +15,11 @@
     $md: 992px !default;
     // Monitor - Small
     $lg: 1200px !default;
-    // Monitor - 1080p
+    // Monitor - Medium
     $xl: 1400px !default;
-    // Monitor - 1440+
+    // Monitor - 1080+
     $xxl: 1900px !default;
 
-    $container-solid-margin: 0.95;
 
 // !SECTION
 
@@ -49,9 +46,18 @@
 
     $minmax: "min-width"; 
 
-        // NOTE
-        // This variable sets the prefix for the root css variables.
+    // This variable sets the prefix for the root css variables.
     $prefix: ss- !default; 
+    // Margin multiplier for container-solid 
+    $container-solid-margin: 0.95;
+    // Set the grid as a classes
+    $grid-as-class: true;
+    // Set the grid as tags
+    $grid-as-tag: true;
+    // sets the utilities to be parameters
+    $utility-as-parameter: true;
+    // sets the utilities to be classes
+    $utility-as-class: true;
 
 // !SECTION
 

@@ -41,43 +41,53 @@ then import each suspendors module as needed (coming soon)
 ## Using the Grid
 
 <p>
-Using the Suspendors grid is nearly identical to using the Bootstrap grid system with the similar syntax. By default Suspendors behaves similarly to bootstrap with the following breakpoints:
+Suspendors behaves similarly to bootstrap (or any other css framework using min-width for the @media rules) however with the following breakpoints by default:
 
-- sm: 576px;
-- md: 768px;
-- lg: 992px;
-- xl: 1200px;
-- xxl: 1400px;
+- xxs: 480px;
+- xs: 600px;
+- sm: 768px;
+- md: 992px;
+- lg: 1200px;
+- xl: 1400px;
+- xxl: 1900px;
 
-and the styles kick in below those points with a default taking priority in over the xxl breakpoint. You can change this behavior by changing the min/max-width parameter in the `_variables.scss` file, you can also modify the breakpoints as well within that same file, however make sure those values match those within the `Variables.json` file in order to ensure proper operation of the framework.
+anything with a `bp` modifier kick when above those points with a default taking priority in whenever under that breakpoint. You can change this behavior by changing the min/max-width parameter in the `_variables.scss` file or by providing your own variables by the same name as Suspendors adds `default` to all editable variables. 
 
-The parent of the grid is `.container` with each section of the grid requiring a `.row`, after that you can implement a grid by using `.col-bp-x` or `col-fill` style ranging from with `bp` being replaced by the corresponding breakpoint and `x` being replaced with 1-12 and col-fill will just fill in the available x-space available.
+Unlike Bootstrap or many other css frameworks, Suspendors, as of 1.6 builds the grid system on top of custom html tags instead of classes. Custom html tags have been technically supported for a very long time, yet have not been widely adapted into many css frameworks, however suspendors tries to make things easier to develop in by making developers utilize these custom tags, which increases readability and functionality awareness. By default these can;t be used as classes, however this can be changed to also be used as classes by setting the `$grid-as-class` variable to true. 
+
+The parent of the grid is `<ss-container>` or a derived container tag with each section of the grid requiring an `<ss-row>`, after that you can implement a grid by using `<col-x>` or `<col-fill>` with the ability to utilize a `col-bp-x` parameter to the tag replacing `bp` being replaced by the corresponding breakpoint and `x` being replaced with 1-12 and col-fill will just fill in the available x-space available.
 
 All classes included are:
 
 ### Grid
 
-- `.container` The parent of the 'grid' with width set to 100%
-    * `.container-x` as of 1.5.1 with max width of the corresponding breakpoint
-    * `container-solid` as of 1.5.1 with max-width set to next lowest breakpoint
-    * `container-shift` as of 1.5.1 switches behavior from solid to standard at given breakpoint
-- `.row` each row of the grid
+- `<ss-container>` The parent of the 'grid' with width set to 100%
+    * `<... container-x>` as of 1.5.1 with max width of the corresponding breakpoint
+    * `<container-solid>` as of 1.5.1 with max-width set to next lowest breakpoint
+    * `<... container-solid-x>` defaults to or from `<container-solid>` at breakpoint x
+    * `<container-shift>` as of 1.5.1 switches behavior from solid to standard at given breakpoint
+    * `<... container-shift-x>` defaults to or from `<container-shift>` at breakpoint x
+- `<ss-row>` each row of the grid
     * `.flex-col` applied to a `.row` will change the flex-direction to column from its default row, which has its uses
-    * `.gx-bp-x`,`.gy-bp-x`, & `g-bp-x` will adjust spacing between rows and containers as of 1.5.1
-    * `.cols-bp-x` as of 1.5.1 sets all `.col` elements within to behave like `.col-bp-x` classes
-- `.col-bp-x` designates a column in the row
+    * `<... gx-bp-x>`,`<... gy-bp-x>`, & `<... g-bp-x>` will adjust spacing between rows and containers as of 1.5.1
+    * `<... cols-bp-x>` as of 1.5.1 sets all `<ss-col>` elements within to behave like `<col-12 col-bp-x>` classes
+- `<... col-bp-x>` / `<col-x>` designates a column in the row
     * `x` between 1-12
-- `.col-fill` fills the available space in the row
+- `<col-fill>` fills the available space in the row
     * ex: a row with a col-3 and a col-fill will have the col-fill act like a col-9, and if that col-3 becomes a col-6 after a bp the col-fill will then act as a col-6
-- `.vol-bp-x` as of 1.5.1 sets the volume of an object (height based on the current screen size)
+- `<... vol-bp-x>` / `<vol-x>` as of 1.5.1 sets the volume of an object (height based on the current screen size)
     * `x` between 1-12
 
 ### Gutters
-    NOTE - gutters can only be applied to rows to space objects inside them
-- `g-bp-x` Adjusts x and y gutters
-- `gx-bp-x` Adjusts x gutter
-- `gy-bp-x` Adjusts y gutter
+    NOTE - since gutters can only be applied to rows to space objects inside them, they are set as parameters to be applied to <ss-row> tags
+
+- `<... g-bp-x>` Adjusts x and y gutters
+- `<... gx-bp-x>` Adjusts x gutter
+- `<... gy-bp-x>` Adjusts y gutter
     * Modifiers for `x` are 0-5
+
+## Utility Classes
+Outside of the grid, Suspendors comes with a spattering of useful utility classes. By default, these can't also be set as parameters, however if you would like to instead be able to apply utility classes as parameters you can change the `$utility-as-parameter` scss variable to true.
 
 ### Padding
 - `.p-bp-x` Padding All
@@ -122,7 +132,7 @@ All classes included are:
     * `-even`
 - `.grow-bp-1` sets the flex grow to 1
 
-### Utility Classes
+### Other Utility Classes
 
 - `.fill-bp` sets height and width to 100% and grow to 1
 - `.fill-bp-x` sets width to 100%
@@ -132,7 +142,19 @@ All classes included are:
 - `.d-bp-block` sets element to display block
 - `.e-bp-x`/`.elevation-bp-x` adds a box shadow to the element
 
-### Other Implementations
+## Skeleton Loader
+
+Suspendors, as of 1.6.1 comes with a built in skeleton loader. By default, the loader will only apply under 2 circumstances, either if the element is completely empty (including white space) or if the element contains an element with the `data-src` parameter applied to it and will continue to apply until that parameter is removed. 
+
+The skeleton loader will do a few things: First, it will apply a default display type to block. Second it will give a minimum display height set to `vol-1`. Last it will apply one of 3 types of loader backgrounds: the default that will just apply a background to the loading element, circle which will fill the element with the largest circle it can, and as bars which will apply 4 bars to the element like unloaded text.
+
+To apply the skeleton loader to an element you can either use one of the listed names as either a class name, an unmodified parameter (for elements like the `<col-x>` tags) or with a `data-` modifier for all default tags (like in a div). It isn't recommended to apply a skeleton loader to an element with an inline default (like spans), since you need height and width to display the loading element. 
+
+- `skeleton`
+- `skeleton-circle`
+- `skeleton-bars`
+
+## Other Implementations
 
 In addition to the utility and grid classes, Suspendors also comes with some custom units to be used in custom styles. These units are what the grid uses for its own styles and are activated by the `suspendors.setup()` function, and when used properly will stop the locking and jumping issues from standard vh and vw units. 
     
@@ -244,4 +266,4 @@ Coming Soon
             * `vh` now called `vol` or `height` for better naming conventions
             * `tie_p` now called `pad`
     * 1.5.2
-        *
+        * All grid classes changed to also support custom tags, Grid classes scheduled to be eliminated in 1.6.1

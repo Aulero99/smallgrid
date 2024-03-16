@@ -11,6 +11,7 @@
 // flexbox made with the grid
 
 
+
 // STUB - Container
 
 %container-base{
@@ -25,85 +26,218 @@
     max-width: $root-container-shift-width;
 }
 
-.container{
-    @extend %container-base;
-    max-width: 100vw;
-}
-
-.container-solid, .container-shift{ 
-    @extend %container-base; 
-    --max-width: #{map.get($container-solid-map, 'xxl')};
-    max-width: var(--max-width);
-}
-
-@each $break, $screen in $breakpoint-map-ref{
-    .container-#{$break}{ 
+@if $grid-as-class {    
+    .container{
         @extend %container-base;
-        max-width: map.get($container-solid-map, $break);
+        max-width: 100vw;
+    }
+      
+    .container-solid, .container-shift{ 
+        @extend %container-base; 
+        max-width: #{map.get($container-solid-map, 'xxl')};
+    }
+   
+    @each $break, $screen in $breakpoint-map-ref{
+        .container-#{$break}{ 
+            @extend %container-base;
+            max-width: map.get($container-solid-map, $break);
+        }
+    }
+
+    @each $break, $screen in reverse-breakpoints($breakpoint-map){
+        .container-#{$break}-solid{
+            @extend %container-solid-base;
+            @extend %container-base;
+        }
+        .container-#{$break}-shift{
+            @extend %container-base;
+        }
+        @media (min-width: $screen) {
+            .container-#{$break}-solid{
+                max-width: #{map.get($container-solid-map, $break)};
+            }
+            .container-solid, .container-shift{
+                max-width: #{map.get($container-solid-map, $break)};
+            }
+            .container-#{$break}-shift{
+                max-width: $root-container-shift-width;
+            }
+        }
+    }
+}
+
+@if $grid-as-tag {
+    #{$prefix}container{
+        @extend %container-base;
+        max-width: 100vw;
+    }
+      
+    #{$prefix}container-solid, #{$prefix}container-shift{ 
+        @extend %container-base; 
+        max-width: #{map.get($container-solid-map, 'xxl')};
+    }
+   
+    @each $break, $screen in $breakpoint-map-ref{
+        #{$prefix}container[#{$break}]{ 
+            @extend %container-base;
+            max-width: map.get($container-solid-map, $break);
+        }
+    }
+
+    @each $break, $screen in reverse-breakpoints($breakpoint-map){
+        #{$prefix}container-solid[#{$break}]{
+            @extend %container-solid-base;
+            @extend %container-base;
+        }
+        #{$prefix}container-shift[#{$break}]{
+            @extend %container-base;
+        }
+        @media (min-width: $screen) {
+            #{$prefix}container-solid[#{$break}]{
+                max-width: #{map.get($container-solid-map, $break)};
+            }
+            #{$prefix}container-solid, #{$prefix}container-shift{
+                max-width: #{map.get($container-solid-map, $break)};
+            }
+            #{$prefix}container-shift[#{$break}]{
+                max-width: $root-container-shift-width;
+            }
+        }
     }
 }
 
 @each $break, $screen in reverse-breakpoints($breakpoint-map){
-    .container-#{$break}-solid{
-        @extend %container-solid-base;
-        @extend %container-base;
-    }
-    .container-#{$break}-shift{
-        @extend %container-base;
-    }
     @media (min-width: $screen) {
         :root{
             --#{$prefix}container-shift-width: #{map.get($container-solid-map, $break)};
-        }
-        .container-#{$break}-solid{
-            max-width: #{map.get($container-solid-map, $break)};
-        }
-        .container-solid, .container-shift{
-            max-width: #{map.get($container-solid-map, $break)};
-        }
-        .container-#{$break}-shift{
-            max-width: $root-container-shift-width;
         }
     }
 }
 
 // STUB - Col
 
-.col-fill{
-    width: 0;
-    flex-grow: 1;
-}
-%col-extend{
+%col-extend {
     --width: 100%;
     width: var(--width);
+    display: block;
 }
 
-.col{
-    --width: 100%;
-    @extend %col-extend;
-}
-
-@each $break, $screen in $breakpoint-map-ref{
-    @each $name, $width in $col-map{
-        .col-#{$break}-#{$name}{ 
-            @extend %col-extend;
-         }
+@if $grid-as-class {    
+    .col{
+        @extend %col-extend;
     }
 }
 
-@each $name, $width in $col-map{
-    .col-#{$name}, .cols-#{$name} .col{
-        --width: #{$width};
-        width: var(--width); 
+@if $grid-as-tag {        
+    #{$prefix}col{
+        @extend %col-extend;
     }
 }
 
-@each $break, $screen in $breakpoint-map-ref{
-    @media screen and (#{$minmax}: $screen){
+@if $grid-as-class {    
+    @each $break, $screen in $breakpoint-map-ref{
         @each $name, $width in $col-map{
-            .col-#{$break}-#{$name}, .cols-#{$break}-#{$name} .col{ 
-                --width: #{$width};
-                width: var(--width); 
+            .col-#{$break}-#{$name}{ 
+                @extend %col-extend;
+             }
+        }
+    }
+}
+
+// @if $grid-as-tag{
+//     @each $break, $screen in $breakpoint-map-ref{
+//         @each $name, $width in $col-map{
+//             col-1, col-2, col-3, col-4, col-5, col-6, col-7, col-8, col-9, col-10, col-11, col-12, #{$prefix}col{
+//                 &[#{$break}-#{$name}]{ 
+//                     @extend %col-extend;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+@if $grid-as-class {
+    @each $name, $width in $col-map{
+        .col-#{$name}, .cols-#{$name} .col{
+            --width: #{$width};
+            width: var(--width); 
+        }
+    }
+}
+
+@if $grid-as-tag{
+    @each $name, $width in $col-map{
+        col-#{$name}, *[cols-#{$name}] >#{$prefix}col{
+            display: block;
+            --width: #{$width};
+            width: var(--width); 
+        }
+    }
+}
+
+@if $grid-as-class {    
+    @each $break, $screen in $breakpoint-map-ref{
+        @media screen and (#{$minmax}: $screen){
+            @each $name, $width in $col-map{
+                .col-#{$break}-#{$name}, .cols-#{$break}-#{$name} .col{ 
+                    --width: #{$width};
+                    width: var(--width); 
+                }
+            }
+        }
+    }
+}
+
+@if $grid-as-tag{
+    @each $break, $screen in $breakpoint-map-ref{
+        @media screen and (#{$minmax}: $screen){
+            col-1, col-2, col-3, col-4, col-5, col-6, col-7, col-8, col-9, col-10, col-11, col-12, #{$prefix}col{
+                @each $name, $width in $col-map{
+                    &[#{$break}-#{$name}]{ 
+                        --width: #{$width};
+                    }
+                }
+            }
+            @each $name, $width in $col-map{
+                *[cols-#{$break}-#{$name}] >#{$prefix}col{ 
+                    --width: #{$width};
+                }
+            }
+        }
+    }
+}
+
+@if $grid-as-class {
+    .col-fill{
+        width: 0;
+        flex-grow: 1;
+    }
+    @each $break, $screen in $breakpoint-map-ref{
+        @media screen and (#{$minmax}: $screen){
+            @each $name, $width in $col-map{
+                .col-#{$break}-fill{ 
+                    width: 0;
+                    flex-grow: 1;
+                }
+            }
+        }
+    }
+}
+
+@if $grid-as-tag {
+    col-fill{
+        width: 0;
+        flex-grow: 1;
+    }
+    @each $break, $screen in $breakpoint-map-ref{
+        @media screen and (#{$minmax}: $screen){
+            col-1, col-2, col-3, col-4, col-5, col-6, col-7, col-8, col-9, col-10, col-11, col-12, #{$prefix}col{
+                @each $name, $width in $col-map{
+                    &[col-#{$break}-fill]{ 
+                        width: 0;
+                        flex-grow: 1;
+                    }
+                }
             }
         }
     }
@@ -111,27 +245,63 @@
 
 // STUB - Row
 
-.row{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    &.flex-col{ flex-direction: column;}
-}
-
-// STUB - Vol
-
-@each $key, $value in $vol-map { 
-    .vol-#{$key} { 
-        height: $value;
+@if $grid-as-class{
+    .row{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        &.flex-col{ flex-direction: column;}
     }
 }
 
-// Breakpoints
-@each $break, $screen in $breakpoint-map-ref {
-    @media (#{$minmax}: $screen){
-        @each $k2, $v2 in $vol-map { 
-            .vol-#{$break}-#{$k2} { 
-                height: $v2;
+@if $grid-as-tag{
+    #{$prefix}row{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        &[flex-col]{ flex-direction: column;}
+    }
+}
+    
+// STUB - Vol
+
+@if $grid-as-class{
+    @each $key, $value in $vol-map { 
+        .vol-#{$key} { 
+            height: $value;
+        }
+    }
+}
+
+@if $grid-as-tag{
+    @each $key, $value in $vol-map { 
+        *[vol-#{$key}] { 
+            height: $value;
+        }
+    }
+}
+ 
+@if $grid-as-class{
+    // Class Breakpoints
+    @each $break, $screen in $breakpoint-map-ref {
+        @media (#{$minmax}: $screen){
+            @each $k2, $v2 in $vol-map { 
+                .vol-#{$break}-#{$k2} { 
+                    height: $v2;
+                }
+            }
+        }
+    }
+}
+
+@if $grid-as-tag{
+    // Tag Breakpoints
+    @each $break, $screen in $breakpoint-map-ref {
+        @media (#{$minmax}: $screen){
+            @each $k2, $v2 in $vol-map { 
+                *[vol-#{$break}-#{$k2}] { 
+                    height: $v2;
+                }
             }
         }
     }
