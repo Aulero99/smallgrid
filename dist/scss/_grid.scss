@@ -67,40 +67,42 @@
 }
 
 @if $grid-as-tag {
+
     #{$prefix}container{
         @extend %container-base;
         max-width: 100vw;
-    }
-      
-    #{$prefix}container-solid, #{$prefix}container-shift{ 
+
+        @each $break, $screen in $breakpoint-map-ref{
+            &[#{$break}]{
+                max-width: map.get($container-solid-map, $break);
+            }
+        }
+    }  
+
+    #{$prefix}container-solid { 
         @extend %container-base; 
+        width: $root-container-shift-width;
         max-width: #{map.get($container-solid-map, 'xxl')};
-    }
-   
-    @each $break, $screen in $breakpoint-map-ref{
-        #{$prefix}container[#{$break}]{ 
-            @extend %container-base;
-            max-width: map.get($container-solid-map, $break);
+
+        @each $break, $screen in reverse-breakpoints($breakpoint-map){
+            @media (min-width: $screen) {
+                &[#{$break}]{
+                    max-width: #{map.get($container-solid-map, $break)};
+                }
+            }
         }
     }
 
-    @each $break, $screen in reverse-breakpoints($breakpoint-map){
-        #{$prefix}container-solid[#{$break}]{
-            @extend %container-solid-base;
-            @extend %container-base;
-        }
-        #{$prefix}container-shift[#{$break}]{
-            @extend %container-base;
-        }
-        @media (min-width: $screen) {
-            #{$prefix}container-solid[#{$break}]{
-                max-width: #{map.get($container-solid-map, $break)};
-            }
-            #{$prefix}container-solid, #{$prefix}container-shift{
-                max-width: #{map.get($container-solid-map, $break)};
-            }
-            #{$prefix}container-shift[#{$break}]{
-                max-width: $root-container-shift-width;
+    #{$prefix}container-shift { 
+        @extend %container-base; 
+        width: 100%;
+        max-width: #{map.get($container-solid-map, 'xxl')};
+        
+        @each $break, $screen in reverse-breakpoints($breakpoint-map){
+            @media (min-width: $screen) {
+                &[#{$break}]{
+                    max-width: $root-container-shift-width;
+                }
             }
         }
     }
@@ -143,18 +145,6 @@
         }
     }
 }
-
-// @if $grid-as-tag{
-//     @each $break, $screen in $breakpoint-map-ref{
-//         @each $name, $width in $col-map{
-//             col-1, col-2, col-3, col-4, col-5, col-6, col-7, col-8, col-9, col-10, col-11, col-12, #{$prefix}col{
-//                 &[#{$break}-#{$name}]{ 
-//                     @extend %col-extend;
-//                 }
-//             }
-//         }
-//     }
-// }
 
 @if $grid-as-class {
     @each $name, $width in $col-map{
@@ -263,6 +253,7 @@
     }
 }
     
+
 // STUB - Vol
 
 @if $grid-as-class{
