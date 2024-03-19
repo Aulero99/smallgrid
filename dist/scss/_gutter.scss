@@ -74,32 +74,27 @@
     #{$prefix}row {
         // STUB Gutter Styling
         @each $key, $value in $gutter-map{
-
             &[gx-#{$key}], &[g-#{$key}] {
-                column-gap: calc($value * $spacer); 
-            }
-            
-            &[gx-#{$key}]:not([full]), &[g-#{$key}]:not([full]){
                 width: calc(100% - ($spacer * $value));
                 margin-left: calc($spacer * $value);
                 margin-right: 0;
-                
+                column-gap: calc($value * $spacer); 
+                &[full]{
+                    width: calc(100% + ($spacer * $value));
+                    margin-left: 0;
+                    margin-right: calc($spacer * $value * -1);
+                }
             }
 
-            &[full]{
-                width: calc(100% + ($spacer * $value));
-                margin-left: 0;
-                margin-right: calc($spacer * $value * -1);
-            }
-            
             &[gy-#{$key}], &[g-#{$key}]{
                 row-gap: calc($value * $spacer);
             }
 
             // NOTE
-            // since this is a custom tag, we don't need to check all tag names
+            // This is the logic for the col classes, combined together to save
+            // space
             &[g-#{$key}], &[gx-#{$key}]{
-                #{$prefix}col{
+                >*{
                     width: calc(var(--width) - ($value * $spacer));
                 }
             }
@@ -111,27 +106,27 @@
             @media screen and ($minmax: $screen){
                 @each $key, $value in $gutter-map{
                     &[gx-#{$break}-#{$key}], &[g-#{$break}-#{$key}]{
-                        column-gap: calc($value * $spacer);                         
+                        column-gap: calc($value * $spacer); 
                     }
 
-                    &[gx-#{$break}-#{$key}]:not([full]), &[g-#{$break}-#{$key}]:not([full]){                        
+                    &[gx-#{$break}-#{$key}], &[g-#{$break}-#{$key}]{
                         width: calc(100% - ($spacer * $value));
                         margin-left: calc($spacer * $value);
                         margin-right: 0;
+                        &[full]{
+                            width: calc(100% + ($spacer * $value));
+                            margin-left: 0;
+                            margin-right: calc($spacer * $value * -1);
+                        }
                     }
-
-                    &[full]{
-                        width: calc(100% + ($spacer * $value));
-                        margin-left: 0;
-                        margin-right: calc($spacer * $value * -1);
-                    }
+    
             
                     &[gy-#{$break}-#{$key}], &[g-#{$break}-#{$key}]{
                         row-gap: calc($value * $spacer);
                     }
 
                     &[g-#{$break}-#{$key}], &[gx-#{$break}-#{$key}]{
-                        >div,article,aside,details,figcaption,figure,footer,header,main,mark,nav,section,summary,time,a{
+                        >*{
                             width: calc(var(--width) - ($value * $spacer));
                         }
                     }
@@ -139,4 +134,72 @@
             }
         }
     }
+    // #{$prefix}row {
+    //     // STUB Gutter Styling
+    //     @each $key, $value in $gutter-map{
+
+    //         &[gx-#{$key}], &[g-#{$key}] {
+    //             column-gap: calc($value * $spacer); 
+    //         }
+            
+    //         &[gx-#{$key}]:not([full]), &[g-#{$key}]:not([full]){
+    //             width: calc(100% - ($spacer * $value));
+    //             margin-left: calc($spacer * $value);
+    //             margin-right: 0;
+                
+    //         }
+
+    //         &[full]{
+    //             width: calc(100% + ($spacer * $value));
+    //             margin-left: 0;
+    //             margin-right: calc($spacer * $value * -1);
+    //         }
+            
+    //         &[gy-#{$key}], &[g-#{$key}]{
+    //             row-gap: calc($value * $spacer);
+    //         }
+
+    //         // NOTE
+    //         // since this is a custom tag, we don't need to check all tag names
+    //         &[g-#{$key}], &[gx-#{$key}]{
+    //             >#{$prefix}col{
+    //                 width: calc(var(--width) - ($value * $spacer));
+    //             }
+    //         }
+    //     }
+
+    // // STUB Gutter breakpoint logic
+
+    //     @each $break, $screen in $breakpoint-map-ref{
+    //         @media screen and ($minmax: $screen){
+    //             @each $key, $value in $gutter-map{
+    //                 &[gx-#{$break}-#{$key}], &[g-#{$break}-#{$key}]{
+    //                     column-gap: calc($value * $spacer);                         
+    //                 }
+
+    //                 &[gx-#{$break}-#{$key}]:not([full]), &[g-#{$break}-#{$key}]:not([full]){                        
+    //                     width: calc(100% - ($spacer * $value));
+    //                     margin-left: calc($spacer * $value);
+    //                     margin-right: 0;
+    //                 }
+
+    //                 &[full]{
+    //                     width: calc(100% + ($spacer * $value));
+    //                     margin-left: 0;
+    //                     margin-right: calc($spacer * $value * -1);
+    //                 }
+            
+    //                 &[gy-#{$break}-#{$key}], &[g-#{$break}-#{$key}]{
+    //                     row-gap: calc($value * $spacer);
+    //                 }
+
+    //                 &[g-#{$break}-#{$key}], &[gx-#{$break}-#{$key}]{
+    //                     >#{$prefix}col{
+    //                         width: calc(var(--width) - ($value * $spacer));
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 }
