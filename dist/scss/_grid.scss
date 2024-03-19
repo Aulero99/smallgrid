@@ -255,44 +255,22 @@
     
 
 // STUB - Vol
+// NOTE
+// because of how useful volume is outside of the grid, I made it so that it can be used
+// both as a parameter, a data-vol custom parameter as well as a class
 
-@if $grid-as-class{
-    @each $key, $value in $vol-map { 
-        .vol-#{$key} { 
-            height: $value;
-        }
-    }
-}
-
-@if $grid-as-tag{
-    @each $key, $value in $vol-map { 
-        *[vol-#{$key}] { 
-            height: $value;
-        }
+@each $key, $value in $vol-map { 
+    *[vol-#{$key}], *[data-vol-#{$key}], .vol-#{$key} { 
+        height: $value;
     }
 }
  
-@if $grid-as-class{
-    // Class Breakpoints
-    @each $break, $screen in $breakpoint-map-ref {
-        @media (#{$minmax}: $screen){
-            @each $k2, $v2 in $vol-map { 
-                .vol-#{$break}-#{$k2} { 
-                    height: $v2;
-                }
-            }
-        }
-    }
-}
-
-@if $grid-as-tag{
-    // Tag Breakpoints
-    @each $break, $screen in $breakpoint-map-ref {
-        @media (#{$minmax}: $screen){
-            @each $k2, $v2 in $vol-map { 
-                *[vol-#{$break}-#{$k2}] { 
-                    height: $v2;
-                }
+// Breakpoints
+@each $break, $screen in $breakpoint-map-ref {
+    @media (#{$minmax}: $screen){
+        @each $k2, $v2 in $vol-map { 
+            *[vol-#{$break}-#{$k2}], *[data-vol-#{$break}-#{$k2}], .vol-#{$break}-#{$k2} { 
+                height: $v2;
             }
         }
     }
