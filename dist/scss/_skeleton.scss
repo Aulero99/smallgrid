@@ -74,12 +74,12 @@ $skeleton-bg: linear-gradient(
 
 img { 
     opacity: 1; 
-    filter: grayscale(0%);
+    filter: grayscale(0%) blur(0px);
 }
 
 img[data-src] { 
     opacity: 0; 
-    filter: grayscale(100%);
+    filter: grayscale(100%) blur(4px);
 }
 
 @media screen and (prefers-reduced-motion: no-preference) { 

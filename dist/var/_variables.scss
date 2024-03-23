@@ -21,13 +21,15 @@
     $xxl: 1900px !default;
 
     // sets the names of the grid classes
-    $container-name: 'container';
-    // names of the container options
-    $container-shift-name: 'shift';
-    $container-solid-name: 'solid';
-    $row-name: 'row';
-    $column-name: 'col';
-    $volume-name: 'vol';
+    $container-name: 'container' !default;
+    $container-shift-name: 'shift' !default;
+    $container-solid-name: 'solid' !default;
+    $row-name: 'row' !default;
+    $column-name: 'col' !default;
+    $volume-name: 'vol' !default;
+
+    // Margin multiplier for container-solid 
+    $container-solid-margin: 0.95 !default;
 
 
 // !SECTION
@@ -53,20 +55,20 @@
     // col-12, while bootstrap would apply .col-12 until the md breakpoint
     // then become a col-3).
 
-    $minmax: "min-width"; 
+    $minmax: "min-width" !default; 
 
     // This variable sets the prefix for the root css variables and class names.
     $prefix: 's' !default; 
-    // Margin multiplier for container-solid 
-    $container-solid-margin: 0.95;
     // Set the grid as a classes
-    $grid-as-class: false;
+    $grid-as-class: false !default;
     // Set the grid as tags
-    $grid-as-tag: true;
-    // sets the utilities to be parameters
-    $utility-as-parameter: true;
+    $grid-as-tag: true !default;
+    
+    // TODO
+    // sets the utilities to be attributes
+    $utility-as-attribute: false !default;
     // sets the utilities to be classes
-    $utility-as-class: true;
+    $utility-as-class: true !default;
 
 // !SECTION
 
@@ -87,7 +89,7 @@
         @return calc(((8px + 1.5625vw) * $multiplier))
     };
 
-    $spacer: spacer(1);
+    $spacer: spacer(1) !default;
 
     // STUB - Padding
 
@@ -131,7 +133,7 @@
 
     // STUB - Fonts
 
-    $font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
+    $font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif !default;
 
     // NOTE
     // shout-out to Matthew James Taylor (matthewjamestaylor.com) for his great
@@ -150,6 +152,7 @@
 
     $font-weight-base:            $font-weight-normal !default;
 
+    $text-align: left;
 
     // STUB - Headings
 
@@ -243,3 +246,6 @@
     $root-container-shift-width: var(--#{$prefix}-container-shift-width);
 
 // !SECTION
+
+    // FIXME - messed up the naming convention here
+    $utility-as-parameter: $utility-as-attribute;

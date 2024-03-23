@@ -51,11 +51,11 @@ Suspendors behaves similarly to bootstrap (or any other css framework using min-
 - xl: 1400px;
 - xxl: 1900px;
 
-anything with a `bp` modifier kick when above those points with a default taking priority in whenever under that breakpoint. You can change this behavior by changing the min/max-width parameter in the `_variables.scss` file or by providing your own variables by the same name as Suspendors adds `default` to all editable variables. 
+anything with a `bp` modifier kick when above those points with a default taking priority in whenever under that breakpoint. You can change this behavior by changing the min/max-width variable in the `_variables.scss` file or by providing your own variables by the same name as Suspendors adds `default` to all editable variables. 
 
 Unlike Bootstrap or many other css frameworks, Suspendors, as of 1.6 builds the grid system on top of custom html tags instead of classes. Custom html tags have been technically supported for a very long time, yet have not been widely adapted into many css frameworks, however suspendors tries to make things easier to develop in by making developers utilize these custom tags, which increases readability and functionality awareness. By default these can;t be used as classes, however this can be changed to also be used as classes by setting the `$grid-as-class` variable to true. 
 
-The parent of the grid is `<ss-container>` or a derived container tag with each section of the grid requiring an `<ss-row>`, after that you can implement a grid by using `<col-x>` or `<col-fill>` with the ability to utilize a `col-bp-x` parameter to the tag replacing `bp` being replaced by the corresponding breakpoint and `x` being replaced with 1-12 and col-fill will just fill in the available x-space available.
+The parent of the grid is `<s-container>` or a derived container tag with each section of the grid requiring an `<s-row>`, after that you can implement a grid by using `<s-col-x>` or `<s-col-fill>` with the ability to utilize a `bp-x` attribute to the tag replacing `bp` being replaced by the corresponding breakpoint and `x` being replaced with 1-12 and col-fill will just fill in the available x-space available.
 
 All classes included are:
 
@@ -67,18 +67,16 @@ All classes included are:
     * `<s-container-solid bp>` sets the max width of container to the bp
     * `<s-container-shift bp>` as of 1.5.1 switches behavior from solid to standard at given bp
 - `<s-row>` each row of the grid
-    * `<s-row gx-bp-x>`,`<... gy-bp-x>`, & `<... g-bp-x>` will adjust gutter spacing as of 1.5.1
+    * `<... gx-bp-x>`,`<... gy-bp-x>`, & `<... g-bp-x>` will adjust gutter spacing as of 1.5.1
         * NOTE - gutters, padding and margin all match each other.
-    * `<s-row cols-bp-x>` as of 1.5.1 sets all `<ss-col>` elements within to behave like `<s-col-x bp-x>` classes
+    * `<s-row cols-bp-x>` as of 1.5.1 sets all `<s-col>` elements within to behave like `<s-col-x bp-x>` classes
 - `<s-row cols-bp-x>` / `<s-col-x>` designates a column in the row
     * `x` between 1-12
 - `<s-col-fill>` fills the available space in the row
     * ex: a row with a col-3 and a col-fill will have the col-fill act like a col-9, and if that col-3 becomes a col-6 after a bp the col-fill will then act as a col-6
-- `<... vol-bp-x>` / `<s-vol-x>` / `.vol-x` as of 1.6.1 sets the volume of an object (height based on the current screen size)
-    * `x` between 1-12
 
-### Gutters
-    NOTE - since gutters can only be applied to rows to space objects inside them, they are set as parameters to be applied to <s-row> tags
+## Gutters
+    NOTE - since gutters can only be applied to rows to space objects inside them, they are set as attributes to be applied to <s-row> tags
 
 - `<... g-bp-x>` Adjusts x and y gutters
 - `<... gx-bp-x>` Adjusts x gutter
@@ -86,7 +84,13 @@ All classes included are:
     * Modifiers for `x` are 0-5
 
 ## Utility Classes
-Outside of the grid, Suspendors comes with a spattering of useful utility classes. By default, these can't also be set as parameters, however if you would like to instead be able to apply utility classes as parameters you can change the `$utility-as-parameter` scss variable to true.
+Outside of the grid, Suspendors comes with a spattering of useful utility classes. By default, these can't also be set as attributes, however if you would like to instead be able to apply utility classes as attributes you can change the `$utility-as-attribute` scss variable to true.
+
+### Volume
+- `.vol-bp-x`/`[data-vol-bp-x]`/`[vol-bp-x]`
+    - Sets the height of the element using javascript controlled height to limit scroll locking and jumping 
+    - modifiers for x are 1-12
+    - NOTE: this tag may be set as either a class or an attribute using either the `data-vol` on non-custom elements or without on custom elements, all three ways are scheduled to remain active for the time being.
 
 ### Padding
 - `.p-bp-x` Padding All
@@ -139,16 +143,17 @@ Outside of the grid, Suspendors comes with a spattering of useful utility classe
 - `.d-bp-none` sets element to display none
 - `.d-bp-flex` sets element to display flex
 - `.d-bp-block` sets element to display block
-- `.e-bp-x`/`.elevation-bp-x` adds a box shadow to the element
-    - NOTE - `.elevation` slated for removal as of 1.6.1 
+    - as of 1.6.1 all display ustility classes are set to !important
+- `.e-bp-x` adds a box shadow to the element
+    - NOTE - `.elevation-bp-x` slated for removal as of 1.6.1 
 
 ## Skeleton Loader
 
-Suspendors, as of 1.6.1 comes with a built in skeleton loader. By default, the loader will only apply under 2 circumstances, either if the element is completely empty (including white space) or if the element contains an element with the `data-src` parameter applied to it and will continue to apply until that parameter is removed. 
+Suspendors, as of 1.6.1 comes with a built in skeleton loader. By default, the loader will only apply under 2 circumstances, either if the element is completely empty (including white space) or if the element contains an element with the `data-src` attribute applied to it and will continue to apply until that attribute is removed. 
 
-The skeleton loader will do a few things: First, it will apply a default display type to block. Second it will give a minimum display height set to `16px`. Last it will apply one of 3 types of loader backgrounds: the default that will just apply a background to the loading element, circle which will fill the element with the largest circle it can, and as bars which will apply 4 bars to the element like unloaded text.
+The skeleton loader will do a few things: First, it will give a minimum display height set to `16px`. Last it will apply one of 3 types of loader backgrounds: the default that will just apply a background to the loading element, circle which will fill the element with the largest circle it can, and as bars which will apply 4 bars to the element like unloaded text.
 
-To apply the skeleton loader to an element you can either use one of the listed names as either a class name, an unmodified parameter (for elements like the `<col-x>` tags) or with a `data-` modifier for all default tags (like in a div). It isn't recommended to apply a skeleton loader to an element with an inline default (like spans), since you need height and width to display the loading element. 
+To apply the skeleton loader to an element you can either use one of the listed names as either a class name, an unmodified attribute (for elements like the `<s-col-x>` tags) or with a `data-` modifier for all default tags (like in a div). It isn't recommended to apply a skeleton loader to an element with an inline default (like spans), since you need height and width to display the loading element. 
 
 - `skeleton`
 - `skeleton-circle`
@@ -216,7 +221,11 @@ You can also get the environment with some callback functions that will return t
 </p>
 
 ## Modules
-Coming Soon
+As of 1.6.1 2 modules are currently in beta: Loaders and Registrar. 
+
+The Registrar module allows you to call `registrar.bp(function)` where bp is the breakpoint you want to initiate your code and the function is the code you want to run.
+
+The other module in beta is the loaders module. The loaders module currently has 2 functions (names subject to change) `loaders.loadAllImg()` which will find all img tags with a `data-src` attribute applied and lazy load them in as well as `loaders.loadAllImgInId(id)` which will take an element id and look for all images within it and lazy load all of them with a `data-src` attribute applied. Note that any img element with a `data-src` attribute applied will have a skeleton loader applied until the script finishes loading the img so make sure this function is called whenever a new element with that attribute is generated.
 
 ## Changelog
 

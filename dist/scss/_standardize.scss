@@ -15,7 +15,7 @@ html{
     font-size: $font-size-base;
 }
 
-html, body, main, header, footer, section{ 
+html, body, main, header, footer, section, article{ 
     margin: 0;
     padding: 0;
 }
@@ -27,7 +27,7 @@ body{
     font-weight: $font-weight-base;
     line-height: $line-height-base;
     font-family: $font-family;
-    text-align: null;
+    text-align: $text-align;
     color: null;
     background-color: null;
     -webkit-text-size-adjust: 100%;
@@ -38,6 +38,8 @@ body{
 section, div{
     position: relative;
 }
+
+// SECTION - Typography
 
 // Heading
 
@@ -107,7 +109,30 @@ p{
     margin-bottom: $p-mb;
 }
 
-// Lists
+// Blockquote
+
+blockquote{
+    margin: 0 0 1rem;
+}
+
+
+// Font-Styles
+
+strong,b{
+    font-weight: $font-weight-bolder;
+}
+
+i, em{
+    font-style: italic;
+}
+
+em {
+    font-weight: $font-weight-medium;
+}
+
+// !SECTION
+
+// SECTION - Lists
 
 ol,
 ul {
@@ -127,6 +152,13 @@ ol ul,
 ul ol {
   margin-bottom: 0;
 }
+
+// NOTE
+// This is not yet supported on IOS devices as of 1.6.1
+// However the default numbering system still works properly with this
+// set of styles applied since it does not unset any list styles
+// and will come into working order as soon as that silly glitch 
+// is ironed out in a later IOS update
 
 ol{
     counter-reset: lv1-counter, lv2-counter, lv3-counter, lv4-counter;
@@ -166,8 +198,96 @@ ol{
     }
 }
 
-// Bold
+// !SECTION
 
-strong,b{
-    font-weight: $font-weight-bolder;
+
+// SECTION - Forms
+
+
+table {
+  caption-side: bottom;
+  border-collapse: collapse;
 }
+
+caption {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: var(--bs-secondary-color);
+  text-align: left;
+}
+
+th {
+  text-align: inherit;
+  text-align: -webkit-match-parent;
+}
+
+thead, tbody, tfoot, tr, td, th {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+}
+
+label {
+  display: inline-block;
+}
+
+button {
+  border-radius: 0;
+}
+
+button:focus:not(:focus-visible) {
+  outline: 0;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+[role=button] {
+  cursor: pointer;
+}
+
+select {
+  word-wrap: normal;
+}
+select:disabled {
+  opacity: 1;
+}
+
+[list]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=week]):not([type=time])::-webkit-calendar-picker-indicator {
+  display: none !important;
+}
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+button:not(:disabled),
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled) {
+  cursor: pointer;
+}
+
+// !SECTION
+
+// SECTION - Other
+
+img, svg {
+    vertical-align: middle;
+  }
+
+// !SECTION

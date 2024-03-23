@@ -1,5 +1,5 @@
 class Loaders {
-    setup(){
+    loadAllImg(){
         Array.prototype.forEach.call(document.querySelectorAll('img[data-src]'), function(img) {
             img.setAttribute('src', img.getAttribute('data-src'));
             img.onload = function() {
@@ -7,7 +7,7 @@ class Loaders {
             };
         });
     }
-    fadeAllInId(id){
+    loadAllImgInId(id){
         Array.prototype.forEach.call(document.getElementById(id).querySelectorAll('img[data-src]'), function(img) {
             img.setAttribute('src', img.getAttribute('data-src'));
             img.onload = function() {
