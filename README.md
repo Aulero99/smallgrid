@@ -103,13 +103,13 @@ Outside of the grid, Suspendors comes with a spattering of useful utility classe
     * Modifiers for `x` are 0-5
 
 ### Margin 
-- `.m-bp-x` Padding All
-- `.mt-bp-x` Padding Top
-- `.mb-bp-x` Padding Bottom
-- `.ms-bp-x` Padding Start
-- `.me-bp-x` Padding End
-- `.mx-bp-x` Padding X
-- `.my-bp-x` Padding Y
+- `.m-bp-x` Margin All
+- `.mt-bp-x` Margin Top
+- `.mb-bp-x` Margin Bottom
+- `.ms-bp-x` Margin Start
+- `.me-bp-x` Margin End
+- `.mx-bp-x` Margin X
+- `.my-bp-x` Margin Y
     * Modifiers for `x` are 0-5
 
 ### Flexbox

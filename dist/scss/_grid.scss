@@ -121,6 +121,9 @@
 %col-extend {
     --width: 100%;
     width: var(--width);
+}
+
+%col-block-extend{
     display: block;
 }
 
@@ -133,6 +136,7 @@
 @if $grid-as-tag {        
     #{$prefix}-#{$column-name}{
         @extend %col-extend;
+        @extend %col-block-extend;
     }
 }
 
@@ -157,8 +161,10 @@
 
 @if $grid-as-tag{
     @each $name, $width in $col-map{
+        #{$prefix}-#{$column-name}-#{$name}{
+            @extend %col-block-extend;
+        }
         #{$prefix}-#{$column-name}-#{$name}, *[cols-#{$name}] >#{$prefix}-#{$column-name}{
-            display: block;
             --width: #{$width};
             width: var(--width); 
         }
@@ -216,6 +222,7 @@
 
 @if $grid-as-tag {
     #{$prefix}-#{$column-name}-fill{
+        @extend %col-block-extend;
         width: 0;
         flex-grow: 1;
     }

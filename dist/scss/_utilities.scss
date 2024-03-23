@@ -156,13 +156,10 @@ $elev-trans-fix: 1 - $elevation-opacity;
 
 // STUB - Display
 
-// FIXME
-// The display properties need !important in order to function at the moment,
-// This should be solved to adhere to best practices
 
-.d-flex,.flex-row,.flex-col{ display: flex !important; }
-.d-none{ display: none !important; }
-.d-block{ display: block !important; }
+.d-flex,.flex-row,.flex-col{ display: flex }
+.d-none{ display: none }
+.d-block{ display: block }
 
 .flex-row{
     flex-direction: row;
@@ -177,9 +174,9 @@ $elev-trans-fix: 1 - $elevation-opacity;
 
 @each $break, $screen in $breakpoint-map-ref{
     @media (#{$minmax}: $screen){
-        .d-#{$break}-none{ display: none !important; }
-        .d-#{$break}-flex,.flex-#{$break}-row,.flex-#{$break}-col{ display: flex !important; }
-        .d-#{$break}-block{ display: block !important; }
+        .d-#{$break}-none{ display: none  }
+        .d-#{$break}-flex,.flex-#{$break}-row,.flex-#{$break}-col{ display: flex  }
+        .d-#{$break}-block{ display: block  }
         .flex-#{$break}-row{
             flex-direction: row;
             .wrap{ flex-wrap: wrap; }
