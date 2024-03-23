@@ -71,7 +71,7 @@
 }
 
 @if $grid-as-tag {
-    #{$prefix}row {
+    #{$prefix}-row {
         // STUB Gutter Styling
         @each $key, $value in $gutter-map{
             &[gx-#{$key}], &[g-#{$key}] {
@@ -134,7 +134,7 @@
             }
         }
     }
-    // #{$prefix}row {
+    // #{$prefix}-row {
     //     // STUB Gutter Styling
     //     @each $key, $value in $gutter-map{
 
@@ -162,7 +162,7 @@
     //         // NOTE
     //         // since this is a custom tag, we don't need to check all tag names
     //         &[g-#{$key}], &[gx-#{$key}]{
-    //             >#{$prefix}col{
+    //             >#{$prefix}-col{
     //                 width: calc(var(--width) - ($value * $spacer));
     //             }
     //         }
@@ -194,7 +194,7 @@
     //                 }
 
     //                 &[g-#{$break}-#{$key}], &[gx-#{$break}-#{$key}]{
-    //                     >#{$prefix}col{
+    //                     >#{$prefix}-col{
     //                         width: calc(var(--width) - ($value * $spacer));
     //                     }
     //                 }

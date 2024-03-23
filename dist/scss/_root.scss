@@ -14,17 +14,17 @@
     // by imports
     
 :root{
-    --prefix: #{$prefix};
-    --#{$prefix}vh100: 100vh;
-    --#{$prefix}vw100: 100vw;
-    --#{$prefix}xxs: #{$xxs};
-    --#{$prefix}xs: #{$xs};
-    --#{$prefix}sm: #{$sm};
-    --#{$prefix}md: #{$md};
-    --#{$prefix}lg: #{$lg};
-    --#{$prefix}xl: #{$xl};
-    --#{$prefix}xxl: #{$xxl};
-    --#{$prefix}spacer: #{$spacer};
-    --#{$prefix}minmax: #{$minmax};
-    --#{$prefix}container-shift-width: 100%;
+    --prefix: #{$prefix}-;
+    --#{$prefix}-vh100: 100vh;
+    --#{$prefix}-vw100: 100vw;
+    --#{$prefix}-xxs: #{$xxs};
+    --#{$prefix}-xs: #{$xs};
+    --#{$prefix}-sm: #{$sm};
+    --#{$prefix}-md: #{$md};
+    --#{$prefix}-lg: #{$lg};
+    --#{$prefix}-xl: #{$xl};
+    --#{$prefix}-xxl: #{$xxl};
+    --#{$prefix}-spacer: #{$spacer};
+    --#{$prefix}-minmax: #{$minmax};
+    --#{$prefix}-container-shift-width: 100%;
 }

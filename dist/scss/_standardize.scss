@@ -8,17 +8,25 @@
     box-sizing: border-box;
 }
 
+html{
+    width: 100%;
+    overflow-x: hidden;
+    touch-action: manipulation;
+    font-size: $font-size-base;
+}
+
 html, body, main, header, footer, section{ 
     margin: 0;
     padding: 0;
 }
 
+
 body{
+    font-size: 1rem;
     min-height: 100vh;
-    font-family: null;
     font-weight: $font-weight-base;
-    font-size: $font-size;
-    line-height: null;
+    line-height: $line-height-base;
+    font-family: $font-family;
     text-align: null;
     color: null;
     background-color: null;
@@ -91,9 +99,10 @@ h6{
     color: $h6-color;
 }
 
-// Padding
+// Paragraph
 
 p{
+    font-size: $font-size;
     margin-top: $p-mt;
     margin-bottom: $p-mb;
 }

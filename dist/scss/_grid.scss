@@ -27,39 +27,39 @@
 }
 
 @if $grid-as-class {    
-    .container{
+    .#{$container-name}{
         @extend %container-base;
         max-width: 100vw;
     }
       
-    .container-solid, .container-shift{ 
+    .#{$container-name}-#{$container-solid-name}, .#{$container-name}-#{$container-shift-name}{ 
         @extend %container-base; 
         max-width: #{map.get($container-solid-map, 'xxl')};
     }
    
     @each $break, $screen in $breakpoint-map-ref{
-        .container-#{$break}{ 
+        .#{$container-name}-#{$break}{ 
             @extend %container-base;
             max-width: map.get($container-solid-map, $break);
         }
     }
 
     @each $break, $screen in reverse-breakpoints($breakpoint-map){
-        .container-#{$break}-solid{
+        .#{$container-name}-#{$break}-#{$container-solid-name}{
             @extend %container-solid-base;
             @extend %container-base;
         }
-        .container-#{$break}-shift{
+        .#{$container-name}-#{$break}-#{$container-shift-name}{
             @extend %container-base;
         }
         @media (min-width: $screen) {
-            .container-#{$break}-solid{
+            .#{$container-name}-#{$break}-#{$container-solid-name}{
                 max-width: #{map.get($container-solid-map, $break)};
             }
-            .container-solid, .container-shift{
+            .#{$container-name}-solid, .#{$container-name}-shift{
                 max-width: #{map.get($container-solid-map, $break)};
             }
-            .container-#{$break}-shift{
+            .#{$container-name}-#{$break}-#{$container-shift-name}{
                 max-width: $root-container-shift-width;
             }
         }
@@ -68,7 +68,7 @@
 
 @if $grid-as-tag {
 
-    #{$prefix}container{
+    #{$prefix}-#{$container-name}{
         @extend %container-base;
         max-width: 100vw;
 
@@ -79,7 +79,7 @@
         }
     }  
 
-    #{$prefix}container-solid { 
+    #{$prefix}-#{$container-name}-#{$container-solid-name} { 
         @extend %container-base; 
         width: $root-container-shift-width;
         max-width: #{map.get($container-solid-map, 'xxl')};
@@ -93,7 +93,7 @@
         }
     }
 
-    #{$prefix}container-shift { 
+    #{$prefix}-#{$container-name}-#{$container-shift-name} { 
         @extend %container-base; 
         width: 100%;
         max-width: #{map.get($container-solid-map, 'xxl')};
@@ -111,7 +111,7 @@
 @each $break, $screen in reverse-breakpoints($breakpoint-map){
     @media (min-width: $screen) {
         :root{
-            --#{$prefix}container-shift-width: #{map.get($container-solid-map, $break)};
+            --#{$prefix}-container-shift-width: #{map.get($container-solid-map, $break)};
         }
     }
 }
@@ -125,13 +125,13 @@
 }
 
 @if $grid-as-class {    
-    .col{
+    .#{$column-name}{
         @extend %col-extend;
     }
 }
 
 @if $grid-as-tag {        
-    #{$prefix}col{
+    #{$prefix}-#{$column-name}{
         @extend %col-extend;
     }
 }
@@ -139,7 +139,7 @@
 @if $grid-as-class {    
     @each $break, $screen in $breakpoint-map-ref{
         @each $name, $width in $col-map{
-            .col-#{$break}-#{$name}{ 
+            .#{$column-name}-#{$break}-#{$name}{ 
                 @extend %col-extend;
              }
         }
@@ -148,7 +148,7 @@
 
 @if $grid-as-class {
     @each $name, $width in $col-map{
-        .col-#{$name}, .cols-#{$name} .col{
+        .#{$column-name}-#{$name}, .cols-#{$name} .#{$column-name}{
             --width: #{$width};
             width: var(--width); 
         }
@@ -157,7 +157,7 @@
 
 @if $grid-as-tag{
     @each $name, $width in $col-map{
-        col-#{$name}, *[cols-#{$name}] >#{$prefix}col{
+        #{$prefix}-#{$column-name}-#{$name}, *[cols-#{$name}] >#{$prefix}-#{$column-name}{
             display: block;
             --width: #{$width};
             width: var(--width); 
@@ -169,7 +169,7 @@
     @each $break, $screen in $breakpoint-map-ref{
         @media screen and (#{$minmax}: $screen){
             @each $name, $width in $col-map{
-                .col-#{$break}-#{$name}, .cols-#{$break}-#{$name} .col{ 
+                .#{$column-name}-#{$break}-#{$name}, .cols-#{$break}-#{$name} .#{$column-name}{ 
                     --width: #{$width};
                     width: var(--width); 
                 }
@@ -181,7 +181,7 @@
 @if $grid-as-tag{
     @each $break, $screen in $breakpoint-map-ref{
         @media screen and (#{$minmax}: $screen){
-            col-1, col-2, col-3, col-4, col-5, col-6, col-7, col-8, col-9, col-10, col-11, col-12, #{$prefix}col{
+            #{$prefix}-#{$column-name}-1, #{$prefix}-#{$column-name}-2, #{$prefix}-#{$column-name}-3, #{$prefix}-#{$column-name}-4, #{$prefix}-#{$column-name}-5, #{$prefix}-#{$column-name}-6, #{$prefix}-#{$column-name}-7, #{$prefix}-#{$column-name}-8, #{$prefix}-#{$column-name}-9, #{$prefix}-#{$column-name}-10, #{$prefix}-#{$column-name}-11, #{$prefix}-#{$column-name}-12, #{$prefix}-#{$column-name}{
                 @each $name, $width in $col-map{
                     &[#{$break}-#{$name}]{ 
                         --width: #{$width};
@@ -189,7 +189,7 @@
                 }
             }
             @each $name, $width in $col-map{
-                *[cols-#{$break}-#{$name}] >#{$prefix}col{ 
+                *[cols-#{$break}-#{$name}] >#{$prefix}-#{$column-name}{ 
                     --width: #{$width};
                 }
             }
@@ -215,13 +215,13 @@
 }
 
 @if $grid-as-tag {
-    col-fill{
+    #{$prefix}-#{$column-name}-fill{
         width: 0;
         flex-grow: 1;
     }
     @each $break, $screen in $breakpoint-map-ref{
         @media screen and (#{$minmax}: $screen){
-            col-1, col-2, col-3, col-4, col-5, col-6, col-7, col-8, col-9, col-10, col-11, col-12, #{$prefix}col{
+            #{$prefix}-#{$column-name}-1, #{$prefix}-#{$column-name}-2, #{$prefix}-#{$column-name}-3, #{$prefix}-#{$column-name}-4, #{$prefix}-#{$column-name}-5, #{$prefix}-#{$column-name}-6, #{$prefix}-#{$column-name}-7, #{$prefix}-#{$column-name}-8, #{$prefix}-#{$column-name}-9, #{$prefix}-#{$column-name}-10, #{$prefix}-#{$column-name}-11, #{$prefix}-#{$column-name}-12, #{$prefix}-#{$column-name}{
                 @each $name, $width in $col-map{
                     &[col-#{$break}-fill]{ 
                         width: 0;
@@ -245,7 +245,7 @@
 }
 
 @if $grid-as-tag{
-    #{$prefix}row{
+    #{$prefix}-row{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -257,7 +257,7 @@
 // STUB - Vol
 // NOTE
 // because of how useful volume is outside of the grid, I made it so that it can be used
-// both as a parameter, a data-vol custom parameter as well as a class
+// both as a parameter on a custom element, a data-vol custom parameter as well as a class
 
 @each $key, $value in $vol-map { 
     *[vol-#{$key}], *[data-vol-#{$key}], .vol-#{$key} { 

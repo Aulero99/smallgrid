@@ -23,7 +23,7 @@ $skeleton-bg: linear-gradient(
 
 %skeleton-bars{
     cursor: progress;
-    // min-height: vol(1);
+    min-height: vol(1);
     mask:
         linear-gradient(#000 0 0) 0 0 / 100% 20%,
         linear-gradient(#000 0 0) 0 33% / 100% 20%,
