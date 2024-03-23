@@ -62,24 +62,23 @@ All classes included are:
 ### Grid
 
 - `<s-container>` The parent of the 'grid' with width set to 100%
-    * `<... bp>` as of 1.5.1 with max width of the corresponding breakpoint
-    * `<s-container-solid>` as of 1.5.1 with max-width set to next lowest breakpoint
-    * `<... bp>` defaults to or from `<container-solid>` at breakpoint x
-    * `<s-container-shift>` as of 1.5.1 switches behavior from solid to standard at given breakpoint
-    * `<... container-shift-x>` defaults to or from `<container-shift>` at breakpoint x
+    * `<s-container bp>` as of 1.5.1 sets max width of the corresponding breakpoint
+    * `<s-container-solid>` as of 1.5.1 with max-width set a point below breakpoint
+    * `<s-container-solid bp>` sets the max width of container to the bp
+    * `<s-container-shift bp>` as of 1.5.1 switches behavior from solid to standard at given bp
 - `<s-row>` each row of the grid
-    * `.flex-col` applied to a `.row` will change the flex-direction to column from its default row, which has its uses
-    * `<... gx-bp-x>`,`<... gy-bp-x>`, & `<... g-bp-x>` will adjust spacing between rows and containers as of 1.5.1
-    * `<... cols-bp-x>` as of 1.5.1 sets all `<ss-col>` elements within to behave like `<col-12 col-bp-x>` classes
+    * `<s-row gx-bp-x>`,`<... gy-bp-x>`, & `<... g-bp-x>` will adjust gutter spacing as of 1.5.1
+        * NOTE - gutters, padding and margin all match each other.
+    * `<s-row cols-bp-x>` as of 1.5.1 sets all `<ss-col>` elements within to behave like `<s-col-x bp-x>` classes
 - `<s-row cols-bp-x>` / `<s-col-x>` designates a column in the row
     * `x` between 1-12
 - `<s-col-fill>` fills the available space in the row
     * ex: a row with a col-3 and a col-fill will have the col-fill act like a col-9, and if that col-3 becomes a col-6 after a bp the col-fill will then act as a col-6
-- `<... vol-bp-x>` / `<vol-x>` as of 1.5.1 sets the volume of an object (height based on the current screen size)
+- `<... vol-bp-x>` / `<s-vol-x>` / `.vol-x` as of 1.6.1 sets the volume of an object (height based on the current screen size)
     * `x` between 1-12
 
 ### Gutters
-    NOTE - since gutters can only be applied to rows to space objects inside them, they are set as parameters to be applied to <ss-row> tags
+    NOTE - since gutters can only be applied to rows to space objects inside them, they are set as parameters to be applied to <s-row> tags
 
 - `<... g-bp-x>` Adjusts x and y gutters
 - `<... gx-bp-x>` Adjusts x gutter
@@ -141,12 +140,13 @@ Outside of the grid, Suspendors comes with a spattering of useful utility classe
 - `.d-bp-flex` sets element to display flex
 - `.d-bp-block` sets element to display block
 - `.e-bp-x`/`.elevation-bp-x` adds a box shadow to the element
+    - NOTE - `.elevation` slated for removal as of 1.6.1 
 
 ## Skeleton Loader
 
 Suspendors, as of 1.6.1 comes with a built in skeleton loader. By default, the loader will only apply under 2 circumstances, either if the element is completely empty (including white space) or if the element contains an element with the `data-src` parameter applied to it and will continue to apply until that parameter is removed. 
 
-The skeleton loader will do a few things: First, it will apply a default display type to block. Second it will give a minimum display height set to `vol-1`. Last it will apply one of 3 types of loader backgrounds: the default that will just apply a background to the loading element, circle which will fill the element with the largest circle it can, and as bars which will apply 4 bars to the element like unloaded text.
+The skeleton loader will do a few things: First, it will apply a default display type to block. Second it will give a minimum display height set to `16px`. Last it will apply one of 3 types of loader backgrounds: the default that will just apply a background to the loading element, circle which will fill the element with the largest circle it can, and as bars which will apply 4 bars to the element like unloaded text.
 
 To apply the skeleton loader to an element you can either use one of the listed names as either a class name, an unmodified parameter (for elements like the `<col-x>` tags) or with a `data-` modifier for all default tags (like in a div). It isn't recommended to apply a skeleton loader to an element with an inline default (like spans), since you need height and width to display the loading element. 
 
@@ -191,7 +191,7 @@ The event names you can listen to are as follows:
 
 <br/>
 
-    * NOTE - that the tie_over and tie_under events are dependant on the mode of suspendors set by the minmax variable. By default minmax is set to max-width, which sets the behavior of the grid to use max-width to determine its breakpoints and apply the -bp classes when BELOW the breakpoint. This means that tie_sm will apply when the screen is a 0-sm and tie_over will apply when screen is at xxl-infinity. As a comparison, bootstrap uses min-width to determine its breakpoints, which applies a -bp class when ABOVE the breakpoint, which would make the tie_under apply when the screen is between 0-sm, sm apply when screen is sm-md  and so on. You can configure this behavior by setting the minmax variable to the chosen value. 
+    * NOTE - that the over and under events are dependant on the mode of suspendors set by the minmax variable. By default minmax is set to min-width, which sets the behavior of the grid to use min-width to determine its breakpoints and apply the -bp classes when ABOVE the breakpoint. You can configure this behavior by setting the minmax variable to the chosen value. 
 
 To set up an event listener use standard javascript event listener syntax like this:
 
@@ -267,3 +267,8 @@ Coming Soon
             * `tie_p` now called `pad`
     * 1.5.2
         * All grid classes changed to also support custom tags, Grid classes scheduled to be eliminated in 1.6.1
+- 1.6 - Custom HTML Grid Classes
+    * 1.6.1
+        * grid classes changed to custom tags (see usage notes)
+        * `.elevation-bp-x` removed, now just `.e-bp-x`
+        * implemented responsive text, margin and padding.

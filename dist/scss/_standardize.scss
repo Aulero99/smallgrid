@@ -111,7 +111,7 @@ p{
 
 ol,
 ul {
-  padding-left: 2rem;
+    padding-left: 1.5rem;
 }
 
 ol,
@@ -126,6 +126,44 @@ ul ul,
 ol ul,
 ul ol {
   margin-bottom: 0;
+}
+
+ol{
+    counter-reset: lv1-counter, lv2-counter, lv3-counter, lv4-counter;
+    >li{
+        counter-increment: lv1-counter;
+        counter-reset: lv2-counter, lv3-counter, lv4-counter;
+        &::marker{
+            content: counter(lv1-counter) ". ";
+
+        }
+    }
+    >ol{
+        >li{
+            position: relative;
+            counter-increment: lv2-counter;
+            &::marker{
+                content: counter(lv1-counter) "." counter(lv2-counter) " ";
+
+            }
+        }
+        >ol{
+            >li{
+                counter-increment: lv3-counter;
+                &::marker{
+                    content: counter(lv1-counter) "." counter(lv2-counter) "." counter(lv3-counter) " ";
+                }
+            }
+            ol{
+                >li{
+                    counter-increment: lv4-counter;
+                    &::marker{
+                        content: counter(lv4-counter, lower-alpha) ". ";
+                    }
+                }
+            }
+        }
+    }
 }
 
 // Bold

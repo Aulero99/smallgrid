@@ -1,4 +1,4 @@
-class ImgFade {
+class Loaders {
     setup(){
         Array.prototype.forEach.call(document.querySelectorAll('img[data-src]'), function(img) {
             img.setAttribute('src', img.getAttribute('data-src'));
@@ -17,4 +17,4 @@ class ImgFade {
     }
 }
 
-export const imgFade = new ImgFade()
+export const loaders = new Loaders()
