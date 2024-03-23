@@ -1721,6 +1721,108 @@ img[data-src] {
     transition: opacity 0.3s, filter 0.6s;
   }
 }
+s-masonry {
+  --gap: 0;
+  --cols: 1;
+  display: block;
+  columns: var(--cols);
+  column-gap: calc((8px + 1.5625vw) * var(--gap) * 0.33333333);
+}
+
+s-mason[cols-0] {
+  --cols: 0;
+}
+
+s-mason[cols-1] {
+  --cols: 1;
+}
+
+s-mason[cols-2] {
+  --cols: 2;
+}
+
+s-mason[cols-3] {
+  --cols: 3;
+}
+
+s-mason[cols-4] {
+  --cols: 4;
+}
+
+s-mason[cols-5] {
+  --cols: 5;
+}
+
+s-mason[cols-6] {
+  --cols: 6;
+}
+
+s-mason[cols-7] {
+  --cols: 7;
+}
+
+s-mason[cols-8] {
+  --cols: 8;
+}
+
+s-mason[cols-9] {
+  --cols: 9;
+}
+
+s-mason[cols-10] {
+  --cols: 10;
+}
+
+s-mason[cols-11] {
+  --cols: 11;
+}
+
+s-mason[cols-12] {
+  --cols: 12;
+}
+
+s-mason[gap-1] {
+  --gap: 1;
+}
+s-mason[gap-1] > * {
+  --gap: 1;
+}
+
+s-mason[gap-2] {
+  --gap: 2;
+}
+s-mason[gap-2] > * {
+  --gap: 2;
+}
+
+s-mason[gap-3] {
+  --gap: 3;
+}
+s-mason[gap-3] > * {
+  --gap: 3;
+}
+
+s-mason[gap-4] {
+  --gap: 4;
+}
+s-mason[gap-4] > * {
+  --gap: 4;
+}
+
+s-mason[gap-5] {
+  --gap: 5;
+}
+s-mason[gap-5] > * {
+  --gap: 5;
+}
+
+s-mason > * {
+  --gap: 0;
+  margin: 0 calc((8px + 1.5625vw) * var(--gap) * 0.33333333) calc((8px + 1.5625vw) * var(--gap) * 0.33333333) 0;
+  display: inline-block;
+  width: 100%;
+}
+
 s-row[gx-0], s-row[g-0] {
   width: calc(100% - 0px);
   margin-left: 0px;
