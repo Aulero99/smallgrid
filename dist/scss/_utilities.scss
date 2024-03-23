@@ -3,258 +3,271 @@
 @import "../var/_variable-maps.scss";
 @import "./_units.scss";
 
-// STUB - Padding
 
-@each $key, $value in $paddings-map { 
-    .p-#{$key} { padding: $value; }
-    .pt-#{$key},.py-#{$key} { padding-top: $value; }
-    .pb-#{$key},.py-#{$key} { padding-bottom: $value; }
-    .ps-#{$key},.px-#{$key} { padding-left: $value; }
-    .pe-#{$key},.px-#{$key} { padding-right: $value; }
-}
+// SECTION - Size, Display and Spacing
 
-// Breakpoints
+    // STUB - Padding
 
-@each $break, $screen in $breakpoint-map-ref {
-    @media ($minmax: $screen){
-        @each $key, $value in $paddings-map { 
-            .p-#{$break}-#{$key} { padding: $value; }
-            .pt-#{$break}-#{$key},.py-#{$break}-#{$key} { padding-top: $value; }
-            .pb-#{$break}-#{$key},.py-#{$break}-#{$key} { padding-bottom: $value; }
-            .ps-#{$break}-#{$key},.px-#{$break}-#{$key} { padding-left: $value; }
-            .pe-#{$break}-#{$key},.px-#{$break}-#{$key} { padding-right: $value; }
-        }
+    @each $key, $value in $paddings-map { 
+        .p-#{$key} { padding: $value; }
+        .pt-#{$key},.py-#{$key} { padding-top: $value; }
+        .pb-#{$key},.py-#{$key} { padding-bottom: $value; }
+        .ps-#{$key},.px-#{$key} { padding-left: $value; }
+        .pe-#{$key},.px-#{$key} { padding-right: $value; }
     }
-}
 
-// STUB - Margins
+    // Breakpoints
 
-@each $key, $value in $margins-map { 
-    .m-#{$key} { margin: $value; }
-    .mt-#{$key},.my-#{$key} { margin-top: $value; }
-    .mb-#{$key},.my-#{$key} { margin-bottom: $value; }
-    .ms-#{$key},.mx-#{$key} { margin-left: $value; }
-    .me-#{$key},.mx-#{$key} { margin-right: $value; }
-}
-
-// Breakpoints
-
-@each $break, $screen in $breakpoint-map-ref {
-    @media ($minmax: $screen){
-        @each $key, $value in $margins-map { 
-            .m-#{$break}-#{$key} { margin: $value; }
-            .mt-#{$break}-#{$key},.my-#{$break}-#{$key} { margin-top: $value; }
-            .mb-#{$break}-#{$key},.my-#{$break}-#{$key} { margin-bottom: $value; }
-            .ms-#{$break}-#{$key},.mx-#{$break}-#{$key} { margin-left: $value; }
-            .me-#{$break}-#{$key},.mx-#{$break}-#{$key} { margin-right: $value; }
-        }
-    }
-}
-
-// STUB - Elevation
-
-// this is to make the user variable more intuitive
-$elev-trans-fix: 1 - $elevation-opacity;
-
-.e-0, .elevation-0 {
-    box-shadow: unset;
-}
-
-@for $i from 1 through $elevation-levels {
-    .e-#{$i}, .elevation-#{$i} { 
-            box-shadow:
-            $elevation-x 
-            $elevation-y + $i - 1
-            $elevation-blur + $i - 1
-            $elevation-spread
-            transparentize($shadow-color, ($elev-trans-fix)),
-            $elevation-x 
-            $elevation-y + $i - 1
-            $elevation-blur + $i - 1
-            $elevation-spread + 1
-            transparentize($shadow-color, ($elev-trans-fix + 0.06)),
-            $elevation-x 
-            $elevation-y
-            $elevation-blur + (($i - 1) * 3)
-            $elevation-spread + 1
-            transparentize($shadow-color, ($elev-trans-fix + 0.08))
-            ;
-    }
-}
-
-// Breakpoints
-
-@each $break, $screen in $breakpoint-map-ref {
-    @media ($minmax: $screen){
-        .e-#{$break}-0, .elevation-#{$break}-0{
-            box-shadow: unset;
-        }
-        
-        @for $i from 1 through 5 {
-            .e-#{$break}-#{$i}, .elevation-#{$break}-#{$i} { 
-                    box-shadow:
-                    $elevation-x 
-                    $elevation-y + $i - 1
-                    $elevation-blur + $i - 1
-                    $elevation-spread
-                    transparentize($shadow-color, ($elev-trans-fix)),
-                    $elevation-x 
-                    $elevation-y + $i - 1
-                    $elevation-blur + $i - 1
-                    $elevation-spread + 1
-                    transparentize($shadow-color, ($elev-trans-fix + 0.06)),
-                    $elevation-x 
-                    $elevation-y
-                    $elevation-blur + (($i - 1) * 3)
-                    $elevation-spread + 1
-                    transparentize($shadow-color, ($elev-trans-fix + 0.08))
-                    ;
+    @each $break, $screen in $breakpoint-map-ref {
+        @media ($minmax: $screen){
+            @each $key, $value in $paddings-map { 
+                .p-#{$break}-#{$key} { padding: $value; }
+                .pt-#{$break}-#{$key},.py-#{$break}-#{$key} { padding-top: $value; }
+                .pb-#{$break}-#{$key},.py-#{$break}-#{$key} { padding-bottom: $value; }
+                .ps-#{$break}-#{$key},.px-#{$break}-#{$key} { padding-left: $value; }
+                .pe-#{$break}-#{$key},.px-#{$break}-#{$key} { padding-right: $value; }
             }
         }
     }
-}
 
-// STUB - Fills
+    // STUB - Margins
 
-.fill{ flex-grow: 1; }
-.fill-x,.fill{ width: 100%; }
-.fill-y,.fill{ height: 100%; }
-
-// Breakpoints
-
-@each $break, $screen in $breakpoint-map-ref {
-    @media ($minmax: $screen){
-        .fill-#{$break}{ flex-grow: 1; }
-        .fill-#{$break}-x,.fill-#{$break}{ width: 100%; }
-        .fill-#{$break}-y,.fill-#{$break}{ height: 100%; }
+    @each $key, $value in $margins-map { 
+        .m-#{$key} { margin: $value; }
+        .mt-#{$key},.my-#{$key} { margin-top: $value; }
+        .mb-#{$key},.my-#{$key} { margin-bottom: $value; }
+        .ms-#{$key},.mx-#{$key} { margin-left: $value; }
+        .me-#{$key},.mx-#{$key} { margin-right: $value; }
     }
-}
 
-// STUB - Order
+    // Breakpoints
 
-.order-first, .o-first{ order: -1; }
-.order-last, .o-last{ order: 9999999999; }
-@for $i from 1 through 12{
-    .order-#{$i}, .o-#{$i}{
-        order: $i;
-    }
-}
-
-// Breakpoints
-
-@each $break, $screen in $breakpoint-map-ref {
-    @media ($minmax: $screen){
-        .order-#{$break}-first, .o-#{$break}-first{ order: -1; }
-        .order-#{$break}-last, .o-#{$break}-last{ order: 9999999999; }
-        @for $i from 1 through 12{
-            .order-#{$break}-#{$i}, .o-#{$break}-#{$i}{
-                order: $i;
+    @each $break, $screen in $breakpoint-map-ref {
+        @media ($minmax: $screen){
+            @each $key, $value in $margins-map { 
+                .m-#{$break}-#{$key} { margin: $value; }
+                .mt-#{$break}-#{$key},.my-#{$break}-#{$key} { margin-top: $value; }
+                .mb-#{$break}-#{$key},.my-#{$break}-#{$key} { margin-bottom: $value; }
+                .ms-#{$break}-#{$key},.mx-#{$break}-#{$key} { margin-left: $value; }
+                .me-#{$break}-#{$key},.mx-#{$break}-#{$key} { margin-right: $value; }
             }
         }
     }
-}
 
-// STUB - Display
+    // STUB - Fills
 
+    .fill{ flex-grow: 1; }
+    .fill-x, .fill{ width: 100%; }
+    .fill-y, .fill{ height: 100%; }
 
-.d-flex,.flex-row,.flex-col{ display: flex }
-.d-none{ display: none }
-.d-block{ display: block }
+    // Breakpoints
 
-.flex-row{
-    flex-direction: row;
-    .wrap{ flex-wrap: wrap; }
-}
-.flex-col{
-    flex-direction: column;
-    .wrap{ flex-wrap: wrap; }
-}
-
-// Breakpoints
-
-@each $break, $screen in $breakpoint-map-ref{
-    @media (#{$minmax}: $screen){
-        .d-#{$break}-none{ display: none  }
-        .d-#{$break}-flex,.flex-#{$break}-row,.flex-#{$break}-col{ display: flex  }
-        .d-#{$break}-block{ display: block  }
-        .flex-#{$break}-row{
-            flex-direction: row;
-            .wrap{ flex-wrap: wrap; }
-        }
-        .flex-#{$break}-col{
-            flex-direction: column;
-            .wrap{ flex-wrap: wrap; }
-        }
-        .grow-#{$break}-1{ flex-grow: 1; }
-        .fill-#{$break} { flex-grow: 1; }
-        .fill-#{$break}-x,.fill-#{$break}{ width: 100%; }
-        .fill-#{$break}-y,.fill-#{$break}{ height: 100%; }
-    }
-}
-
-// STUB - Alignment
-
-$flex-justify-alignment-values:(
-    'start':flex-start,
-    'center':center,
-    'end':flex-end,
-    'between':space-between,
-    'around':space-around,
-    'even':space-evenly
-) !default;
-
-@each $key, $value in $flex-justify-alignment-values{
-    .align-items-#{$key}, .align-#{$key}{
-        align-items: $value;
-    }
-    .align-content-#{$key}, .align-#{$key}{
-        align-content: $value;
-    }
-}
-
-@each $break, $screen in $breakpoint-map-ref{
-    @media (#{$minmax}: $screen){
-        @each $key, $value in $flex-justify-alignment-values{
-            .align-items-#{$break}-#{$key}, .align-#{$break}-#{$key}{
-                align-items: $value;
-            }
-            .align-content-#{$break}-#{$key}, .align-#{$break}-#{$key}{
-                align-content: $value;
-            }
+    @each $break, $screen in $breakpoint-map-ref {
+        @media ($minmax: $screen){
+            .fill-#{$break}{ flex-grow: 1; }
+            .fill-#{$break}-x,.fill-#{$break}{ width: 100%; }
+            .fill-#{$break}-y,.fill-#{$break}{ height: 100%; }
         }
     }
-}
 
-// STUB - Justification
+    // STUB - Display
 
-@each $key, $value in $flex-justify-alignment-values{
-    .justify-items-#{$key}, .justify-#{$key}{
-        justify-items: $value;
-    }
-    .justify-content-#{$key}, .justify-#{$key}{
-        justify-content: $value;
-    }
-}
 
-@each $break, $screen in $breakpoint-map-ref{
-    @media (#{$minmax}: $screen){
-        @each $key, $value in $flex-justify-alignment-values{
-            .justify-items-#{$break}-#{$key}, .justify-#{$break}-#{$key}{
-                justify-items: $value;
+    .d-none{ display: none; }
+    .d-block{ display: block; }
+    .d-inline{ display: inline; }
+    .d-grid{ display: grid; }
+
+    .d-flex, .flex-row, .flex-col, .flex-wrap{ display: flex; }
+    .flex-row{ flex-direction: row; }
+    .flex-col{ flex-direction: column; }
+    .flex-wrap{ flex-wrap: wrap; }
+    .flex-nowrap{ flex-wrap: nowrap; }
+
+    // Breakpoints
+
+    @each $break, $screen in $breakpoint-map-ref{
+        @media (#{$minmax}: $screen){
+            .d-#{$break}-none{ display: none;  }
+            .d-#{$break}-block{ display: block;  }
+            .d-#{$break}-inline{ display: inline;  }
+            .d-#{$break}-grid{ display: grid; }
+
+            .d-#{$break}-flex,.flex-#{$break}-row,.flex-#{$break}-col{ display: flex;  }
+            .flex-#{$break}-row{
+                flex-direction: row;
             }
-            .justify-content-#{$break}-#{$key}, .justify-#{$break}-#{$key}{
-                justify-content: $value;
+            .flex-#{$break}-col{
+                flex-direction: column;
+            }
+            .flex-#{$break}-wrap{ flex-wrap: wrap; }
+            .flex-#{$break}-nowrap{ flex-wrap: nowrap; }
+            .grow-#{$break}-1{ flex-grow: 1; }
+            .fill-#{$break} { flex-grow: 1; }
+            .fill-#{$break}-x,.fill-#{$break}{ width: 100%; }
+            .fill-#{$break}-y,.fill-#{$break}{ height: 100%; }
+        }
+    }
+
+// !SECTION
+
+// SECTION - Elevation
+
+    // this is to make the user variable more intuitive
+    $elev-trans-fix: 1 - $elevation-opacity;
+
+    .e-0, .elevation-0 {
+        box-shadow: unset;
+    }
+
+    @for $i from 1 through $elevation-levels {
+        .e-#{$i}, .elevation-#{$i} { 
+                box-shadow:
+                $elevation-x 
+                $elevation-y + $i - 1
+                $elevation-blur + $i - 1
+                $elevation-spread
+                transparentize($shadow-color, ($elev-trans-fix)),
+                $elevation-x 
+                $elevation-y + $i - 1
+                $elevation-blur + $i - 1
+                $elevation-spread + 1
+                transparentize($shadow-color, ($elev-trans-fix + 0.06)),
+                $elevation-x 
+                $elevation-y
+                $elevation-blur + (($i - 1) * 3)
+                $elevation-spread + 1
+                transparentize($shadow-color, ($elev-trans-fix + 0.08))
+                ;
+        }
+    }
+
+    // Breakpoints
+
+    @each $break, $screen in $breakpoint-map-ref {
+        @media ($minmax: $screen){
+            .e-#{$break}-0, .elevation-#{$break}-0{
+                box-shadow: unset;
+            }
+            
+            @for $i from 1 through 5 {
+                .e-#{$break}-#{$i}, .elevation-#{$break}-#{$i} { 
+                        box-shadow:
+                        $elevation-x 
+                        $elevation-y + $i - 1
+                        $elevation-blur + $i - 1
+                        $elevation-spread
+                        transparentize($shadow-color, ($elev-trans-fix)),
+                        $elevation-x 
+                        $elevation-y + $i - 1
+                        $elevation-blur + $i - 1
+                        $elevation-spread + 1
+                        transparentize($shadow-color, ($elev-trans-fix + 0.06)),
+                        $elevation-x 
+                        $elevation-y
+                        $elevation-blur + (($i - 1) * 3)
+                        $elevation-spread + 1
+                        transparentize($shadow-color, ($elev-trans-fix + 0.08))
+                        ;
+                }
             }
         }
     }
-}
 
-// STUB - Grow
+// !SECTION
 
-.grow-1{ flex-grow: 1; }
 
-@each $break, $screen in $breakpoint-map-ref{
-    @media (#{$minmax}: $screen){
-        .grow-#{$break}-1{ flex-grow: 1; }
+// SECTION - Flexbox
+
+    // STUB - Alignment
+
+    $flex-justify-alignment-values:(
+        'start':flex-start,
+        'center':center,
+        'end':flex-end,
+        'between':space-between,
+        'around':space-around,
+        'even':space-evenly
+    ) !default;
+
+    @each $key, $value in $flex-justify-alignment-values{
+        .align-items-#{$key}, .align-#{$key}{
+            align-items: $value;
+        }
+        .align-content-#{$key}, .align-#{$key}{
+            align-content: $value;
+        }
     }
-}
+
+    @each $break, $screen in $breakpoint-map-ref{
+        @media (#{$minmax}: $screen){
+            @each $key, $value in $flex-justify-alignment-values{
+                .align-items-#{$break}-#{$key}, .align-#{$break}-#{$key}{
+                    align-items: $value;
+                }
+                .align-content-#{$break}-#{$key}, .align-#{$break}-#{$key}{
+                    align-content: $value;
+                }
+            }
+        }
+    }
+
+    // STUB - Justification
+
+    @each $key, $value in $flex-justify-alignment-values{
+        .justify-items-#{$key}, .justify-#{$key}{
+            justify-items: $value;
+        }
+        .justify-content-#{$key}, .justify-#{$key}{
+            justify-content: $value;
+        }
+    }
+
+    @each $break, $screen in $breakpoint-map-ref{
+        @media (#{$minmax}: $screen){
+            @each $key, $value in $flex-justify-alignment-values{
+                .justify-items-#{$break}-#{$key}, .justify-#{$break}-#{$key}{
+                    justify-items: $value;
+                }
+                .justify-content-#{$break}-#{$key}, .justify-#{$break}-#{$key}{
+                    justify-content: $value;
+                }
+            }
+        }
+    }
+
+    // STUB - Grow
+
+    .grow-1{ flex-grow: 1; }
+
+    @each $break, $screen in $breakpoint-map-ref{
+        @media (#{$minmax}: $screen){
+            .grow-#{$break}-1{ flex-grow: 1; }
+        }
+    }
+
+    // STUB - Order
+
+    .order-first, .o-first{ order: -1; }
+    .order-last, .o-last{ order: 9999999999; }
+    @for $i from 1 through 12{
+        .order-#{$i}, .o-#{$i}{
+            order: $i;
+        }
+    }
+
+    // Breakpoints
+
+    @each $break, $screen in $breakpoint-map-ref {
+        @media ($minmax: $screen){
+            .order-#{$break}-first, .o-#{$break}-first{ order: -1; }
+            .order-#{$break}-last, .o-#{$break}-last{ order: 9999999999; }
+            @for $i from 1 through 12{
+                .order-#{$break}-#{$i}, .o-#{$break}-#{$i}{
+                    order: $i;
+                }
+            }
+        }
+    }
+
+// !SECTION
