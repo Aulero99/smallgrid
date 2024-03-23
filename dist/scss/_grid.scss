@@ -56,7 +56,7 @@
             .#{$container-name}-#{$break}-#{$container-solid-name}{
                 max-width: #{map.get($container-solid-map, $break)};
             }
-            .#{$container-name}-solid, .#{$container-name}-shift{
+            .#{$container-name}-solid, .#{$container-name}-#{$container-shift-name}{
                 max-width: #{map.get($container-solid-map, $break)};
             }
             .#{$container-name}-#{$break}-#{$container-shift-name}{

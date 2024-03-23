@@ -1,7 +1,6 @@
 @import "../var/_variables.scss";
 @import "../var/_variable-maps.scss";
 
-// NOTE this is the logic for calculating a logical size for 
 @function vol($size){ 
     @return calc(($size/12) * $root-vh100) 
 };
@@ -19,7 +18,7 @@
 };
 
 @function pad($size){
-    @return calc((1/5) * $spacer * $size)
+    @return spacer( ((1/5) * $size) )
 };
 
 @function mar($size){ @return pad($size) }

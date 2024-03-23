@@ -82,17 +82,21 @@
     // NOTE
     // shout-out to Matthew James Taylor (matthewjamestaylor.com) for his great
     // guide on responsive font and padding sizes
-    
-    $spacer: calc(8px + 1.5625vw) !default;
+
+    @function spacer($multiplier){
+        @return calc(((8px + 1.5625vw) * $multiplier))
+    };
+
+    $spacer: spacer(1);
 
     // STUB - Padding
 
-    $p0: 0 !default;
-    $p1: calc( #{$spacer} * 0.25 ) !default;
-    $p2: calc( #{$spacer} * 0.5 ) !default;
-    $p3: #{$spacer} !default;
-    $p4: calc( #{$spacer} * 1.5 ) !default;
-    $p5: calc( #{$spacer} * 2 ) !default;
+    $p0: 0px !default;
+    $p1: spacer(0.33333333) !default;
+    $p2: spacer(0.66666666) !default;
+    $p3: spacer(1) !default;
+    $p4: spacer(1.33333333) !default;
+    $p5: spacer(1.66666666) !default;
 
 
     // STUB - Margin
@@ -107,12 +111,12 @@
 
     //STUB - Gutters
 
-    $g0: 0 !default;
-    $g1: 0.2 !default;
-    $g2: 0.4 !default;
-    $g3: 0.6 !default;
-    $g4: 0.8 !default;
-    $g5: 1 !default;
+    $g0: 0px !default;
+    $g1: spacer(0.33333333) !default;
+    $g2: spacer(0.66666666) !default;
+    $g3: spacer(1) !default;
+    $g4: spacer(1.33333333) !default;
+    $g5: spacer(1.66666666) !default;
 
 // !SECTION
 

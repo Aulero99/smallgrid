@@ -4,8 +4,8 @@ class Pop{
     constructor(){
     }
     test(){
-        console.log('modals test successful')
-        logger.log('Dev Mode confirmed - modals')
+        console.log('pop test successful')
+        logger.log('Dev Mode confirmed - pop')
     }
 }
 

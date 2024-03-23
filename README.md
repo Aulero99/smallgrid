@@ -61,19 +61,19 @@ All classes included are:
 
 ### Grid
 
-- `<ss-container>` The parent of the 'grid' with width set to 100%
-    * `<... container-x>` as of 1.5.1 with max width of the corresponding breakpoint
-    * `<container-solid>` as of 1.5.1 with max-width set to next lowest breakpoint
-    * `<... container-solid-x>` defaults to or from `<container-solid>` at breakpoint x
-    * `<container-shift>` as of 1.5.1 switches behavior from solid to standard at given breakpoint
+- `<s-container>` The parent of the 'grid' with width set to 100%
+    * `<... bp>` as of 1.5.1 with max width of the corresponding breakpoint
+    * `<s-container-solid>` as of 1.5.1 with max-width set to next lowest breakpoint
+    * `<... bp>` defaults to or from `<container-solid>` at breakpoint x
+    * `<s-container-shift>` as of 1.5.1 switches behavior from solid to standard at given breakpoint
     * `<... container-shift-x>` defaults to or from `<container-shift>` at breakpoint x
-- `<ss-row>` each row of the grid
+- `<s-row>` each row of the grid
     * `.flex-col` applied to a `.row` will change the flex-direction to column from its default row, which has its uses
     * `<... gx-bp-x>`,`<... gy-bp-x>`, & `<... g-bp-x>` will adjust spacing between rows and containers as of 1.5.1
     * `<... cols-bp-x>` as of 1.5.1 sets all `<ss-col>` elements within to behave like `<col-12 col-bp-x>` classes
-- `<... col-bp-x>` / `<col-x>` designates a column in the row
+- `<s-row cols-bp-x>` / `<s-col-x>` designates a column in the row
     * `x` between 1-12
-- `<col-fill>` fills the available space in the row
+- `<s-col-fill>` fills the available space in the row
     * ex: a row with a col-3 and a col-fill will have the col-fill act like a col-9, and if that col-3 becomes a col-6 after a bp the col-fill will then act as a col-6
 - `<... vol-bp-x>` / `<vol-x>` as of 1.5.1 sets the volume of an object (height based on the current screen size)
     * `x` between 1-12
