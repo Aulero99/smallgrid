@@ -10,26 +10,40 @@
     display: block;
     columns: var(--cols);
     column-gap: calc(((8px + 1.5625vw) * var(--gap) * 0.33333333));
+    >* {
+        --gap: 0;
+        margin: 0 calc(((8px + 1.5625vw) * var(--gap) * 0.33333333)) calc(((8px + 1.5625vw) * var(--gap) * 0.33333333)) 0;
+        display: inline-block;
+        width: 100%;
+      } 
 }
 
 @for $i from 0 through 12{
-    s-mason[cols-#{$i}]{ --cols: #{$i}; }
+    #{$prefix}-masonry[cols-#{$i}]{ --cols: #{$i}; }
 }
 
 @for $i from 1 through 5{
-    s-mason[gap-#{$i}]{ 
+    #{$prefix}-masonry[gap-#{$i}]{ 
         --gap: #{$i};
         >*{
-            --gap: #{$i};
+            --gap: calc(#{$i} / 2);
         } 
     } 
 }
 
-s-mason{
-    >* {
-    --gap: 0;
-    margin: 0 calc(((8px + 1.5625vw) * var(--gap) * 0.33333333)) calc(((8px + 1.5625vw) * var(--gap) * 0.33333333)) 0;
-    display: inline-block;
-    width: 100%;
-  } 
+@each $break, $screen in $breakpoint-map-ref{
+    @media screen and (#{$minmax}: $screen){
+        @for $i from 0 through 12{
+            #{$prefix}-masonry[cols-#{$break}-#{$i}]{ --cols: #{$i}; }
+        }
+        
+        @for $i from 1 through 5{
+            #{$prefix}-masonry[gap-#{$break}-#{$i}]{ 
+                --gap: #{$i};
+                >*{
+                    --gap: calc(#{$i} / 2);
+                } 
+            } 
+        }
+    }
 }

@@ -1728,99 +1728,707 @@ s-masonry {
   columns: var(--cols);
   column-gap: calc((8px + 1.5625vw) * var(--gap) * 0.33333333);
 }
-
-s-mason[cols-0] {
-  --cols: 0;
-}
-
-s-mason[cols-1] {
-  --cols: 1;
-}
-
-s-mason[cols-2] {
-  --cols: 2;
-}
-
-s-mason[cols-3] {
-  --cols: 3;
-}
-
-s-mason[cols-4] {
-  --cols: 4;
-}
-
-s-mason[cols-5] {
-  --cols: 5;
-}
-
-s-mason[cols-6] {
-  --cols: 6;
-}
-
-s-mason[cols-7] {
-  --cols: 7;
-}
-
-s-mason[cols-8] {
-  --cols: 8;
-}
-
-s-mason[cols-9] {
-  --cols: 9;
-}
-
-s-mason[cols-10] {
-  --cols: 10;
-}
-
-s-mason[cols-11] {
-  --cols: 11;
-}
-
-s-mason[cols-12] {
-  --cols: 12;
-}
-
-s-mason[gap-1] {
-  --gap: 1;
-}
-s-mason[gap-1] > * {
-  --gap: 1;
-}
-
-s-mason[gap-2] {
-  --gap: 2;
-}
-s-mason[gap-2] > * {
-  --gap: 2;
-}
-
-s-mason[gap-3] {
-  --gap: 3;
-}
-s-mason[gap-3] > * {
-  --gap: 3;
-}
-
-s-mason[gap-4] {
-  --gap: 4;
-}
-s-mason[gap-4] > * {
-  --gap: 4;
-}
-
-s-mason[gap-5] {
-  --gap: 5;
-}
-s-mason[gap-5] > * {
-  --gap: 5;
-}
-
-s-mason > * {
+s-masonry > * {
   --gap: 0;
   margin: 0 calc((8px + 1.5625vw) * var(--gap) * 0.33333333) calc((8px + 1.5625vw) * var(--gap) * 0.33333333) 0;
   display: inline-block;
   width: 100%;
+}
+
+s-masonry[cols-0] {
+  --cols: 0;
+}
+
+s-masonry[cols-1] {
+  --cols: 1;
+}
+
+s-masonry[cols-2] {
+  --cols: 2;
+}
+
+s-masonry[cols-3] {
+  --cols: 3;
+}
+
+s-masonry[cols-4] {
+  --cols: 4;
+}
+
+s-masonry[cols-5] {
+  --cols: 5;
+}
+
+s-masonry[cols-6] {
+  --cols: 6;
+}
+
+s-masonry[cols-7] {
+  --cols: 7;
+}
+
+s-masonry[cols-8] {
+  --cols: 8;
+}
+
+s-masonry[cols-9] {
+  --cols: 9;
+}
+
+s-masonry[cols-10] {
+  --cols: 10;
+}
+
+s-masonry[cols-11] {
+  --cols: 11;
+}
+
+s-masonry[cols-12] {
+  --cols: 12;
+}
+
+s-masonry[gap-1] {
+  --gap: 1;
+}
+s-masonry[gap-1] > * {
+  --gap: 1;
+}
+
+s-masonry[gap-2] {
+  --gap: 2;
+}
+s-masonry[gap-2] > * {
+  --gap: 2;
+}
+
+s-masonry[gap-3] {
+  --gap: 3;
+}
+s-masonry[gap-3] > * {
+  --gap: 3;
+}
+
+s-masonry[gap-4] {
+  --gap: 4;
+}
+s-masonry[gap-4] > * {
+  --gap: 4;
+}
+
+s-masonry[gap-5] {
+  --gap: 5;
+}
+s-masonry[gap-5] > * {
+  --gap: 5;
+}
+
+s-masonry[cols-xxs-0] {
+  --cols: 0;
+}
+
+s-masonry[cols-xxs-1] {
+  --cols: 1;
+}
+
+s-masonry[cols-xxs-2] {
+  --cols: 2;
+}
+
+s-masonry[cols-xxs-3] {
+  --cols: 3;
+}
+
+s-masonry[cols-xxs-4] {
+  --cols: 4;
+}
+
+s-masonry[cols-xxs-5] {
+  --cols: 5;
+}
+
+s-masonry[cols-xxs-6] {
+  --cols: 6;
+}
+
+s-masonry[cols-xxs-7] {
+  --cols: 7;
+}
+
+s-masonry[cols-xxs-8] {
+  --cols: 8;
+}
+
+s-masonry[cols-xxs-9] {
+  --cols: 9;
+}
+
+s-masonry[cols-xxs-10] {
+  --cols: 10;
+}
+
+s-masonry[cols-xxs-11] {
+  --cols: 11;
+}
+
+s-masonry[cols-xxs-12] {
+  --cols: 12;
+}
+
+s-masonry[gap-xxs-1] {
+  --gap: 1;
+}
+s-masonry[gap-xxs-1] > * {
+  --gap: 1;
+}
+
+s-masonry[gap-xxs-2] {
+  --gap: 2;
+}
+s-masonry[gap-xxs-2] > * {
+  --gap: 2;
+}
+
+s-masonry[gap-xxs-3] {
+  --gap: 3;
+}
+s-masonry[gap-xxs-3] > * {
+  --gap: 3;
+}
+
+s-masonry[gap-xxs-4] {
+  --gap: 4;
+}
+s-masonry[gap-xxs-4] > * {
+  --gap: 4;
+}
+
+s-masonry[gap-xxs-5] {
+  --gap: 5;
+}
+s-masonry[gap-xxs-5] > * {
+  --gap: 5;
+}
+
+s-masonry[cols-xs-0] {
+  --cols: 0;
+}
+
+s-masonry[cols-xs-1] {
+  --cols: 1;
+}
+
+s-masonry[cols-xs-2] {
+  --cols: 2;
+}
+
+s-masonry[cols-xs-3] {
+  --cols: 3;
+}
+
+s-masonry[cols-xs-4] {
+  --cols: 4;
+}
+
+s-masonry[cols-xs-5] {
+  --cols: 5;
+}
+
+s-masonry[cols-xs-6] {
+  --cols: 6;
+}
+
+s-masonry[cols-xs-7] {
+  --cols: 7;
+}
+
+s-masonry[cols-xs-8] {
+  --cols: 8;
+}
+
+s-masonry[cols-xs-9] {
+  --cols: 9;
+}
+
+s-masonry[cols-xs-10] {
+  --cols: 10;
+}
+
+s-masonry[cols-xs-11] {
+  --cols: 11;
+}
+
+s-masonry[cols-xs-12] {
+  --cols: 12;
+}
+
+s-masonry[gap-xs-1] {
+  --gap: 1;
+}
+s-masonry[gap-xs-1] > * {
+  --gap: 1;
+}
+
+s-masonry[gap-xs-2] {
+  --gap: 2;
+}
+s-masonry[gap-xs-2] > * {
+  --gap: 2;
+}
+
+s-masonry[gap-xs-3] {
+  --gap: 3;
+}
+s-masonry[gap-xs-3] > * {
+  --gap: 3;
+}
+
+s-masonry[gap-xs-4] {
+  --gap: 4;
+}
+s-masonry[gap-xs-4] > * {
+  --gap: 4;
+}
+
+s-masonry[gap-xs-5] {
+  --gap: 5;
+}
+s-masonry[gap-xs-5] > * {
+  --gap: 5;
+}
+
+s-masonry[cols-sm-0] {
+  --cols: 0;
+}
+
+s-masonry[cols-sm-1] {
+  --cols: 1;
+}
+
+s-masonry[cols-sm-2] {
+  --cols: 2;
+}
+
+s-masonry[cols-sm-3] {
+  --cols: 3;
+}
+
+s-masonry[cols-sm-4] {
+  --cols: 4;
+}
+
+s-masonry[cols-sm-5] {
+  --cols: 5;
+}
+
+s-masonry[cols-sm-6] {
+  --cols: 6;
+}
+
+s-masonry[cols-sm-7] {
+  --cols: 7;
+}
+
+s-masonry[cols-sm-8] {
+  --cols: 8;
+}
+
+s-masonry[cols-sm-9] {
+  --cols: 9;
+}
+
+s-masonry[cols-sm-10] {
+  --cols: 10;
+}
+
+s-masonry[cols-sm-11] {
+  --cols: 11;
+}
+
+s-masonry[cols-sm-12] {
+  --cols: 12;
+}
+
+s-masonry[gap-sm-1] {
+  --gap: 1;
+}
+s-masonry[gap-sm-1] > * {
+  --gap: 1;
+}
+
+s-masonry[gap-sm-2] {
+  --gap: 2;
+}
+s-masonry[gap-sm-2] > * {
+  --gap: 2;
+}
+
+s-masonry[gap-sm-3] {
+  --gap: 3;
+}
+s-masonry[gap-sm-3] > * {
+  --gap: 3;
+}
+
+s-masonry[gap-sm-4] {
+  --gap: 4;
+}
+s-masonry[gap-sm-4] > * {
+  --gap: 4;
+}
+
+s-masonry[gap-sm-5] {
+  --gap: 5;
+}
+s-masonry[gap-sm-5] > * {
+  --gap: 5;
+}
+
+s-masonry[cols-md-0] {
+  --cols: 0;
+}
+
+s-masonry[cols-md-1] {
+  --cols: 1;
+}
+
+s-masonry[cols-md-2] {
+  --cols: 2;
+}
+
+s-masonry[cols-md-3] {
+  --cols: 3;
+}
+
+s-masonry[cols-md-4] {
+  --cols: 4;
+}
+
+s-masonry[cols-md-5] {
+  --cols: 5;
+}
+
+s-masonry[cols-md-6] {
+  --cols: 6;
+}
+
+s-masonry[cols-md-7] {
+  --cols: 7;
+}
+
+s-masonry[cols-md-8] {
+  --cols: 8;
+}
+
+s-masonry[cols-md-9] {
+  --cols: 9;
+}
+
+s-masonry[cols-md-10] {
+  --cols: 10;
+}
+
+s-masonry[cols-md-11] {
+  --cols: 11;
+}
+
+s-masonry[cols-md-12] {
+  --cols: 12;
+}
+
+s-masonry[gap-md-1] {
+  --gap: 1;
+}
+s-masonry[gap-md-1] > * {
+  --gap: 1;
+}
+
+s-masonry[gap-md-2] {
+  --gap: 2;
+}
+s-masonry[gap-md-2] > * {
+  --gap: 2;
+}
+
+s-masonry[gap-md-3] {
+  --gap: 3;
+}
+s-masonry[gap-md-3] > * {
+  --gap: 3;
+}
+
+s-masonry[gap-md-4] {
+  --gap: 4;
+}
+s-masonry[gap-md-4] > * {
+  --gap: 4;
+}
+
+s-masonry[gap-md-5] {
+  --gap: 5;
+}
+s-masonry[gap-md-5] > * {
+  --gap: 5;
+}
+
+s-masonry[cols-lg-0] {
+  --cols: 0;
+}
+
+s-masonry[cols-lg-1] {
+  --cols: 1;
+}
+
+s-masonry[cols-lg-2] {
+  --cols: 2;
+}
+
+s-masonry[cols-lg-3] {
+  --cols: 3;
+}
+
+s-masonry[cols-lg-4] {
+  --cols: 4;
+}
+
+s-masonry[cols-lg-5] {
+  --cols: 5;
+}
+
+s-masonry[cols-lg-6] {
+  --cols: 6;
+}
+
+s-masonry[cols-lg-7] {
+  --cols: 7;
+}
+
+s-masonry[cols-lg-8] {
+  --cols: 8;
+}
+
+s-masonry[cols-lg-9] {
+  --cols: 9;
+}
+
+s-masonry[cols-lg-10] {
+  --cols: 10;
+}
+
+s-masonry[cols-lg-11] {
+  --cols: 11;
+}
+
+s-masonry[cols-lg-12] {
+  --cols: 12;
+}
+
+s-masonry[gap-lg-1] {
+  --gap: 1;
+}
+s-masonry[gap-lg-1] > * {
+  --gap: 1;
+}
+
+s-masonry[gap-lg-2] {
+  --gap: 2;
+}
+s-masonry[gap-lg-2] > * {
+  --gap: 2;
+}
+
+s-masonry[gap-lg-3] {
+  --gap: 3;
+}
+s-masonry[gap-lg-3] > * {
+  --gap: 3;
+}
+
+s-masonry[gap-lg-4] {
+  --gap: 4;
+}
+s-masonry[gap-lg-4] > * {
+  --gap: 4;
+}
+
+s-masonry[gap-lg-5] {
+  --gap: 5;
+}
+s-masonry[gap-lg-5] > * {
+  --gap: 5;
+}
+
+s-masonry[cols-xl-0] {
+  --cols: 0;
+}
+
+s-masonry[cols-xl-1] {
+  --cols: 1;
+}
+
+s-masonry[cols-xl-2] {
+  --cols: 2;
+}
+
+s-masonry[cols-xl-3] {
+  --cols: 3;
+}
+
+s-masonry[cols-xl-4] {
+  --cols: 4;
+}
+
+s-masonry[cols-xl-5] {
+  --cols: 5;
+}
+
+s-masonry[cols-xl-6] {
+  --cols: 6;
+}
+
+s-masonry[cols-xl-7] {
+  --cols: 7;
+}
+
+s-masonry[cols-xl-8] {
+  --cols: 8;
+}
+
+s-masonry[cols-xl-9] {
+  --cols: 9;
+}
+
+s-masonry[cols-xl-10] {
+  --cols: 10;
+}
+
+s-masonry[cols-xl-11] {
+  --cols: 11;
+}
+
+s-masonry[cols-xl-12] {
+  --cols: 12;
+}
+
+s-masonry[gap-xl-1] {
+  --gap: 1;
+}
+s-masonry[gap-xl-1] > * {
+  --gap: 1;
+}
+
+s-masonry[gap-xl-2] {
+  --gap: 2;
+}
+s-masonry[gap-xl-2] > * {
+  --gap: 2;
+}
+
+s-masonry[gap-xl-3] {
+  --gap: 3;
+}
+s-masonry[gap-xl-3] > * {
+  --gap: 3;
+}
+
+s-masonry[gap-xl-4] {
+  --gap: 4;
+}
+s-masonry[gap-xl-4] > * {
+  --gap: 4;
+}
+
+s-masonry[gap-xl-5] {
+  --gap: 5;
+}
+s-masonry[gap-xl-5] > * {
+  --gap: 5;
+}
+
+s-masonry[cols-xxl-0] {
+  --cols: 0;
+}
+
+s-masonry[cols-xxl-1] {
+  --cols: 1;
+}
+
+s-masonry[cols-xxl-2] {
+  --cols: 2;
+}
+
+s-masonry[cols-xxl-3] {
+  --cols: 3;
+}
+
+s-masonry[cols-xxl-4] {
+  --cols: 4;
+}
+
+s-masonry[cols-xxl-5] {
+  --cols: 5;
+}
+
+s-masonry[cols-xxl-6] {
+  --cols: 6;
+}
+
+s-masonry[cols-xxl-7] {
+  --cols: 7;
+}
+
+s-masonry[cols-xxl-8] {
+  --cols: 8;
+}
+
+s-masonry[cols-xxl-9] {
+  --cols: 9;
+}
+
+s-masonry[cols-xxl-10] {
+  --cols: 10;
+}
+
+s-masonry[cols-xxl-11] {
+  --cols: 11;
+}
+
+s-masonry[cols-xxl-12] {
+  --cols: 12;
+}
+
+s-masonry[gap-xxl-1] {
+  --gap: 1;
+}
+s-masonry[gap-xxl-1] > * {
+  --gap: 1;
+}
+
+s-masonry[gap-xxl-2] {
+  --gap: 2;
+}
+s-masonry[gap-xxl-2] > * {
+  --gap: 2;
+}
+
+s-masonry[gap-xxl-3] {
+  --gap: 3;
+}
+s-masonry[gap-xxl-3] > * {
+  --gap: 3;
+}
+
+s-masonry[gap-xxl-4] {
+  --gap: 4;
+}
+s-masonry[gap-xxl-4] > * {
+  --gap: 4;
+}
+
+s-masonry[gap-xxl-5] {
+  --gap: 5;
+}
+s-masonry[gap-xxl-5] > * {
+  --gap: 5;
 }
 
 s-row[gx-0], s-row[g-0] {
