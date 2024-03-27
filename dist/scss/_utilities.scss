@@ -271,3 +271,42 @@
     }
 
 // !SECTION
+
+// SECTION - Simple Styling
+
+    // STUB Rounded / Circle
+    @each $name, $val in $border-radius-map{
+        .round-#{$name}{
+            border-radius: #{$val};
+        }
+    }
+
+    .round-circle{
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+    }
+
+    .round-pill{
+        border-radius: 999rem;
+    }
+
+    // Breakpoints
+
+    @each $break, $screen in $breakpoint-map-ref {
+        @media ($minmax: $screen){
+            @each $name, $val in $border-radius-map{
+                .round-#{$break}-#{$name}{
+                    border-radius: #{$val};
+                }
+            }
+            .round-#{$break}-circle{
+                aspect-ratio: 1/1;
+                border-radius: 50%;
+            }
+            .round-#{$break}-pill{
+                border-radius: 999rem;
+            }
+        }
+    }
+
+// !SECTION

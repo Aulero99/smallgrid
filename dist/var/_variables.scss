@@ -227,6 +227,16 @@
     $elevation-spread: $shadow-spread - 1px !default;
     $elevation-color: $shadow-color !default;
     $elevation-opacity: 0.19 !default;
+
+    // STUB - Borders
+    @function var-border-radius($num){
+        @return calc(0.15rem + ((#{$num} * #{$num}) * 0.05rem))
+    }
+    $border-radius-1: var-border-radius(1) !default;
+    $border-radius-2: var-border-radius(2) !default;
+    $border-radius-3: var-border-radius(3) !default;
+    $border-radius-4: var-border-radius(4) !default;
+    $border-radius-5: var-border-radius(5) !default;
     
 // !SECTION
 
