@@ -83,6 +83,14 @@ All classes included are:
 - `<... gy-bp-x>` Adjusts y gutter
     * Modifiers for `x` are 0-5
 
+## Vertical Masonry
+In addition to the grid system implemented in framework, Suspendors also comes pre installed with a vertical masonry layout.
+- `<s-masonry>` The containing tag of the masonry layout
+    * `<... cols-bp-x>` sets the number of columns
+        * modifier for x is 1-12
+    * `<... gap-bp-x>` sets the gap for the columns, sizing is identical to the gutters in `<s-row>`
+        * modifiers for x are 1-5
+
 ## Utility Classes
 Outside of the grid, Suspendors comes with a spattering of useful utility classes. By default, these can't also be set as attributes, however if you would like to instead be able to apply utility classes as attributes you can change the `$utility-as-attribute` scss variable to true.
 
@@ -281,3 +289,6 @@ The other module in beta is the loaders module. The loaders module currently has
         * grid classes changed to custom tags (see usage notes)
         * `.elevation-bp-x` removed, now just `.e-bp-x`
         * implemented responsive text, margin and padding.
+    * 1.6.2
+        * Added vertical masonry layout option
+        * added `round-` classes to utility classes 
