@@ -136,3 +136,14 @@ $border-radius-map:(
     "4": $border-radius-4,
     "5": $border-radius-5,
 ) !default;
+
+// STUB - Justification
+
+$flex-justify-alignment-values:(
+    'start':flex-start,
+    'center':center,
+    'end':flex-end,
+    'between':space-between,
+    'around':space-around,
+    'even':space-evenly
+) !default;

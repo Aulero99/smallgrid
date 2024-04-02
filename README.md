@@ -292,3 +292,5 @@ The other module in beta is the loaders module. The loaders module currently has
     * 1.6.2
         * Added vertical masonry layout option
         * added `round-` classes to utility classes 
+    * 1.6.3
+        * Fixed issue with display block on skeleton classes interfering with implementation

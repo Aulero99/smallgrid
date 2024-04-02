@@ -181,15 +181,6 @@
 
     // STUB - Alignment
 
-    $flex-justify-alignment-values:(
-        'start':flex-start,
-        'center':center,
-        'end':flex-end,
-        'between':space-between,
-        'around':space-around,
-        'even':space-evenly
-    ) !default;
-
     @each $key, $value in $flex-justify-alignment-values{
         .align-items-#{$key}, .align-#{$key}{
             align-items: $value;
@@ -239,6 +230,8 @@
     // STUB - Grow
 
     .grow-1{ flex-grow: 1; }
+
+    // Breakpoints
 
     @each $break, $screen in $breakpoint-map-ref{
         @media (#{$minmax}: $screen){
