@@ -1,7 +1,7 @@
 {
     "name": "suspendors",
     "private": false,
-    "version": "1.6.2",
+    "version": "1.6.3",
     "description": "Scss framework with multiple applicable uses",
     "main": "dist/js/Suspendors.js",
     "module": "dist/js/Suspendors.esm.js",
