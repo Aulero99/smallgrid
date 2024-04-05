@@ -1,6 +1,6 @@
 import { logger } from "./Logger"
 
-class Modals{
+class Modal{
     constructor(){
     }
     test(){
@@ -9,4 +9,4 @@ class Modals{
     }
 }
 
-export const modals = new Modals()
+export const modal = new Modal()
