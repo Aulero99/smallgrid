@@ -10,12 +10,12 @@
 
 html{
     width: 100%;
-    overflow-x: hidden;
     touch-action: manipulation;
     font-size: $font-size-base;
 }
 
 html, body, main, header, footer, section, article{ 
+  display: block;
     margin: 0;
     padding: 0;
 }

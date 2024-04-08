@@ -206,6 +206,14 @@
 
 // !SECTION
 
+// SECTION - Modals
+
+    $modal-transition-time: 200ms;
+    $modal-width: 70vw;
+    $modal-height: 70vh;
+
+// !SECTION
+
 
 // SECTION - Styling
 
@@ -259,6 +267,9 @@
     $root-xxl: var(--#{$prefix}-xxl);
     $root-spacer: var(--#{$prefix}-spacer);
     $root-container-shift-width: var(--#{$prefix}-container-shift-width);
+    $root-modal-transition-time: var(--#{$prefix}-modal-transition-time);
+    $root-modal-width: var(--#{$prefix}-modal-width);
+    $root-modal-height: var(--#{$prefix}-modal-width);
 
 // !SECTION
 

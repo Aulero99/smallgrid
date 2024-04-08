@@ -1,6 +1,6 @@
 import { suspendors } from "./Suspendors"
 import { registrar } from "./Registrar"
-import { modal } from "./Modals"
+import { modal } from "./modals/Modals"
 import { forms } from "./Forms"
 import { pop } from "./Pop"
 import { options } from "../var/_variables"

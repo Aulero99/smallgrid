@@ -10,8 +10,9 @@ export const vars = {
     md:0,
     lg:0,
     xl:0,
-    xxl:0,
-    dev:false
+    'xxl':0,
+    'dev':false,
+    'modal-transition-time':null
 }
 
 const root = document.querySelector(':root')
@@ -80,7 +81,7 @@ class Options{
             let set = null
 
             // skip if value is nulled or key is too long
-            if(val.length == 0 || key.length > 14){ continue }
+            if(val.length == 0 || key.length > 30){ continue }
             // skip the prefix
             if(key === 'prefix'){ continue }
             // skip the vh100 and vw100 values, which we only need to set not get
