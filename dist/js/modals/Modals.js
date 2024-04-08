@@ -9,14 +9,14 @@ let modalClosing = false;
 let modalOpening = false;
 
 function setFocus(){
+    if(!openModalID || !shownModal){ throw new Error(`no modal target ${arguments.callee.name}`) }
     // Check to see if an element has the autofocus attribute applied,
     // and if not apply it to the first child of the element.
     let autofocus = 0
-    const modal = document.getElementById(openModalID)
-    Array.prototype.forEach.call(modal.querySelectorAll('[autofocus]'), function(){autofocus++})
+    Array.prototype.forEach.call(shownModal.querySelectorAll('[autofocus]'), function(){autofocus++})
     if(autofocus == 0){
         logger.log('no autofocus target provided, setting first child to autofocus.')
-        modal.firstChild.setAttribute('autofocus', '')
+        shownModal.firstChild.setAttribute('autofocus', '')
     }
     return
 }
@@ -31,11 +31,10 @@ function awaitEscKeyCloseModal(e){
 }
 
 function awaitOutClickCloseModal(e){
-    const modal = document.getElementById(openModalID)
+    if(!openModalID || !shownModal){ throw new Error(`no modal target ${arguments.callee.name}`) }
     // if modal is closed it will not be visible on the dom
-    // so return
-    if(!modal.checkVisibility()){ return }
-    const rect = modal.getBoundingClientRect();
+    if(!shownModal.checkVisibility()){ return }
+    const rect = shownModal.getBoundingClientRect();
     if(e.x < rect.left || e.x > (rect.width + rect.left)){
         closeModal()
     }else if(e.y < rect.top || e.y > (rect.height + rect.top)){
@@ -45,32 +44,32 @@ function awaitOutClickCloseModal(e){
 }
 
 function awaitOutTouchStartToCloseModal(e){
-    const modal = document.getElementById(openModalID)
+    if(!openModalID || !shownModal){ throw new Error(`no modal target ${arguments.callee.name}`) }
     const x = e.changedTouches[0].clientX
     const y = e.changedTouches[0].clientY
-    const rect = modal.getBoundingClientRect();
+    const rect = shownModal.getBoundingClientRect();
     // // if modal is closed it will not be visible on the dom
     // // so return
     // if(!modal.checkVisibility()){ return }
     
     if(x < rect.left + window.scrollX || x > rect.left + window.scrollX + rect.width){
         // further left
-        modal.addEventListener('touchend', awaitOutTouchEndToCloseModal)
+        shownModal.addEventListener('touchend', awaitOutTouchEndToCloseModal)
         return
     }else if(y < rect.top + window.scrollY || y > rect.top + window.scrollY + rect.height){
         // above
-        modal.addEventListener('touchend', awaitOutTouchEndToCloseModal)
+        shownModal.addEventListener('touchend', awaitOutTouchEndToCloseModal)
         return
     }
 }
 
 function awaitOutTouchEndToCloseModal(e){
-    const modal = document.getElementById(openModalID)
+    if(!openModalID || !shownModal){ throw new Error(`no modal target ${arguments.callee.name}`) }
     const x = e.changedTouches[0].clientX
     const y = e.changedTouches[0].clientY
-    const rect = modal.getBoundingClientRect();
+    const rect = shownModal.getBoundingClientRect();
     
-    modal.removeEventListener('touchend', awaitOutTouchEndToCloseModal)
+    shownModal.removeEventListener('touchend', awaitOutTouchEndToCloseModal)
     // // if modal is closed it will not be visible on the dom
     // // so return
     // if(!modal.checkVisibility()){ return }
@@ -93,8 +92,8 @@ function getScrollBarWidth() {
     return width;
 }
 
-function disableScroll(tf = true){
-    if(tf){
+function toggleScroll(toggle = true){
+    if(toggle){
         // get the width of the scrollbar in the document
         let scrollBarWidth = getScrollBarWidth();
         // turn the body scroll off when modal is open
@@ -111,9 +110,9 @@ function disableScroll(tf = true){
     }
 }
 
-function setModalEventListeners(tf = true){
+function toggleEventListenersToCloseModal(toggle = true){
     if(!openModalID || !shownModal){ throw new Error(`no modal target ${arguments.callee.name}`) }
-    if(tf){
+    if(toggle){
         shownModal.addEventListener('cancel', (e) => {
             e.preventDefault();
         });
@@ -132,33 +131,49 @@ function setModalEventListeners(tf = true){
     }
 }
 
-function setOptions(tf=true, options = {}){
+function toggleOptionsAndAttributes(toggle = true, options){
     if(!openModalID || !shownModal){ throw new Error(`no modal target ${arguments.callee.name}`) }
-    if(tf){
-        // disable the scroll on the page
-        disableScroll(options.disableBodyScroll)
-        // determine whether to center or not
+    if(!options){
+        options = new Options(modalOptions)
+    }
+    if(toggle){
         if(options.centered){ shownModal.setAttribute('data-centered', '') }
         if(options.static){ shownModal.setAttribute('data-static', '') }
         if(options.scrollable){ shownModal.setAttribute('data-scrollable', '') }
         if(!options.animation){ shownModal.setAttribute('data-no-animation', '') }
         return
     }else{
-        disableScroll(false)
-        shownModal.removeAttribute('data-centered', '') 
-        shownModal.removeAttribute('data-static', '')
-        shownModal.removeAttribute('data-scrollable', '') 
-        shownModal.removeAttribute('data-no-animation', '')
+        if(options.centered){ shownModal.removeAttribute('data-centered', '') }
+        if(options.static){ shownModal.removeAttribute('data-static', '') }
+        if(options.scrollable){ shownModal.removeAttribute('data-scrollable', '') }
+        if(!options.animation){ shownModal.removeAttribute('data-no-animation', '') }
         return
     }
 }
 
-async function openModal(options = {}){
-    // debugger
+function setModalValuesAndEnvironment(id, options){
+        // sanitize the options from the user
+        // and save the options for use later
+        modalOptions = new Options(options)
+        // set the variables id to check against
+        openModalID = id
+        // get the element to manipulate
+        shownModal = document?.getElementById(openModalID)
+        return
+}
+
+function resetModalValuesAndEnvironment(){
+    // reset the environment
+    openModalID = null
+    shownModal = null
+}
+
+async function openModal(id, options){
+    // check to see if the environment is ready
     if(!openModalID || !shownModal){ throw new Error(`no modal target ${arguments.callee.name}`) }
 
     // set the options, true to set, false to remove, options as second param
-    setOptions(true, options)
+    toggleOptionsAndAttributes(true)
 
     // Make sure the modal has a focusable target before opening
     setFocus()
@@ -172,7 +187,7 @@ async function openModal(options = {}){
     shownModal.style.display = 'block';
 
     // then set the event listeners for the options
-    shownModal.addEventListener('transitionend', setOpenModalEvents)
+    shownModal.addEventListener('transitionend', toggleOnEventListenersToCloseModal)
 
     // the dom needs a moment to update after setting display styles, so set
     // a minimal timeout function before updating the attribute we are
@@ -182,55 +197,50 @@ async function openModal(options = {}){
     // now we set up a function that returns after a set amount of time
     let modalStatus = await modalTransitionTimer(options)
     console.log(modalStatus)
+
+    // after the set amount of time call the show-modal function
+    // for accessability
+    shownModal.showModal()
     return
 }
 
-function setOpenModalEvents(){
+function toggleOnEventListenersToCloseModal(){
     if(!openModalID || !shownModal){ throw new Error(`no modal target ${arguments.callee.name}`) }
     console.log('modal opened')
-    shownModal.removeEventListener('transitionend', setOpenModalEvents)
-    setModalEventListeners(true)
-    shownModal.showModal()
+    shownModal.removeEventListener('transitionend', toggleOnEventListenersToCloseModal)
+    toggleEventListenersToCloseModal(true)
     return
 }
 
 async function closeModal(){
     if(!openModalID || !shownModal){ throw new Error(`no modal target ${arguments.callee.name}`) }
-
-    // check to see if the modal is closing to avoid double triggers
-    if(modalClosing){ return }
-    modalClosing = true
     
     // remove the closing events for the modal since we are closing it now
-    setModalEventListeners(false)
+    toggleEventListenersToCloseModal(false)
     
     // then start the close process
-    shownModal.addEventListener('transitionend', setCloseModalOptions)
+    shownModal.addEventListener('transitionend', toggleOffEventListenersToCloseModal)
     shownModal.removeAttribute('data-modal-open')
 
     // now we set up a function that returns after a set amount of time
     let modalStatus = await modalTransitionTimer(modalOptions)
     console.log(modalStatus)
-
-    // reset the modal variables
-    modalClosing = false
-    openModalID = null
-    shownModal = null
+    
     return
 }
 
-function setCloseModalOptions(){
+function toggleOffEventListenersToCloseModal(){
     // remove the listener for the transition
-    shownModal.removeEventListener('transitionend', setCloseModalOptions)
+    shownModal.removeEventListener('transitionend', toggleOffEventListenersToCloseModal)
     shownModal.style = ''
-    setModalEventListeners(false)
-    setOptions(false)
+    toggleEventListenersToCloseModal(false)
+    toggleOptionsAndAttributes(false)
     shownModal.close()
     console.log('modal closed')
 }
 
 async function modalTransitionTimer(options){
-    const timeOut = options.transitionTime + 50 || 1
+    const timeOut = options ? options.transitionTime + 50 : modalOptions.transitionTime + 50
     return new Promise(resolve =>{
         setTimeout(() => {
             resolve(true)
@@ -243,25 +253,25 @@ class Modal{
     async open(id = '', options = {}){
         // debugger
         try {
+            // user must provide an id to open a modal
             if(id === ''){ throw new Error('No id provided') }
-            // if a modal is already open, then close the open one first
-            if(openModalID !== null){ 
-                await this.close(openModalID) 
-            }
 
-            // sanitize the options from the user
-            options = new Options(options)
-            // save the options for use later
-            modalOptions = options
-            // set the variables to check against
-            openModalID = id
-            shownModal = document?.getElementById(openModalID)
-
-            // check to see if modal is opening to avoid double triggers
+            // if a modal is opening return to prevent double inputs
             if(modalOpening){ return }
             modalOpening = true
+
+            // if a modal is already open, then close the open one first
+            if(openModalID !== null){ await this.close(openModalID) }
+
+            // set up the environment to work in
+            setModalValuesAndEnvironment(id, options)
+
+            // turn off the scroll of the page
+            toggleScroll(true)
+
             // then run the open logic
-            await openModal(options)
+            await openModal(id, options)
+            
             // set the opening check back to false
             modalOpening = false
             return
@@ -271,11 +281,27 @@ class Modal{
         }
     }
     async close(){
+        debugger
         try {
             // there must be an open modal to close a modal
             if(openModalID === null){ throw new Error('no modal to close') }
-                await closeModal()
-                return
+            // if the modal is closing, then return to prevent double inputs
+            if(modalClosing){ return }
+            modalClosing = true
+            
+            // then run the close logic
+            await closeModal()
+
+            // if there is a modal opening, don't restore
+            // scroll capability
+            if(!modalOpening){ toggleScroll(false) }
+
+            // clear the environment
+            resetModalValuesAndEnvironment()
+            
+            // Set the check back to false
+            modalClosing = false
+            return
             }
         catch (e) {
             if(vars.dev){ logger.error(e) }
@@ -284,7 +310,11 @@ class Modal{
     }
     async toggle(id = '', options = {}){
         try {
-            if(id === ''){ throw new Error('No id provided')}
+            if(id === ''){ 
+                // if no id provided, default to close
+                await this.close() 
+                return
+            }
             if(openModalID === null || openModalID !== id){
                 // open a modal if no modal is open or if the id provided is not the
                 // id of the currently open modal
