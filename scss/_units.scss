@@ -1,0 +1,25 @@
+@use "sass:map";
+@import "./_variables.scss";
+@import "./_variable-maps.scss";
+
+@function vol($size){ 
+    @return calc(($size/12) * $root-vh100) 
+};
+
+@function col($size){ 
+    @return calc($size * (1/12) * 100%) 
+};
+
+@function height($size){ 
+    @return calc(($size/100) * $root-vh100)
+};
+
+@function width($size){ 
+    @return calc(($size/100) * $root-vw100) 
+};
+
+@function pad($size){
+    @return spacer( ((1/5) * $size) )
+};
+
+@function mar($size){ @return pad($size) }

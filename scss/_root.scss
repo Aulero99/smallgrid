@@ -1,0 +1,33 @@
+@use "sass:map";
+@import "./_variables.scss";
+@import "./_variable-maps.scss";
+@import "./_units.scss";
+
+// STUB CSS Root Variable Declaration
+
+    // NOTE This is where the root css variables 
+    // are declared and defaulted, for example vh100
+    // defaults to 100vh if scripts are turned off
+    // etc. If variables need to be accessed after 
+    // compiling, this is where they need to be
+    // declared to ensure no duplicates are made
+    // by imports
+    
+:root{
+    --prefix: #{$prefix}-;
+    --#{$prefix}-vh100: 100vh;
+    --#{$prefix}-vw100: 100vw;
+    --#{$prefix}-xxs: #{$xxs};
+    --#{$prefix}-xs: #{$xs};
+    --#{$prefix}-sm: #{$sm};
+    --#{$prefix}-md: #{$md};
+    --#{$prefix}-lg: #{$lg};
+    --#{$prefix}-xl: #{$xl};
+    --#{$prefix}-xxl: #{$xxl};
+    --#{$prefix}-spacer: #{$spacer};
+    --#{$prefix}-minmax: #{$minmax};
+    --#{$prefix}-container-shift-width: 100%;
+    --#{$prefix}-modal-transition-time: #{$modal-transition-time};
+    --#{$prefix}-modal-height: #{$modal-height};
+    --#{$prefix}-modal-width: #{$modal-width};
+}

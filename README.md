@@ -294,3 +294,6 @@ The other module in beta is the loaders module. The loaders module currently has
         * added `round-` classes to utility classes 
     * 1.6.3
         * Fixed issue with display block on skeleton classes interfering with implementation
+    * 1.6.4
+        * changed package file structure for more support in tree shaking and bundling
+        * added support for modals (see implementation details) 

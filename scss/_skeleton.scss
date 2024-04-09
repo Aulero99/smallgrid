@@ -1,0 +1,118 @@
+@use "sass:map";
+@import "./_variables.scss";
+@import "./_variable-maps.scss";
+@import "./_units.scss";
+
+// NOTE - The extension classes for the backgrounds
+
+$skeleton-bg: linear-gradient(
+    90deg,
+    rgba(230, 230, 230, 0.65) 40%,
+    rgba(255,255,255,0.65) 50%,
+    rgba(230, 230, 230, 0.65) 60%) 
+    right / 300% 100%;;
+
+
+%skeleton{
+    cursor: progress;
+    min-height: 16px;
+    mask:
+        linear-gradient(#000 0 0) top / 100% 100%;
+    -webkit-mask:
+        linear-gradient(#000 0 0) top / 100% 100%;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    background: $skeleton-bg;
+}
+
+%skeleton-bars{
+    cursor: progress;
+    min-height: vol(1);
+    mask:
+        linear-gradient(#000 0 0) 0 0 / 100% 20%,
+        linear-gradient(#000 0 0) 0 33% / 100% 20%,
+        linear-gradient(#000 0 0) 0 66% / 100% 20%,
+        linear-gradient(#000 0 0) 0 100% / 60% 20%;
+    -webkit-mask:
+        linear-gradient(#000 0 0) 0 0 / 100% 20%,
+        linear-gradient(#000 0 0) 0 33% / 100% 20%,
+        linear-gradient(#000 0 0) 0 66% / 100% 20%,
+        linear-gradient(#000 0 0) 0 100% / 60% 20%;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    background: $skeleton-bg;
+}
+
+%skeleton-circle{
+    cursor: progress;
+    min-height: vol(1);
+    mask: radial-gradient(circle closest-side,#000 100%,#0000) bottom left / 100% 100%;
+    -webkit-mask: radial-gradient(circle closest-side,#000 100%,#0000) bottom left / 100% 100%;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    background: $skeleton-bg;
+}
+
+
+
+// NOTE - these are the standard skeleton classes, they only work if the element is empty or has a loadable element
+
+*[data-skeleton], *[skeleton], .skeleton{
+    &:empty, &:has(img[data-src]){
+        @extend %skeleton;
+    }
+
+}
+
+*[data-skeleton-circle], *[skeleton-circle], .skeleton-circle{
+    &:empty, &:has(img[data-src]){
+        @extend %skeleton-circle;
+    }
+}
+
+*[data-skeleton-bars], *[skeleton-bars], .skeleton-bars{
+    &:empty, &:has(img[data-src]){
+        @extend %skeleton-bars;
+    }
+}
+
+img { 
+    opacity: 1; 
+    filter: grayscale(0%) blur(0px);
+}
+
+img[data-src] { 
+    opacity: 0; 
+    filter: grayscale(100%) blur(4px);
+}
+
+@media screen and (prefers-reduced-motion: no-preference) { 
+
+    // IMPORTANT - All code for animated elements must be in this media query
+
+
+    *[data-skeleton], *[skeleton], .skeleton{
+        &:empty, &:has(img[data-src]){
+            animation: loading 1.5s infinite;
+        }
+    }
+    
+    *[data-skeleton-circle], *[skeleton-circle], .skeleton-circle{
+        &:empty, &:has(img[data-src]){
+            animation: loading 1.5s infinite;
+        }
+    }
+    
+    *[data-skeleton-bars], *[skeleton-bars], .skeleton-bars{
+        &:empty, &:has(img[data-src]){
+            animation: loading 1.5s infinite;
+        }
+    }
+
+    img { 
+        transition: 
+        opacity 0.3s,
+        filter 0.6s; 
+    }
+
+}
