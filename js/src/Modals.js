@@ -1,4 +1,4 @@
-import { vars } from './_variables.js'
+import { vars } from './utils/_variables.js'
 import { logger } from './utils/Logger.js'
 import { Modal } from './models/Modal.js'
 

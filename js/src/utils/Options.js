@@ -1,7 +1,7 @@
 /* eslint-disable no-return-assign */
 /* eslint-disable unicorn/no-array-reduce */
 import { logger } from './Logger.js'
-import { vars } from '../_variables.js'
+import { vars } from './_variables.js'
 
 const root = document.querySelector(':root')
 
@@ -10,7 +10,6 @@ function getStyle(name) {
   if (select !== null) {
     return select.getPropertyValue(name)
   }
-
   return null
 }
 
@@ -59,18 +58,22 @@ function getCssRoot() {
 class Options {
   importVariablesFromCss() {
     const root = getCssRoot()
-    logger.log('the found root is: ', root)
+    // logger.log('the found root is: ', root)
+    console.log('the found root is: ', root)
 
     const prefix = getStyle('--prefix')
     vars.prefix = prefix
+
+    console.log('the found prefix is: ', prefix)
+
 
     for (const element of root) {
       const key = element.slice(2)
       const val = getStyle(element)
       let set = null
 
-      // skip if value is nulled or key is too long
-      if (val.length === 0 || key.length > 30) {
+      // skip if value is nulled
+      if (val.length === 0) {
         continue
       }
 
@@ -137,4 +140,3 @@ class Options {
   }
 }
 export const options = new Options()
-document.addEventListener('DOMContentLoaded', options.importVariablesFromCss)

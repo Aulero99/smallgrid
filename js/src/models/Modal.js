@@ -1,4 +1,4 @@
-import { vars } from '../_variables.js'
+import { vars } from '../utils/_variables.js'
 
 export class Modal {
   constructor(data) {

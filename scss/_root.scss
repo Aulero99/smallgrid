@@ -30,4 +30,13 @@
     --#{$prefix}-modal-transition-time: #{$modal-transition-time};
     --#{$prefix}-modal-height: #{$modal-height};
     --#{$prefix}-modal-width: #{$modal-width};
+    --#{$prefix}-color-primary: null;
+    --#{$prefix}-color-secondary: null;
+    --#{$prefix}-color-tertiary: null;
+    --#{$prefix}-color-text: null;
+    --#{$prefix}-color-link: null;
+    --#{$prefix}-color-info: null;
+    --#{$prefix}-color-success: null;
+    --#{$prefix}-color-warning: null;
+    --#{$prefix}-color-danger: null;
 }

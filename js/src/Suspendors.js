@@ -1,15 +1,12 @@
 import { setter } from './EventSetter.js'
 import { volSizer } from './VolSizer.js'
 import { logger } from './utils/Logger.js'
-import { vars } from './_variables.js'
+import { vars } from './utils/_variables.js'
 import { options } from './utils/Options.js'
 
 class Suspendors {
   constructor() {
-    logger.log('Suspendors Online')
-
-    volSizer.setup()
-    setter.setup()
+    this.setup()
   }
 
   // NOTE
@@ -18,6 +15,13 @@ class Suspendors {
   // or orientation that will remain consistent
   // with all listeners and registered
   // functions
+
+  setup(){
+    logger.log('Suspendors Online')
+
+    volSizer.setup()
+    setter.setup()
+  }
 
   triggerAll() {
     setter.clearAllThenUpdate()
@@ -53,4 +57,5 @@ class Suspendors {
   }
 }
 
+document.addEventListener('DOMContentLoaded', options.importVariablesFromCss)
 export const suspendors = new Suspendors()

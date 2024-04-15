@@ -1,5 +1,5 @@
 /* eslint-disable prefer-rest-params */
-import { vars } from '../_variables.js'
+import { vars } from './_variables.js'
 
 function log(type, content) {
   if (vars.dev) {

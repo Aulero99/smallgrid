@@ -1,5 +1,5 @@
 import { logger } from './utils/Logger.js'
-import { vars } from './_variables.js'
+import { vars } from './utils/_variables.js'
 
 // NOTE
 // This is an independent file for setting the dynamic
